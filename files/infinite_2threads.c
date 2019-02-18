@@ -3,35 +3,25 @@
 #include <pthread.h>
 #include <unistd.h> // sleep()
 
-#define EVER ;;
-
-void *func1(void *a)
-{
-    (void)a;
-
-    for(EVER) {
-        printf("1 ");
-    }
-}
+#define NO_OF_CORES 4
 
 void
-*func2(void *b) {
-    (void)b;
-
-    for(EVER) {
-        printf("2 ");
-    }
+*func()
+{
+    for(;;) {}
 }
 
 int
 main() {
-    pthread_t thread[2];
+    pthread_t thread[NO_OF_CORES];
 
-    pthread_create(&thread[0], NULL, func1, NULL);
-    pthread_create(&thread[1], NULL, func2, NULL);
+	for(int i=0; i < NO_OF_CORES; i++) {
+		pthread_create(&thread[i], NULL, func, NULL);
+	}
 
-    while(1)
-        sleep(10);
+	for(;;) {
+		sleep(1);
+	}
 
     return 0;
 }

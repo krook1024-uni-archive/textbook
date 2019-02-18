@@ -8,15 +8,16 @@
     <section>
         <title>Végtelen ciklus</title>
         <para>
-            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely
-            100 százalékban minden magot!
+			Megoldás videó:
         </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-			Megoldás forrása:
+		<para>
+			Dolgoztassunk 1 magot megközelítőleg 0 százalékban:
 		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/infinite_0cpu.c" />
+			</textobject>
+		</programlisting>
 
 		<para>
 			Dolgoztassunk 100 százalékban egy magot:
@@ -37,7 +38,12 @@
 		</programlisting>
 
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzoridőt
+			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Némi keresgélés után meg
+			is találtam a választ, mi szerint az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt
+			hiszi, hogy rengeteg dolga van a programnak, így ki is osztja neki az összes rendelkezésre álló processzoridőt.
+			Ezzel szemben a <code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
+			milliszekundumban nem tart igényt processzoridőre, ennek megfelelően az OS nem is oszt számára időt.
         </para>
     </section>
 
@@ -131,14 +137,19 @@ false]]></screen>
         <title>Változók értékének felcserélése</title>
         <para>
             Írj olyan C programot, amely felcseréli két változó értékét, bármiféle logikai utasítás vagy kifejezés
-            nasználata nélkül!
+            használata nélkül!
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
             Megoldás forrása:
-        </para>
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/swap_xor.c" />
+			</textobject>
+		</programlisting>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
@@ -154,9 +165,11 @@ false]]></screen>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
         </para>
-        <para>
-            Megoldás forrása:
-        </para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/ball.c" />
+			</textobject>
+		</programlisting>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
@@ -171,9 +184,11 @@ false]]></screen>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
-        <para>
-            Megoldás forrása: <link xlink:href=""></link>
-        </para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/szohossz.c" />
+			</textobject>
+		</programlisting>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
@@ -188,9 +203,11 @@ false]]></screen>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
-        <para>
-            Megoldás forrása: <link xlink:href=""></link>
-        </para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/pr.c" />
+			</textobject>
+		</programlisting>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>

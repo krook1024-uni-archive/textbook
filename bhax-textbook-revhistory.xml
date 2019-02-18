@@ -36,4 +36,14 @@
 			<link xlink:href="https://github.com/krook1024/textbook">https://github.com/krook1024/textbook</link>
         </revremark>
 	</revision>
+    <revision>
+        <revnumber>0.0.5</revnumber>
+        <date>2019-02-18</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Meglévő kódsnittek behúzása.
+            Magyarázatok megírásának elkezdése.
+        </revremark>
+	</revision>
+
 </revhistory>

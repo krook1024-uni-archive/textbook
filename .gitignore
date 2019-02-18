@@ -1,2 +1,5 @@
 # Vim swappies
 *.swp
+
+# Pdf files
+*.pdf
