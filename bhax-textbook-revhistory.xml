@@ -14,16 +14,26 @@
         <revremark>
             Inciális feladatlisták összeállítása.
         </revremark>
-    </revision>    
+    </revision>
     <revision>
         <revnumber>0.0.3</revnumber>
         <date>2019-02-16</date>
         <authorinitials>nbatfai</authorinitials>
         <revremark>
             Feladatlisták folytatása.
-            Feltöltés a BHAX csatorna 
+            Feltöltés a BHAX csatorna
             <link xlink:href="https://gitlab.com/nbatfai/bhax">https://gitlab.com/nbatfai/bhax</link>
             repójába.
         </revremark>
     </revision>
+    <revision>
+        <revnumber>0.0.4</revnumber>
+        <date>2019-02-18</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Perszonalizáció.
+            Saját fork GitHubon:
+			<link xlink:href="https://github.com/krook1024/textbook">https://github.com/krook1024/textbook</link>
+        </revremark>
+	</revision>
 </revhistory>

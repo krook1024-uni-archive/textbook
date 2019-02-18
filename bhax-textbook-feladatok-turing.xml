@@ -8,20 +8,39 @@
     <section>
         <title>Végtelen ciklus</title>
         <para>
-            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely  
+            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely
             100 százalékban minden magot!
         </para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
-        </para>
+			Megoldás forrása:
+		</para>
+
+		<para>
+			Dolgoztassunk 100 százalékban egy magot:
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/infinite.c" />
+			</textobject>
+		</programlisting>
+
+		<para>
+			Dolgoztassuk meg az összes magot 100 százalékban:
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/infinite_2threads.c" />
+			</textobject>
+		</programlisting>
+
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
-        
+        </para>
+    </section>
+
     <section>
         <title>Lefagyott, nem fagyott, akkor most mi van?</title>
         <para>
@@ -32,7 +51,7 @@
         </para>
         <para>
             Megoldás forrása:  tegyük fel, hogy akkora haxorok vagyunk, hogy meg tudjuk írni a <function>Lefagy</function>
-            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:              
+            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:
         </para>
         <programlisting language="c"><![CDATA[Program T100
 {
@@ -42,22 +61,22 @@
 		 if(P-ben van végtelen ciklus)
 			return true;
 		 else
-			return false; 
+			return false;
 	}
 
 	main(Input Q)
 	{
 		Lefagy(Q)
 	}
-}]]></programlisting>            
+}]]></programlisting>
         <para>
             A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudókódjára:
             <screen><![CDATA[T100(t.c.pseudo)
-true]]></screen>            
+true]]></screen>
             akár önmagára
             <screen><![CDATA[T100(T100)
-false]]></screen>  
-            ezt a kimenetet adja.          
+false]]></screen>
+            ezt a kimenetet adja.
         </para>
         <para>
             A T100-as programot felhasználva készítsük most el az alábbi T1000-set, amelyben a
@@ -71,7 +90,7 @@ false]]></screen>
 		 if(P-ben van végtelen ciklus)
 			return true;
 		 else
-			return false; 
+			return false;
 	}
 
 	boolean Lefagy2(Program P)
@@ -79,7 +98,7 @@ false]]></screen>
 		 if(Lefagy(P))
 			return true;
 		 else
-			for(;;); 
+			for(;;);
 	}
 
 	main(Input Q)
@@ -87,27 +106,27 @@ false]]></screen>
 		Lefagy2(Q)
 	}
 
-}]]></programlisting>            
-        <programlisting><![CDATA[]]></programlisting>            
+}]]></programlisting>
+        <programlisting><![CDATA[]]></programlisting>
         <para>
             Mit for kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
-                                
+
             <itemizedlist>
                 <listitem>
-                    <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>                        
+                    <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>
                 </listitem>
                 <listitem>
-                    <para>Ha T1000 nem fagyó, akkor pedig le fog fagyni...</para>                        
+                    <para>Ha T1000 nem fagyó, akkor pedig le fog fagyni...</para>
                 </listitem>
             </itemizedlist>
             akkor most hogy fog működni? Sehogy, mert ilyen <function>Lefagy</function>
-            függvényt, azaz a T100 program nem is létezik.                
+            függvényt, azaz a T100 program nem is létezik.
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>        
-                
+    </section>
+
     <section>
         <title>Változók értékének felcserélése</title>
         <para>
@@ -118,12 +137,12 @@ false]]></screen>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>                     
+    </section>
 
     <section>
         <title>Labdapattogás</title>
@@ -136,18 +155,18 @@ false]]></screen>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
         </para>
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>                     
+    </section>
 
     <section>
         <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
         <para>
             Írj egy programot, ami megnézi, hogy hány bites a szó a gépeden, azaz mekkora az <type>int</type> mérete.
-            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában! 
+            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában!
         </para>
         <para>
             Megoldás videó: <link xlink:href=""></link>
@@ -156,14 +175,14 @@ false]]></screen>
             Megoldás forrása: <link xlink:href=""></link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat... 
+            Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>                     
+    </section>
 
     <section>
         <title>Helló, Google!</title>
         <para>
-            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank 
+            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank
             értékét!
         </para>
         <para>
@@ -176,7 +195,7 @@ false]]></screen>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>
-                                                                                                                                                                                                                                                                                                                                                        
+
     <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
         <title>A Monty Hall probléma</title>
         <para>
@@ -193,4 +212,4 @@ false]]></screen>
         </para>
     </section>
 
-</chapter>                
+</chapter>
