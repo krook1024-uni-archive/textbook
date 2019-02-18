@@ -1,0 +1,86 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>A Mandelbrot halmaz</title>
+        <para>
+                
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+        
+    <section>
+        <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
+        <para>
+                
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+                
+    <section>
+        <title>Biomorfok</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/IJMbgRzY76E">https://youtu.be/IJMbgRzY76E</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>                        
+    </section>                     
+
+    <section>
+        <title>A Mandelbrot halmaz CUDA megvalósítása</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mandelbrot nagyító és utazó C++ nyelven</title>
+        <para>
+            Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
+            egérrel kiválasztva vizualizálja onnan a komplex iteréció bejárta z<subscript>n</subscript> komplex számokat!
+        </para>
+            
+        <para>
+            Megoldás forrása:  
+        </para>
+
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+                                                                                                                                                                            
+    <section>
+        <title>Mandelbrot nagyító és utazó Java nyelven</title>
+        <para>
+        </para>
+    </section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

@@ -1,0 +1,196 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Turing!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Végtelen ciklus</title>
+        <para>
+            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely  
+            100 százalékban minden magot!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+        
+    <section>
+        <title>Lefagyott, nem fagyott, akkor most mi van?</title>
+        <para>
+            Mutasd meg, hogy nem lehet olyan programot írni, amely bármely más programról eldönti, hogy le fog-e fagyni vagy sem!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  tegyük fel, hogy akkora haxorok vagyunk, hogy meg tudjuk írni a <function>Lefagy</function>
+            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:              
+        </para>
+        <programlisting language="c"><![CDATA[Program T100
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	main(Input Q)
+	{
+		Lefagy(Q)
+	}
+}]]></programlisting>            
+        <para>
+            A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudókódjára:
+            <screen><![CDATA[T100(t.c.pseudo)
+true]]></screen>            
+            akár önmagára
+            <screen><![CDATA[T100(T100)
+false]]></screen>  
+            ezt a kimenetet adja.          
+        </para>
+        <para>
+            A T100-as programot felhasználva készítsük most el az alábbi T1000-set, amelyben a
+            Lefagy-ra épőlő Lefagy2 már nem tartalmaz feltételezett, csak csak konkrét kódot:
+        </para>
+        <programlisting language="c"><![CDATA[Program T1000
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	boolean Lefagy2(Program P)
+	{
+		 if(Lefagy(P))
+			return true;
+		 else
+			for(;;); 
+	}
+
+	main(Input Q)
+	{
+		Lefagy2(Q)
+	}
+
+}]]></programlisting>            
+        <programlisting><![CDATA[]]></programlisting>            
+        <para>
+            Mit for kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
+                                
+            <itemizedlist>
+                <listitem>
+                    <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>                        
+                </listitem>
+                <listitem>
+                    <para>Ha T1000 nem fagyó, akkor pedig le fog fagyni...</para>                        
+                </listitem>
+            </itemizedlist>
+            akkor most hogy fog működni? Sehogy, mert ilyen <function>Lefagy</function>
+            függvényt, azaz a T100 program nem is létezik.                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                
+    <section>
+        <title>Változók értékének felcserélése</title>
+        <para>
+            Írj olyan C programot, amely felcseréli két változó értékét, bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>                     
+
+    <section>
+        <title>Labdapattogás</title>
+        <para>
+            Először if-ekkel, majd bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül írj egy olyan programot, ami egy labdát pattogtat a karakteres konzolon! (Hogy mit értek
+            pattogtatás alatt, alább láthatod a videókon.)
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>                     
+
+    <section>
+        <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
+        <para>
+            Írj egy programot, ami megnézi, hogy hány bites a szó a gépeden, azaz mekkora az <type>int</type> mérete.
+            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában! 
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""></link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... 
+        </para>
+    </section>                     
+
+    <section>
+        <title>Helló, Google!</title>
+        <para>
+            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank 
+            értékét!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""></link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+                                                                                                                                                                                                                                                                                                                                                        
+    <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
+        <title>A Monty Hall probléma</title>
+        <para>
+            Írj R szimulációt a Monty Hall problémára!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+</chapter>                

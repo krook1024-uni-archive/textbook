@@ -1,0 +1,29 @@
+<authorgroup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <author>
+        <personname>
+            <honorific>Dr.</honorific>
+            <surname>Bátfai</surname>
+            <firstname>Norbert</firstname>        
+        </personname>    
+        <affiliation>
+            <shortaffil>E. adjunktus, DE.</shortaffil>
+            <jobtitle>Egyetemi adjunktus</jobtitle>
+            <orgname>Debreceni Egyetem</orgname>
+            <orgdiv>Információtechnológiai Tanszék</orgdiv>
+            <address>
+                <email>batfai.norbert@inf.unideb.hu</email>
+                <email>nbatfai@gmail.com</email>
+            </address>
+        </affiliation>
+        <address>
+            <street>Kassai út 26.</street>
+            <city>Debrecen</city>
+            <postcode>4028</postcode>
+            <country>Magyarország</country>
+            <email>batfai.norbert@inf.unideb.hu</email>
+            <otheraddr>
+                <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/">https://arato.inf.unideb.hu/batfai.norbert/</link>
+            </otheraddr>
+        </address>
+    </author>    
+</authorgroup>

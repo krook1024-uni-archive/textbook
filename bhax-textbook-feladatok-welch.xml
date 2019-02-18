@@ -1,0 +1,96 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
+            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
+            nincs eltéve kiszámolt szám.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... térj ki arra is, hogy a JDK forrásaiban a Sun programozói
+            pont úgy csinálták meg ahogyan te is, azaz az OO nemhogy nem nehéz, hanem éppen természetes neked!
+        </para>                
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+        
+    <section>
+        <title>Fabejárás</title>
+        <para>
+            Járd be az előző (inorder bejárású) fát pre- és posztorder is!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

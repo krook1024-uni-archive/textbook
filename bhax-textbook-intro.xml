@@ -1,0 +1,53 @@
+<part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Bevezetés</title>
+    <partintro>
+        <para> 
+        </para>
+    </partintro>
+    <chapter>
+        <info>
+            <title>Vízió</title>
+            <keywordset>
+                <keyword/>
+            </keywordset>
+        </info>
+        <section>
+            <title>Mi a programozás?</title>
+            <para>                  
+                          
+            </para>
+        </section>
+        <section>
+            <title>Milyen doksikat olvassak el?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>Olvasgasd a kézikönyv lapjait, kezd a <command>man man</command> parancs kiadásával. A C programozásban
+                    a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a 
+                    <command>man 3 sleep</command> lapot</para>                        
+                </listitem>
+                <listitem>
+                    <para><citation>KERNIGHANRITCHIE</citation></para>                        
+                </listitem>
+                <listitem>
+                    <para><citation>BMECPP</citation></para>                        
+                </listitem>
+                <listitem>
+                    <para>Az igazi kockák persze csemegéznek a C nyelvi szabvány 
+                        <link xlink:href="https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf">ISO/IEC 9899:2017</link> kódcsipeteiből is.
+                    </para>                        
+                </listitem>
+            </itemizedlist>            
+        </section>
+        <section>
+            <title>Milyen filmeket nézzek meg?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>21 - Las Vegas ostroma, 
+                        <link xlink:href="https://www.imdb.com/title/tt0478087/">https://www.imdb.com/title/tt0478087/</link>,
+                        benne a <link xlink:href="#bhax-textbook-feladatok-turing.MontyHall">Monty Hall probléma</link> bemutatása.
+                    </para>                        
+                </listitem>
+            </itemizedlist> 
+        </section>
+    </chapter>                
+</part>  

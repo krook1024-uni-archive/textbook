@@ -1,0 +1,70 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Conway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Hangyaszimulációk</title>
+        <para>
+            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
+            készíts UML osztálydiagramot is!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>Java életjáték</title>
+        <para>
+            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            valósítsa meg a sikló-kilövőt!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>Qt C++ életjáték</title>
+        <para>
+            Most Qt C++-ban!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>BrainB Benchmark</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

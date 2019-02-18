@@ -1,0 +1,100 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Caesar!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title><type>int ***</type> háromszögmátrix</title>
+        <para>
+           
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót C-ben!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>Java EXOR titkosító</title>
+        <para>
+            Írj egy EXOR titkosítót Java-ban!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>C EXOR törő</title>
+        <para>
+            Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>Neurális OR, AND és EXOR kapu</title>
+        <para>
+            R
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+    <section>
+        <title>Hiba-visszaterjesztéses perceptron</title>
+        <para>
+            C++
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>            
+    </section>        
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                
