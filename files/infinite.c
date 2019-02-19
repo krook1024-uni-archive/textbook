@@ -4,9 +4,9 @@
 
 int
 main() {
-	// A végtelen ciklus
+	// A vegtelen ciklus
 	for(EVER) {}
 
-	// Soha nem érjük el
+	// Soha nem erjuk el
 	return 0;
 }
