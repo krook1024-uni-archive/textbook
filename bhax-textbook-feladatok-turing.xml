@@ -7,35 +7,45 @@
     </info>
     <section>
         <title>Végtelen ciklus</title>
-        <para>
-			Megoldás videó:
-        </para>
 		<para>
-			Dolgoztassunk 1 magot megközelítőleg 0 százalékban:
+			<emphasis role="strong">Dolgoztassunk 1 magot megközelítőleg 0 százalékban:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/infinite_0cpu.c" />
 			</textobject>
 		</programlisting>
+		<para>
+			Amennyiben egy végtelen ciklusban <code language="c">sleep(1)</code> rendszerhívással
+			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzoridőt
+			kapni, a processzorhasználatunk (megközelítőleg) 0 százalék lesz.
+		</para>
 
 		<para>
-			Dolgoztassunk 100 százalékban egy magot:
+			<emphasis role="strong">Dolgoztassunk 100 százalékban egy magot:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/infinite.c" />
 			</textobject>
 		</programlisting>
+		<para>
+			Természetesen semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
+		</para>
 
 		<para>
-			Dolgoztassuk meg az összes magot 100 százalékban:
+			<emphasis role="strong">Dolgoztassuk meg az összes magot 100 százalékban:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/infinite_2threads.c" />
 			</textobject>
 		</programlisting>
+		<para>
+			Ebben az esetben a <code>pthreads.h</code> adta előnyöknél fogva, és bízva abban, hogy threadsafe
+			függvényt sikerült írnunk, benne a végtelen ciklussal, egyszerűen megoldhatjuk, hogy az alkalmazásunk
+			magához vegye a fennmaradó szabad processzoridő 100 százalékát.
+		</para>
 
         <para>
 			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzoridőt
@@ -143,7 +153,7 @@ false]]></screen>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
-            Megoldás forrása:
+			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
@@ -151,7 +161,9 @@ false]]></screen>
 			</textobject>
 		</programlisting>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			Két változó értékét megcserélhetjük az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
+			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában.
+
         </para>
     </section>
 
