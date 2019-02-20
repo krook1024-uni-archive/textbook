@@ -169,7 +169,7 @@ false]]></screen>
 			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
 			programunkat, a következőképp:
 		</para>
-		<programlisting language="c">
+		<programlisting language="c" startinglinenumber="14">
 			<textobject>
 				<textdata fileref="./files/swap_xor_m.c" />
 			</textobject>
@@ -184,7 +184,11 @@ a=00000100, b=00000011
 a=00000111, b=00000011]]>
 		</programlisting>
 		<para>
-			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben.
+			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
+			a kiinduló állapotot tükrözi. A második sorban már az össze ÉS-elt a és b változók jelennek meg.
+			Ezek után mégegyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán mégegyszer
+			az eredeti sorrendben. Ekkor az eredeti <emphasis>a</emphasis> és az eredeti <emphasis>b</emphasis>
+			helyet cserélnek.
 		</para>
     </section>
 
@@ -204,7 +208,10 @@ a=00000111, b=00000011]]>
 			</textobject>
 		</programlisting>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			Tanulságok, tapasztalatok, magyarázat...
+			Ez a példa mintapéldája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
+			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
+			esnek a konzolunkon (azaz a megjeleníthető ko-ordinátákon).
         </para>
     </section>
 
@@ -241,13 +248,18 @@ a=00000111, b=00000011]]>
 				<textdata fileref="./files/pr.c" />
 			</textobject>
 		</programlisting>
-        <para>
-			Tanulságok, tapasztalatok, magyarázat...
-			Lényegében ez a program egy adott M mátrix sajátvektorát számolja ki. A módszer Larry Page
-			Google-alapító után lett elnevezve, holott a módszert már két-, vagy háromszáz éve is ismerték
-			már. Szimplán eddig nem volt rá igény. Természetesen a Googlenél ennek az algoritmusnak egy
-			jócskán módosított változata fut, mely nem is publikus, hiszen akkor mindenki keresőszolgáltatást
-			indíthatna.
+		<para>
+			Ezt az algoritmust a Googlenél fejlesztette ki Larry Page (innen a neve; PageRank) és Sergey Brin.
+			Vélték felfedezni, hogy minél több oldal mutat egy oldalra, annak az oldalnak az értéke annál nagyobb.
+			Persze ez nem ilyen egyszerű, a nagyobb értékű weboldalak "voksai" többet érnek. Egy oldal
+			fontossága az alapján dől el, hogy hány másik oldal mutat ő rá.
+		</para>
+		<para>
+			Természetesen a Googlenél ennek az algoritmusnak egy jócskán módosított változata fut, mely
+			nem is publikus, hiszen akkor mindenki keresőszolgáltatást indíthatna szabadidejében.
+			Azt is fontos megjegyezni, hogy a fent látott példa az algoritmus egyszerűsített változata,
+			ez már magában hordoz hibákat, és némi eltérést. Például a zsákutca hiba, miszerint zsákutcába
+			érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
         </para>
     </section>
 
