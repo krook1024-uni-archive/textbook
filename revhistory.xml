@@ -45,13 +45,5 @@
             Magyarázatok megírásának elkezdése.
         </revremark>
 	</revision>
-    <revision>
-        <revnumber>0.0.6</revnumber>
-        <date>2019-02-20</date>
-        <authorinitials>krook1024</authorinitials>
-        <revremark>
-			Egy plusz olvasandó doksi (The Unix Koans of Master Foo).
-			Magyarázat a legtöbb első csokorbeli feladathoz.
-        </revremark>
-	</revision>
+
 </revhistory>
