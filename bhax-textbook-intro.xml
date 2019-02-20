@@ -14,8 +14,23 @@
         <section>
             <title>Mi a programozás?</title>
 			<para>
-				A programozás problémamegoldás. Sokféle és sokszínű. A számítógép tanítása.
-            </para>
+				A programozás problémamegoldás. Sokféle és sokszínű.
+				Trial and error.
+				És abból nagyon sok.
+			</para>
+			<para>
+				Minden elitizmus és hasonló érzelmek nélkül bátran állíthatom, hogy a programozás nem való mindenkinek.
+				Manapság nagyon sokan választják ezt a szakmát egy jó megélhetés reményében, ám nem biztos, hogy a jó
+				úton járnak. Amennyiben számodra jól hangizk ugyan azt a kódsnittet bámulni órákig, hibákat javítani
+				és még sorolhatnám, a legjobb helyen jársz. Ellenkező esetben előfordulhat, hogy a programozás mégsem
+				neked való.
+			</para>
+			<para>
+				Elméletben a programozók szigorú, lefektetett szabályok és nyelvtanok alapján alkotnak kódot.
+				Ezzel szemben a valóságban ők is csak emberek. Rengeteg időt töltenek saját, vagy mások hibáinak javításával,
+				tanulással, stb. Értetlenül ülnek a számítógép felett, mikor három napnyi hibakeresés után még mindig nem
+				találtak megoldást, vagy éppen mikor az általuk hibásnak feltételezett kód (látszólag) jól működik.
+			</para>
         </section>
         <section>
             <title>Milyen doksikat olvassak el?</title>
@@ -25,7 +40,10 @@
                     a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a
                     <command>man 3 sleep</command> lapot</para>
                 </listitem>
-                <listitem>
+				<listitem>
+					<para><citation>FOO</citation></para>
+				</listitem>
+				<listitem>
                     <para><citation>KERNIGHANRITCHIE</citation></para>
                 </listitem>
                 <listitem>
@@ -48,6 +66,15 @@
                     </para>
                 </listitem>
             </itemizedlist>
-        </section>
+		</section>
+		<section>
+			<title>A Battlestation</title>
+			<para>
+				A könyv egy ThinkPad X230 ultrabookon íródott, Arch Linux alatt. C fordító: gcc, szövegszerkesztő: vim.
+				Ez a setup megengedte számomra, hogy soha ne kelljen elhagynom a terminált és egy kellemes, a saját igényeimnek
+				megfelelően kialakított környezetben dolgozhassak.
+			</para>
+       </section>
+
     </chapter>
 </part>

@@ -25,7 +25,8 @@ main ()
 
       clear ();
 
-      mvprintw (abs ((yj + (my - yk)) / 2), abs ((xj + (mx - xk)) / 2), "o");
+      mvprintw (abs ((yj + (my - yk)) / 2),
+		abs ((xj + (mx - xk)) / 2), "o");
 
       refresh ();
       usleep (30000);

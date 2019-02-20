@@ -139,7 +139,10 @@ false]]></screen>
             függvényt, azaz a T100 program nem is létezik.
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			A lefagyó program problémája majdnem egyidős a programozással. Annak idején Alan Turing (aki megalkotta
+			a Turing-gép fogalmát) matematikai bizonyításon keresztül mutatta meg, hogy ilyen programot nem lehet
+			írni. Míg egyszerű programok esetében ránézésére meg lehet mondani, hogy le fog-e fagyni, bonyolultabb
+			programok esetében ezt eldönteni is nehezebb.
         </para>
     </section>
 
@@ -162,9 +165,27 @@ false]]></screen>
 		</programlisting>
         <para>
 			Két változó értékét megcserélhetjük az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
-			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában.
-
-        </para>
+			Az <emphasis>XOR</emphasis> operátor bitenként végzi el az ÉS logikai műveletet a bemeneteken.
+			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
+			programunkat, a következőképp:
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/swap_xor_m.c" />
+			</textobject>
+		</programlisting>
+		<para>
+			Erre a kimenet a következőképp alakul:
+		</para>
+		<programlisting language="c">
+<![CDATA[a=00000011, b=00000111
+a=00000100, b=00000111
+a=00000100, b=00000011
+a=00000111, b=00000011]]>
+		</programlisting>
+		<para>
+			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben.
+		</para>
     </section>
 
     <section>
@@ -221,7 +242,12 @@ false]]></screen>
 			</textobject>
 		</programlisting>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			Tanulságok, tapasztalatok, magyarázat...
+			Lényegében ez a program egy adott M mátrix sajátvektorát számolja ki. A módszer Larry Page
+			Google-alapító után lett elnevezve, holott a módszert már két-, vagy háromszáz éve is ismerték
+			már. Szimplán eddig nem volt rá igény. Természetesen a Googlenél ennek az algoritmusnak egy
+			jócskán módosított változata fut, mely nem is publikus, hiszen akkor mindenki keresőszolgáltatást
+			indíthatna.
         </para>
     </section>
 

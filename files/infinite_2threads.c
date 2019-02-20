@@ -8,9 +8,7 @@
 void *
 func ()
 {
-  for (;;)
-    {
-    }
+  for (;;);
 }
 
 int
@@ -19,14 +17,10 @@ main ()
   pthread_t thread[NO_OF_CORES];
 
   for (int i = 0; i < NO_OF_CORES; i++)
-    {
-      pthread_create (&thread[i], NULL, func, NULL);
-    }
+    pthread_create (&thread[i], NULL, func, NULL);
 
   for (;;)
-    {
-      sleep (1);
-    }
+    sleep (1);
 
   return 0;
 }

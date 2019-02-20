@@ -5,11 +5,6 @@
 int
 main ()
 {
-  // A vegtelen ciklus
-  for (EVER)
-    {
-    }
-
-  // Soha nem erjuk el
+  for (EVER);
   return 0;
 }

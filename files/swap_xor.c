@@ -14,7 +14,7 @@ swap (int *a, int *b)
 int
 main ()
 {
-  int x = 3, y = 4;
+  int x = 3, y = 7;
 
   printf ("x=%d y=%d\n", x, y);
   swap (&x, &y);

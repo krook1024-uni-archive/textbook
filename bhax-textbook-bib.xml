@@ -18,9 +18,22 @@
                     Typotex
                 </publishername>
             </publisher>
-            <pubdate>2005</pubdate>
-        </biblioentry>  
-    </bibliodiv> 
+			<pubdate>2005</pubdate>
+		</biblioentry>
+
+		<biblioentry xml:lang="en">
+			<abbrev>FOO</abbrev>
+			<title>The Unix Koans of Master Foo</title>
+			<authorgroup>
+				<author>
+					<personname>
+						<firstname>Eric</firstname>
+						<surname>Steven Raymond</surname>
+					</personname>
+				</author>
+			</authorgroup>
+        </biblioentry>
+    </bibliodiv>
     <bibliodiv>
         <title>C</title>
         <biblioentry>
@@ -44,7 +57,7 @@
                 <publishername>Bp., Műszaki</publishername>
             </publisher>
             <pubdate>1993</pubdate>
-        </biblioentry>            
+        </biblioentry>
     </bibliodiv>
     <bibliodiv>
         <title>C++</title>
@@ -69,7 +82,7 @@
                 <publishername>Bp., Szak Kiadó</publishername>
             </publisher>
             <pubdate>2013</pubdate>
-        </biblioentry>            
+        </biblioentry>
     </bibliodiv>
     <bibliodiv>
         <title>Lisp</title>
@@ -90,6 +103,6 @@
                 </publishername>
             </publisher>
             <pubdate>2004</pubdate>
-        </biblioentry> 
-    </bibliodiv>    
-</bibliography>     
+        </biblioentry>
+    </bibliodiv>
+</bibliography>
