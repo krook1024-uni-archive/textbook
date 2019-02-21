@@ -229,7 +229,9 @@ a=00000111, b=00000011]]>
 			</textobject>
 		</programlisting>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			A szóhossz megállapítására használhatunk egy <code language="c">int</code> típusú változót, melyet
+			inicializálunk <code>1</code>-el, majd addig shifteljük balra, amíg csak tudjuk. Ha megszámoljuk,
+			hogy hányszor tudtuk jobbra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
         </para>
     </section>
 
