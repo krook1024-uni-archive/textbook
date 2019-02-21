@@ -288,6 +288,7 @@ a=00000111, b=00000011]]>
 		</para>
 		<programlisting>
 <![CDATA[
+$ Rscript montyhall.r
 [1] "Kiserletek szama: 10000000"
 [1] 3330958
 [1] 6669042
