@@ -308,7 +308,7 @@ a=00000111, b=00000011]]>
 			az, hogy mindenképp érdemes váltogatni az ajtóinkat, ugyanis így megközelítőleg 50 százalékos javulást
 			érhetünk el.
 			Itt a <computeroutput>3330958</computeroutput> azt mutatja, hogy az összes esetből ennyiszer nyerünk úgy, ha nem változtatunk
-			az ajtónkon, amin benyitunk. A <computeroutput>6669042</computeroutput>pedig a nyertes esetek száma.
+			az ajtónkon, amin benyitunk. A <computeroutput>6669042</computeroutput> pedig a nyertes esetek száma.
 			A <computeroutput>0.4994657</computeroutput> pedig az előbbi kettőnek a hányadosa.
 		</para>
     </section>
