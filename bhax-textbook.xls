@@ -12,5 +12,8 @@
 <xsl:param name="latex.class.options">12pt</xsl:param>
 <xsl:param name="doc.collab.show">2</xsl:param>
 <xsl:param name="highlight.source" select="1"/>
+<xsl:template match="mathphrase">
+   <xsl:call-template name="inline.italicseq"/>
+</xsl:template>
 
 </xsl:stylesheet>

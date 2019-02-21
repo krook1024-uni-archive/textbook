@@ -250,9 +250,33 @@ a=00000111, b=00000011]]>
 			ez már magában hordoz hibákat, és némi eltérést. Például a zsákutca hiba, miszerint zsákutcába
 			érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
         </para>
-    </section>
+	</section>
 
-    <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
+    <section>
+		<title>100 éves a Brun tétel</title>
+
+		<para>
+			Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
+		</para>
+		<para>
+			Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R</link>
+		</para>
+
+		<para>
+			A Brun tétel azt mondja ki, hogy ha vesszük az ikerprímek reciprokát, majd elkezdjük
+			összeadni őket, pl.
+			<inlineequation>
+					<alt role="tex">\left(\frac{1}{3} + \frac{1}{5}\right) + \left(\frac{1}{5} + \frac{1}{7}\right) + ...</alt>
+				<mathphrase>
+				</mathphrase>
+			</inlineequation>,
+			akkor az összegünk egy B<subscript>2</subscript> (Brun-)konstanshoz fog kovergálni.
+			Ez a felfedezés viszont nem oldja meg az ikerprímek számának problémáját, hiszen arról nem nyilatkozik,
+			hogy a sor véges, vagy végtelen.
+		</para>
+	</section>
+
+    <section>
         <title>A Monty Hall probléma</title>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
