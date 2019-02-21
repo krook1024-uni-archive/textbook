@@ -287,14 +287,12 @@ a=00000111, b=00000011]]>
 			ugyanannál az ajtónál maradni a játék körei során.
 		</para>
 		<programlisting>
-<![CDATA[
-$ Rscript montyhall.r
+<![CDATA[$ Rscript montyhall.r
 [1] "Kiserletek szama: 10000000"
 [1] 3330958
 [1] 6669042
 [1] 0.4994657
-[1] 10000000
-]]>
+[1] 10000000]]>
 		</programlisting>
 		<para>
 			A program kimenetét elemezve azt láthatjuk, hogy <computeroutput>100000000</computeroutput> iteráció után az eredmény
