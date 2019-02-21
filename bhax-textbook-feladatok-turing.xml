@@ -161,7 +161,7 @@ false]]></screen>
 		</programlisting>
         <para>
 			Két változó értékét megcserélhetjük az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
-			Az <emphasis>XOR</emphasis> operátor bitenként végzi el az ÉS logikai műveletet a bemeneteken.
+			Az <emphasis>XOR</emphasis> operátor bitenként végzi el a kizáró vagy logikai műveletet a bemeneteken.
 			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
 			programunkat, a következőképp:
 		</para>
@@ -181,7 +181,7 @@ a=00000111, b=00000011]]>
 		</programlisting>
 		<para>
 			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
-			a kiinduló állapotot tükrözi. A második sorban már az össze ÉS-elt a és b változók jelennek meg.
+			a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredeménye jelenik meg.
 			Ezek után mégegyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán mégegyszer
 			az eredeti sorrendben. Ekkor az eredeti <emphasis>a</emphasis> és az eredeti <emphasis>b</emphasis>
 			helyet cserélnek.
