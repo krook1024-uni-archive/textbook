@@ -11,39 +11,36 @@
   (byte & 0x02 ? '1' : '0'), \
   (byte & 0x01 ? '1' : '0')
 
-void
-swap (int *a, int *b)
+void swap(int *a, int *b)
 {
-  if (a != b)
-    {
-      printf ("a=" BYTE_TO_BINARY_PATTERN ", b="
-	      BYTE_TO_BINARY_PATTERN "\n", BYTE_TO_BINARY (*a),
-	      BYTE_TO_BINARY (*b));
+	if (a != b) {
+		printf("a=" BYTE_TO_BINARY_PATTERN ", b="
+		       BYTE_TO_BINARY_PATTERN "\n",
+		       BYTE_TO_BINARY(*a), BYTE_TO_BINARY(*b));
 
-      *a ^= *b;
-      printf ("a=" BYTE_TO_BINARY_PATTERN ", b="
-	      BYTE_TO_BINARY_PATTERN "\n", BYTE_TO_BINARY (*a),
-	      BYTE_TO_BINARY (*b));
+		*a ^= *b;
+		printf("a=" BYTE_TO_BINARY_PATTERN ", b="
+		       BYTE_TO_BINARY_PATTERN "\n",
+		       BYTE_TO_BINARY(*a), BYTE_TO_BINARY(*b));
 
-      *b ^= *a;
-      printf ("a=" BYTE_TO_BINARY_PATTERN ", b="
-	      BYTE_TO_BINARY_PATTERN "\n", BYTE_TO_BINARY (*a),
-	      BYTE_TO_BINARY (*b));
+		*b ^= *a;
+		printf("a=" BYTE_TO_BINARY_PATTERN ", b="
+		       BYTE_TO_BINARY_PATTERN "\n",
+		       BYTE_TO_BINARY(*a), BYTE_TO_BINARY(*b));
 
-      *a ^= *b;
-      printf ("a=" BYTE_TO_BINARY_PATTERN ", b="
-	      BYTE_TO_BINARY_PATTERN "\n", BYTE_TO_BINARY (*a),
-	      BYTE_TO_BINARY (*b));
-    }
+		*a ^= *b;
+		printf("a=" BYTE_TO_BINARY_PATTERN ", b="
+		       BYTE_TO_BINARY_PATTERN "\n",
+		       BYTE_TO_BINARY(*a), BYTE_TO_BINARY(*b));
+	}
 }
 
-int
-main ()
+int main()
 {
-  int x = 3, y = 7;
+	int x = 3, y = 7;
 
-  swap (&x, &y);
+	swap(&x, &y);
 
-  //printf ("x=%d y=%d\n", x, y);
-  return 0;
+	//printf ("x=%d y=%d\n", x, y);
+	return 0;
 }

@@ -3,24 +3,22 @@
 #include <pthread.h>
 #include <unistd.h>		// sleep()
 
-#define NO_OF_CORES 4
+#define NO_OF_THREADS 4
 
-void *
-func ()
+void *func()
 {
-  for (;;);
+	for (;;) ;
 }
 
-int
-main ()
+int main()
 {
-  pthread_t thread[NO_OF_CORES];
+	pthread_t thread[NO_OF_CORES];
 
-  for (int i = 0; i < NO_OF_CORES; i++)
-    pthread_create (&thread[i], NULL, func, NULL);
+	for (int i = 0; i < NO_OF_CORES; i++)
+		pthread_create(&thread[i], NULL, func, NULL);
 
-  for (;;)
-    sleep (1);
+	for (;;)
+		sleep(1);
 
-  return 0;
+	return 0;
 }

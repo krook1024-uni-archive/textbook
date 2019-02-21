@@ -2,9 +2,8 @@
 
 #define EVER ;;
 
-int
-main ()
+int main()
 {
-  for (EVER);
-  return 0;
+	for (EVER) ;
+	return 0;
 }
