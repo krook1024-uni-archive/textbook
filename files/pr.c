@@ -19,9 +19,8 @@ int main(void)
 	    { 1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0, 1.0 / 4.0 };
 
 	for (;;) {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
 			PR[i] = PRv[i];
-		}
 
 		for (int i = 0; i < 4; i++) {
 			double tmp = 0.0;
@@ -32,9 +31,9 @@ int main(void)
 			}
 		}
 
-		if (tavolsag(PR, PRv, 4) < 0.000001) {
+		if (tavolsag(PR, PRv, 4) < 0.000001)
 			break;
-		}
+
 	}
 
 	kiir(PR, 4);
@@ -44,9 +43,9 @@ int main(void)
 
 void kiir(double tomb[], int db)
 {
-	for (int i = 0; i < db; i++) {
+	for (int i = 0; i < db; i++)
 		printf("PageRank [%d]: %lf\n", i, tomb[i]);
-	}
+
 }
 
 double tavolsag(double pagerank[], double pagerank_temp[], int db)
