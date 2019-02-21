@@ -8,7 +8,7 @@
     <section>
         <title>Végtelen ciklus</title>
 		<para>
-			<emphasis role="strong">Dolgoztassunk 1 magot megközelítőleg 0 százalékban:</emphasis>
+			<emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
@@ -22,7 +22,7 @@
 		</para>
 
 		<para>
-			<emphasis role="strong">Dolgoztassunk 100 százalékban egy magot:</emphasis>
+			<emphasis role="strong">Dolgoztassunk 100 százalékban egy szálat:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
@@ -34,7 +34,7 @@
 		</para>
 
 		<para>
-			<emphasis role="strong">Dolgoztassuk meg az összes magot 100 százalékban:</emphasis>
+			<emphasis role="strong">Dolgoztassuk meg az összes szálat 100 százalékban:</emphasis>
 		</para>
 		<programlisting language="c">
 			<textobject>
@@ -208,7 +208,6 @@ a=00000111, b=00000011]]>
 			</textobject>
 		</programlisting>
         <para>
-			Tanulságok, tapasztalatok, magyarázat...
 			Ez a példa mintapéldája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
 			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
 			esnek a konzolunkon (azaz a megjeleníthető ko-ordinátákon).
@@ -275,8 +274,33 @@ a=00000111, b=00000011]]>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+			Ebben a példában megismerkedhettünk az R programozási nyelvvel, amely egy főleg statisztikai
+			számításokra alkalmas, interpreteres nyelv. Ennek köszönhetően a Monthy Hall problémára alkotott
+			R program forrása (is) könnyen olvasható és értelmezhető.
+		</para>
+		<para>
+			A Monty Hall probléma egy TV showból ered, melyben három ajtó közül kell választanunk,
+			az egyik kinyitásával megtalálhatjuk a kincset, a másik kettővel pedig nem. Itt a szimulációban
+			azt vizsgáljuk, hogy érdemes-e váltogatni, hogy mikor melyik ajtót nyitjuk ki, vagy érdemesebb
+			ugyanannál az ajtónál maradni a játék körei során.
+		</para>
+		<programlisting>
+<![CDATA[
+[1] "Kiserletek szama: 10000000"
+[1] 3330958
+[1] 6669042
+[1] 0.4994657
+[1] 10000000
+]]>
+		</programlisting>
+		<para>
+			A program kimenetét elemezve azt láthatjuk, hogy <computeroutput>100000000</computeroutput> iteráció után az eredmény
+			az, hogy mindenképp érdemes váltogatni az ajtóinkat, ugyanis így megközelítőleg 50 százalékos javulást
+			érhetünk el.
+			Itt a <computeroutput>3330958</computeroutput> azt mutatja, hogy az összes esetből ennyiszer nyerünk úgy, ha nem változtatunk
+			az ajtónkon, amin benyitunk. A <computeroutput>6669042</computeroutput>pedig a nyertes esetek száma.
+			A <computeroutput>0.4994657</computeroutput> pedig az előbbi kettőnek a hányadosa.
+		</para>
     </section>
 
 </chapter>
