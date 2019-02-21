@@ -64,7 +64,8 @@ tavolsag (double pagerank[], double pagerank_temp[], int db)
   for (int i = 0; i < db; i++)
     {
       tav +=
-	(pagerank[i] - pagerank_temp[i]) * (pagerank[i] - pagerank_temp[i]);
+	(pagerank[i] - pagerank_temp[i]) * (pagerank[i] -
+					    pagerank_temp[i]);
     }
 
   return sqrt (tav);
