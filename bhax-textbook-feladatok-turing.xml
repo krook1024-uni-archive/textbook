@@ -149,10 +149,6 @@ false]]></screen>
     <section>
         <title>Változók értékének felcserélése</title>
         <para>
-            Írj olyan C programot, amely felcseréli két változó értékét, bármiféle logikai utasítás vagy kifejezés
-            használata nélkül!
-        </para>
-        <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
@@ -217,10 +213,6 @@ a=00000111, b=00000011]]>
     <section>
         <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
         <para>
-            Írj egy programot, ami megnézi, hogy hány bites a szó a gépeden, azaz mekkora az <type>int</type> mérete.
-            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában!
-        </para>
-        <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
 		<programlisting language="c">
@@ -237,10 +229,6 @@ a=00000111, b=00000011]]>
 
     <section>
         <title>Helló, Google!</title>
-        <para>
-            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank
-            értékét!
-        </para>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
@@ -266,9 +254,6 @@ a=00000111, b=00000011]]>
 
     <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
         <title>A Monty Hall probléma</title>
-        <para>
-            Írj R szimulációt a Monty Hall problémára!
-        </para>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
         </para>
