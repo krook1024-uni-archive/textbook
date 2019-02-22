@@ -1,0 +1,315 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Chomsky!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Decimálisból unárisba átváltó Turing gép</title>
+        <para>
+            Állapotátmenet gráfjával megadva írd meg ezt a gépet!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section>
+        <title>Az a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript> nyelv nem környezetfüggetlen</title>
+        <para>
+            Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section>
+        <title>Hivatkozási nyelv</title>
+        <para>
+            A <citation>KERNIGHANRITCHIE</citation> könyv C referencia-kézikönyv/Utasítások melléklete alapján definiáld
+            BNF-ben a C utasítás fogalmát!
+            Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section>
+        <title>Saját lexikális elemző</title>
+        <para>
+            Írj olyan programot, ami számolja a bemenetén megjelenő valós számokat!
+            Nem elfogadható olyan megoldás, amely maga olvassa betűnként a bemenetet,
+            a feladat lényege, hogy lexert használjunk, azaz óriások vállán álljunk és ne kispályázzunk!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section>
+        <title>l33t.l</title>
+        <para>
+            Lexelj össze egy l33t ciphert!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+
+    <section>
+        <title>A források olvasása</title>
+        <para>
+            Hogyan olvasod, hogyan értelmezed természetes nyelven az alábbi kódcsipeteket? Például
+            <programlisting><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)
+    signal(SIGINT, SIG_IGN);]]></programlisting>
+            Ha a SIGINT jel kezelése figyelmen kívül volt hagyva, akkor ezen túl is legyen
+            figyelmen kívül hagyva, ha nem volt figyelmen kívül hagyva, akkor a jelkezelo függvény
+            kezelje. (Miután a <command>man 7 signal</command> lapon megismertem a SIGINT jelet, a
+            <command>man 2 signal</command> lapon pedig a használt rendszerhívást.)
+        </para>
+
+        <caution>
+            <title>Bugok</title>
+            <para>
+                Vigyázz, sok csipet kerülendő, mert bugokat visz a kódba! Melyek ezek és miért?
+                Ha nem megy ránézésre, elkapja valamelyiket esetleg a splint vagy a frama?
+            </para>
+        </caution>
+
+        <orderedlist numeration="lowerroman">
+            <listitem>
+                <programlisting><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
+    signal(SIGINT, jelkezelo);]]></programlisting>
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
+            </listitem>
+            <listitem>
+
+                <programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
+            </listitem>
+        </orderedlist>
+        <para>
+            Megoldás forrása:
+        </para>
+
+        <para>
+            Megoldás videó:
+        </para>
+
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+
+    </section>
+
+    <section>
+        <title>Logikus</title>
+        <para>
+            Hogyan olvasod természetes nyelven az alábbi Ar nyelvű formulákat?
+        </para>
+        <programlisting language="tex"><![CDATA[$(\forall x \exists y ((x<y)\wedge(y \text{ prím})))$
+
+$(\forall x \exists y ((x<y)\wedge(y \text{ prím})\wedge(SSy \text{ prím})))$
+
+$(\exists y \forall x (x \text{ prím}) \supset (x<y)) $
+
+$(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
+]]></programlisting>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX</link>
+		</para>
+
+		<para>
+			Bármely x létezik y, hogy x kisebb mint y és y prím.
+			A prímszámok száma végtelen.
+		</para>
+		<para>
+			Bármely x létezik y, hogy x kisebb mint y, y prím, és y rákövetkezőjének
+			a rákövetkezője is prím.
+
+			Léteznek ikerprímek.
+		</para>
+		<para>
+			Létezik y bármely x, hogy x prím implikálja x kisebb mint y.
+		</para>
+		<para>
+			Létezik y bármely x, hogy y kisebb mint x implikálja, hogy x nem prím.
+		</para>
+
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/ZexiPy3ZxsA">https://youtu.be/ZexiPy3ZxsA</link>, <link xlink:href="https://youtu.be/AJSXOQFF_wk">https://youtu.be/AJSXOQFF_wk</link>
+        </para>
+
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+    <section>
+        <title>Deklaráció</title>
+
+        <para>
+            Vezesd be egy programba (forduljon le) a következőket:
+        </para>
+
+        <itemizedlist>
+            <listitem>
+                <para>egész</para>
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutató</para>
+            </listitem>
+            <listitem>
+                <para>egész referenciája</para>
+            </listitem>
+            <listitem>
+                <para>egészek tömbje</para>
+            </listitem>
+            <listitem>
+                <para>egészek tömbjének referenciája (nem az első elemé)</para>
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatók tömbje</para>
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvény</para>
+            </listitem>
+            <listitem>
+                <para>egészre mutató mutatót visszaadó függvényre mutató mutató</para>
+            </listitem>
+            <listitem>
+                <para>egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvény</para>
+            </listitem>
+            <listitem>
+                <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>
+            </listitem>
+        </itemizedlist>
+
+       <para>
+            Mit vezetnek be a programba a következő nevek?
+        </para>
+
+        <itemizedlist>
+            <listitem>
+				<programlisting><![CDATA[int a;]]></programlisting>
+				<para>
+					int típusú a változó
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int *b = &a;]]></programlisting>
+				<para>
+					egy b mutatót, mely <code>a</code>-ra mutat
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int &r = a;]]></programlisting>
+				<para>
+					hiba
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int c[5];]]></programlisting>
+				<para>
+					öt elemű int tömb
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>
+				<para>
+					hiba
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int *d[5];]]></programlisting>
+				<para>
+					5*n tömb
+				</para>
+            </listitem>
+            <listitem>
+				<programlisting><![CDATA[int *h ();]]></programlisting>
+				<para>
+					egy int-et visszaadó bemenet nélküli h függvényre mutató
+					mutató deklarációja
+				</para>
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int *(*l) ();]]></programlisting>
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
+            </listitem>
+            <listitem>
+                <programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
+            </listitem>
+        </itemizedlist>
+
+
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>
+
+
+</chapter>
