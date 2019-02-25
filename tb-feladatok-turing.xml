@@ -30,7 +30,7 @@
 			</textobject>
 		</programlisting>
 		<para>
-			Természetesen semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
+			Természetesen itt semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
 		</para>
 
 		<para>
@@ -258,10 +258,16 @@ a=00000111, b=00000011]]>
 		<para>
 			Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
 		</para>
-		<para>
-			Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R</link>
-		</para>
+		<programlisting language="R">
+			<textobject>
+				<textdata fileref="./files/primek.r" />
+			</textobject>
+		</programlisting>
 
+		<para>
+			A prímszámok olyan számok, melyek csak önmagukkal és eggyel osztva nem adnak maradékot.
+			Az ikerprímek pedig olyan príszmámok, melyek különbsége kettő.
+		</para>
 		<para>
 			A Brun tétel azt mondja ki, hogy ha vesszük az ikerprímek reciprokát, majd elkezdjük
 			összeadni őket, pl.
@@ -270,10 +276,25 @@ a=00000111, b=00000011]]>
 				<mathphrase>
 				</mathphrase>
 			</inlineequation>,
-			akkor az összegünk egy B<subscript>2</subscript> (Brun-)konstanshoz fog kovergálni.
+			akkor ez a sor egy B<subscript>2</subscript> (Brun-)konstanshoz fog konvergálni.
 			Ez a felfedezés viszont nem oldja meg az ikerprímek számának problémáját, hiszen arról nem nyilatkozik,
 			hogy a sor véges, vagy végtelen.
 		</para>
+		<para>
+			Ez a program az ikerprímeket ábrázolja egy ko-ordináta rendszerben, melyen jól megfigyelhető hogy valóban
+			a B<subscript>2</subscript> konstanshoz tartunk.
+		</para>
+		<figure>
+			<title>A B<subscript>2</subscript> konstans közelítése</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="pictures/Brun.png" />
+				</imageobject>
+				<textobject>
+					<phrase>A B<subscript>2</subscript> konstans közelítése</phrase>
+				</textobject>
+			</mediaobject>
+		</figure>
 	</section>
 
     <section>
