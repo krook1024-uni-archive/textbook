@@ -54,4 +54,12 @@
 			Magyarázat a legtöbb első csokorbeli feladathoz.
         </revremark>
 	</revision>
+	<revision>
+		<revnumber>0.0.7</revnumber>
+		<date>2019-02-26</date>
+		<authorinitials>krook1024</authorinitials>
+		<revremark>
+			Az első csokor teljesen kész.
+		</revremark>
+	</revision>
 </revhistory>

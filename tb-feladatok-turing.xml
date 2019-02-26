@@ -47,12 +47,30 @@
 			magához vegye a fennmaradó szabad processzoridő 100 százalékát.
 		</para>
 
+		<para>
+			Egy másik megoldásban az OpenMP függvénykönyvtárat használva is megoldható a feladat,
+			lényegesen kevesebb, mindössze 5 sornyi kóddal.
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/infinite_2threads_omp.c" />
+			</textobject>
+		</programlisting>
+
+		<para>
+			A különbség a kettő megoldás között az, hogy a pthreads egy alacsony
+			szintű POSIX API, melyben jóval több irányításunk van a szálak fölött,
+			míg az OMP egy magasabb szintű könyvtár mely szinte mindent megcsinál
+			helyettünk, ezzel kivéve az irányítást a kezünkből.
+		</para>
+
         <para>
 			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzoridőt
-			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Némi keresgélés után meg
-			is találtam a választ, mi szerint az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt
-			hiszi, hogy rengeteg dolga van a programnak, így ki is osztja neki az összes rendelkezésre álló processzoridőt.
-			Ezzel szemben a <code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
+			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Meglehetősen kíváncsi
+			voltam hogy mi is történik ilyenkor a háttérben. Némi utánajárás után meg is találtam a választ, mi szerint
+			az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt hiszi, hogy rengeteg dolga van a
+			programnak, így ki is osztja neki az összes rendelkezésre álló processzoridőt. Ezzel szemben a
+			<code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
 			milliszekundumban nem tart igényt processzoridőre, ennek megfelelően az OS nem is oszt számára időt.
         </para>
     </section>
@@ -191,11 +209,6 @@ a=00000111, b=00000011]]>
     <section>
         <title>Labdapattogás</title>
         <para>
-            Először if-ekkel, majd bármiféle logikai utasítás vagy kifejezés
-            nasználata nélkül írj egy olyan programot, ami egy labdát pattogtat a karakteres konzolon! (Hogy mit értek
-            pattogtatás alatt, alább láthatod a videókon.)
-        </para>
-        <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
         </para>
 		<programlisting language="c">
@@ -207,7 +220,7 @@ a=00000111, b=00000011]]>
 			Ez a példa mintapéldája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
 			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
 			esnek a konzolunkon (azaz a megjeleníthető ko-ordinátákon).
-        </para>
+		</para>
     </section>
 
     <section>
