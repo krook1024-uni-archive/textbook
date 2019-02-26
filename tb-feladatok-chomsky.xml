@@ -67,10 +67,51 @@
         </para>
         <para>
             Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+		</para>
+
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/chomsky/lex.l" />
+			</textobject>
+		</programlisting>
+
+		<para>
+			Itt a lex által ránkruházott előnyöknél fogva egyszerűen csak
+			megadjuk a definíciót, majd hagyjuk, hogy az óriások, akiknek a vállán
+			állunk, dolgozzanak helyettünk.
+		</para>
+		<para>
+			Amit fent látunk, az nem más, mint a lex definíciónk. A programnak
+			megmondjuk, hogy mi értelmes, esetünkben ezt a <code>[0-9]+</code>
+			sor jelenti. Természetes nyelven olvasva ezalatt annyit értünk, hogy
+			bármely szám nullátol kilencig, bárhányszoros előfordulása érvényes.
+			A következő sorban az <code>.|\n {}</code> utasítás alapján minden
+			más bemenetet ignorálunk.
+		</para>
+		<para>
+			Ebből az egyszerűnek tűnő kódból majd a <code>lex</code> farag nekünk
+			egy értelmes C kódot, amit lefordítva láthatjuk is, hogy a programunk
+			működik.
+		</para>
+
+		<programlisting>
+<![CDATA[$ lex lex.l
+$ gcc lex.yy.c -o lex
+$ ./lex
+3213asd1n23
+Számot találtam: 3213
+Számot találtam: 1
+Számot találtam: 23
+abcde
+fghj
+ayldna@&'
+{1}{2}{3}
+Számot találtam: 1
+Számot találtam: 2
+Számot találtam: 3
+...
+]]>
+		</programlisting>
     </section>
 
     <section>
@@ -116,19 +157,29 @@
     signal(SIGINT, jelkezelo);]]></programlisting>
             </listitem>
             <listitem>
-                <programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+				<programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+				<para>
+					Ha a SIGINT jelkezelése nincs ignorálva, akkor innentől fogva
+					<code>jelkezelo</code> végezze a jelkezelést.
+				</para>
             </listitem>
             <listitem>
-
-                <programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
+				<programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
+				<para>
+					Végezzük el ötször, hogy...
+				</para>
             </listitem>
             <listitem>
-
-                <programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
+				<programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
+				<para>
+					Növeljük meg tomb első 5 elemét.
+				</para>
             </listitem>
             <listitem>
-
-                <programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
+				<programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
+			<para>
+				...
+			</para>
             </listitem>
             <listitem>
 
@@ -175,29 +226,56 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
 		</para>
 
 		<para>
-			Bármely x létezik y, hogy x kisebb mint y és y prím.
-			A prímszámok száma végtelen.
-		</para>
-		<para>
-			Bármely x létezik y, hogy x kisebb mint y, y prím, és y rákövetkezőjének
-			a rákövetkezője is prím.
-
-			Léteznek ikerprímek.
-		</para>
-		<para>
-			Létezik y bármely x, hogy x prím implikálja x kisebb mint y.
-		</para>
-		<para>
-			Létezik y bármely x, hogy y kisebb mint x implikálja, hogy x nem prím.
+			Az egyszerűség kedvéért lefordítjuk a LaTeX forrást egy segédprogram használatával,
+			hogy könnyebben olvasható legyen.
 		</para>
 
-        <para>
-            Megoldás videó: <link xlink:href="https://youtu.be/ZexiPy3ZxsA">https://youtu.be/ZexiPy3ZxsA</link>, <link xlink:href="https://youtu.be/AJSXOQFF_wk">https://youtu.be/AJSXOQFF_wk</link>
-        </para>
+		<programlisting>
+<![CDATA[
+$ pandoc -t latex logikus.tex -o logikus.pdf
+]]>
+		</programlisting>
 
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+		<para>
+			Az elkészült dokumentumot alább beágyazva megtalálhatja az olvasó is.
+		</para>
+
+		<figure>
+			<title>LaTeX forrás lefordítva</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/chomsky/logikus.png" width="60%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<para>
+			Ezek lefordítva természetes szövegre:
+		</para>
+
+		<itemizedlist>
+			<listitem>
+				<para>
+					A prímszámok száma végtelen.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Vannak ikerprímek.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Létezik olyan y szám, mely x prímszámnál nagyobb.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					A prímszámok száma véges.
+				</para>
+			</listitem>
+
+		</itemizedlist>
     </section>
 
     <section>
@@ -238,71 +316,68 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
             <listitem>
                 <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>
             </listitem>
-        </itemizedlist>
+		</itemizedlist>
+
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/chomsky/dek.c" />
+			</textobject>
+		</programlisting>
 
        <para>
             Mit vezetnek be a programba a következő nevek?
         </para>
 
-        <itemizedlist>
-            <listitem>
-				<programlisting><![CDATA[int a;]]></programlisting>
-				<para>
-					int típusú a változó
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int *b = &a;]]></programlisting>
-				<para>
-					egy b mutatót, mely <code>a</code>-ra mutat
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int &r = a;]]></programlisting>
-				<para>
-					hiba
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int c[5];]]></programlisting>
-				<para>
-					öt elemű int tömb
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>
-				<para>
-					hiba
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int *d[5];]]></programlisting>
-				<para>
-					5*n tömb
-				</para>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[int *h ();]]></programlisting>
-				<para>
-					egy int-et visszaadó bemenet nélküli h függvényre mutató
-					mutató deklarációja
-				</para>
-            </listitem>
-            <listitem>
-                <programlisting><![CDATA[int *(*l) ();]]></programlisting>
-            </listitem>
-            <listitem>
-                <programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
-            </listitem>
-            <listitem>
-                <programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
-            </listitem>
-        </itemizedlist>
+		<programlisting><![CDATA[int a;]]></programlisting>
+		<para>
+			egész
+		</para>
 
+		<programlisting><![CDATA[int *b = &a;]]></programlisting>
+		<para>
+			egész referenciája
+		</para>
 
-        <para>
-            Megoldás videó:
-        </para>
+		<programlisting><![CDATA[int &r = a;]]></programlisting>
+		<para>
+			hiba
+		</para>
+
+		<programlisting><![CDATA[int c[5];]]></programlisting>
+		<para>
+			egészek tömbje
+		</para>
+
+		<programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>
+		<para>
+			hiba
+		</para>
+
+		<programlisting><![CDATA[int *d[5];]]></programlisting>
+		<para>
+			egészek tömbjére mutató mutató
+		</para>
+
+		<programlisting><![CDATA[int *h ();]]></programlisting>
+		<para>
+			egészre mutató mutatót visszaadó függvény
+		</para>
+
+		<programlisting><![CDATA[int *(*l) ();]]></programlisting>
+		<para>
+			egészre mutatóra mutató mutatót visszaadó függvény
+		</para>
+
+		<programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
+		<para>
+			két egészet kapó, egy egészre mutató mutatót visszaadó függvény
+		</para>
+
+		<programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
+		<para>
+			két egészet kapó, egy egészet visszaadó függvényre mutató mutató
+		</para>
+
         <para>
             Megoldás forrása:
         </para>

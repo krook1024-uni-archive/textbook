@@ -8,16 +8,16 @@
     <section>
         <title>Iteratív és rekurzív faktoriális Lisp-ben</title>
         <para>
-                
+
         </para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-        
+    </section>
+
     <section>
         <title>Weizenbaum Eliza programja</title>
         <para>
@@ -27,59 +27,59 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
+    </section>
 
     <section>
         <title>Gimp Scheme Script-fu: króm effekt</title>
         <para>
-            Írj olyan script-fu kiterjesztést a GIMP programhoz, amely megvalósítja a króm effektet egy 
+            Írj olyan script-fu kiterjesztést a GIMP programhoz, amely megvalósítja a króm effektet egy
             bemenő szövegre!
         </para>
         <para>
-            Megoldás videó: <link xlink:href="https://youtu.be/OKdAkI_c7Sc">https://youtu.be/OKdAkI_c7Sc</link>      
+            Megoldás videó: <link xlink:href="https://youtu.be/OKdAkI_c7Sc">https://youtu.be/OKdAkI_c7Sc</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome</link>               
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Chrome</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>    
-    </section>        
+        </para>
+    </section>
 
     <section>
         <title>Gimp Scheme Script-fu: név mandala</title>
         <para>
             Írj olyan script-fu kiterjesztést a GIMP programhoz, amely név-mandalát készít a
-            bemenő szövegből!               
+            bemenő szövegből!
         </para>
         <para>
-            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv">https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv</link>      
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv">https://bhaxor.blog.hu/2019/01/10/a_gimp_lisp_hackelese_a_scheme_programozasi_nyelv</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala</link>               
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/GIMP_Lisp/Mandala</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        </para>
+    </section>
+
     <section>
         <title>Lambda</title>
         <para>
             Hasonlítsd össze a következő programokat!
         </para>
         <para>
-            Megoldás videó: <link xlink:href=""></link>      
+            Megoldás videó: <link xlink:href=""></link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href=""></link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
 
     <section>
         <title>Omega</title>
@@ -89,8 +89,8 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-</chapter>                
+    </section>
+
+</chapter>

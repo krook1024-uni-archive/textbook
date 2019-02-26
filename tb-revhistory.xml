@@ -62,4 +62,12 @@
 			Az első csokor teljesen kész.
 		</revremark>
 	</revision>
+	<revision>
+		<revnumber>0.0.8</revnumber>
+		<date>2019-02-26</date>
+		<authorinitials>krook1024</authorinitials>
+		<revremark>
+			A második csokor elkezdve.
+		</revremark>
+	</revision>
 </revhistory>
