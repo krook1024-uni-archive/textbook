@@ -12,7 +12,7 @@
 		</para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/infinite_0cpu.c" />
+				<textdata fileref="./files/turing/infinite_0cpu.c" />
 			</textobject>
 		</programlisting>
 		<para>
@@ -26,7 +26,7 @@
 		</para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/infinite.c" />
+				<textdata fileref="./files/turing/infinite.c" />
 			</textobject>
 		</programlisting>
 		<para>
@@ -38,7 +38,7 @@
 		</para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/infinite_2threads.c" />
+				<textdata fileref="./files/turing/infinite_2threads.c" />
 			</textobject>
 		</programlisting>
 		<para>
@@ -53,7 +53,7 @@
 		</para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/infinite_2threads_omp.c" />
+				<textdata fileref="./files/turing/infinite_2threads_omp.c" />
 			</textobject>
 		</programlisting>
 
@@ -174,7 +174,7 @@ false]]></screen>
 		</para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/swap_xor.c" />
+				<textdata fileref="./files/turing/swap_xor.c" />
 			</textobject>
 		</programlisting>
         <para>
@@ -185,7 +185,7 @@ false]]></screen>
 		</para>
 		<programlisting language="c" startinglinenumber="14">
 			<textobject>
-				<textdata fileref="./files/swap_xor_m.c" />
+				<textdata fileref="./files/turing/swap_xor_m.c" />
 			</textobject>
 		</programlisting>
 		<para>
@@ -213,7 +213,7 @@ a=00000111, b=00000011]]>
         </para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/ball.c" />
+				<textdata fileref="./files/turing/ball.c" />
 			</textobject>
 		</programlisting>
         <para>
@@ -230,7 +230,7 @@ a=00000111, b=00000011]]>
         </para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/szohossz.c" />
+				<textdata fileref="./files/turing/szohossz.c" />
 			</textobject>
 		</programlisting>
         <para>
@@ -247,7 +247,7 @@ a=00000111, b=00000011]]>
         </para>
 		<programlisting language="c">
 			<textobject>
-				<textdata fileref="./files/pr.c" />
+				<textdata fileref="./files/turing/pr.c" />
 			</textobject>
 		</programlisting>
 		<para>
@@ -273,7 +273,7 @@ a=00000111, b=00000011]]>
 		</para>
 		<programlisting language="R">
 			<textobject>
-				<textdata fileref="./files/primek.r" />
+				<textdata fileref="./files/turing/primek.r" />
 			</textobject>
 		</programlisting>
 
