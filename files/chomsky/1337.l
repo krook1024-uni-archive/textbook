@@ -20,6 +20,7 @@
 "I"			{ printf("1");				}
 "V"			{ printf("\\/");			}
 "T"			{ printf("7");				}
+"S"			{ printf("$");				}
 "bye" 		{ printf("bai");			}
 "and" 		{ printf("nd");				}
 "dude" 		{ printf("d00d");			}
