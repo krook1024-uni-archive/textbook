@@ -188,7 +188,9 @@ wut's up m8?
 hey dude!
 h3y d00d!
 loveu
-10/3u]]>
+10/3u
+Using a lexer is fun!
+Us1ng 4 l3x3r 1s fun!]]>
 		</programlisting>
         <para>
 			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
@@ -207,6 +209,7 @@ loveu
 "e"		{ printf("3");				}
 "o"		{ printf("0");				}
 "i"		{ printf("1");				}
+"t"		{ printf("7");				}
 "q"		{ printf("kw");				}
 "A"		{ printf("/-\\");			}
 "B"		{ printf("13");				}
