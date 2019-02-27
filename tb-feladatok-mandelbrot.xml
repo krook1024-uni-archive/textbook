@@ -8,29 +8,29 @@
     <section>
         <title>A Mandelbrot halmaz</title>
         <para>
-                
+
         </para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-        
+    </section>
+
     <section>
         <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
         <para>
-                
+
         </para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-                
+    </section>
+
     <section>
         <title>Biomorfok</title>
         <para>
@@ -43,20 +43,20 @@
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>                        
-    </section>                     
+        </para>
+    </section>
 
     <section>
         <title>A Mandelbrot halmaz CUDA megvalósítása</title>
         <para>
         </para>
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
-    </section>                     
+    </section>
 
     <section>
         <title>Mandelbrot nagyító és utazó C++ nyelven</title>
@@ -64,23 +64,23 @@
             Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
             egérrel kiválasztva vizualizálja onnan a komplex iteréció bejárta z<subscript>n</subscript> komplex számokat!
         </para>
-            
+
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
 
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
-    </section>                     
-                                                                                                                                                                            
+    </section>
+
     <section>
         <title>Mandelbrot nagyító és utazó Java nyelven</title>
         <para>
         </para>
     </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-</chapter>                
+
+</chapter>
