@@ -138,8 +138,8 @@
 
 		<para>
 			Látszódik, hogy a reguláris kifejezésünk felépítése egyszerű. Elsőnek
-			keresünk előjelet (negatív vagy pozitív), majd keressük az egészrészt
-			valamint a törtrészt <emphasis role="strong">VAGY</emphasis>
+			keresünk előjelet (negatív vagy pozitív) <emphasis role="strong">ÉS</emphasis>
+			keressük az egészrészt valamint a törtrészt <emphasis role="strong">VAGY</emphasis>
 			csak egészrészt.
 		</para>
 
@@ -192,12 +192,36 @@ loveu
 		</programlisting>
         <para>
 			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
-			Ezt a programot megadtuk egyszerű szabályokkal, hogy specifikus
-			bemenetre mit adjon, minden mást pedig írjon le úgy, ahogy kapta.
+			Ezt a programot megadtuk a következő egyszerű szabályokkal, hogy
+			specifikus bemenetre mit adjon, minden mást pedig írjon le úgy, ahogy kapta.
 			Ezzel a módszerrel sokkal egyszerűbb volt a feladatot megoldani,
 			mint magunknak olvasni a bemenetet, és keresni benne a kicserélendő
 			karakterláncokat.
-        </para>
+		</para>
+
+		<programlisting>
+<![CDATA[...
+%%
+"a"		{ printf("4");				}
+"c"		{ printf("k");				}
+"e"		{ printf("3");				}
+"o"		{ printf("0");				}
+"i"		{ printf("1");				}
+"q"		{ printf("kw");				}
+"A"		{ printf("/-\\");			}
+"B"		{ printf("13");				}
+"C"		{ printf("K");				}
+"E"		{ printf("3");				}
+"I"		{ printf("1");				}
+"V"		{ printf("\\/");			}
+"bye" 	{ printf("bai");			}
+"and" 	{ printf("nd");				}
+"dude" 	{ printf("d00d");			}
+[...]
+.|\n	{ printf("%s", yytext);		}
+%%
+...]]>
+		</programlisting>
     </section>
 
 
