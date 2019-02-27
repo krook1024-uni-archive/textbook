@@ -82,12 +82,67 @@
 		</para>
 		<para>
 			Amit fent látunk, az nem más, mint a lex definíciónk. A programnak
-			megmondjuk, hogy mi értelmes, esetünkben ezt a <code>[0-9]+</code>
-			sor jelenti. Természetes nyelven olvasva ezalatt annyit értünk, hogy
+			megmondjuk, hogy mi értelmes, esetünkben ezt a
+			<code>[-+]?([0-9]*\.[0-9]+|[0-9]+)</code>
+			sor jelenti.
+			Természetes nyelven olvasva ezalatt annyit értünk, hogy
 			bármely szám nullátol kilencig, bárhányszoros előfordulása érvényes.
 			A következő sorban az <code>.|\n {}</code> utasítás alapján minden
 			más bemenetet ignorálunk.
 		</para>
+		<para>
+			Kicsit részletesebben a valós szám regex defenícióján:
+		</para>
+
+		<itemizedlist>
+			<listitem>
+				<para><code>[-+]?</code></para>
+				<para>'-' vagy '+', egyszer, vagy nullaszor</para>
+			</listitem>
+
+			<listitem>
+				<para><code>(</code></para>
+				<para>Csoport kezdete</para>
+			</listitem>
+
+			<listitem>
+				<para><code>[0-9]*</code></para>
+				<para>Szám nullátol kilencig, bárhányszor (ez a pont előtti rész)</para>
+			</listitem>
+
+			<listitem>
+				<para><code>\.</code></para>
+				<para>Szó szerint vett '.' (pont)</para>
+			</listitem>
+
+			<listitem>
+				<para><code>[0-9]+</code></para>
+				<para>Szám nullátor kilencig, bárhányszor</para>
+			</listitem>
+
+			<listitem>
+				<para><code>|</code></para>
+				<para>Logikai vagy</para>
+			</listitem>
+
+			<listitem>
+				<para><code>[0-9]+</code></para>
+				<para>Szám nullától kilencig, bárhányszor</para>
+			</listitem>
+
+			<listitem>
+				<para><code>)</code></para>
+				<para>Csoport vége</para>
+			</listitem>
+		</itemizedlist>
+
+		<para>
+			Látszódik, hogy a reguláris kifejezésünk felépítése egyszerű. Elsőnek
+			keresünk előjelet (negatív vagy pozitív), majd keressük az egészrészt
+			valamint a törtrészt <emphasis role="strong">VAGY</emphasis>
+			csak egészrészt.
+		</para>
+
 		<para>
 			Ebből az egyszerűnek tűnő kódból majd a <code>lex</code> farag nekünk
 			egy értelmes C kódot, amit lefordítva láthatjuk is, hogy a programunk
@@ -98,17 +153,17 @@
 <![CDATA[$ lex lex.l
 $ gcc lex.yy.c -o lex
 $ ./lex
-3213asd1n23
-Számot találtam: 3213
-Számot találtam: 1
-Számot találtam: 23
-abcde
-fghj
-ayldna@&'
-{1}{2}{3}
-Számot találtam: 1
-Számot találtam: 2
-Számot találtam: 3
+123ad
+Valost talaltam: 123
+123ad45
+Valost talaltam: 123
+Valost talaltam: 45
+{1}{2}
+Valost talaltam: 1
+Valost talaltam: 2
+3.1415 1.4142
+Valost talaltam: 3.1415
+Valost talaltam: 1.4142
 ...
 ]]>
 		</programlisting>
@@ -117,16 +172,31 @@ Számot találtam: 3
     <section>
         <title>l33t.l</title>
         <para>
-            Lexelj össze egy l33t ciphert!
-        </para>
+			Megoldás forrása:
+		</para>
+
+		<programlisting>
+<![CDATA[$ lex 1337.l  && gcc lex.yy.c && ./a.out
+hello, world!
+h3ll0, w0rld!
+what's up?
+wut's up?
+this is so cool!
+th1s 1s s0 kewl!
+what's up mate?
+wut's up m8?
+hey dude!
+h3y d00d!
+loveu
+10/3u]]>
+		</programlisting>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
+			Ezt a programot megadtuk egyszerű szabályokkal, hogy specifikus
+			bemenetre mit adjon, minden mást pedig írjon le úgy, ahogy kapta.
+			Ezzel a módszerrel sokkal egyszerűbb volt a feladatot megoldani,
+			mint magunknak olvasni a bemenetet, és keresni benne a kicserélendő
+			karakterláncokat.
         </para>
     </section>
 

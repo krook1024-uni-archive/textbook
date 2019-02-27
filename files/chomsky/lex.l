@@ -6,7 +6,9 @@
 %option noyywrap
 
 %%
-[0-9]+	{	printf("Szamot talaltam: %s\n", yytext);	}
+[-+]?([0-9]*\.[0-9]+|[0-9]+) {
+			printf("Valost talaltam: %s\n", yytext);
+		}
 .|\n	{}
 %%
 
