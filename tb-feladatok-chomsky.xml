@@ -45,14 +45,36 @@
             Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+			Előfordul olyan kódcsipet, mely az egyik C verzióval hibátlanul lefordul,
+			míg más C verzió fordítója hibát dob rá.
+			Nézzünk meg erre egy konkrét példát, ahol a csipetünk C99-el fordul,
+			azonban C89-el nem.
+		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/chomsky/c99.c" />
+			</textobject>
+		</programlisting>
+		<para>
+			A fenti csipet talán a leglátványosabb példája ennek. Próbáljuk
+			meg lefordítani ezt C89 verzióval.
+		</para>
+		<programlisting>
+<![CDATA[$ gcc -std=c89 c99.c
+c99.c: In function ‘main’:
+c99.c:4:2: error: ‘for’ loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i < 5; i++);
+  ^~~
+c99.c:4:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code]]>
+		</programlisting>
+		<para>
+			Látható hogy a fordító a barátunk, megoldást is kínál a problémánkra.
+			Amennyiben az általa javasolt opciókkal fordítunk, semmi probléma nincs.
+		</para>
+		<programlisting>
+<![CDATA[$ gcc -std=c99 c99.c
+$]]>
+		</programlisting>
     </section>
 
     <section>
@@ -251,58 +273,73 @@ Us1ng 4 l3x3r 1s fun!]]>
         <orderedlist numeration="lowerroman">
             <listitem>
                 <programlisting><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
-    signal(SIGINT, jelkezelo);]]></programlisting>
-            </listitem>
-            <listitem>
-				<programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+signal(SIGINT, jelkezelo);]]></programlisting>
 				<para>
 					Ha a SIGINT jelkezelése nincs ignorálva, akkor innentől fogva
 					<code>jelkezelo</code> végezze a jelkezelést.
 				</para>
-            </listitem>
+			</listitem>
+
+            <listitem>
+				<programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+				<para>
+					Végezzük el ötször, hogy...
+				</para>
+			</listitem>
+
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
 				<para>
 					Végezzük el ötször, hogy...
 				</para>
-            </listitem>
+			</listitem>
+
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
 				<para>
-					Növeljük meg tomb első 5 elemét.
+					Növeljük meg tomb első öt elemét eggyel.
 				</para>
-            </listitem>
+			</listitem>
+
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
-			<para>
-				...
-			</para>
-            </listitem>
-            <listitem>
+				<para>
+					...
+				</para>
+			</listitem>
 
-                <programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
-            </listitem>
             <listitem>
+				<programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
+				<para>
+					Itt az történik, hogy egy printf függvény argumentumában
+					próbáljuk inkrementálni a változókat, melyre nem lehetünk
+					abban biztosak, hogy milyen sorrendben fognak kiértékelődni.
+					Megbizonyosodhatunk róla, hogy a program nem a kívánt eredményt
+					fogja visszaadni, hogyha megpróbáljuk lefuttatni.
+				</para>
+				<programlisting language="c">
+					<textobject>
+						<textdata fileref="./files/chomsky/hiba_6.c" />
+					</textobject>
+				</programlisting>
+			</listitem>
 
+            <listitem>
                 <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
-            </listitem>
+			</listitem>
+
             <listitem>
-
-                <programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
-            </listitem>
+				<programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
+				<para>
+					Itt is problémába ütközünk.
+				</para>
+				<programlisting language="c">
+					<textobject>
+						<textdata fileref="./files/chomsky/hiba_8.c" />
+					</textobject>
+				</programlisting>
+			</listitem>
         </orderedlist>
-        <para>
-            Megoldás forrása:
-        </para>
-
-        <para>
-            Megoldás videó:
-        </para>
-
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-
     </section>
 
     <section>
@@ -447,7 +484,7 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
 
 		<programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>
 		<para>
-			hiba
+			egészek tömbjének referenciája
 		</para>
 
 		<programlisting><![CDATA[int *d[5];]]></programlisting>
@@ -474,14 +511,5 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
 		<para>
 			két egészet kapó, egy egészet visszaadó függvényre mutató mutató
 		</para>
-
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
     </section>
-
-
 </chapter>
