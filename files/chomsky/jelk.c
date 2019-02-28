@@ -8,8 +8,8 @@ void jelkezelo()
 
 int main()
 {
-	for(;;) {
-		if(signal(SIGINT, jelkezelo)==SIG_IGN)
+	for (;;) {
+		if (signal(SIGINT, jelkezelo) == SIG_IGN)
 			signal(SIGINT, SIG_IGN);
 	}
 

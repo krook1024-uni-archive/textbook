@@ -251,7 +251,15 @@ Us1ng 4 l3x3r 1s fun!]]>
 
 
     <section>
-        <title>A források olvasása</title>
+		<title>A források olvasása</title>
+
+        <caution>
+            <title>Tutoriált</title>
+            <para>
+                Ebben a feladatban tutoriáltam Füleky Ladislav-ot.
+            </para>
+        </caution>
+
         <para>
             Hogyan olvasod, hogyan értelmezed természetes nyelven az alábbi kódcsipeteket? Például
             <programlisting><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)

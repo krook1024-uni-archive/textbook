@@ -6,7 +6,15 @@
         </keywordset>
     </info>
     <section>
-        <title>Végtelen ciklus</title>
+		<title>Végtelen ciklus</title>
+
+        <caution>
+            <title>Tutoriált</title>
+            <para>
+                Ebben a feladatban tutoriáltam Füleky Ladislav-ot.
+            </para>
+        </caution>
+
 		<para>
 			<emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
 		</para>
