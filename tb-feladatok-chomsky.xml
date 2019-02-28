@@ -460,7 +460,7 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
             </listitem>
 		</itemizedlist>
 
-		<programlisting language="c">
+		<programlisting language="c++">
 			<textobject>
 				<textdata fileref="./files/chomsky/dek.c" />
 			</textobject>
@@ -470,52 +470,52 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
             Mit vezetnek be a programba a következő nevek?
         </para>
 
-		<programlisting><![CDATA[int a;]]></programlisting>
+		<programlisting language="c"><![CDATA[int a;]]></programlisting>
 		<para>
 			egész
 		</para>
 
-		<programlisting><![CDATA[int *b = &a;]]></programlisting>
+		<programlisting language="c"><![CDATA[int *b = &a;]]></programlisting>
 		<para>
-			egész referenciája
+			egészre mutató mutató
 		</para>
 
-		<programlisting><![CDATA[int &r = a;]]></programlisting>
+		<programlisting language="c"><![CDATA[int &r = a;]]></programlisting>
 		<para>
-			hiba
+			egész referenciája C++ban
 		</para>
 
-		<programlisting><![CDATA[int c[5];]]></programlisting>
+		<programlisting language="c"><![CDATA[int c[5];]]></programlisting>
 		<para>
 			egészek tömbje
 		</para>
 
-		<programlisting><![CDATA[int (&tr)[5] = c;]]></programlisting>
+		<programlisting language="c"><![CDATA[int (&tr)[5] = c;]]></programlisting>
 		<para>
 			egészek tömbjének referenciája
 		</para>
 
-		<programlisting><![CDATA[int *d[5];]]></programlisting>
+		<programlisting language="c"><![CDATA[int *d[5];]]></programlisting>
 		<para>
 			egészek tömbjére mutató mutató
 		</para>
 
-		<programlisting><![CDATA[int *h ();]]></programlisting>
+		<programlisting language="c"><![CDATA[int *h ();]]></programlisting>
 		<para>
 			egészre mutató mutatót visszaadó függvény
 		</para>
 
-		<programlisting><![CDATA[int *(*l) ();]]></programlisting>
+		<programlisting language="c"><![CDATA[int *(*l) ();]]></programlisting>
 		<para>
 			egészre mutatóra mutató mutatót visszaadó függvény
 		</para>
 
-		<programlisting><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
+		<programlisting language="c"><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
 		<para>
 			két egészet kapó, egy egészre mutató mutatót visszaadó függvény
 		</para>
 
-		<programlisting><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
+		<programlisting language="c"><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
 		<para>
 			két egészet kapó, egy egészet visszaadó függvényre mutató mutató
 		</para>

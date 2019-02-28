@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <cstdlib> // C++
 
 int main(void)
 {
@@ -15,7 +15,8 @@ int main(void)
 	int d[5];
 
 	// Egeszek tombjenek referenciaja
-	int *e = malloc(5 * sizeof(int));
+	// int *e = malloc(5 * sizeof(int));
+	int (&e)[5] = d;
 
 	// Egeszre mutato mutatok tombje
 	int **f[5];
