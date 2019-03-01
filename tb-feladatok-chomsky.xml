@@ -7,15 +7,12 @@
     </info>
     <section>
         <title>Decimálisból unárisba átváltó Turing gép</title>
-        <para>
-            Állapotátmenet gráfjával megadva írd meg ezt a gépet!
-		</para>
 
 		<figure>
 			<title>Példa ilyen Turing-gépre</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./pictures/Turing.png" width="90%" />
+					<imagedata fileref="./pictures/Turing.png" width="100%" />
 				</imageobject>
 			</mediaobject>
 		</figure>
@@ -25,16 +22,6 @@
 			azonban hogyha jobban beleássunk magunkat a témába,
 			rájöhetünk, hogy meglehetősen izgalmas téma ez.
 		</para>
-
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
     </section>
 
     <section>
@@ -77,53 +64,65 @@
 <utasítás> ::= kifejezés;
 
 <kifejezés> ::= <értékadó kifejezés>
-				| <összehasonlító kifejezés>
-				| <ciklus kifejezés>
+		| <összehasonlító kifejezés>
+		| <ciklus kifejezés>
 
 <értékadó kifejezés> ::= <változó> = érték;
 
 <összehasonlító kifejezés> ::=
-				<váltózó> <összehasonlító operátor> <változó> |
-				<változó> <összehasonlító operátor> konstans
+		<váltózó> <összehasonlító operátor> <változó>
+		| <változó> <összehasonlító operátor> konstans
 
 <ciklus kifejezés> ::=
-				| for( <kifejezés>? ; <kifejezés>? ; <kifejezés>? ) { <utasítás> }
-				| do { <utasítás> } while <kifejezés>
-				while ( <kifejezés> ) { <utasítás }
+		| for( <kifejezés>? ; <kifejezés>? ; <kifejezés>? ) { <utasítás> }
+		| do { <utasítás> } while <kifejezés>
+		while ( <kifejezés> ) { <utasítás }
 
-<függvény> ::= <visszatérési_típus> függvénynév ( paraméterek ) { <utasítás> }
+<függvény> ::=
+		<visszatérési_típus> függvénynév ( paraméterlista ) { <utasítás> }
+
+<paraméterlista> ::= <paraméter> | <paraméter> , <paraméter>
+
+<paraméter> ::=
+		<változó>
+		| <konstans>
 
 <típus> ::=
-				int    |
-				double |
-				float  |
-				char
+		int
+		| double
+		| float
+		| char
 
 <változó> ::= <típus> változónév
 
 <operátor> ::= <értékadó operátor> | <egyváltozós operátor>
 
 <értékadó operátor> ::=
-				*=  |
-				/=  |
-				%=  |
-				+=  |
-				-=  |
-				<<= |
-				>>= |
-				&=  |
-				^=  |
-				|=
+		*=
+		| /=
+		| %=
+		| +=
+		| -=
+		| <<=
+		| >>=
+		| &=
+		| ^=
+		| |=
 
 <egyváltozós operátor> ::=
-			+ |
-			- |
-			* |
-			/ |
-			& |
-			!
+		+ |
+		| -
+		| *
+		| /
+		| &
+		| !
 ]]>
 		</programlisting>
+
+		<para>
+			Ugyan ez a nyelvtan nem generálja a teljes C nyelvet, viszont nekünk a
+			megértéshez elégséges példát szolgáltat.
+		</para>
 
 
         <para>

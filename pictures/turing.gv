@@ -1,22 +1,29 @@
 digraph unary_to_binary {
     rankdir=LR;
-    size="8,5"
+    size="20";
+    splines=false;
+    nodesep=0.7;
+    ranksep=0.5;
 
     node [shape = doublecircle]; S;
-    node [shape = point ]; qi
+    node [shape = point label = ""]; qi
 
     node [shape = circle];
     qi -> S;
-    S  -> q1 [ label = "(1,2,↑)" ] ;
-	q1 -> q2 [ label = "(=,=,←)" ] ;
-	q2 -> q3;
-	q3 -> q4;
-	q4 -> q5;
-	q5 -> q6;
-
-	q6 -> q2;
-
-	edge [ label="hey" ];
+    S  -> q1 [ label = "(0,ró,→)"];
+	q1 -> q2 [ label = "(1,2,↑)" ] ;
+	q2 -> q3 [ label = "(=,=,←)" ];
+	q3 -> q4 [ label = "(2,0,→)\n.\n.\n.\n(9,8,→)" ];
+	q4 -> q5 [ label = "(ró,1,←)" ];
+	q5 -> q2 [ label="(ró,ró,→)" ];
+	
+	q3->q3 [ label = "(0,9,←)" ];
+	q4->q4 [ label = "(1,1,→)\n(=,=,→)\n(0,0,→)\n.\n.\n.\n(9,9,→)" ];
+	q5->q5 [ label = "(1,1,←)\n(=,=,←)\n(0,0,←)\n.\n.\n.\n(9,9,←)"];
+	
+	q2 [ style=filled color = red ];
+	q3 [ style=filled color = green label = "\"-1\""];
+	q4 [ style=filled color = blue ];
 
 }
 
@@ -25,5 +32,4 @@ digraph unary_to_binary {
 # ↑
 # →
 # ↓
-
 # dot -Tpng turing.gv -o Turing.png
