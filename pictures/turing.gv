@@ -1,0 +1,29 @@
+digraph unary_to_binary {
+    rankdir=LR;
+    size="8,5"
+
+    node [shape = doublecircle]; S;
+    node [shape = point ]; qi
+
+    node [shape = circle];
+    qi -> S;
+    S  -> q1 [ label = "(1,2,↑)" ] ;
+	q1 -> q2 [ label = "(=,=,←)" ] ;
+	q2 -> q3;
+	q3 -> q4;
+	q4 -> q5;
+	q5 -> q6;
+
+	q6 -> q2;
+
+	edge [ label="hey" ];
+
+}
+
+
+# ←
+# ↑
+# →
+# ↓
+
+# dot -Tpng turing.gv -o Turing.png

@@ -9,7 +9,23 @@
         <title>Decimálisból unárisba átváltó Turing gép</title>
         <para>
             Állapotátmenet gráfjával megadva írd meg ezt a gépet!
-        </para>
+		</para>
+
+		<figure>
+			<title>Példa ilyen Turing-gépre</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/Turing.png" width="90%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<para>
+			Ránézésre a téma eléggé száraznak és unalmasnak hangozhat,
+			azonban hogyha jobban beleássunk magunkat a témába,
+			rájöhetünk, hogy meglehetősen izgalmas téma ez.
+		</para>
+
         <para>
             Megoldás videó:
         </para>
@@ -43,7 +59,73 @@
             A <citation>KERNIGHANRITCHIE</citation> könyv C referencia-kézikönyv/Utasítások melléklete alapján definiáld
             BNF-ben a C utasítás fogalmát!
             Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
-        </para>
+		</para>
+
+		<para>
+			C-ben az utasítás fogalmát Bachus-Naur formában megadhatjuk
+			a következőképpen, visszafelé gondolkodva.
+			A gondolatmenet itt a következő; miből áll az <emphasis>utasítás</emphasis>?
+			<emphasis>kifejezés;</emphasis>
+			Mi a <emphasis>kifejezés</emphasis>? <emphasis>Típus</emphasis>, majd <emphasis>változó</emphasis>, majd
+			<emphasis>operátor</emphasis>, és így tovább.
+			Ezen logika mentén olvassuk a következő szabálysorozatot!
+		</para>
+
+
+		<programlisting>
+<![CDATA[
+<utasítás> ::= kifejezés;
+
+<kifejezés> ::= <értékadó kifejezés>
+				| <összehasonlító kifejezés>
+				| <ciklus kifejezés>
+
+<értékadó kifejezés> ::= <változó> = érték;
+
+<összehasonlító kifejezés> ::=
+				<váltózó> <összehasonlító operátor> <változó> |
+				<változó> <összehasonlító operátor> konstans
+
+<ciklus kifejezés> ::=
+				| for( <kifejezés>? ; <kifejezés>? ; <kifejezés>? ) { <utasítás> }
+				| do { <utasítás> } while <kifejezés>
+				while ( <kifejezés> ) { <utasítás }
+
+<függvény> ::= <visszatérési_típus> függvénynév ( paraméterek ) { <utasítás> }
+
+<típus> ::=
+				int    |
+				double |
+				float  |
+				char
+
+<változó> ::= <típus> változónév
+
+<operátor> ::= <értékadó operátor> | <egyváltozós operátor>
+
+<értékadó operátor> ::=
+				*=  |
+				/=  |
+				%=  |
+				+=  |
+				-=  |
+				<<= |
+				>>= |
+				&=  |
+				^=  |
+				|=
+
+<egyváltozós operátor> ::=
+			+ |
+			- |
+			* |
+			/ |
+			& |
+			!
+]]>
+		</programlisting>
+
+
         <para>
 			Előfordul olyan kódcsipet, mely az egyik C verzióval hibátlanul lefordul,
 			míg más C verzió fordítója hibát dob rá.
@@ -82,7 +164,8 @@ $]]>
         <para>
             Írj olyan programot, ami számolja a bemenetén megjelenő valós számokat!
             Nem elfogadható olyan megoldás, amely maga olvassa betűnként a bemenetet,
-            a feladat lényege, hogy lexert használjunk, azaz óriások vállán álljunk és ne kispályázzunk!
+			a feladat lényege, hogy lexert használjunk, azaz óriások vállán álljunk
+			és ne kispályázzunk!
         </para>
         <para>
             Megoldás videó:
