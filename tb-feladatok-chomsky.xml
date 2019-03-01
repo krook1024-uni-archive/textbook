@@ -30,13 +30,36 @@
         <title>Az a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript> nyelv nem környezetfüggetlen</title>
         <para>
             Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
+		</para>
+
+		<orderedlist numeration="upperroman">
+			<listitem>
+				<para>
+					Legyenek <emphasis>S, X, Y</emphasis> változók.
+					Legyen <emphasis>a, b, c</emphasis> konstansok.
+				</para>
+				<para>
+					<emphasis>S -> abc, S->aXbc, Xb -> bX, Xc -> Ybcc, bY -> Yb, Ay > aax, Ay -> aa</emphasis>
+				</para>
+				<programlisting>
+<![CDATA[S
+aXbc
+abXc (Xc -> Ybcc)
+abYbcc]]>
+				</programlisting>
+			</listitem>
+
+			<listitem>
+				<para>
+					Legyenek <emphasis>S, X, Y</emphasis> változók.
+					Legyen <emphasis>a, b, c</emphasis> konstansok.
+				</para>
+				<para>
+					<emphasis>A -> aAB, A -> aC, CB -> bCc, cB -> Bc, C -> bc</emphasis>
+				</para>
+			</listitem>
+		</orderedlist>
+
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
