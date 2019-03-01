@@ -80,7 +80,8 @@ abYbcc]]>
 			<emphasis>kifejezés;</emphasis>
 			Mi a <emphasis>kifejezés</emphasis>? <emphasis>Típus</emphasis>, majd <emphasis>változó</emphasis>, majd
 			<emphasis>operátor</emphasis>, és így tovább.
-			Ezen logika mentén olvassuk a következő szabálysorozatot!
+			Ezen logika mentén olvassuk a következő szabálysorozatot! A
+			szabályokat érdemes hátulról (visszafelé) olvasni.
 		</para>
 
 
@@ -92,7 +93,7 @@ abYbcc]]>
 		| <összehasonlító kifejezés>
 		| <ciklus kifejezés>
 
-<értékadó kifejezés> ::= <változó> = érték;
+<értékadó kifejezés> ::= <változó> = érték
 
 <összehasonlító kifejezés> ::=
 		<váltózó> <összehasonlító operátor> <változó>
