@@ -14,8 +14,9 @@ digraph unary_to_binary {
 	q1 -> q2 [ label = "(1,2,↑)" ] ;
 	q2 -> q3 [ label = "(=,=,←)" ];
 	q3 -> q4 [ label = "(2,0,→)\n.\n.\n.\n(9,8,→)" ];
-	q4 -> q5 [ label = "(ró,1,←)" ];
-	q5 -> q2 [ label="(ró,ró,→)" ];
+	q4 -> q5 [ label = "" ];
+	q5 -> q6 [ label = "(ró,1,←)" ];
+	q6 -> q2 [ headlabel="\n(0,ró,→)         (1,2,→)\n                  .\n\                  .\n                  .\n                   (1,9,→)" label = "(ró,ró,→)" ];
 	
 	q1->q1 [ label = "(0,ró,→)" ];
 	q2->q2 [ label = "(0,0,→)\n.\n.\n.\n(9,9,→)" ];
