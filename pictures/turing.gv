@@ -15,15 +15,15 @@ digraph unary_to_binary {
 	q2 -> q3 [ label = "(=,=,←)" ];
 	q3 -> q4 [ label = "(2,0,→)\n.\n.\n.\n(9,8,→)" ];
 	q4 -> q5 [ label = "" ];
-	q5 -> q6 [ label = "(ró,1,←)" ];
-	q6 -> q2 [ headlabel="\n(0,ró,→)         (1,2,→)\n                  .\n\                  .\n                  .\n                   (1,9,→)" label = "(ró,ró,→)" ];
-	
-	q1->q1 [ label = "(0,ró,→)" ];
+	q5 -> q6 [ label = "(𝛠,1,←)" ];
+	q6 -> q2 [ headlabel="\n(0,𝛠,→)         (1,2,→)\n                  .\n\                  .\n                  .\n                   (1,9,→)" label = "(𝛠,𝛠,→)" ];
+
+	q1->q1 [ label = "(0,𝛠,→)" ];
 	q2->q2 [ label = "(0,0,→)\n.\n.\n.\n(9,9,→)" ];
 	q3->q3 [ label = "(0,9,←)" ];
 	q4->q4 [ label = "(1,1,→)\n(=,=,→)\n(0,0,→)\n.\n.\n.\n(9,9,→)" ];
 	q5->q5 [ label = "(1,1,←)\n(=,=,←)\n(0,0,←)\n.\n.\n.\n(9,9,←)"];
-	
+
 	q2 [ style=filled color = red ];
 	q3 [ style=filled color = green label = "\"-1\""];
 	q4 [ style=filled color = blue ];
