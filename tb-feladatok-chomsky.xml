@@ -74,75 +74,55 @@ abYbcc]]>
 		</para>
 
 		<para>
-			C-ben az utasítás fogalmát Bachus-Naur formában megadhatjuk
-			a következőképpen, visszafelé gondolkodva.
-			A gondolatmenet itt a következő; miből áll az <emphasis>utasítás</emphasis>?
-			<emphasis>kifejezés;</emphasis>
-			Mi a <emphasis>kifejezés</emphasis>? <emphasis>Típus</emphasis>, majd <emphasis>változó</emphasis>, majd
-			<emphasis>operátor</emphasis>, és így tovább.
+			C-ben az utasítás fogalmát Bachus-Naur formában megadhatjuk	a következőképpen.
+
+			Ezt a következő logika mentén olvassuk;
+			Mi az <code>utasítás</code>? <code>címkézett_utasítás</code> VAGY
+			<code>összetett_utasítás</code> VAGY stb...
+
 			Ezen logika mentén olvassuk a következő szabálysorozatot! A
 			szabályokat érdemes hátulról (visszafelé) olvasni.
 		</para>
 
 
 		<programlisting>
-<![CDATA[
-<utasítás> ::= kifejezés;
+			<![CDATA[
+utasítás ::=
+	címkézett_utasítás
+	| kifejezésutasítás
+	| összetett_utasítás
+	| kiválasztó_utasítás
+	| iterációs_utasítás
+	| vezérlésátadó_utasítás
 
-<kifejezés> ::= <értékadó kifejezés>
-		| <összehasonlító kifejezés>
-		| <ciklus kifejezés>
+címkézett_utasítás ::=
+	azonosító : utasítás
+	case állandó_kifejezés : utasítás
+	default : utasítás
 
-<értékadó kifejezés> ::= <változó> = érték
+kifejezésutasítás ::= kifejezés ;
 
-<összehasonlító kifejezés> ::=
-		<váltózó> <összehasonlító operátor> <változó>
-		| <változó> <összehasonlító operátor> konstans
+összetett_utasítás ::= { deklarációs_lista  utasítás_lista }
 
-<ciklus kifejezés> ::=
-		| for( <kifejezés>? ; <kifejezés>? ; <kifejezés>? ) { <utasítás> }
-		| do { <utasítás> } while <kifejezés>
-		while ( <kifejezés> ) { <utasítás }
+deklarációs_lista ::= deklaráció | deklarációs_lista deklaráció
 
-<függvény> ::=
-		<visszatérési_típus> függvénynév ( paraméterlista ) { <utasítás> }
+utasítás_lista ::= utasítás | utasítás_lista utasítás
 
-<paraméterlista> ::= <paraméter> | <paraméter> , <paraméter>
+kiválasztó_utasítás ::=
+	if ( kifejezés ) utasítás
+	| if ( kifejezés ) utasítás else utasítás
+	| switch ( kifejezés ) utasítás
 
-<paraméter> ::=
-		<változó>
-		| <konstans>
+iterációs_utasítás ::=
+	while ( kifejezés ) utasítás
+	| do utasítás while ( kifejezés ) ;
+	| for ( kifejezés ; kifejezés ; kifejezés ) utasítás
 
-<típus> ::=
-		int
-		| double
-		| float
-		| char
-
-<változó> ::= <típus> változónév
-
-<operátor> ::= <értékadó operátor> | <egyváltozós operátor>
-
-<értékadó operátor> ::=
-		*=
-		| /=
-		| %=
-		| +=
-		| -=
-		| <<=
-		| >>=
-		| &=
-		| ^=
-		| |=
-
-<egyváltozós operátor> ::=
-		+ |
-		| -
-		| *
-		| /
-		| &
-		| !
-]]>
+vezérlésátadó_utasítás ::=
+	goto azonosító;
+	| continue ;
+	| break ;
+	| return kifejezés ;]]>
 		</programlisting>
 
 		<para>
