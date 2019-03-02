@@ -511,12 +511,12 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
 			</listitem>
 			<listitem>
 				<para>
-					Vannak ikerprímek.
+					Végtelen sok ikerprím van.
 				</para>
 			</listitem>
 			<listitem>
 				<para>
-					Létezik olyan y szám, mely x prímszámnál nagyobb.
+					A prímszámok száma véges.
 				</para>
 			</listitem>
 			<listitem>

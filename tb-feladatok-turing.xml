@@ -189,7 +189,8 @@ false]]></screen>
 			Két változó értékét megcserélhetjük az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
 			Az <emphasis>XOR</emphasis> operátor bitenként végzi el a kizáró vagy logikai műveletet a bemeneteken.
 			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
-			programunkat, a következőképp:
+			programunkat, a következőképp: (ne ijedjünk meg a sok <code>#define</code>-tól, ezek ahhoz kellenek, hogy kettes
+			számrendszerben láthassuk a számokat)
 		</para>
 		<programlisting language="c" startinglinenumber="14">
 			<textobject>
