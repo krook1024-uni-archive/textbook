@@ -451,13 +451,18 @@ $(\exists y \forall x (x \text{ prím}) \supset (x<y)) $
 
 $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
 ]]></programlisting>
-        <para>
-            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/MatLog_LaTeX</link>
+		<para>
+			A LaTeX-ről annyit kell tudni, hogy ez egy szövegformázó rendszer, amelyet
+			matematikusok előszeretettel használnak dokumentumok és prezentációk formázására,
+			de jelen van a nyomdákban is. Használata a tanulási fázist követően egyáltalán
+			nem megerőltető, véleményem szerint kényelmesebb is mint egy Word dokumentumot szerkesztgetni,
+			valamint jóval több testreszabhatóságot rejt, melyek pár leütésre vannak, és az összkép még
+			így is sokkal szebb, mint bármelyik konkurenséé.
 		</para>
 
 		<para>
-			Az egyszerűség kedvéért lefordítjuk a LaTeX forrást egy segédprogram használatával,
-			hogy könnyebben olvasható legyen.
+			Az egyszerűség kedvéért ezen sorokat betesszük egy logikus.tex fájlba, majd
+			lefordítjuk a forrást egy segédprogram használatával, hogy könnyebben olvasható legyen.
 		</para>
 
 		<programlisting>
@@ -480,7 +485,7 @@ $ pandoc -t latex logikus.tex -o logikus.pdf
 		</figure>
 
 		<para>
-			Ezek lefordítva természetes szövegre:
+			Ezek az elsőrendű logikai kifejezések lefordítva természetes szövegre:
 		</para>
 
 		<itemizedlist>
