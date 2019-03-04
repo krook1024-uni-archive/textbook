@@ -189,7 +189,8 @@ false]]></screen>
 			Két változó értékét megcserélhetjük az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
 			Az <emphasis>XOR</emphasis> operátor bitenként végzi el a kizáró vagy logikai műveletet a bemeneteken.
 			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
-			programunkat, a következőképp:
+			programunkat, a következőképp: (ne ijedjünk meg a sok <code>#define</code>-tól, ezeket makrónak hívják, és
+			ahhoz kellenek, hogy a megértést segítendő kettes számrendszerben láthassuk a számokat)
 		</para>
 		<programlisting language="c" startinglinenumber="14">
 			<textobject>
@@ -229,6 +230,70 @@ a=00000111, b=00000011]]>
 			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
 			esnek a konzolunkon (azaz a megjeleníthető ko-ordinátákon).
 		</para>
+		<para>
+			A fenti kód egy megoldása a problémának. Itt az <code>ncurses</code> függvénykönyvtárat
+			vesszük használatba, mely terminálos interfészek (TUI-k) létrehozására lett elkészítve.
+		</para>
+		<para>
+			A program lényeges része a ciklusmagban van, ezt nézzük meg sorról sorra.
+		</para>
+
+
+		<programlisting>
+<![CDATA[xj = (xj - 1) % mx;]]>
+		</programlisting>
+		<para>
+			Az xj változó értékét beállítjuk úgy, hogy az a maradéka
+			legyen a saját értékénél egyel kisebb értéknek és a
+			terminál szélességének a kétszeresének a hányadosával.
+		</para>
+
+		<programlisting>
+<![CDATA[xk = (xk + 1) % mx;]]>
+		</programlisting>
+		<para>
+			Ugyanezt elvégezzük az xk változóval is.
+		</para>
+
+
+		<programlisting>
+<![CDATA[yj = (yj - 1) % my;
+yk = (yk + 1) % my;]]>
+		</programlisting>
+		<para>
+			Itt ugyanezt elvégezzük az <emphasis>y</emphasis> tengelyen is.
+		</para>
+
+
+		<programlisting>
+<![CDATA[clear();]]>
+		</programlisting>
+		<para>
+			Letöröljük a képernyőt, hogy ne maradjon fent a labdánk az előző
+			kirajzolásból adódóan. Ezzel készülünk fel a következő képkocka
+			kirajzolására.
+		</para>
+
+
+		<programlisting>
+<![CDATA[mvprintw(abs((yj + (my - yk)) / 2),
+abs((xj + (mx - xk)) / 2), "o");]]>
+		</programlisting>
+		<para>
+			Itt rajzoljuk ki a labdát magát, ehhez meghívjuk az <code>mvprintw</code>
+			függvényt. Ez a függvény kiirat egy karaktert a megadott x és y ko-ordinátáknak
+			megfelelően a képernyőn valahol.
+		</para>
+
+
+		<programlisting>
+<![CDATA[refresh();
+usleep(30000);]]>
+		</programlisting>
+		<para>
+			A refresh függvény szükséges, hogy kimenetet lássunk a terminál-ablakunban,
+			majd váruk 30000 mikroszekundumnyi időt.
+		</para>
     </section>
 
     <section>
@@ -244,7 +309,7 @@ a=00000111, b=00000011]]>
         <para>
 			A szóhossz megállapítására használhatunk egy <code language="c">int</code> típusú változót, melyet
 			inicializálunk <code>1</code>-el, majd addig shifteljük balra, amíg csak tudjuk. Ha megszámoljuk,
-			hogy hányszor tudtuk jobbra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
+			hogy hányszor tudtuk balra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
         </para>
     </section>
 
