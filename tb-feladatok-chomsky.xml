@@ -119,17 +119,11 @@ iterációs_utasítás ::=
 	| for ( kifejezés ; kifejezés ; kifejezés ) utasítás
 
 vezérlésátadó_utasítás ::=
-	goto azonosító;
+	goto azonosító ;
 	| continue ;
 	| break ;
 	| return kifejezés ;]]>
 		</programlisting>
-
-		<para>
-			Ugyan ez a nyelvtan nem generálja a teljes C nyelvet, viszont nekünk a
-			megértéshez elégséges példát szolgáltat.
-		</para>
-
 
         <para>
 			Előfordul olyan kódcsipet, mely az egyik C verzióval hibátlanul lefordul,
