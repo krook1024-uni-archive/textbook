@@ -34,7 +34,7 @@
 "cool" 		{ printf("kewl");			}
 "like" 		{ printf("liek");			}
 "lol" 		{ printf("lopl");			}
-"mate" 		{ printf("m8");				}
+"ate" 		{ printf("8");				}
 "master"	{ printf("mastah");			}
 "max0r"		{ printf("maximum");		}
 "oh my god"	{ printf("OMG");			}

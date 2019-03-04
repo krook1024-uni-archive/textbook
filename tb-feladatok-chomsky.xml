@@ -420,7 +420,8 @@ signal(SIGINT, jelkezelo);]]></programlisting>
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
 				<para>
-					...
+					A kód nehezen olvashatósága mellett kétséges a kiértékelődési
+					sorrend is.
 				</para>
 			</listitem>
 
@@ -447,7 +448,11 @@ signal(SIGINT, jelkezelo);]]></programlisting>
             <listitem>
 				<programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
 				<para>
-					Itt is problémába ütközünk.
+					Itt is problémába ütközünk, hiszen az f függvény referencia
+					szerint kapja meg az a változót, tehát másolás nélkül.
+					Ebben az esetben az f függvény közvetlenül tudja módosítani
+					az a változót, emiatt megint kétséges a kiértékelődési
+					sorrend, valamit a kód is meglehetősen "rossz minőségű".
 				</para>
 				<programlisting language="c">
 					<textobject>
@@ -481,9 +486,7 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
 		</para>
 
 		<programlisting>
-<![CDATA[
-$ pandoc -t latex logikus.tex -o logikus.pdf
-]]>
+<![CDATA[$ pandoc -t latex logikus.tex -o logikus.pdf]]>
 		</programlisting>
 
 		<para>
