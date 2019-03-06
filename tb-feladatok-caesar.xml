@@ -8,18 +8,18 @@
     <section>
         <title><type>int ***</type> háromszögmátrix</title>
         <para>
-           
+
         </para>
         <para>
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>C EXOR titkosító</title>
         <para>
@@ -29,12 +29,19 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
-        </para>
+            Megoldás forrása:
+		</para>
+
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/caesar/xor_e.c" />
+			</textobject>
+		</programlisting>
+
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>Java EXOR titkosító</title>
         <para>
@@ -44,12 +51,12 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>C EXOR törő</title>
         <para>
@@ -59,12 +66,12 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>Neurális OR, AND és EXOR kapu</title>
         <para>
@@ -74,12 +81,12 @@
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>               
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>Hiba-visszaterjesztéses perceptron</title>
         <para>
@@ -89,12 +96,12 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
-        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-</chapter>                
+        </para>
+    </section>
+
+
+</chapter>
