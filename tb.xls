@@ -15,5 +15,6 @@
 <xsl:template match="mathphrase">
    <xsl:call-template name="inline.italicseq"/>
 </xsl:template>
+<xsl:param name="textdata.default.encoding">utf-8</xsl:param>
 
 </xsl:stylesheet>
