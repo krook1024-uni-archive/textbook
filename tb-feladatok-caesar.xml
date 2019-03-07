@@ -22,16 +22,6 @@
     </section>
     <section>
         <title>C EXOR titkosító</title>
-        <para>
-            Írj egy EXOR titkosítót C-ben!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-		</para>
-
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/caesar/xor_e.c" />
@@ -39,7 +29,17 @@
 		</programlisting>
 
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+        	Az XOR titoksító programunk meglehetősen egyszerűen működik. Az
+			argumentumból kiolvassuk a kulcsot majd a <code>while</code>
+			ciklusban olvassuk az érkező bementet az úgynevezett
+			sztenderd inputon. Majd menézzük a bemenetünk méretetét,
+			és ennek a teljes tartalmát "titkosítjuk", azaz
+			elvégezzük rajta a bitenkénti XOR utasítást
+			<code language="c">buffer[i] ^= key[key_index];</code>).
+			Ezután vesszük a buffert és kinyomjuk az úgynevezett
+			sztendert outputon. Ez azért jó, mert a felhasználó
+			egyszerűen inspektálhatja, vagy fájlba írhatja a kimenetet,
+			legalábbis UNIX-jellegű operációs rendszerek alatt.
         </para>
     </section>
     <section>

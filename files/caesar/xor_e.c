@@ -1,22 +1,27 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
-#define BUFFER_SIZE 200
+#define MAX_KEY_SIZE 100
+#define BUFFER_SIZE 256
 
-char *exor(char *str, char *key)
+int main(int argc, char **argv)
 {
-	while (*str)
-		*str++ ^= *key;
+	char key[MAX_KEY_SIZE];
+	char buffer[BUFFER_SIZE];
 
-	return str;
-}
+	int key_index = 0, read_bytes = 0;
+	int key_size = strlen(argv[1]);
 
-int main(void)
-{
-	char *buffer;
-	char key[5] = "1234";
-	while (read(0, (char *)buffer, BUFFER_SIZE))
-		printf("%s", exor(buffer, key));
+	strncpy(key, argv[1], MAX_KEY_SIZE);
 
-	return 0;
+	while ((read_bytes = read(0, (void *)buffer, BUFFER_SIZE))) {
+		for (int i = 0; i < read_bytes; i++) {
+			// buffer[i] = buffer[i] ^ key[key_index];
+			buffer[i] ^= key[key_index];
+			key_index = (key_index + 1) % key_size;
+		}
+
+		write(1, buffer, read_bytes);
+	}
 }
