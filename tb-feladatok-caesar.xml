@@ -66,7 +66,6 @@ Elso sor cime: 0x5567bca696a0
 			<code language="c">(*hm[1]+1)</code>, vagy
 			<code language="c">(*(*hm + 1)+1)</code>.
 		</para>
-
 	</section>
 
     <section>
@@ -90,6 +89,7 @@ Elso sor cime: 0x5567bca696a0
 			egyszerűen inspektálhatja, vagy fájlba írhatja a kimenetet,
 			legalábbis UNIX-jellegű operációs rendszerek alatt.
 		</para>
+
 		<para>
 			Természetesen ugyanezzel a kóddal és a kulcs ismeretében,
 			a generált titkosított állomány vissza is fejthető.
@@ -155,13 +155,16 @@ Elso sor cime: 0x5567bca696a0
         <title>Neurális OR, AND és EXOR kapu</title>
         <para>
             R
-        </para>
+		</para>
+
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
-        </para>
+		</para>
+
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>
-        </para>
+		</para>
+
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
@@ -171,13 +174,16 @@ Elso sor cime: 0x5567bca696a0
         <title>Hiba-visszaterjesztéses perceptron</title>
         <para>
             C++
-        </para>
+		</para>
+
         <para>
             Megoldás videó:
-        </para>
+		</para>
+
         <para>
             Megoldás forrása:
-        </para>
+		</para>
+
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
