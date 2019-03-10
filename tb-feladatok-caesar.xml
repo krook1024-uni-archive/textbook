@@ -18,14 +18,14 @@
         <para>
 			Ebben a példában a C nyelv fő jellegzetességével foglalkozunk,
 			ami nem az egyszerűsége, hanem a dinamikus memóriakezelés.
-		</para>
-
-		<para>
-			Ebben a programban egy olyan példát nézünk meg, ahol létrehozunk
+			Nézzünk meg egy olyan példát, ahol létrehozunk
 			egy double ** háromszögmátrixot, ami lényegében nem más, mint egy
 			kétdimenziós tömb (C-ben a <code>[]</code> jelek használata a
 			tömbök kezelésére csupán egy fordító adta kényelem, hogy ne kelljen
 			mindig mutató-, és címaritmetikával foglalkozunk).
+			A különbség itt az lesz, hogy nem mondjuk meg előre, hogy hány
+			elemű tömbjeink lesznek, hanem azokat majd dinamikusan
+			foglaljuk le.
 		</para>
 
 		<para>
@@ -40,14 +40,14 @@
 
 		<para>
 			Egy alsó háromszögmátrix egy olyan mátrix, melyben a főátló felett csupán
-			nullák vannak. A programunk egy ilyet készít el, olyan módon, hogy minden
-			elemét úgy állítjuk be, hogy <code>(i+1)/(j+1)</code>, ahol az i a sor
-			száma, a j pedig az oszlop száma. A +1 azért kell, hogy ne próbáljunk meg
-			nullával osztani véletlenül se.
+			nullák vannak. A programunk egy kvadratikus háromszögmátrixot készít el,
+			olyan módon, hogy minden elemét úgy állítjuk be, hogy <code>(i+1)/(j+1)</code>,
+			ahol az i a sor	száma, a j pedig az oszlop száma. A +1 azért kell, hogy ne osszunk
+			nullával véletlenül se.
 		</para>
 
 		<programlisting>
-<![CDATA[gcc doubleharomszog.c  && ./a.out
+<![CDATA[$ gcc doubleharomszog.c  && ./a.out
 Mutato cime: 0x7fffbc435de0
 Sorok tombjenek cime: 0x5567bca69670
 Elso sor cime: 0x5567bca696a0
