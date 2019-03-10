@@ -97,7 +97,7 @@ Elso sor cime: 0x5567bca696a0
 	</section>
 
     <section>
-        <title>Java EXOR titkosító</title>
+		<title>Java EXOR titkosító</title>
 		<programlisting language="java">
 			<textobject>
 				<textdata fileref="./files/caesar/java/XorEncode.java"/>
@@ -105,7 +105,16 @@ Elso sor cime: 0x5567bca696a0
 		</programlisting>
 		<para>
 			A Java egy objektum orientált nyelv, melyet főleg enterprise
-			környezetekben használnak, mert jellegénél fogva jól modulálható.
+			környezetekben használnak, mert jellegénél fogva jól modulálható,
+			valamint nincs benne semmiféle memóriakezelés, sokan emiatt hívják
+			viccesen memóriakezelés nélküli C-nek is, mely érthető,
+			hiszen a két nyelv szintaxisa között valóban vannak hasonlóságok.
+		</para>
+		<para>
+			Ebben a programban is hasonlóan járunk el, mint a C-s változatban,
+			az argumentumok közül kiolvassuk a kulcsot, majd a standard inputon
+			megjelenő szöveget XOR-ozzuk ezzel a kulccsal, majd a kimeneten
+			kiíratjuk a végeredményt.
 		</para>
 	</section>
 
@@ -156,7 +165,8 @@ Elso sor cime: 0x5567bca696a0
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>
+	</section>
+
     <section>
         <title>Hiba-visszaterjesztéses perceptron</title>
         <para>
