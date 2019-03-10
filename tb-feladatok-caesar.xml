@@ -27,37 +27,44 @@
 			tömbök kezelésére csupán egy fordító adta kényelem, hogy ne kelljen
 			mindig mutató-, és címaritmetikával foglalkozunk).
 		</para>
+
 		<para>
 			A program úgy működik, hogy elsőnek megadjuk, hogy hányszor
 			hányas tömböt szeretnénk létrehozni, és ezt eltároljuk a db változóba.
 			Ezután lefoglaljuk magát a hm háromszögmátrixot, és a megértés érdekében
 			kiiíratjuk a memóriacímét is (példa lentebb).
 			Ezt követően lefoglalunk <code>db</code> darab (esetünkben 5)
-			tömböt, amelyek a következő lépésben szintén tartalmazni fognak 5 db
-			tömböt, melynek elemeit inicializáljuk (i+j-vel), hogy lássuk, hogy itt
-			valóban már adatok jelennek meg, és nem memóracímek.
+			tömböt (ezek lesznek a sorok), amelyek a következő lépésben szintén
+			tartalmazni fognak 5 db tömböt (ezek pedig az oszlopok).
+		</para>
+
+		<para>
+			Egy alsó háromszögmátrix egy olyan mátrix, melyben a főátló felett csupán
+			nullák vannak. A programunk egy ilyet készít el, olyan módon, hogy minden
+			elemét úgy állítjuk be, hogy <code>(i+1)/(j+1)</code>, ahol az i a sor
+			száma, a j pedig az oszlop száma. A +1 azért kell, hogy ne próbáljunk meg
+			nullával osztani véletlenül se.
 		</para>
 
 		<programlisting>
-<![CDATA[$ gcc doubleharomszog.c -o dm && ./dm
-Fő mutató címe: 0x7ffe73a795b0
-Lefoglalt 5 double** címe: 0x55deb701c670
-Első szint első eleme: 0x55deb701c6a0
-[0][0]: 0.000000 [0][1]: 1.000000 [0][2]: 2.000000 [0][3]: 3.000000 [0][4]: 4.000000
-[1][0]: 1.000000 [1][1]: 2.000000 [1][2]: 3.000000 [1][3]: 4.000000 [1][4]: 5.000000
-[2][0]: 2.000000 [2][1]: 3.000000 [2][2]: 4.000000 [2][3]: 5.000000 [2][4]: 6.000000
-[3][0]: 3.000000 [3][1]: 4.000000 [3][2]: 5.000000 [3][3]: 6.000000 [3][4]: 7.000000
-[4][0]: 4.000000 [4][1]: 5.000000 [4][2]: 6.000000 [4][3]: 7.000000 [4][4]: 8.000000]]>
+<![CDATA[gcc doubleharomszog.c  && ./a.out
+Mutato cime: 0x7fffbc435de0
+Sorok tombjenek cime: 0x5567bca69670
+Elso sor cime: 0x5567bca696a0
+|1.00  0.00  0.00  0.00  0.00  |
+|2.00  1.00  0.00  0.00  0.00  |
+|3.00  1.00  1.00  0.00  0.00  |
+|4.00  2.00  1.00  1.00  0.00  |
+|5.00  2.00  1.00  1.00  1.00  |]]>
 		</programlisting>
 
 		<para>
-			Tehát a feladat fő tanulsága, hogy a [] jelek valóban csak a
+			A feladat tanulsága, hogy a [] jelek valóban csak a
 			fordító adta kényelmi funckió. C-ben azt a kifejezést, hogy
 			<code language="c">hm[1][1]</code> legalább háromféleképpen
 			fejezhetjük ki, melyek a következők:
 			<code language="c">(*hm[1]+1)</code>, vagy
 			<code language="c">(*(*hm + 1)+1)</code>.
-
 		</para>
 
 	</section>
@@ -97,7 +104,8 @@ Első szint első eleme: 0x55deb701c6a0
 			</textobject>
 		</programlisting>
 		<para>
-			A Java egy erősen objektum orientált nyelv [...]
+			A Java egy objektum orientált nyelv, melyet főleg enterprise
+			környezetekben használnak, mert jellegénél fogva jól modulálható.
 		</para>
 	</section>
 

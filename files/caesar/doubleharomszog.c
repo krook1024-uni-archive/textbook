@@ -6,21 +6,22 @@ int main(void)
 	const int db = 5;
 
 	double **hm;
-	printf("Fo mutato cime: %p\n", &hm);
+	printf("Mutato cime: %p\n", &hm);
 
 	hm = (double **)malloc(db * sizeof(double));
-	printf("Lefoglalt 5 double** cime: %p\n", hm);
+	printf("Sorok tombjenek cime: %p\n", hm);
 
 	for (int i = 0; i < db; i++)
 		hm[i] = (double *)malloc(db * sizeof(double));
-	printf("Elso szint elso eleme: %p\n", hm[0]);
+	printf("Elso sor cime: %p\n", hm[0]);
 
 	for (int i = 0; i < db; i++) {
+		printf("|");
 		for (int j = 0; j < db; j++) {
-			hm[i][j] = i + j;
-			printf("[%d][%d]: %f ", i, j, hm[i][j]);
+			hm[i][j] = (i + 1)/(j + 1);
+			printf("%.2f  ", hm[i][j]);
 		}
-		printf("\n");
+		printf("|\n");
 	}
 
 	return 0;
