@@ -28,20 +28,10 @@
         </xi:fallback>
     </xi:include>
 
-    <!--
-        <xi:include href="tb-glossary.xml">
-            <xi:fallback>
-                <para>
-                    <emphasis>XInclude: tb-glossary.xml file not found</emphasis>
-                </para>
-            </xi:fallback>
-        </xi:include>
-    -->
-
     <xi:include href="tb-intro.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-glossary.xml file not found</emphasis>
+                <emphasis>XInclude: tb-intro.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
@@ -49,7 +39,7 @@
     <xi:include href="tb-feladatok.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb-feladatok.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
@@ -57,11 +47,10 @@
     <xi:include href="tb-feladatok2.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb-feladatok2.xml file not found</emphasis>
             </para>
         </xi:fallback>
-    </xi:include>
-
+	</xi:include>
 
     <xi:include href="tb-bib.xml">
         <xi:fallback>
@@ -71,12 +60,20 @@
         </xi:fallback>
     </xi:include>
 
-            <xi:include href="tb-ack.xml">
-            <xi:fallback>
-                <para>
-                    <emphasis>XInclude: tb-ack.xml file not found</emphasis>
-                </para>
-            </xi:fallback>
-        </xi:include>
+	<xi:include href="tb-ack.xml">
+		<xi:fallback>
+			<para>
+				<emphasis>XInclude: tb-ack.xml file not found</emphasis>
+			</para>
+			</xi:fallback>
+	</xi:include>
+
+	<xi:include href="tb-copy.xml">
+        <xi:fallback>
+            <para>
+                <emphasis>XInclude: tb-bib.xml file not found</emphasis>
+            </para>
+        </xi:fallback>
+    </xi:include>
 
 </book>

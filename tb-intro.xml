@@ -53,20 +53,22 @@
                     <para>Az igazi kockák persze csemegéznek a C nyelvi szabvány
                         <link xlink:href="https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf">ISO/IEC 9899:2017</link> kódcsipeteiből is.
                     </para>
-                </listitem>
+				</listitem>
+				<listitem>
+
+<tip>
+              <title>Bátf41 Haxor Stream</title>
+              <para>
+                  A feladatokkal kapcsolatos élő adásokat sugároz
+                  a <link xlink:href="https://www.twitch.tv/nbatfai">https://www.twitch.tv/nbatfai</link> csatorna,
+                  melynek permanens archívuma a <link xlink:href="https://www.youtube.com/c/nbatfai">https://www.youtube.com/c/nbatfai</link>
+                  csatornán található.
+              </para>
+            </tip>
+
+				</listitem>
             </itemizedlist>
         </section>
-        <section>
-            <title>Milyen filmeket nézzek meg?</title>
-            <itemizedlist>
-                <listitem>
-                    <para>21 - Las Vegas ostroma,
-                        <link xlink:href="https://www.imdb.com/title/tt0478087/">https://www.imdb.com/title/tt0478087/</link>,
-                        benne a <link xlink:href="#bhax-textbook-feladatok-turing.MontyHall">Monty Hall probléma</link> bemutatása.
-                    </para>
-                </listitem>
-            </itemizedlist>
-		</section>
 		<section>
 			<title>A Battlestation</title>
 			<para>
