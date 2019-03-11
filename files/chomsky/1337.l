@@ -13,6 +13,7 @@
 "i"			{ printf("1");				}
 "t"			{ printf("7");				}
 "q"			{ printf("kw");				}
+"u"			{ printf("v");				}
 "A"			{ printf("/-\\");			}
 "B"			{ printf("13");				}
 "C"			{ printf("K");				}
@@ -36,7 +37,7 @@
 "lol" 		{ printf("lopl");			}
 "ate" 		{ printf("8");				}
 "master"	{ printf("mastah");			}
-"max0r"		{ printf("maximum");		}
+"maximum"	{ printf("max0r");			}
 "oh my god"	{ printf("OMG");			}
 "own"		{ printf("pwn"); 			}
 "please"	{ printf("pl0x"); 			}

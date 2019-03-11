@@ -328,7 +328,7 @@ h3y d00d!
 loveu
 10/3u
 Using a lexer is fun!
-Us1ng 4 l3x3r 1s fun!]]>
+Us1ng 4 l3x3r 1s fvn!]]>
 		</programlisting>
         <para>
 			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
@@ -407,21 +407,25 @@ signal(SIGINT, jelkezelo);]]></programlisting>
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
 				<para>
-					Végezzük el ötször, hogy...
+					Végezzük el ötször, hogy... (prefix increment)
 				</para>
 			</listitem>
 
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
 				<para>
-					Végezzük el ötször, hogy...
+					Végezzük el ötször, hogy... (postfix increment)
 				</para>
 			</listitem>
 
             <listitem>
 				<programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
 				<para>
-					Növeljük meg tomb első öt elemét eggyel.
+					Nem lehet megmondani, hogy mi fog történni, mert
+					az i-t már használjuk ciklusváltozónak is, valamint
+					arra is, hogy a tömb elemét beállítsuk. Nem érdemes
+					olyan kódot írni, ami valamilyen kiértékelődési
+					sorrendet feltételez, ez pedig pont olyan.
 				</para>
 			</listitem>
 
@@ -430,6 +434,11 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 				<para>
 					A kód nehezen olvashatósága mellett kétséges a kiértékelődési
 					sorrend is.
+				</para>
+				<para>
+					Azt mondjuk, hogy legyen i=0, valamint ha i kisebb mint n,
+					és a d rákövetkezője megegyezik az s rákövetkezőjével, akkor
+					növeljük meg az i-t egyel.
 				</para>
 			</listitem>
 
@@ -450,7 +459,11 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 			</listitem>
 
             <listitem>
-                <programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
+				<programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
+				<para>
+					Írassuk ki az f függvény a-ra való outputját, valamint
+					magát az a-t is.
+				</para>
 			</listitem>
 
             <listitem>
