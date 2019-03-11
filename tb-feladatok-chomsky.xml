@@ -24,6 +24,40 @@
 			Programozóként nem szabad megijednünk a Turing-gépektől
 			valamint alkalmazásuktól.
 		</para>
+
+		<para>
+			Az unáris számrendszer egy olyan egyszerű számrendszer,
+			ahol vonalakkal, húzásokkal ábrázoljuk a számokat.
+			Egy vonal egyet jelent, és összeadva kell értelmezni
+			ezeket (pl. <code>||| = 3</code>). Ez a Turing-gép ezt
+			az átváltást végzi el.
+		</para>
+
+		<para>
+			C-ben a következőképpen nézne ez ki:
+		</para>
+
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/chomsky/binary-to-unary.c" />
+			</textobject>
+		</programlisting>
+
+		<para>
+			Itt mindösszesen annyi történik, hogy bekérünk egy számot,
+			majd ötös csoportokban kiíratjuk a vonalkákat.
+		</para>
+
+		<programlisting>
+<![CDATA[$ ./a.out
+Please enter a decimal number you'd like to convert to unary: 50
+||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |||||
+$ ./a.out
+Please enter a decimal number you'd like to convert to unary: 51
+||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |]]>
+		</programlisting>
+
+
     </section>
 
     <section>

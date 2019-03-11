@@ -1,4 +1,4 @@
-#include <cstdlib> // C++
+#include <cstdlib>		// C++
 
 int main(void)
 {
