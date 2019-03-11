@@ -29,7 +29,12 @@
             Ám tervezem felhasználását az egyetemi programozás oktatásban is. Ahogy szélesedni tudna a
             felhasználók köre, akkor lehetne kiadása különböző korosztályú gyerekeknek, családoknak,
             szakköröknek, programozás kurzusoknak, felnőtt és továbbképzési műhelyeknek és sorolhatnánk...
-        </para>
+		</para>
+		<para>
+			A könyv írása során igyekeztem minden forrást beágyazni, annak
+			érdekében, hogy ne kelljen folyamatosan új ablakokat megnyitni
+			a böngészőben.
+		</para>
         <section>
             <title>Milyen nyelven nyomjuk?</title>
             <para>

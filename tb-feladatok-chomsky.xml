@@ -48,14 +48,14 @@
 			majd ötös csoportokban kiíratjuk a vonalkákat.
 		</para>
 
-		<programlisting>
+		<screen>
 <![CDATA[$ ./a.out
 Please enter a decimal number you'd like to convert to unary: 50
 ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |||||
 $ ./a.out
 Please enter a decimal number you'd like to convert to unary: 51
 ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |]]>
-		</programlisting>
+		</screen>
 
 
     </section>
@@ -174,22 +174,22 @@ vezérlésátadó_utasítás ::=
 			A fenti csipet talán a leglátványosabb példája ennek. Próbáljuk
 			meg lefordítani ezt C89 verzióval.
 		</para>
-		<programlisting>
+		<screen>
 <![CDATA[$ gcc -std=c89 c99.c
 c99.c: In function ‘main’:
 c99.c:4:2: error: ‘for’ loop initial declarations are only allowed in C99 or C11 mode
   for(int i=0; i < 5; i++);
   ^~~
 c99.c:4:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code]]>
-		</programlisting>
+		</screen>
 		<para>
 			Látható hogy a fordító a barátunk, megoldást is kínál a problémánkra.
 			Amennyiben az általa javasolt opciókkal fordítunk, semmi probléma nincs.
 		</para>
-		<programlisting>
+		<screen>
 <![CDATA[$ gcc -std=c99 c99.c
 $]]>
-		</programlisting>
+		</screen>
     </section>
 
     <section>
@@ -287,7 +287,7 @@ $]]>
 			működik.
 		</para>
 
-		<programlisting>
+		<screen>
 <![CDATA[$ lex lex.l
 $ gcc lex.yy.c -o lex
 $ ./lex
@@ -304,7 +304,7 @@ Valost talaltam: 3.1415
 Valost talaltam: 1.4142
 ...
 ]]>
-		</programlisting>
+		</screen>
     </section>
 
     <section>
@@ -313,7 +313,7 @@ Valost talaltam: 1.4142
 			Megoldás forrása:
 		</para>
 
-		<programlisting>
+		<screen>
 <![CDATA[$ lex 1337.l  && gcc lex.yy.c && ./a.out
 hello, world!
 h3ll0, w0rld!
@@ -329,7 +329,7 @@ loveu
 10/3u
 Using a lexer is fun!
 Us1ng 4 l3x3r 1s fvn!]]>
-		</programlisting>
+		</screen>
         <para>
 			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
 			Ezt a programot megadtuk a következő egyszerű szabályokkal, hogy
@@ -339,7 +339,7 @@ Us1ng 4 l3x3r 1s fvn!]]>
 			karakterláncokat.
 		</para>
 
-		<programlisting>
+		<programlisting language="c">
 <![CDATA[...
 %%
 "a"		{ printf("4");				}
@@ -378,7 +378,7 @@ Us1ng 4 l3x3r 1s fvn!]]>
 
         <para>
             Hogyan olvasod, hogyan értelmezed természetes nyelven az alábbi kódcsipeteket? Például
-            <programlisting><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)
+            <programlisting language="c"><![CDATA[if(signal(SIGINT, jelkezelo)==SIG_IGN)
     signal(SIGINT, SIG_IGN);]]></programlisting>
             Ha a SIGINT jel kezelése figyelmen kívül volt hagyva, akkor ezen túl is legyen
             figyelmen kívül hagyva, ha nem volt figyelmen kívül hagyva, akkor a jelkezelo függvény
@@ -396,7 +396,7 @@ Us1ng 4 l3x3r 1s fvn!]]>
 
         <orderedlist numeration="lowerroman">
             <listitem>
-                <programlisting><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
+                <programlisting language="c"><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
 signal(SIGINT, jelkezelo);]]></programlisting>
 				<para>
 					Ha a SIGINT jelkezelése nincs ignorálva, akkor innentől fogva
@@ -405,21 +405,21 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+				<programlisting language="c"><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
 				<para>
 					Végezzük el ötször, hogy... (prefix increment)
 				</para>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[for(i=0; i<5; i++)]]></programlisting>
+				<programlisting language="c"><![CDATA[for(i=0; i<5; i++)]]></programlisting>
 				<para>
 					Végezzük el ötször, hogy... (postfix increment)
 				</para>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
+				<programlisting language="c"><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
 				<para>
 					Nem lehet megmondani, hogy mi fog történni, mert
 					az i-t már használjuk ciklusváltozónak is, valamint
@@ -427,10 +427,16 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 					olyan kódot írni, ami valamilyen kiértékelődési
 					sorrendet feltételez, ez pedig pont olyan.
 				</para>
+
+				<programlisting language="c">
+					<textobject>
+						<textdata fileref="./files/chomsky/hiba_4.c" />
+					</textobject>
+				</programlisting>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
+				<programlisting language="c"><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
 				<para>
 					A kód nehezen olvashatósága mellett kétséges a kiértékelődési
 					sorrend is.
@@ -440,10 +446,23 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 					és a d rákövetkezője megegyezik az s rákövetkezőjével, akkor
 					növeljük meg az i-t egyel.
 				</para>
+
+				<programlisting language="c">
+					<textobject>
+						<textdata fileref="./files/chomsky/hiba_5.c" />
+					</textobject>
+				</programlisting>
+
+				<para>
+					Ha ezt a csipetet beágyazzuk egy programba, és futtatjuk,
+					akkor láthatjuk, hogy nem teljesen az történik, mint
+					aimt szerettünk volna.
+				</para>
+
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
+				<programlisting language="c"><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
 				<para>
 					Itt az történik, hogy egy printf függvény argumentumában
 					próbáljuk inkrementálni a változókat, melyre nem lehetünk
@@ -459,7 +478,7 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
+				<programlisting language="c"><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
 				<para>
 					Írassuk ki az f függvény a-ra való outputját, valamint
 					magát az a-t is.
@@ -467,7 +486,7 @@ signal(SIGINT, jelkezelo);]]></programlisting>
 			</listitem>
 
             <listitem>
-				<programlisting><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
+				<programlisting language="c"><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
 				<para>
 					Itt is problémába ütközünk, hiszen az f függvény referencia
 					szerint kapja meg az a változót, tehát másolás nélkül.

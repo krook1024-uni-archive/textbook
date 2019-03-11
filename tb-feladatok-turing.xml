@@ -200,12 +200,12 @@ false]]></screen>
 		<para>
 			Erre a kimenet a következőképp alakul:
 		</para>
-		<programlisting language="c">
+		<screen>
 <![CDATA[a=00000011, b=00000111
 a=00000100, b=00000111
 a=00000100, b=00000011
 a=00000111, b=00000011]]>
-		</programlisting>
+		</screen>
 		<para>
 			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
 			a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredeménye jelenik meg.
@@ -402,14 +402,14 @@ usleep(30000);]]>
 			azt vizsgáljuk, hogy érdemes-e váltogatni, hogy mikor melyik ajtót nyitjuk ki, vagy érdemesebb
 			ugyanannál az ajtónál maradni a játék körei során.
 		</para>
-		<programlisting>
+		<screen>
 <![CDATA[$ Rscript montyhall.r
 [1] "Kiserletek szama: 10000000"
 [1] 3330958
 [1] 6669042
 [1] 0.4994657
 [1] 10000000]]>
-		</programlisting>
+		</screen>
 		<para>
 			A program kimenetét elemezve azt láthatjuk, hogy <computeroutput>100000000</computeroutput> iteráció után az eredmény
 			az, hogy mindenképp érdemes váltogatni az ajtóinkat, ugyanis így megközelítőleg 50 százalékos javulást

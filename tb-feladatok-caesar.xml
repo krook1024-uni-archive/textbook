@@ -46,7 +46,7 @@
 			nullával véletlenül se.
 		</para>
 
-		<programlisting>
+		<screen>
 <![CDATA[$ gcc doubleharomszog.c  && ./a.out
 Mutato cime: 0x7fffbc435de0
 Sorok tombjenek cime: 0x5567bca69670
@@ -56,7 +56,7 @@ Elso sor cime: 0x5567bca696a0
 |3.00  1.00  1.00  0.00  0.00  |
 |4.00  2.00  1.00  1.00  0.00  |
 |5.00  2.00  1.00  1.00  1.00  |]]>
-		</programlisting>
+		</screen>
 
 		<para>
 			A feladat tanulsága, hogy a [] jelek valóban csak a
