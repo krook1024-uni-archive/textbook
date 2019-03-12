@@ -18,7 +18,7 @@ int main(void)
 	for (int i = 0; i < db; i++) {
 		printf("|");
 		for (int j = 0; j < db; j++) {
-			hm[i][j] = (i + 1)/(j + 1);
+			hm[i][j] = (i + 1) / (j + 1);
 			printf("%.2f  ", hm[i][j]);
 		}
 		printf("|\n");

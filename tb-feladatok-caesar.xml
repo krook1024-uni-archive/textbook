@@ -142,7 +142,8 @@ Elso sor cime: 0x5567bca696a0
 			a titkosított szöveget. A bemenetet olvasva a program
 			meghatározza a szavak hosszát, és amennyiben ez megfelel egy
 			bizonyos értékhatárnak, megnézi, hogy előfordulnak-e benne
-			a leggyakoribb magyar szavak (a, meg, vagy, van, volt, már, stb...),
+			a leggyakoribb magyar szavak (
+			<emphasis>a, meg, vagy, van, volt, már, stb...</emphasis>),
 			és ha sikerül találni ilyeneket, akkor kiírja a kimenetre.
 		</para>
 		<para>
