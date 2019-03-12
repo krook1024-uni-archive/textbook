@@ -166,10 +166,17 @@ false]]></screen>
         </para>
         <para>
 			A lefagyó program problémája majdnem egyidős a programozással. Annak idején Alan Turing (aki megalkotta
-			a Turing-gép fogalmát) matematikai bizonyításon keresztül mutatta meg, hogy ilyen programot nem lehet
+			a Turing-gép fogalmát) matematikai eszközökkel keresztül bizonyította meg, hogy ilyen programot nem lehet
 			írni. Míg egyszerű programok esetében ránézésére meg lehet mondani, hogy le fog-e fagyni, bonyolultabb
 			programok esetében ezt eldönteni is nehezebb.
-        </para>
+		</para>
+		<para>
+			Tehát amennyiben a bizonyítás ellenére nekünk sikerülne egy ilyen
+			programot írnunk, valószínű, hogy nem kellene dolgoznunk soha életünkben,
+			hiszen rengeteg pénzt érne.
+			Egy ilyen program tömérdek problémát megoldana, amelyekért szép
+			summát kaphatnánk.
+		</para>
     </section>
 
     <section>

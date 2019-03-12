@@ -75,12 +75,20 @@ Please enter a decimal number you'd like to convert to unary: 51
 				<para>
 					<emphasis>S -> abc, S->aXbc, Xb -> bX, Xc -> Ybcc, bY -> Yb, Ay > aax, Ay -> aa</emphasis>
 				</para>
-				<programlisting>
+				<screen>
 <![CDATA[S
 aXbc
 abXc (Xc -> Ybcc)
 abYbcc]]>
-				</programlisting>
+				</screen>
+				<itemizedlist>
+					<listitem><para>S <code>(S->aXbc)</code></para></listitem>
+					<listitem><para>aXbc <code>(Xb->bX)</code></para></listitem>
+					<listitem><para>abXc <code>(Xc->Ybcc)</code></para></listitem>
+					<listitem><para>abYbcc <code>(bY->Yb)</code></para></listitem>
+					<listitem><para>aYbbcc <code>(aY->aa)</code></para></listitem>
+					<listitem><para>aabbcc</para></listitem>
+				</itemizedlist>
 			</listitem>
 
 			<listitem>
@@ -91,12 +99,29 @@ abYbcc]]>
 				<para>
 					<emphasis>A -> aAB, A -> aC, CB -> bCc, cB -> Bc, C -> bc</emphasis>
 				</para>
+				<itemizedlist>
+					<listitem><para>A <code>(A->aAB)</code></para></listitem>
+					<listitem><para>aAB <code>(A->aC)</code></para></listitem>
+					<listitem><para>aaCB <code>(CB->bCc)</code></para></listitem>
+					<listitem><para>aaabCc <code>(C->bc)</code></para></listitem>
+					<listitem><para>aabbcc</para></listitem>
+				</itemizedlist>
 			</listitem>
 		</orderedlist>
 
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+			Noam Chomsky az 50-es években élt és alkotott, nyelvészként végzett, ami
+			azért lássuk be, nem annyira meglepő, hiszen a mai napig sok
+			programozó kerül ki a nyelvész szakmából, hiszen sok a hasonlóság
+			a két szakma között.
+		</para>
+		<para>
+			Chomsky a Chomsky-féle nyelvosztályok megalkotója. A fent látottak pedig
+			bizonyítékok arra, hogy az
+			a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript>
+			nyelv nem környezetfüggetlen, hiszen kettő nyelvtant is megadtunk, amik
+			ezt a nyelvet generálják (valamint példákat rájuk).
+		</para>
     </section>
 
     <section>
