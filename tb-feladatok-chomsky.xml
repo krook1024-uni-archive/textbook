@@ -573,6 +573,12 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
 		</figure>
 
 		<para>
+			Az Ar egy elsőrendű matematikai logikai nyelv. Az elsőrendű nyelveket
+			azért éri meg tanulmányoznunk, mert kiválóan lehet vele a világunkat
+			modellezni.
+		</para>
+
+		<para>
 			Ezek az elsőrendű logikai kifejezések lefordítva természetes szövegre:
 		</para>
 
