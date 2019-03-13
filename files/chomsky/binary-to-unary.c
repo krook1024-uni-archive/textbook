@@ -9,7 +9,7 @@ int main(void)
 	scanf("%d", &in);
 
 	for (int i = 0; i < in; ++i)
-		(i % 5) ? printf("|") : printf(" |");
+		printf((i % 5) ? "|" : " |");
 
 	printf("\n");
 
