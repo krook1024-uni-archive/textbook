@@ -82,7 +82,11 @@
 			<code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
 			struktúrát írnánk a komplex számok tárolására.
 		</para>
-
+		<para>
+			Ha elkészítünk egy egyszerű <code>Makefile</code>t a programhoz, úgy
+			szintén	egyszerű lesz azt futtatni. Nem meglepő, hogy ugyanazt a
+			kimenetet adja, mint az előző programunk.
+		</para>
     </section>
 
     <section>
