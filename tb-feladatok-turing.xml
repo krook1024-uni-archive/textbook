@@ -25,7 +25,7 @@
 		</programlisting>
 		<para>
 			Amennyiben egy végtelen ciklusban <code language="c">sleep(1)</code> rendszerhívással
-			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzoridőt
+			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzor időt
 			kapni, a processzor használatunk (megközelítőleg) 0 százalék lesz.
 		</para>
 
@@ -73,13 +73,13 @@
 		</para>
 
         <para>
-			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzoridőt
+			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzor időt
 			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Meglehetősen kíváncsi
 			voltam hogy mi is történik ilyenkor a háttérben. Némi utánajárás után meg is találtam a választ, mi szerint
 			az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt hiszi, hogy rengeteg dolga van a
-			programnak, így ki is osztja neki az összes rendelkezésre álló processzoridőt. Ezzel szemben a
+			programnak, így ki is osztja neki az összes rendelkezésre álló processzor időt. Ezzel szemben a
 			<code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
-			milliszekundumban nem tart igényt processzoridőre, ennek megfelelően az OS nem is oszt számára időt.
+			milliszekundumban nem tart igényt processzor időre, ennek megfelelően az OS nem is oszt számára időt.
         </para>
     </section>
 
@@ -112,7 +112,7 @@
 	}
 }]]></programlisting>
         <para>
-            A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudókódjára:
+            A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudokódjára:
             <screen><![CDATA[T100(t.c.pseudo)
 true]]></screen>
             akár önmagára
@@ -121,8 +121,8 @@ false]]></screen>
             ezt a kimenetet adja.
         </para>
         <para>
-            A T100-as programot felhasználva készítsük most el az alábbi T1000-set, amelyben a
-            Lefagy-ra épőlő Lefagy2 már nem tartalmaz feltételezett, csak csak konkrét kódot:
+            A T100-as programot felhasználva készítsük most el az alábbi T1000-est, amelyben a
+            Lefagy-ra épülő Lefagy2 már nem tartalmaz feltételezett, csak csak konkrét kódot:
         </para>
         <programlisting language="c"><![CDATA[Program T1000
 {
@@ -151,7 +151,7 @@ false]]></screen>
 }]]></programlisting>
         <programlisting><![CDATA[]]></programlisting>
         <para>
-            Mit for kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
+            Mit fog kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
 
             <itemizedlist>
                 <listitem>
@@ -234,8 +234,8 @@ a=00000111, b=00000011]]>
 		</screen>
 		<para>
 			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
-			a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredeménye jelenik meg.
-			Ezek után mégegyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán mégegyszer
+			a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredménye jelenik meg.
+			Ezek után még egyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán még egyszer
 			az eredeti sorrendben. Ekkor az eredeti <emphasis>a</emphasis> és az eredeti <emphasis>b</emphasis>
 			helyet cserélnek.
 		</para>
@@ -252,12 +252,12 @@ a=00000111, b=00000011]]>
 			</textobject>
 		</programlisting>
         <para>
-			Ez a példa mintapéldája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
+			Ez a példa minta példája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
 			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
-			esnek a konzolunkon (azaz a megjeleníthető ko-ordinátákon).
+			esnek a konzolunkon (azaz a megjeleníthető koordinátákon).
 		</para>
 		<para>
-			A fenti kód egy megoldása a problémának. Itt az <code>ncurses</code> függvénykönyvtárat
+			A fenti kód egy megoldása a problémának. Itt az <code>ncurses</code> függvény könyvtárat
 			vesszük használatba, mely terminálos interfészek (TUI-k) létrehozására lett elkészítve.
 		</para>
 		<para>
@@ -307,7 +307,7 @@ abs((xj + (mx - xk)) / 2), "o");]]>
 		</programlisting>
 		<para>
 			Itt rajzoljuk ki a labdát magát, ehhez meghívjuk az <code>mvprintw</code>
-			függvényt. Ez a függvény kiirat egy karaktert a megadott x és y ko-ordinátáknak
+			függvényt. Ez a függvény kiírat egy karaktert a megadott x és y koordinátáknak
 			megfelelően a képernyőn valahol.
 		</para>
 
@@ -317,7 +317,7 @@ abs((xj + (mx - xk)) / 2), "o");]]>
 usleep(30000);]]>
 		</programlisting>
 		<para>
-			A refresh függvény szükséges, hogy kimenetet lássunk a terminál-ablakunban,
+			A refresh függvény szükséges, hogy kimenetet lássunk a terminál ablakunkban,
 			majd váruk 30000 mikroszekundumnyi időt.
 		</para>
     </section>
@@ -357,7 +357,7 @@ usleep(30000);]]>
 		</para>
 		<para>
 			Természetesen a Googlenél ennek az algoritmusnak egy jócskán módosított változata fut, mely
-			nem is publikus, hiszen akkor mindenki keresőszolgáltatást indíthatna szabadidejében.
+			nem is publikus, hiszen akkor mindenki kereső szolgáltatást indíthatna szabadidejében.
 			Azt is fontos megjegyezni, hogy a fent látott példa az algoritmus egyszerűsített változata,
 			ez már magában hordoz hibákat, és némi eltérést. Például a zsákutca hiba, miszerint zsákutcába
 			érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
@@ -393,7 +393,7 @@ usleep(30000);]]>
 			hogy a sor véges, vagy végtelen.
 		</para>
 		<para>
-			Ez a program az ikerprímeket ábrázolja egy ko-ordináta rendszerben, melyen jól megfigyelhető hogy valóban
+			Ez a program az ikerprímeket ábrázolja egy koordináta rendszerben, melyen jól megfigyelhető hogy valóban
 			a B<subscript>2</subscript> konstanshoz tartunk.
 		</para>
 		<figure>
