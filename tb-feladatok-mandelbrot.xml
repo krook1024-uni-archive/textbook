@@ -8,14 +8,46 @@
     <section>
         <title>A Mandelbrot halmaz</title>
         <para>
-
-        </para>
-        <para>
             Megoldás videó:
         </para>
         <para>
             Megoldás forrása:
-        </para>
+		</para>
+		<para>
+			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen. 		
+			A Mandelbrot halmaz egy olyan komplex halmaz, amelyre igaz, hogy a
+			<inlineequation>
+				<alt role="tex">f_c(z) = z^2 + c</alt>
+				<mathphrase/>
+			</inlineequation>
+			függvény nem divergál, ha nullától iteráljuk, tehát a
+			<inlineequation>
+				<alt role="tex">f_c(0), f_c(f_c(0)), ...</alt>
+				<mathphrase/>
+			</inlineequation>
+			abszolútértekben korlátos.
+		</para>
+		<para>
+			Amennyiben a forrásfájlt egyszerűen <code>make</code>-el lefordítjuk,
+			úgy láthatjuk, hogy létrejön a kimenet.png, hiszen a
+			<code>Makefile</code>-unkban úgy adtuk meg, hogy a forrást ne csak
+			lefordítsa, hanem futtassa is a programunkat <code>kimenet.png</code>
+			kimenettel. A kimenetet be is ágyazom, mert látványos.
+		</para>
+
+		<figure>
+			<title>A Mandelbrot halmaz</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/mandelbrot/kimenet.png" width="50%"/>
+				</imageobject>
+				<textobject>
+					<phrase>A Mandelbrot halmaz</phrase>
+				</textobject>
+			</mediaobject>
+		</figure>
+
+
     </section>
 
     <section>
