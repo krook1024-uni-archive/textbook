@@ -62,7 +62,7 @@
 			valós és imaginárius értékeinek. A további működési elv mindössze
 			annyi, hogy megadunk egy halmazt, amelyre a megadott egyenletünk
 			illeszkedik, majd végigmegyünk ezen a halmazon, és beszínezzük
-			az erre alkalmaz pixeleket.
+			az erre alkalmas pixeleket.
 		</para>
 
     </section>

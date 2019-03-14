@@ -1,10 +1,3 @@
-/*
- * Program: Mandelbrot halmaz
- * Dátum: 2014. február. 26.
- * Tutor: Szabó Attila
- * Tutoriált: Tuza József
- */
-
 #include <png++/png.hpp>
 
 #define N 500

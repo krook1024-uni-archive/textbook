@@ -1,10 +1,3 @@
-/*
- * Program: Mandelbrot halmaz komplex osztállyal
- * Dátum: 2014. március. 5.
- * A feladatot Szabó Attila és Tuza József által készített alapfeladat alapján
- * Dalmadi Zoltán módosította
- */
-
 #include <png++/png.hpp>
 #include <complex>
 
@@ -43,9 +36,6 @@ int main()
     {
         for (int j = 0; j < N; j++)
         {
-            // real(C) = MINX + j * dx;
-            // imag(C) = MAXY - i * dy;
-
 			C = {MINX + j * dx , MAXY - i * dy};
 
             Z = 0;
