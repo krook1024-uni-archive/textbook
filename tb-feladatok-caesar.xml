@@ -155,10 +155,6 @@ Elso sor cime: 0x5567bca696a0
     <section>
         <title>Neurális OR, AND és EXOR kapu</title>
         <para>
-            R
-		</para>
-
-        <para>
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
 		</para>
 
@@ -167,8 +163,55 @@ Elso sor cime: 0x5567bca696a0
 		</para>
 
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+			Ebben az R programban egy neurális hálót építünk fel.
+		</para>
+
+		<para>
+			A programot futtatva a program kimenetét vizualizálva kapjuk,
+			melyeket png-vé konvertáltam, hogy láthassuk őket.
+		</para>
+
+		<!--<screen>
+			<textobject>
+				<textdata fileref="./files/caesar/r/out" />
+			</textobject>
+		</screen>-->
+
+		<figure>
+			<title>Neurális OR kapu</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/caesar/r/Rplots.png" width="3in" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<figure>
+			<title>Neurális OR, AND kapu</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/caesar/r/Rplots1.png" width="3in" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<figure>
+			<title>Neurális EXOR kapu</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/caesar/r/Rplots2.png" width="3.5in" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<figure>
+			<title>Neurális OR kapu</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/caesar/r/Rplots3.png" width="3.5in" />
+				</imageobject>
+			</mediaobject>
+		</figure>
 	</section>
 
     <section>

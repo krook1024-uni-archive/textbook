@@ -120,7 +120,7 @@
         <title>Mandelbrot nagyító és utazó C++ nyelven</title>
         <para>
             Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
-            egérrel kiválasztva vizualizálja onnan a komplex iteréció bejárta z<subscript>n</subscript> komplex számokat!
+            egérrel kiválasztva vizualizálja onnan a komplex iteráció bejárta z<subscript>n</subscript> komplex számokat!
         </para>
 
         <para>

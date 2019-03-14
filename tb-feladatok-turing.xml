@@ -26,7 +26,7 @@
 		<para>
 			Amennyiben egy végtelen ciklusban <code language="c">sleep(1)</code> rendszerhívással
 			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzoridőt
-			kapni, a processzorhasználatunk (megközelítőleg) 0 százalék lesz.
+			kapni, a processzor használatunk (megközelítőleg) 0 százalék lesz.
 		</para>
 
 		<para>
@@ -52,7 +52,7 @@
 		<para>
 			Ebben az esetben a <code>pthreads.h</code> adta előnyöknél fogva, és bízva abban, hogy threadsafe
 			függvényt sikerült írnunk, benne a végtelen ciklussal, egyszerűen megoldhatjuk, hogy az alkalmazásunk
-			magához vegye a fennmaradó szabad processzoridő 100 százalékát.
+			magához vegye a fennmaradó szabad processzor idő 100 százalékát.
 		</para>
 
 		<para>
@@ -93,7 +93,7 @@
         </para>
         <para>
             Megoldás forrása:  tegyük fel, hogy akkora haxorok vagyunk, hogy meg tudjuk írni a <function>Lefagy</function>
-            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:
+            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne végtelen ciklus:
         </para>
         <programlisting language="c"><![CDATA[Program T100
 {
