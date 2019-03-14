@@ -9,7 +9,10 @@
         <title>A Mandelbrot halmaz</title>
 		
 		<para>
-			Megoldás forrása: <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">github/krook1024/textbook/mandelbrot</link>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
+				github/krook1024/textbook/mandelbrot
+			</link>
 		</para>
 
 		<para>
@@ -66,15 +69,20 @@
 
     <section>
         <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
-        <para>
+       <para>
+		   <emphasis role="strong">Megoldás forrása:</emphasis>
+		   <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot_komplex">
+				github/krook1024/textbook/mandelb/mandelbrot_komplex/
+		   </link>
+	   </para>
 
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
+		<para>
+			Ebben a programban, hasonlóan az előzőhöz, a Mandelbrot halmazt
+			ábrázoltatjuk. A különbség csupán annyi, hogy itt a beépített
+			<code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
+			struktúrát írnánk a komplex számok tárolására.
+		</para>
+
     </section>
 
     <section>

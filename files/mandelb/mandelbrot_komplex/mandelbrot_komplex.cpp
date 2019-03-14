@@ -32,8 +32,8 @@ int main()
 {
     int tomb[N][M];
 
-    double dx = (MAXX - MINX) / N;
-    double dy = (MAXY - MINY) / M;
+    double dx = ((MAXX - MINX) / N);
+    double dy = ((MAXY - MINY) / M);
 
     std::complex<double> C, Z, Zuj;
 
@@ -43,8 +43,10 @@ int main()
     {
         for (int j = 0; j < N; j++)
         {
-            real(C) = MINX + j * dx;
-            imag(C) = MAXY - i * dy;
+            // real(C) = MINX + j * dx;
+            // imag(C) = MAXY - i * dy;
+
+			C = {MINX + j * dx , MAXY - i * dy};
 
             Z = 0;
             iteracio = 0;
