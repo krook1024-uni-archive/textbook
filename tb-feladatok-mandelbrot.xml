@@ -17,12 +17,12 @@
 
 		<para>
 			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen. 		
-			A Mandelbrot halmaz egy olyan komplex halmaz, amelyre igaz, hogy a
+			A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
 			<inlineequation>
 				<alt role="tex">f_c(z) = z^2 + c</alt>
 				<mathphrase/>
 			</inlineequation>
-			függvény nem divergál, ha nullától iteráljuk, tehát a
+			függvény képére, s nullától iterálva nem divergál, tehát a
 			<inlineequation>
 				<alt role="tex">f_c(0), f_c(f_c(0)), ...</alt>
 				<mathphrase/>
@@ -64,7 +64,6 @@
 			illeszkedik, majd végigmegyünk ezen a halmazon, és beszínezzük
 			az erre alkalmas pixeleket.
 		</para>
-
     </section>
 
     <section>
@@ -82,11 +81,21 @@
 			<code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
 			struktúrát írnánk a komplex számok tárolására.
 		</para>
+
 		<para>
 			Ha elkészítünk egy egyszerű <code>Makefile</code>t a programhoz, úgy
 			szintén	egyszerű lesz azt futtatni. Nem meglepő, hogy ugyanazt a
 			kimenetet adja, mint az előző programunk.
 		</para>
+
+		<para>
+			A <code language="c++">std::complex</code> osztály használata jár némi előnnyel,
+			például lehetőséget ad kényelmesebb, elegánsabb változó definiálsára
+			(pl. <code language="c++">C = {MINX + j * dx, MAXY - i * dy};</code>,
+			ahol az első rész a szám valós része, a másik pedig a szám imaginárius
+			része).
+		</para>
+
     </section>
 
     <section>

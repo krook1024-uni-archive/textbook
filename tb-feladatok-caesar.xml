@@ -20,9 +20,9 @@
 			ami nem az egyszerűsége, hanem a dinamikus memóriakezelés.
 			Nézzünk meg egy olyan példát, ahol létrehozunk
 			egy double ** háromszögmátrixot, ami lényegében nem más, mint egy
-			kétdimenziós tömb (C-ben a <code>[]</code> jelek használata a
+			két dimenziós tömb (C-ben a <code>[]</code> jelek használata a
 			tömbök kezelésére csupán egy fordító adta kényelem, hogy ne kelljen
-			mindig mutató-, és címaritmetikával foglalkozunk).
+			mindig mutató-, és cím aritmetikával foglalkozunk).
 			A különbség itt az lesz, hogy nem mondjuk meg előre, hogy hány
 			elemű tömbjeink lesznek, hanem azokat majd dinamikusan
 			foglaljuk le.
@@ -32,7 +32,7 @@
 			A program úgy működik, hogy elsőnek megadjuk, hogy hányszor
 			hányas tömböt szeretnénk létrehozni, és ezt eltároljuk a db változóba.
 			Ezután lefoglaljuk magát a hm háromszögmátrixot, és a megértés érdekében
-			kiiíratjuk a memóriacímét is (példa lentebb).
+			kiíratjuk a memória címét is (példa lentebb).
 			Ezt követően lefoglalunk <code>db</code> darab (esetünkben 5)
 			tömböt (ezek lesznek a sorok), amelyek a következő lépésben szintén
 			tartalmazni fognak 5 db tömböt (ezek pedig az oszlopok).
@@ -60,7 +60,7 @@ Elso sor cime: 0x5567bca696a0
 
 		<para>
 			A feladat tanulsága, hogy a [] jelek valóban csak a
-			fordító adta kényelmi funckió. C-ben azt a kifejezést, hogy
+			fordító adta kényelmi funkció. C-ben azt a kifejezést, hogy
 			<code language="c">hm[1][1]</code> legalább háromféleképpen
 			fejezhetjük ki, melyek a következők:
 			<code language="c">(*hm[1]+1)</code>, vagy
@@ -77,15 +77,15 @@ Elso sor cime: 0x5567bca696a0
 		</programlisting>
 
         <para>
-        	Az XOR titoksító programunk meglehetősen egyszerűen működik. Az
+        	Az XOR titkosító programunk meglehetősen egyszerűen működik. Az
 			argumentumból kiolvassuk a kulcsot majd a <code>while</code>
 			ciklusban olvassuk az érkező bementet az úgynevezett
-			sztenderd inputon. Majd menézzük a bemenetünk méretetét,
+			sztenderd inputon. Majd megnézzük a bemenetünk méretét,
 			és ennek a teljes tartalmát "titkosítjuk", azaz
 			elvégezzük rajta a bitenkénti XOR utasítást
 			<code language="c">buffer[i] ^= key[key_index];</code>).
 			Ezután vesszük a buffert és kinyomjuk az úgynevezett
-			sztendert outputon. Ez azért jó, mert a felhasználó
+			sztenderd outputon. Ez azért jó, mert a felhasználó
 			egyszerűen inspektálhatja, vagy fájlba írhatja a kimenetet,
 			legalábbis UNIX-jellegű operációs rendszerek alatt.
 		</para>
