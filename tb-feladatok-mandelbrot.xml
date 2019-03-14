@@ -7,12 +7,11 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
+		
+		<para>
+			Megoldás forrása: <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">github/krook1024/textbook/mandelbrot</link>
 		</para>
+
 		<para>
 			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen. 		
 			A Mandelbrot halmaz egy olyan komplex halmaz, amelyre igaz, hogy a
@@ -27,12 +26,13 @@
 			</inlineequation>
 			abszolútértekben korlátos.
 		</para>
+
 		<para>
 			Amennyiben a forrásfájlt egyszerűen <code>make</code>-el lefordítjuk,
 			úgy láthatjuk, hogy létrejön a kimenet.png, hiszen a
 			<code>Makefile</code>-unkban úgy adtuk meg, hogy a forrást ne csak
 			lefordítsa, hanem futtassa is a programunkat <code>kimenet.png</code>
-			kimenettel. A kimenetet be is ágyazom, mert látványos.
+			kimenettel. A kimenetet be is ágyazom, mert meglehetősen látványos.
 		</para>
 
 		<figure>
@@ -47,6 +47,20 @@
 			</mediaobject>
 		</figure>
 
+		<para>
+			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy 
+			wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
+		</para>
+		<para>
+			Ebben a programban viszont nem használjuk a <code>std::complex</code>
+			osztályt, amit a C++ biztosít, hanem egyszerűen magunknak
+			adunk meg egy <code>Komplex</code> struktúrát, mely egyszerűen
+			tartalmaz két double változót, ami megfeleltethető a komplex számok
+			valós és imaginárius értékeinek. A további működési elv mindössze
+			annyi, hogy megadunk egy halmazt, amelyre a megadott egyenletünk
+			illeszkedik, majd végigmegyünk ezen a halmazon, és beszínezzük
+			az erre alkalmaz pixeleket.
+		</para>
 
     </section>
 
