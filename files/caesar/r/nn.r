@@ -17,6 +17,7 @@ or.data <- data.frame(a1, a2, OR)
 
 nn.or <- neuralnet(OR~a1+a2, or.data, hidden=0, linear.output=FALSE, stepmax = 1e+07, threshold = 0.000001)
 
+options("scipen"=100, "digits"=4)
 plot(nn.or)
 
 compute(nn.or, or.data[,1:2])

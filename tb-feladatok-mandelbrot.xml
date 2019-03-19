@@ -39,7 +39,7 @@
 		</para>
 
 		<figure>
-			<title>A Mandelbrot halmaz</title>
+			<title>A Mandelbrot halmaz a komplex síkon</title>
 			<mediaobject>
 				<imageobject>
 					<imagedata fileref="./files/mandelb/mandelbrot/kimenet.png" width="50%"/>
