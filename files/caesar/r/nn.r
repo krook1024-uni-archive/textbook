@@ -24,7 +24,6 @@ plot(nn.or)
 
 compute(nn.or, or.data[,1:2])
 
-
 a1    <- c(0,1,0,1)
 a2    <- c(0,0,1,1)
 OR    <- c(0,1,1,1)
@@ -37,8 +36,6 @@ nn.orand <- neuralnet(OR+AND~a1+a2, orand.data, hidden=0, linear.output=FALSE, s
 plot(nn.orand)
 
 compute(nn.orand, orand.data[,1:2])
-
-
 
 a1      <- c(0,1,0,1)
 a2      <- c(0,0,1,1)

@@ -9,6 +9,13 @@
     <section>
 		<title><type>double **</type> háromszögmátrix</title>
 
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Őz Ágostont.
+            </para>
+        </caution>
+
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/caesar/doubleharomszog.c"/>
@@ -153,7 +160,15 @@ Elso sor cime: 0x5567bca696a0
 	</section>
 
     <section>
-        <title>Neurális OR, AND és EXOR kapu</title>
+		<title>Neurális OR, AND és EXOR kapu</title>
+
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorált Tóth Attila.
+            </para>
+        </caution>
+
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
 		</para>
@@ -163,19 +178,16 @@ Elso sor cime: 0x5567bca696a0
 		</para>
 
         <para>
-			Ebben az R programban egy neurális hálót építünk fel.
+			Ebben az R programban egy neurális hálót építünk fel. Egy
+			neurális háló lényegében úgy működik, hogy megadjuk neki,
+			hogy milyen bemenetre milyen kimenetet kell adnia, majd
+			ő megprobálja ezt mesterségesen utánozni.
 		</para>
 
 		<para>
 			A programot futtatva a program kimenetét vizualizálva kapjuk,
 			melyeket alább beágyozva láthat az olvasó is. 
 		</para>
-
-		<!--<screen>
-			<textobject>
-				<textdata fileref="./files/caesar/r/out" />
-			</textobject>
-		</screen>-->
 
 		<figure>
 			<title>Neurális OR kapu</title>
@@ -190,6 +202,20 @@ Elso sor cime: 0x5567bca696a0
 			Erről az ábráról leolvasható, hogy 149 lépés alatt
 			0.000001 hibával sikerült megtanítani a neurális
 			hálónkat az OR utasítás elvégzésére.
+		</para>
+
+		<programlisting language="R">
+<![CDATA[a1    <- c(0,1,0,1)
+a2    <- c(0,0,1,1)
+OR    <- c(0,1,1,1)]]>
+		</programlisting>
+
+		<para>
+			A hálót úgy építettük fel, hogy megadtuk, hogy milyen
+			bemenetre milyen kimenetet kell adjon az OR (pl 0 OR 0 = 0;
+			1 OR 0 = 1; stb...), és  mással nem kellett törődnünk,
+			minden mást, beleértve a teljes matematikai hátteret, az R
+			és a <code>neuralnet</code> könyvtár végezte helyettünk.
 		</para>
 
 		<figure>
@@ -216,11 +242,13 @@ Elso sor cime: 0x5567bca696a0
 		</figure>
 
 		<para>
-			Az EXOR megtanulásához 94 lépés volt elegendő.
+			Az EXOR megtanulásához 94 lépés volt elegendő, ám a hiba itt
+			elég magas, 0.5. Emiatt a következő lépésben új módszerekhez
+			folymodunk, úgynevezett rejtett neuronokat iktatunk be.
 		</para>
 
 		<figure>
-			<title>Neurális valami kapu</title>
+			<title>Neurális XOR kapu</title>
 			<mediaobject>
 				<imageobject>
 					<imagedata fileref="./files/caesar/r/Rplots3.png" width="6in"/>
@@ -229,9 +257,10 @@ Elso sor cime: 0x5567bca696a0
 		</figure>
 
 		<para>
-			A(z) [........] megtanulásához esetünkben 123 lépés volt szükséges.
+			Az új EXOR megtanulásához esetünkben 123 lépés volt szükséges, ám
+			a hibát sikerült lecsökkentenünk 0-ra, olyan módon, hogy
+			extra 14 rejtett neuront iktattunk be. 
 		</para>
-
 	</section>
 
     <section>
