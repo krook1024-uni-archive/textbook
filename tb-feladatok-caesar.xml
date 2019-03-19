@@ -181,37 +181,57 @@ Elso sor cime: 0x5567bca696a0
 			<title>Neurális OR kapu</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./files/caesar/r/Rplots.png" width="3in" />
+					<imagedata fileref="./files/caesar/r/Rplots.png" width="4in" />
 				</imageobject>
 			</mediaobject>
 		</figure>
+
+		<para>
+			Erről az ábráról leolvasható, hogy 149 lépés alatt
+			0.000001 hibával sikerült megtanítani a neurális
+			hálónkat az OR utasítás elvégzésére.
+		</para>
 
 		<figure>
 			<title>Neurális OR, AND kapu</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./files/caesar/r/Rplots1.png" width="3in" />
+					<imagedata fileref="./files/caesar/r/Rplots1.png" width="5in"/>
 				</imageobject>
 			</mediaobject>
 		</figure>
+
+		<para>
+			Ezen az ábrán viszont látjuk, hogy az OR és AND
+			megtanulásához már 359 lépés kellett.
+		</para>
 
 		<figure>
 			<title>Neurális EXOR kapu</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./files/caesar/r/Rplots2.png" width="3.5in" />
+					<imagedata fileref="./files/caesar/r/Rplots2.png" width="4in" />
 				</imageobject>
 			</mediaobject>
 		</figure>
 
+		<para>
+			Az EXOR megtanulásához 94 lépés volt elegendő.
+		</para>
+
 		<figure>
-			<title>Neurális OR kapu</title>
+			<title>Neurális valami kapu</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./files/caesar/r/Rplots3.png" width="3.5in" />
+					<imagedata fileref="./files/caesar/r/Rplots3.png" width="6in"/>
 				</imageobject>
 			</mediaobject>
 		</figure>
+
+		<para>
+			A(z) [........] megtanulásához esetünkben 123 lépés volt szükséges.
+		</para>
+
 	</section>
 
     <section>
