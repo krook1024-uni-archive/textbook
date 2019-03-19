@@ -14,7 +14,7 @@ make
 
 - Arch Linux:
 ```bash
-sudo pacman -Sy --noconfirm dblatex graphviz texlive-langextra texlive-science docbook-xsl docbook-xml
+sudo pacman -Sy --needed --noconfirm dblatex graphviz texlive-langextra texlive-science docbook-xsl docbook-xml
 make
 ```
 
