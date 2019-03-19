@@ -51,7 +51,7 @@
     <xi:include href="tb-feladatok-schwarzenegger.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb-schwarzenegger.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
@@ -59,10 +59,17 @@
     <xi:include href="tb-feladatok-chaitin.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb-chaitin.xml file not found</emphasis>
+            </para>
+        </xi:fallback>
+	</xi:include>
+
+    <xi:include href="tb-feladatok-gutenberg.xml">
+        <xi:fallback>
+            <para>
+                <emphasis>XInclude: tb-gutenberg.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
-
 
 </part>
