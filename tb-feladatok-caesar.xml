@@ -259,7 +259,7 @@ OR    <- c(0,1,1,1)]]>
 		<para>
 			Az új EXOR megtanulásához esetünkben 123 lépés volt szükséges, ám
 			a hibát sikerült lecsökkentenünk 0-ra, olyan módon, hogy
-			extra 14 rejtett neuront iktattunk be. 
+			extra 14 rejtett neuront iktattunk be, 3 különböző szinten. 
 		</para>
 	</section>
 
