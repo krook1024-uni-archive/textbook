@@ -54,6 +54,7 @@
 			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy 
 			wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
 		</para>
+
 		<para>
 			Ebben a programban viszont nem használjuk a <code>std::complex</code>
 			osztályt, amit a C++ biztosít, hanem egyszerűen magunknak
@@ -108,9 +109,26 @@
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
         </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+
+		<para>
+			A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
+			is a komplex számsíkon ábrázolható függvényeket nézünk meg, és ezek
+			ábrázolásának C++ megvalósításait. Kedvcsinálóként előbb nézzünk meg egy pár
+			biomorfot.
+		</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="./pictures/biomorf1.png" width="50%"/>
+			</imageobject>
+		</mediaobject>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="./pictures/biomorf2.jpg" width="50%"/>
+			</imageobject>
+		</mediaobject>
+
     </section>
 
     <section>
