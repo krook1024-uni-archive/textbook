@@ -265,20 +265,22 @@ OR    <- c(0,1,1,1)]]>
 
     <section>
         <title>Hiba-visszaterjesztéses perceptron</title>
-        <para>
-            C++
-		</para>
 
         <para>
-            Megoldás videó:
+			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>
 
-        <para>
-            Megoldás forrása:
-		</para>
+		<programlisting language="c">
+			<textobject>
+				<textdata fileref="./files/caesar/perceptron/main.cc" />
+			</textobject>
+		</programlisting>
 
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+			Ebben a programban kipróbáljuk a Perceptron osztályt egy
+			viszonylag egyszerű program keretében. Ez a program mindössze
+			annyit csinál, hogy a bemenetén érkező képnek végigmegy a
+			pixelein és számolja a piros szín jelenlétét(?).
         </para>
     </section>
 </chapter>
