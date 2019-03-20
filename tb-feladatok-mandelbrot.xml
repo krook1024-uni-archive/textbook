@@ -161,6 +161,15 @@
 				</textobject>
 			</mediaobject>
 		</figure>
+
+		<para>
+			Magán a formán kívül észrevehető további különbség az, hogy
+			színes ábrát kaptunk a Mandelbrot-halmazos programunkkal ellentétben.
+			A program működési elve az említett módon hasonló, csak más képlettel
+			dolgozunk, valamint a színezést úgy valósítjuk meg, hogy az iteráció
+			számát maradékosan osztjuk 255-el, így kapunk egy RGB színkódot, és
+			ezt használjuk fel egy adott pixel színezésére.
+		</para>
     </section>
 
     <section>
