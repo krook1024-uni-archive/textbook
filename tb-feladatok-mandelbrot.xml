@@ -1,5 +1,5 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
-    <info>
+	<info>
         <title>Helló, Mandelbrot!</title>
         <keywordset>
             <keyword/>
@@ -100,12 +100,8 @@
     </section>
 
     <section>
-        <title>Biomorfok</title>
-        <para>
-        </para>
-        <para>
-            Megoldás videó: <link xlink:href="https://youtu.be/IJMbgRzY76E">https://youtu.be/IJMbgRzY76E</link>
-        </para>
+		<title>Biomorfok</title>
+
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
         </para>
@@ -129,6 +125,42 @@
 			</imageobject>
 		</mediaobject>
 
+		<para>
+			A biomorfok szoros kapcsolatban vannak a Mandelbrot-halmazzal,
+			ám itt a 
+			<inlineequation>
+				<alt role="tex">f_c(z) = z^2 + c</alt>
+				<mathphrase/>
+			</inlineequation>
+			képletet lecseréljük másra. 
+		</para>
+
+		<para>
+			Az egyszerűség kedvéért itt is létrehoztunk egy Makefilet, így a
+			<code>make</code> parancs kiadásával lefuttatható a programunk, feltéve
+			hogy telepítettük a png++ könyvtárat és működik a g++-unk.
+		</para>
+
+		<screen>
+<![CDATA[$ make]]>
+		</screen>
+
+		<para>
+			Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png 
+			fájlunk, amit beágyazva meg is tekinthet az olvasó.
+		</para>
+
+		<figure>
+			<title>A generált biomorf</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/biomorf/bmorf.png" width="50%"/>
+				</imageobject>
+				<textobject>
+					<phrase>A generált biomorf</phrase>
+				</textobject>
+			</mediaobject>
+		</figure>
     </section>
 
     <section>
