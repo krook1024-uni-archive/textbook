@@ -1,6 +1,6 @@
-#include <iostream>		// mert olvassuk a std::cin, írjuk a std::cout csatornákat
-#include <cmath>		// mert vonunk gyököt a szóráshoz: std::sqrt
-#include <fstream>		// fájlból olvasunk, írunk majd
+#include <iostream>
+#include <cmath>
+#include <fstream>
 
 class LZWBinFa
 {
@@ -71,10 +71,6 @@ private:
     class Csomopont
     {
     public:
-        /* A paraméter nélküli konstruktor az elepértelmezett '/' "gyökér-betűvel" hozza
-       létre a csomópontot, ilyet hívunk a fából, aki tagként tartalmazza a gyökeret.
-       Máskülönben, ha valami betűvel hívjuk, akkor azt teszi a "betu" tagba, a két
-       gyermekre mutató mutatót pedig nullra állítjuk, C++-ban a 0 is megteszi. */
         Csomopont (char b = '/'):betu (b), balNulla (0), jobbEgy (0)
         {
         };
@@ -108,7 +104,7 @@ private:
         char betu;
         Csomopont *balNulla;
         Csomopont *jobbEgy;
-        Csomopont (const Csomopont &); //másoló konstruktor
+        Csomopont (const Csomopont &); 
         Csomopont & operator= (const Csomopont &);
     };
 
@@ -124,7 +120,6 @@ private:
         {
             ++melyseg;
             kiir (elem->egyesGyermek (), os);
-            // 1-el nagyobb mélység, ezért -1
             for (int i = 0; i < melyseg; ++i)
                 os << "---";
             os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;
@@ -142,11 +137,10 @@ private:
         }
     }
 
-protected:			// ha esetleg egyszer majd kiterjesztjük az osztályt, mert
-    // akkor ezek látszanak majd a gyerek osztályban is
+protected:			
 
     /* A fában tagként benne van egy csomópont, ez erősen ki van tüntetve, Ő a gyökér: */
-	Csomopont *gyoker = new Csomopont;
+	Csomopont *gyoker = new Csomopont('/');
     int maxMelyseg;
     double atlag, szoras;
 
@@ -261,7 +255,6 @@ main (int argc, char *argv[])
         return -2;
     }
 
-    // ha igen, akkor az 5. előadásból kimásoljuk a fájlkezelés C++ változatát:
     std::fstream beFile (inFile, std::ios_base::in);
 
     if (!beFile)
@@ -275,9 +268,6 @@ main (int argc, char *argv[])
 
     unsigned char b;		
     LZWBinFa binFa;		
-
-    // a bemenetet binárisan olvassuk, de a kimenő fájlt már karakteresen írjuk, hogy meg tudjuk
-    // majd nézni... :) l. az említett 5. ea. C -> C++ gyökkettes átírási példáit
 
     while (beFile.read ((char *) &b, sizeof (unsigned char)))
         if (b == 0x0a)
@@ -306,29 +296,18 @@ main (int argc, char *argv[])
         if (b == 0x4e)		// N betű
             continue;
 
-        // egyszerűen a korábbi d.c kódját bemásoljuk
-        // laboron többször lerajzoltuk ezt a bit-tologatást:
-        // a b-ben lévő bájt bitjeit egyenként megnézzük
         for (int i = 0; i < 8; ++i)
         {
-            // maszkolunk eddig..., most már simán írjuk az if fejébe a legmagasabb helyiértékű bit vizsgálatát
-            // csupa 0 lesz benne a végén pedig a vizsgált 0 vagy 1, az if megmondja melyik:
             if (b & 0x80)
-                // ha a vizsgált bit 1, akkor az '1' betűt nyomjuk az LZW fa objektumunkba
                 binFa << '1';
             else
-                // különben meg a '0' betűt:
                 binFa << '0';
             b <<= 1;
         }
 
     }
 
-    //std::cout << binFa.kiir (); // így rajzolt ki a fát a korábbi verziókban de, hogy izgalmasabb legyen
-    // a példa, azaz ki lehessen tolni az LZWBinFa-t kimeneti csatornára:
-
-    kiFile << binFa;		// ehhez kell a globális operator<< túlterhelése, lásd fentebb
-    // (jó ez az OO, mert mi ugye nem igazán erre gondoltunk, amikor írtuk, mégis megy, hurrá)
+    kiFile << binFa;		
 
     kiFile << "depth = " << binFa.getMelyseg () << std::endl;
     kiFile << "mean = " << binFa.getAtlag () << std::endl;
