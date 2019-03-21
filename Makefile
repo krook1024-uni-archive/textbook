@@ -11,7 +11,7 @@ tb_fdl.pdf: tb-fdl.xml tb.xls turing.gv
 .PHONY: validate_tb_fdl_hu
 validate_tb_fdl_hu:
 	xmllint --xinclude tb-fdl.xml --output output.xml
-	xmllint --relaxng docbookxi.rng output.xml --noout
+	xmllint --relaxng tb/docbookxi.rng output.xml --noout
 	rm -f output.xml
 
 .PHONY: clean

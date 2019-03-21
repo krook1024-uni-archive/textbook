@@ -4,34 +4,34 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       version="5.1" xml:lang="hu">
 
-    <xi:include href="tb-fdlinfo.xml">
+    <xi:include href="tb/tb-fdlinfo.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-fdlinfo.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-fdlinfo.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
 
-    <xi:include href="tb-motto.xml">
+    <xi:include href="tb/tb-motto.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-motto.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
 
-    <xi:include href="tb-pre.xml">
+    <xi:include href="tb/tb-pre.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-pre.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-pre.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
 
-    <xi:include href="tb-intro.xml">
+    <xi:include href="tb/tb-intro.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-intro.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-intro.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
@@ -39,7 +39,7 @@
     <xi:include href="tb-feladatok.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-feladatok.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-feladatok.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
@@ -47,31 +47,31 @@
     <xi:include href="tb-feladatok2.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-feladatok2.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-feladatok2.xml file not found</emphasis>
             </para>
         </xi:fallback>
 	</xi:include>
 
-    <xi:include href="tb-bib.xml">
+    <xi:include href="tb/tb-bib.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-bib.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-bib.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
 
-	<xi:include href="tb-ack.xml">
+	<xi:include href="tb/tb-ack.xml">
 		<xi:fallback>
 			<para>
-				<emphasis>XInclude: tb-ack.xml file not found</emphasis>
+				<emphasis>XInclude: tb/tb-ack.xml file not found</emphasis>
 			</para>
 			</xi:fallback>
 	</xi:include>
 
-	<xi:include href="tb-copy.xml">
+	<xi:include href="tb/tb-copy.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-bib.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-bib.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
