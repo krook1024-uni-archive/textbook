@@ -1,6 +1,10 @@
-all:	clean fdl
+all:	clean fdl tutoraltak
 
 fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
+
+tutoraltak:
+	./tutoraltak.sh
+
 
 turing.gv: pictures/turing.gv
 	dot -Tpng pictures/turing.gv -o pictures/Turing.png
