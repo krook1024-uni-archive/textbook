@@ -105,6 +105,15 @@ Elso sor cime: 0x5567bca696a0
 
     <section>
 		<title>Java EXOR titkosító</title>
+
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Füleky Ladislavot.
+            </para>
+        </caution>
+
+
 		<programlisting language="java">
 			<textobject>
 				<textdata fileref="./files/caesar/java/XorEncode.java"/>
