@@ -129,12 +129,12 @@ Elso sor cime: 0x5567bca696a0
         <title>C EXOR törő</title>
 		<para>
 			<emphasis>
-            Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
+				Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
 			</emphasis>
 		</para>
 		<para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://raw.githubusercontent.com/krook1024/Bevprog/master/xortores/crack.c">gh/krook1024/Bevprog/master/xortores/crack.c</link>
+			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/caesar/xor_c.c">gh/krook1024/textbook/master/files/caesar/xor_c.c</link>
 		</para>
 
 		<para>
