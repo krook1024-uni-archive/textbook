@@ -11,19 +11,21 @@ public:
 
     ~LZWBinFa ()
     {
-        szabadit (gyoker->egyesGyermek ());
-        szabadit (gyoker->nullasGyermek ());
+        szabadit (gyoker->egyesGyermek());
+        szabadit (gyoker->nullasGyermek());
     }
 
     void operator<< (char b)
     {
         if (b == '0')
         {
-            if (!fa->nullasGyermek ())
+            if (!fa->nullasGyermek())
             {
                 Csomopont *uj = new Csomopont ('0');
                 fa->ujNullasGyermek (uj);
-				fa = gyoker;
+
+				if(gyoker != nullptr)
+					fa = gyoker;
             }
             else
             {
@@ -37,7 +39,9 @@ public:
             {
                 Csomopont *uj = new Csomopont ('1');
                 fa->ujEgyesGyermek (uj);
-                fa = gyoker;
+
+				if(gyoker != nullptr)
+					fa = gyoker;
             }
             else
             {
@@ -61,6 +65,7 @@ public:
         bf.kiir (os);
         return os;
     }
+
     void kiir (std::ostream & os)
     {
         melyseg = 0;
@@ -104,7 +109,7 @@ private:
         char betu;
         Csomopont *balNulla;
         Csomopont *jobbEgy;
-        Csomopont (const Csomopont &); 
+        Csomopont (const Csomopont &);
         Csomopont & operator= (const Csomopont &);
     };
 
@@ -116,7 +121,7 @@ private:
 
     void kiir (Csomopont * elem, std::ostream & os)
     {
-        if (elem != NULL)
+        if (elem != nullptr)
         {
             ++melyseg;
             kiir (elem->egyesGyermek (), os);
@@ -129,7 +134,7 @@ private:
     }
     void szabadit (Csomopont * elem)
     {
-        if (elem != NULL)
+        if (elem != nullptr)
         {
             szabadit (elem->egyesGyermek ());
             szabadit (elem->nullasGyermek ());
@@ -137,10 +142,9 @@ private:
         }
     }
 
-protected:			
-
-    /* A fában tagként benne van egy csomópont, ez erősen ki van tüntetve, Ő a gyökér: */
-	Csomopont *gyoker = new Csomopont('/');
+protected:
+    // A fában tagként benne van egy csomópont, ez erősen ki van tüntetve, Ő a gyökér:
+	Csomopont * gyoker = new Csomopont('/');
     int maxMelyseg;
     double atlag, szoras;
 
@@ -187,7 +191,7 @@ LZWBinFa::getSzoras (void)
 void
 LZWBinFa::rmelyseg (Csomopont * elem)
 {
-    if (elem != NULL)
+    if (elem != nullptr)
     {
         ++melyseg;
         if (melyseg > maxMelyseg)
@@ -201,13 +205,13 @@ LZWBinFa::rmelyseg (Csomopont * elem)
 void
 LZWBinFa::ratlag (Csomopont * elem)
 {
-    if (elem != NULL)
+    if (elem != nullptr)
     {
         ++melyseg;
         ratlag (elem->egyesGyermek ());
         ratlag (elem->nullasGyermek ());
         --melyseg;
-        if (elem->egyesGyermek () == NULL && elem->nullasGyermek () == NULL)
+        if (elem->egyesGyermek () == nullptr && elem->nullasGyermek () == nullptr)
         {
             ++atlagdb;
             atlagosszeg += melyseg;
@@ -218,13 +222,13 @@ LZWBinFa::ratlag (Csomopont * elem)
 void
 LZWBinFa::rszoras (Csomopont * elem)
 {
-    if (elem != NULL)
+    if (elem != nullptr)
     {
         ++melyseg;
         rszoras (elem->egyesGyermek ());
         rszoras (elem->nullasGyermek ());
         --melyseg;
-        if (elem->egyesGyermek () == NULL && elem->nullasGyermek () == NULL)
+        if (elem->egyesGyermek () == nullptr && elem->nullasGyermek () == nullptr)
         {
             ++atlagdb;
             szorasosszeg += ((melyseg - atlag) * (melyseg - atlag));
@@ -266,8 +270,8 @@ main (int argc, char *argv[])
 
     std::fstream kiFile (*++argv, std::ios_base::out);
 
-    unsigned char b;		
-    LZWBinFa binFa;		
+    unsigned char b;
+    LZWBinFa binFa;
 
     while (beFile.read ((char *) &b, sizeof (unsigned char)))
         if (b == 0x0a)
@@ -307,7 +311,7 @@ main (int argc, char *argv[])
 
     }
 
-    kiFile << binFa;		
+    kiFile << binFa;
 
     kiFile << "depth = " << binFa.getMelyseg () << std::endl;
     kiFile << "mean = " << binFa.getAtlag () << std::endl;
