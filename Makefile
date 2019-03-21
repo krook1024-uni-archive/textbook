@@ -1,11 +1,11 @@
-all:	clean turing.gv fdl
+all:	clean fdl
 
 fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
 
 turing.gv: pictures/turing.gv
 	dot -Tpng pictures/turing.gv -o pictures/Turing.png
 
-tb_fdl.pdf: tb-fdl.xml tb.xls
+tb_fdl.pdf: tb-fdl.xml tb.xls turing.gv
 	dblatex tb-fdl.xml -p tb.xls
 
 .PHONY: validate_tb_fdl_hu
