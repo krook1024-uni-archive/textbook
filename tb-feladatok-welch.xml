@@ -8,7 +8,7 @@
     <section>
         <title>Első osztályom</title>
         <para>
-            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér 
+            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér
             teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
             számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
             nincs eltéve kiszámolt szám.
@@ -17,13 +17,13 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat... térj ki arra is, hogy a JDK forrásaiban a Sun programozói
             pont úgy csinálták meg ahogyan te is, azaz az OO nemhogy nem nehéz, hanem éppen természetes neked!
-        </para>                
-    </section>        
+        </para>
+    </section>
 
     <section>
         <title>LZW</title>
@@ -31,13 +31,13 @@
             Valósítsd meg C-ben az LZW algoritmus fa-építését!
         </para>
         <para>
-            Megoldás videó:
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
+				gh/krook1024/textbook/master/files/welch/z3a7.cpp
+			</link>
         </para>
-        <para>
-            Megoldás forrása:                
-        </para>
-    </section>        
-        
+    </section>
+
     <section>
         <title>Fabejárás</title>
         <para>
@@ -47,10 +47,10 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-                        
+    </section>
+
     <section>
         <title>Tag a gyökér</title>
         <para>
@@ -61,23 +61,36 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
-    </section>        
-                
+    </section>
+
     <section>
         <title>Mutató a gyökér</title>
         <para>
-            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a
             fával!
-        </para>
+		</para>
+
         <para>
-            Megoldás videó: 
-        </para>
-        <para>
-            Megoldás forrása:  
-        </para>
-    </section>                     
+			Megoldás forrása:
+			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp</link>
+		</para>
+
+		<para>
+			Ebben a programban úgy írtuk át a már meglévő BinFa
+			programunkat, hogy a bináris fánk gyökere mutató legyen.
+		</para>
+
+		<para>
+			A módosítások elvégzése egyszerű, mechanikus folyamat.
+			A gyökér csomópont definíciójánál foglalunk helyet a heapen
+			a gyökérnek, majd az ebből kapott mutatót behelyettesítjük az
+			olyan helykre, ahol egyébként a gyökér változóra hivatkoztunk.
+			Ez a gyakorlatban annyit jelent, hogy eltávolítunk a kódból néhány
+			címképző operátort (<emphasis>i</emphasis>).
+		</para>
+    </section>
 
     <section>
         <title>Mozgató szemantika</title>
@@ -86,11 +99,10 @@
             értékadásra alapozva!
         </para>
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:  
+            Megoldás forrása:
         </para>
-    </section>                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-</chapter>                
+	</section>
+</chapter>
