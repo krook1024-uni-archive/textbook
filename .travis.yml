@@ -1,16 +1,16 @@
 language: xml
-script: make
 
-addons:
-  apt:
-    packages:
-      - docbook
-      - docbook-xml
-      - docbook-xsl
-      - dblatex
-      - texlive-lang-european
-      - make
-      - pkg-config
-      - xsltproc
-      - graphviz
-      - xmllint
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install xsltproc
+  - sudo apt-get install docbook
+  - sudo apt-get install docbook-xml docbook-xsl
+  - sudo apt-get install dblatex
+  - sudo apt-get install texlive-lang-european
+  - sudo apt-get install make
+  - sudo apt-get install pkg-config
+  - sudo apt-get install graphviz
+  - sudo apt-get install xmllint
+  - sudo apt-get install imagemagick
+
+script: make
