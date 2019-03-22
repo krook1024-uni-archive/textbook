@@ -1,13 +1,10 @@
 branches:
   only:
-    - master
-
+  - master
 language: xml
-
 before_install:
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 - sudo apt-get update -q
-
 install:
 - sudo apt-get install xsltproc
 - sudo apt-get install docbook
@@ -19,20 +16,17 @@ install:
 - sudo apt-get install graphviz
 - sudo apt-get install libxml2-utils
 - sudo apt-get install imagemagick
-
 script: make
-
 before_deploy:
-  - git config --local user.name "krook1024"
-  - git config --local user.email "krook1024@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
-
+- git config --local user.name "krook1024"
+- git config --local user.email "krook1024@gmail.com"
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+- git tag $TRAVIS_TAG
 deploy:
   provider: releases
   api_key:
-    secure: U6IzObSKiLVU1JPxRKBniCuIWqTItT7f6rrLWze8IHIr0jW233Pyszjb2Ow5LQbBsbvblLglgLQWBIfm9bj6tRkNYVOtFFVMmCTYjOLcHtP5x1hG+4FlOycjNF9Ytr01WtwEWfLUS+MFiey/OxJYFFAcvyG/JX+u0S93BTXEkEgisIOhp3KwLyI/rlZP+URuKff4g+mVLGHektzBtJk2WLgDDPbG1BeuzLtLk5vyEKmpzEyYTbkdjCx+NuIgqChq3asjUygI7U9NkeZnOG5LYp33Enfmz3QKgOgiF33eF7KqPAvGrF52zcA4RAo6rL/bMiaWr8efKI8A0PEAdj3u0jmNtdxk+ldGbwMTEf0O2Ow5h4Vj5iKrt/UqjOrhpwQIkKLyILNRBYBeSbBKuNGPZLGnGvdWkxnsLrnqdrJ3Ol3eRn3Ot0hqgVznE+U2bqWqgZ3xoZsSALQYJtyCw7kICVTIfVj4IRTF2G5DX2UXMiEuolDpIx8box6qZVxSAPP6IuGMnjp/Ij9akUPp3yQL2pQxysKTgIUP7x7R2rQCt+qIEjXSw6VOJDp/S2CLh/XiRjpn1hg9dIc7Rx7NRGd0mNPjB1ju9ojTy/EqvyYHdoFEFuQq/ZODyN8/gb00Gnjty+8W7oObovGJpgard8AqO+lM8yEjKTgdjHxsgF8f3qI=
-  file: "tb-fdl.pdf"
+    secure: WcW++Tva1+LfeLFAnIwYiR9d1IumI8qJQAkqt/fRZVw5iyDlpwViT2eYDAA1Co0tdPuqs33xflvhpu3vWpYXug36Hfv1yEG1tu/YTWjmyqSLvCsXkQO1jFoIlb6t9J4p9F0RZn5jHyrSX/4i4RzHfYz0gMJ0ZvfNUSfsAYjYBRkAzSAQ+VAW2GQsCLQD3l0FRIZUgYgGi5KPTAhs8RHQOSWZp8aWNf0/nwHkWq7EwO/WkTbVOV9bRmxfXmJTyr2f4Ipd7h7N4g/04lIaT2p6wFLfCfWJh8REE1W/INR8iBGKWp6fNmGrkD8DnwqXdsZwNqB26qT07sOD5tb1QmKFb7UMNCcr7zFgXDELpmiNj3HvOx2B7DPbLKWVYnU8hqV4TTVtVrS3CtqsAOV3d9P38TGkZxyicv4oFuGUYhNSE05IssuUlztgZWl4rBBnnhnVVN1hG+zst4kZ8WNrzSTjvg1njKNBSX4z6XnuV/6ERW3J9B3/l7ORBgnNlFMKUzgmAEEI05NpW4NW5nK0K24GRy/9PIzrInMF6Or38AowYgT2MJTMNa2LzDK3EAnU4iYLDl8UquyU8j+s4PYxYm015HL/dRVr242m0nry0hn1o/pzTqk3hEsRiZux4Ym1nnwQce9GWZWAeHSa8n9IZmZEQYqlt13R9zvGn4z8chktllU=
+  file: tb-fdl.pdf
   on:
-    repo: "krook1024/textbook"
+    repo: krook1024/textbook
   skip_cleanup: true
