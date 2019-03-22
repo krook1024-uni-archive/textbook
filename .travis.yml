@@ -10,7 +10,7 @@ install:
   - sudo apt-get install make
   - sudo apt-get install pkg-config
   - sudo apt-get install graphviz
-  - sudo apt-get install xmllint
+  - sudo apt-get install libxml2-utils
   - sudo apt-get install imagemagick
 
 script: make
