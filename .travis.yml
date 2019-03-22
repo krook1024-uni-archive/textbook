@@ -1,2 +1,24 @@
 language: xml
 script: make
+
+addons:
+  apt:
+    packages:
+      - autoconf
+      - automake
+      - docbook
+      - docbook-xml
+      - docbook-xsl
+      - texlive-lang-european
+      - gcc
+      - libgnutls-dev
+      - libhiredis-dev
+      - libicu-dev
+      - libmemcached-dev
+      - libreadline-dev
+      - libtool
+      - libwrap0-dev
+      - libxslt1-dev
+      - make
+      - pkg-config
+      - xsltproc
