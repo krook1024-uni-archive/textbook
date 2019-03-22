@@ -17,3 +17,9 @@ install:
   - sudo apt-get install imagemagick
 
 script: make
+
+deploy:
+  provider: releases
+  api_key: ""
+  file: "tb-fdl.pdf"
+  skip_cleanup: true
