@@ -6,22 +6,19 @@ before_install:
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 - sudo apt-get update -q
 install:
+- sudo apt-get install make
 - sudo apt-get install xsltproc
 - sudo apt-get install docbook
-- sudo apt-get install docbook-xml docbook-xsl
-- sudo apt-get install dblatex
-- sudo apt-get install texlive-lang-european
-- sudo apt-get install make
-- sudo apt-get install pkg-config
-- sudo apt-get install graphviz
-- sudo apt-get install libxml2-utils
-- sudo apt-get install imagemagick
+- sudo apt-get install docbook-xml docbook-xsl dblatex texlive-lang-european
+- sudo apt-get install graphviz libxml2-utils
+- sudo apt-get install curl
 script: make
 before_deploy:
 - git config --local user.name "krook1024"
 - git config --local user.email "krook1024@gmail.com"
 - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
 - git tag $TRAVIS_TAG
+- curl -L https://git.io/fhj4c | sudo bash
 deploy:
   provider: releases
   api_key:
