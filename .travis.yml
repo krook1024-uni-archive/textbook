@@ -1,9 +1,14 @@
+branches:
+  only:
+    - master
+
 language: xml
+
 before_install:
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 - sudo apt-get update -q
+
 install:
-- sudo apt-get update -q
 - sudo apt-get install xsltproc
 - sudo apt-get install docbook
 - sudo apt-get install docbook-xml docbook-xsl
@@ -14,7 +19,9 @@ install:
 - sudo apt-get install graphviz
 - sudo apt-get install libxml2-utils
 - sudo apt-get install imagemagick
+
 script: make
+
 deploy:
   provider: releases
   api_key:
