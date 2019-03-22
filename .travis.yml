@@ -30,4 +30,3 @@ deploy:
   on:
     repo: krook1024/textbook
   skip_cleanup: true
-  draft: true
