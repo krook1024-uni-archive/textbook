@@ -76,7 +76,28 @@
 				Ez a setup megengedte számomra, hogy soha ne kelljen elhagynom a terminált és egy kellemes, a saját igényeimnek
 				megfelelően kialakított környezetben dolgozhassak.
 			</para>
-       </section>
+		</section>
+		<section>
+			<title>A disztróról</title>
+			<para>
+				Az Arch Linux egy bleeding-edge operációs rendszer, melynek használata nagyon egyszerű, és hosszútávon
+				rengeteg időt spórol meg, amennyiben elsajátítjuk. A bleeding-edge azt jelenti, hogy a fejlesztők
+				igyekeznek minden csomagból a legfrissebbet elérhetővé tenni a felhasználók számára a lehető
+				leggyorsabban.
+			</para>
+			<para>
+				Az Arch Linux sok ablakkezelőt támogat, az én választásom pedig az i3-ra esett. Ez egy billentyűzet-orientált
+				ablakkezelő rendszer, melynek előnye, hogy minden teljesen testreszabható. Az én konfigurációmról beágyazok
+				egy képet lentebb.
+			</para>
+
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="../pictures/screenshot.png" width="100%"/>
+				</imageobject>
+			</mediaobject>
+
+		</section>
 
     </chapter>
 </part>
