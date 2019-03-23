@@ -1,5 +1,7 @@
 # 📚 textbook
 
+[![Build Status](https://travis-ci.org/krook1024/textbook.png?branch=master)](https://travis-ci.org/krook1024/textbook)
+
 A saját prog. könyvem.
 
 Forkolva innen: https://gitlab.com/nbatfai/bhax/tree/master/thematic_tutorials/bhax_textbook (@0f1de1ee)
