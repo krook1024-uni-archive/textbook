@@ -96,4 +96,23 @@
 			Negyedik csokor elkezdése.
 		</revremark>
 	</revision>
+	<revision>
+		<revnumber>0.1.9</revnumber>
+		<date>2019-03-15</date>
+		<authorinitials>krook1024</authorinitials>
+		<revremark>
+			Caesar csokor kész.
+			Mandelbrot elkezdve.
+		</revremark>
+	</revision>
+	<revision>
+		<revnumber>0.2.1</revnumber>
+		<date>2019-03-23</date>
+		<authorinitials>krook1024</authorinitials>
+		<revremark>
+			Travis build beállítva.
+			Welch elkezdve.
+		</revremark>
+	</revision>
+
 </revhistory>
