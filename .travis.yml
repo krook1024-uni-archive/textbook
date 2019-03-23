@@ -6,12 +6,11 @@ before_install:
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 - sudo apt-get update -q
 install:
-- sudo apt-get install make
-- sudo apt-get install xsltproc
-- sudo apt-get install docbook
-- sudo apt-get install docbook-xml docbook-xsl dblatex texlive-lang-european
-- sudo apt-get install graphviz libxml2-utils
-- sudo apt-get install curl
+- sudo apt-get install -y make
+- sudo apt-get install -y xsltproc
+- sudo apt-get install -y docbook docbook-xml docbook-xsl dblatex texlive-lang-european
+- sudo apt-get install -y graphviz libxml2-utils
+- sudo apt-get install -y curl
 - curl -L https://git.io/fhj4c | sudo bash
 script: make
 before_deploy:
@@ -27,3 +26,4 @@ deploy:
   on:
     repo: krook1024/textbook
   skip_cleanup: true
+  prerelease: true

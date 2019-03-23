@@ -8,14 +8,14 @@ Forkolva innen: https://gitlab.com/nbatfai/bhax/tree/master/thematic_tutorials/b
 
 ## Letöltés
 
-A könyv legfrissebbi állapotában letölthető innen:  
+A könyv minnden commit alkalmával frissül és letölthető a következő linken:
 [⬇ Letöltés](https://github.com/krook1024/textbook/releases)
 
 ## Fordítás
 
 - Ubuntu:
 ```bash
-sudo apt install -y dblatex graphviz texlive-lang-european
+sudo apt install -y docbook docbook-xml docbook-xsl xsltproc build-essential dblatex graphviz texlive-lang-european
 make
 ```
 
