@@ -8,7 +8,7 @@ before_install:
 install:
 - sudo apt-get install -y make
 - sudo apt-get install -y xsltproc
-- sudo apt-get install --no-install-recommends -y docbook docbook-xml docbook-xsl dblatex texlive-lang-european
+- sudo apt-get --no-install-recommends install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-fonts-recommended texlive-latex-recommended texlive-lang-european
 - sudo apt-get install -y graphviz libxml2-utils
 - sudo apt-get install -y curl
 - curl -L https://git.io/fhj4c | sudo bash
