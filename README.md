@@ -8,7 +8,7 @@ Forkolva innen: https://gitlab.com/nbatfai/bhax/tree/master/thematic_tutorials/b
 
 ## Letöltés
 
-A könyv minnden commit alkalmával frissül és letölthető a következő linken:
+A könyv minnden commit alkalmával frissül és letölthető a következő linken:  
 [⬇ Letöltés](https://github.com/krook1024/textbook/releases)
 
 ## Fordítás
