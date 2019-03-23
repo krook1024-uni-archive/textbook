@@ -7,7 +7,7 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
-		
+
 		<para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
@@ -16,7 +16,7 @@
 		</para>
 
 		<para>
-			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen. 		
+			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen.
 			A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
 			<inlineequation>
 				<alt role="tex">f_c(z) = z^2 + c</alt>
@@ -51,7 +51,7 @@
 		</figure>
 
 		<para>
-			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy 
+			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy
 			wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
 		</para>
 
@@ -127,12 +127,12 @@
 
 		<para>
 			A biomorfok szoros kapcsolatban vannak a Mandelbrot-halmazzal,
-			ám itt a 
+			ám itt a
 			<inlineequation>
 				<alt role="tex">f_c(z) = z^2 + c</alt>
 				<mathphrase/>
 			</inlineequation>
-			képletet lecseréljük másra. 
+			képletet lecseréljük másra.
 		</para>
 
 		<para>
@@ -146,7 +146,7 @@
 		</screen>
 
 		<para>
-			Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png 
+			Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png
 			fájlunk, amit beágyazva meg is tekinthet az olvasó.
 		</para>
 
@@ -173,34 +173,63 @@
     </section>
 
     <section>
-        <title>A Mandelbrot halmaz CUDA megvalósítása</title>
+		<title>A Mandelbrot halmaz CUDA megvalósítása</title>
         <para>
+			<emphasis role="strong">Megoldás forrása:</emphasis> TBA
         </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
+		<para>
+			A CUDA az nVidia kártyák által használt API a kártyák vezérlésére
+			nagyobb teljesítménnyel, mint például az OpenGL. A CUDA jelen van a legtöbb
+			mai játékban, vagy streamer, videóvágó szoftverben. A teljesítménynövekedést
+			párhuzamos számítással érik el, több "magot" dolgoztatnak a videókártyán egyszerre.
         </para>
     </section>
 
     <section>
         <title>Mandelbrot nagyító és utazó C++ nyelven</title>
         <para>
-            Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
-            egérrel kiválasztva vizualizálja onnan a komplex iteráció bejárta z<subscript>n</subscript> komplex számokat!
+			<emphasis>
+				Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
+				egérrel kiválasztva vizualizálja onnan a komplex iteráció bejárta z<subscript>n</subscript> komplex számokat
+			</emphasis>
+		</para>
+        <para>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito">https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito</link>
         </para>
+		<para>
+			A feladat megvalósításához a Qt Creator nevű szoftvert fogjuk használni, mely egy több platformon
+			átívelő keretrendszer elsősorban grafikus alkalmazások készítésére. A Qt nagyon népszerű választás
+			a nagyobb projektek körében is, például a Qt az alapja a VLC-nek, és még sok más <emphasis role="strong">szabad szoftvernek</emphasis>.
+		</para>
+		<para>
+			Ebben a programban alapul vesszük a már meglévő Mandelbrot-halmaz számító C++ programunkat, és egy
+			más kontextusba ültetjük be. Természetesen ez még nem lenne elég, hanem el kell készítenünk
+			hozzá Qt Creatorban a felületet, valamint némi extra kódot. Ez a kód a repóban megtalálható.
+		</para>
+		<para>
+			A program hasznáalta során az egérrel jelölünk ki egy adott területet, melyet az
+			újra renderel és betölt. A programról használat közben beillesztek néhány képernyőképet.
+		</para>
+		<para>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel1.png" width="32%"/>
+				</imageobject>
+			</inlinemediaobject>
 
-        <para>
-            Megoldás forrása:
-        </para>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel2.png" width="32%"/>
+				</imageobject>
+			</inlinemediaobject>
 
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
+			<inlinemediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel3.png" width="32%"/>
+				</imageobject>
+			</inlinemediaobject>
+		</para>
     </section>
 
     <section>
