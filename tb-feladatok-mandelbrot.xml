@@ -234,8 +234,36 @@
 
     <section>
         <title>Mandelbrot nagyító és utazó Java nyelven</title>
-        <para>
-        </para>
-    </section>
+		<para>
+			A feladat megoldásához az OpenJFX 11-et fogjuk használni. A projekt weboldala
+			megtalálható itt:
+		</para>
+		<para>
+			<link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
+		</para>
+		<para>
+			Szerencsénkre C++ és Java között egyszerű a fordítás, néhány nyelvi sajátosságon,
+			könyvtáron, valamint a mutatókon kívül semmit sem kell változtatnunk. Esetünkben
+			a Mandelbrot-halmaz számító programunk C++ változatához képest mindössze
+			egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
+			megvalósítani.
+		</para>
 
+		<figure>
+			<title>Mandelbrot nagyító és utazó Java nyelven</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/java_utazo.png" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<para>
+			A végeredmény itt látható. A forrásfájlok pedig megtalálhatóak a repóban.
+		</para>
+
+		<para>
+			<emphasis role="strong">Megoldás forrása:</emphasis> a repóban.
+		</para>
+    </section>
 </chapter>

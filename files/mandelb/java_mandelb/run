@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#export PATH_TO_FX=/usr/lib/jvm/java-11-openjdk/lib/
+export PATH_TO_FX=/java/lib
+
+java_modules="javafx.controls,javafx.graphics"
+
+rm *.class
+
+/java/bin/javac --module-path $PATH_TO_FX --add-modules=$java_modules Mandelb.java && \
+/java/bin/java --module-path $PATH_TO_FX --add-modules=$java_modules Mandelb && \
+
+rm *.class
