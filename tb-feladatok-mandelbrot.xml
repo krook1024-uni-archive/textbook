@@ -263,7 +263,8 @@
 		</para>
 
 		<para>
-			<emphasis role="strong">Megoldás forrása:</emphasis> a repóban.
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb">https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb</link>
 		</para>
     </section>
 </chapter>
