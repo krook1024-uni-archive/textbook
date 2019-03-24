@@ -235,12 +235,42 @@
     <section>
         <title>Mandelbrot nagyító és utazó Java nyelven</title>
 		<para>
-			A feladat megoldásához az OpenJFX 11-et fogjuk használni. A projekt weboldala
+			A feladat megoldásához az OpenJFX 11-et fogjuk használni. Az OpenJFX projekt weboldala
 			megtalálható itt:
+			<link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
+			Az OpenJFX, hasonlóan a Qt-hoz, egy keretrendszer grafikus felületek készítéséhez.
+			Előnye, hogy kiváló útmutatást adnak ahhoz, hogy miképp és hogyan tudjuk elkezdeni a saját
+			projektünket.
 		</para>
 		<para>
-			<link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
+			Például egy egyszerű program, ami nem csinál mást, csak kiírja az OpenJFX és a Java
+			verzióját egy grafikus ablakban a következőképpen néz ki:
 		</para>
+		<programlisting language="java">
+<![CDATA[import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class HelloFX extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        String javaVersion = System.getProperty("java.version");
+        String javafxVersion = System.getProperty("javafx.version");
+        Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
+        Scene scene = new Scene(new StackPane(l), 640, 480);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+}]]>
+		</programlisting>
 		<para>
 			Szerencsénkre C++ és Java között egyszerű a fordítás, néhány nyelvi sajátosságon,
 			könyvtáron, valamint a mutatókon kívül semmit sem kell változtatnunk. Esetünkben
