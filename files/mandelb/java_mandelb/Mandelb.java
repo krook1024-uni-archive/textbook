@@ -11,10 +11,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.application.Application;
+import javafx.scene.input.MouseEvent;
+import javafx.event.*;
 
 public class Mandelb extends Application {
 	private static final int N = 500;
 	private static final int M = 500;
+
+	private static double mousex, mousey;
 
 	@Override
 	public void start(Stage stage) {
@@ -35,6 +39,35 @@ public class Mandelb extends Application {
 		final double MINY = -1.35;
 		Mandelb m = new Mandelb();
 		m.drawMandel(gc, m.calculateMandelbrot(MAXX, MINX, MAXY, MINY));
+
+
+		root.setOnMouseMoved(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				mousex = event.getX();
+				mousey = event.getY();
+				//System.out.printf("coordinate X: %.2f, coordinate Y: %.2f\n", mousex, mousey);
+			}
+		});
+
+		s.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				// System.out.println("click! " + mousex + " " + mousey);
+				double dx = (MAXX - MINX) / N;
+				double dy = (MAXY - MINY) / M;
+
+				double nMAXX, nMINX, nMAXY, nMINY;
+				double range = 60;
+
+				nMINX = MINX + (mousex*dx);
+				nMAXX = MINX + (mousex*dx) + (range*dx);
+				nMINY = MAXY - (mousey*dy) - (range*dy);
+				nMAXY = MAXY - (mousey*dy);
+
+				m.drawMandel(gc, m.calculateMandelbrot(nMAXX, nMINX, nMAXY, nMINY));
+			}
+		});
 
 
 		stage.setScene(s);
