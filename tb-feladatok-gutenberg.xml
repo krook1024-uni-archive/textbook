@@ -6,9 +6,24 @@
 		</keywordset>
 	</info>
 	<section>
-		<title>Helló</title>
+		<title>Programozási alapfogalmak</title>
 		<para>
-			Lol
+			[...]
 		</para>
 	</section>
+
+	<section>
+		<title>Kernighan & Ritchie</title>
+		<para>
+			[...]
+		</para>
+	</section>
+
+	<section>
+		<title>BME könyv</title>
+		<para>
+			[...]
+		</para>
+	</section>
+
 </chapter>
