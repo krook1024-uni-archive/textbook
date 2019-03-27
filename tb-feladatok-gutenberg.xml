@@ -7,22 +7,56 @@
 	</info>
 	<section>
 		<title>Programozási alapfogalmak</title>
+
 		<para>
-			[...]
+
 		</para>
 	</section>
 
 	<section>
 		<title>Kernighan &amp; Ritchie</title>
 		<para>
-			[...]
+			A könyv a Hello, World! C változatával indít, ami a könyvben
+			a következőképp néz ki;
+		</para>
+
+		<programlisting language="C">
+			<textobject>
+				<textdata fileref="./files/gutenberg/hw.c" />
+			</textobject>
+		</programlisting>
+
+		<screen>
+<![CDATA[$ cc hw.c
+hw.c:3:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+ main() {
+ ^~~~
+$ ]]>
+		</screen>
+
+		<para>
+			Aki nem először lát C kódot annak feltűnhet, hogy milyen
+			önző programozó írhatta ezt a kódot, aki nem hajlandó a
+			rendszernek visszaadni egy 0-t a kód futtatásáért cserébe,
+			de talán lépjünk is ezen tovább.
+		</para>
+
+		<para>
+			Ebben a fejezetben a könyv a legalapvetőbb C utasításokon
+			megy végig. Ismerteti a C-ben használatos típusokat, változókezelést,
+			ciklusokat (<code>for, while, do-while</code>), I/O utasításokat,
+			tömböket, függvényeket, függvények használatát, argumentumkezelést,
+			karaktertömböket (sztringeket), és a változók érvényességét, avagy
+			milyen scope-ban milyen változó látszik.
+			Egyszóval tényleg az abszolút minimumot.
 		</para>
 	</section>
 
 	<section>
 		<title>BME könyv</title>
 		<para>
-			[...]
+			<emphasis>A könyvet még nem sikerült beszereznem ezért az olvasónapló
+			megírását halasztani vagyok kénytelen.</emphasis>
 		</para>
 	</section>
 
