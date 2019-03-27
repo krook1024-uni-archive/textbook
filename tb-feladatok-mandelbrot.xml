@@ -182,7 +182,85 @@
 			nagyobb teljesítménnyel, mint például az OpenGL. A CUDA jelen van a legtöbb
 			mai játékban, vagy streamer, videóvágó szoftverben. A teljesítménynövekedést
 			párhuzamos számítással érik el, több "magot" dolgoztatnak a videókártyán egyszerre.
-        </para>
+			Ezen kívül használható másra is az interfész, nem csak grafikus dolgok programozására.
+			Például széles körben elterjedt szokás CUDA kártyákkal "bányászni" különböző
+			kriptovalutákat.
+		</para>
+		<para>
+			CUDA programok fejlesztéséhez hasznos olvasmány lehet a dokumentáció, amely
+			a következő linken található meg;
+			<link xlink:href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</link>.
+		</para>
+		<para>
+			Tekintsük meg a forráskódot egy pillanatra. A kód már ismerős lehet,
+			hiszen ugyan azt az algoritmust taglaljuk az egész fejezetben.
+			Megjelenik a Mandelbrot-halmaz számító while cuklusunk, a png++, és minden egyéb
+			megszokott csipet amit ebben a fejezetben olvashattunk.
+		</para>
+		<para>
+			A fő különbséget az adja, hogy most a CUDA API-n keresztül kell
+			dolgoznunk. Itt újdonságképpen jelennek meg a <code>__device__</code>,
+			<code>__global__</code> és hasonló jellegű szövegek.
+		</para>
+		<para>
+			A dokumentációt olvasva hamar rájöhetünk, hogy mit is jelentenek ezek.
+			A <code>__device__</code> minősítővel rendelkeznek a magán a GPU-n futó függvények.
+
+			A <code>__global__</code> minősítővel az úgynevezett "kernel" rendelkezik. Ezen belül
+			igyekszünk megvalósítani a párhuzamosítást.
+
+			Ezekre úgy gondoljunk, mint például a <code>short int a;</code> kifejezés során,
+			ahol a <code>short</code> a minősítő, az <code>int</code> a típus, az
+			<code>a</code> pedig a változó neve.
+
+			Minden más pedig hoszt-oldalon fut, tehát a gazdagépen, a processzoron.
+		</para>
+		<para>
+			Ennyi előképzettséggel viszont már lássuk a kódot!
+		</para>
+
+		<programlisting language="C++">
+			<textobject>
+				<textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
+			</textobject>
+		</programlisting>
+
+		<para>
+			Segítséggképpen itt is mellékeltem egy <filename>Makefile</filename>-t, amivel könnyen és egyszerűen
+			fordítható a program, feltéve, hogy a CUDA telepítre van a számítógépünkre, és van
+			erre alkalmas kártyánk. Amennyiben ezek szükséges feltételek teljesülnek, de mégsem
+			működne, próbáljuk meg a <filename>Makefile</filename>-ban korrigálni a fordító abszolút elérési útvonalát.
+		</para>
+
+		<para>
+			Hogyha fordítjuk és futtatjuk a programot, akkor láthatjuk hogy létrejön
+			a <filename>mandel.png</filename> állományunk, amely szokás szerint be
+			lesz ágyazva az olvasó számára.
+		</para>
+
+		<figure>
+			<title>Mandelbrot halmaz CUDA-val</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./files/mandelb/cuda_mandel/mandel.png" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
+		<screen>
+<![CDATA[$ make
+16
+0.159764
+$ ]]>
+		</screen>
+
+		<para>
+			A program kimenetéből látszik, hogy jóval gyorsabb mint a C++ és C-s verziók,
+			ahol akár fél percet is várnunk kellett egy-egy ábra elkészülésére, itt viszont
+			a másodperc törtrésze alatt elkészült a kép, mindez egy olyan számítógépen,
+			amiben egy átlagos videókártya van és SSD nincs. Tehát a sebességnövekedés
+			jelentős.
+		</para>
     </section>
 
     <section>
