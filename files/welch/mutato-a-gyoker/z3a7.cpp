@@ -5,7 +5,7 @@
 class LZWBinFa
 {
 public:
-    LZWBinFa ():fa (gyoker)
+    LZWBinFa ():fa (gyoker = new Csomopont('/'))
     {
     }
 
@@ -13,6 +13,7 @@ public:
     {
         szabadit (gyoker->egyesGyermek());
         szabadit (gyoker->nullasGyermek());
+		delete gyoker;
     }
 
     void operator<< (char b)
@@ -23,9 +24,7 @@ public:
             {
                 Csomopont *uj = new Csomopont ('0');
                 fa->ujNullasGyermek (uj);
-
-				if(gyoker != nullptr)
-					fa = gyoker;
+				fa = gyoker;
             }
             else
             {
@@ -39,9 +38,7 @@ public:
             {
                 Csomopont *uj = new Csomopont ('1');
                 fa->ujEgyesGyermek (uj);
-
-				if(gyoker != nullptr)
-					fa = gyoker;
+				fa = gyoker;
             }
             else
             {
@@ -132,6 +129,7 @@ private:
             --melyseg;
         }
     }
+
     void szabadit (Csomopont * elem)
     {
         if (elem != nullptr)
