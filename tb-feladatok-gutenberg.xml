@@ -42,7 +42,7 @@ $ ]]>
 		</para>
 
 		<para>
-			Ebben a fejezetben a könyv a legalapvetőbb C utasításokon
+			Az első fejezetben a könyv a legalapvetőbb C utasításokon
 			megy végig. Ismerteti a C-ben használatos típusokat, változókezelést,
 			ciklusokat (<code>for, while, do-while</code>), I/O utasításokat,
 			tömböket, függvényeket, függvények használatát, argumentumkezelést,

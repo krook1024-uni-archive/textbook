@@ -15,56 +15,57 @@
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href=""></link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>Java életjáték</title>
         <para>
-            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            Írd meg Java-ban a John Horton Conway-féle életjátékot,
             valósítsa meg a sikló-kilövőt!
         </para>
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href=""></link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>Qt C++ életjáték</title>
         <para>
             Most Qt C++-ban!
         </para>
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+            Megoldás forrása: <link xlink:href=""></link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
+        </para>
+    </section>
     <section>
         <title>BrainB Benchmark</title>
         <para>
         </para>
         <para>
-            Megoldás videó: 
+            Megoldás videó:
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>               
+			Megoldás forrása:
+			<link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>            
-    </section>        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-</chapter>                
+        </para>
+    </section>
+
+</chapter>
