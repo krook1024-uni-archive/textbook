@@ -6,3 +6,9 @@
 
 # gcc binaries
 *.out
+
+# Build files
+*/build/*
+*/*/build/*
+*/*/*/*/build/*
+*/*/*/*/*/build/*
