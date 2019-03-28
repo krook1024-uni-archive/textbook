@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+dir=$(mktemp -d)
+cp ./* $dir/ >/dev/null 2>&1
+cd $dir >/dev/null 2>&1
+qmake . >/dev/null 2>&1
+make >/dev/null 2>&1
+./Sejtauto >/dev/null 2>&1
+rm -rf $dir >/dev/null 2>&1

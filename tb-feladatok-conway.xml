@@ -4,7 +4,8 @@
         <keywordset>
             <keyword/>
         </keywordset>
-    </info>
+	</info>
+
     <section>
         <title>Hangyaszimulációk</title>
         <para>
@@ -20,7 +21,8 @@
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>
+	</section>
+
     <section>
         <title>Java életjáték</title>
         <para>
@@ -36,36 +38,105 @@
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>
+	</section>
+
     <section>
         <title>Qt C++ életjáték</title>
         <para>
-            Most Qt C++-ban!
+			Megoldás forrása:
+			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/conway/Sejtauto">
+				https://github.com/krook1024/textbook/tree/master/files/conway/Sejtauto
+			</link>
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása: <link xlink:href=""></link>
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>
+			A Qt már ismerős lehet, hiszen már a Mandelbrotos fejezetünkben
+			előkerült. Most ismét felélesztjük, és a John H. Conway féle
+			életjátékot fogjuk kipróbálni.
+		</para>
+		<para>
+			Szokás szerint egyszerűen a mappába lépve a <filename>./run</filename> parancsot kiadva le fog fordulni és futtatva lesz a program.
+			Futás közbeni képeket alább találhat meg az olvasó.
+		</para>
+		<figure>
+			<title>Qt C++ életjáték</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/eletjatek1.png" width="50%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<figure>
+			<title>Qt C++ életjáték</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/eletjatek2.png"  width="50%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+	</section>
+
     <section>
-        <title>BrainB Benchmark</title>
-        <para>
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
+		<title>BrainB Benchmark</title>
+
+		<figure>
+			<title>BrainB Benchmark</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/brainb.png" width="6.5in" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+
         <para>
 			Megoldás forrása:
 			<link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>
-        </para>
+		</para>
+
+		<para>
+			A játék célja hogy pár perc játékidő után az egy E-Sport "profilt" állítson elő
+			a játékosról, próbálja megjósolni, hogy az adott játékosból mennyire lehet
+			jó E-sportoló.
+		</para>
+
+		<para>
+			A programot kipróbálhatjuk mi is a következő parancsok kiadásával: (OpenCV-re szükségünk lesz)
+		</para>
+
+		<screen><![CDATA[$ git clone https://github.com/nbatfai/esport-talent-search
+$ cd esport-talent-search
+$ mkdir build && cd build
+$ qmake ..
+$ make
+$ ./BrainB]]>
+		</screen>
+
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+			Az én eredményem 3 perc játék után a következő lett:
+		</para>
+
+		<screen>
+<![CDATA[NEMESPOR BrainB Test 6.0.3
+time      : 1809
+bps       : 21720
+noc       : 22
+nop       : 0
+lost      :
+45230 44090 15600 12730 82840 49690 63660 86510 63010 43770 32800 18760 19120 10990 14510 66850 48580 56320 35800 54540 21200 56470 35880 36880 29050
+mean      : 41795
+var       : 21398.8
+found     : 20170 19560 27830 49580 30150 50580 66080 22670 35600 5450 9730 15130 43400 33610 51300 56580 47370 48940 62560 57660 58400 45580 6920 15380 15440 13460 8590 25120 24650 29940 44950 50710 51920 48310 30030 48740 29900 37420 31020 35740 37290 46400
+mean      : 35472
+var       : 16558.8
+lost2found: 22670 5450 47370 57660 6920 51920 30030 29900 31020
+mean      : 31437
+var       : 18435.2
+found2lost: 44090 82840 63660 86510 66850 48580 56320 54540 56470
+mean      : 62206
+var       : 14492.7
+mean(lost2found) < mean(found2lost)
+time      : 3:0
+U R about 5.71552 Kilobytes]]>
+		</screen>
     </section>
 
 </chapter>
