@@ -13,54 +13,14 @@
 		</para>
 
 		<programlisting language="Java">
-<![CDATA[public class PolárGenerátor {
-    boolean nincsTárolt = true;
-    double tárolt;
-
-    public PolárGenerátor() {
-        nincsTárolt = true;
-    }
-
-    public double következő() {
-        if(nincsTárolt) {
-            double u1, u2, v1, v2, w;
-            do {
-                u1 = Math.random();
-                u2 = Math.random();
-
-                v1 = 2*u1 - 1;
-                v2 = 2*u2 - 1;
-
-                w = v1*v1 + v2*v2;
-
-            } while(w > 1);
-
-            double r = Math.sqrt((-2*Math.log(w))/w);
-
-            tárolt = r*v2;
-            nincsTárolt = !nincsTárolt;
-
-            return r*v1;
-
-        } else {
-            nincsTárolt = !nincsTárolt;
-            return tárolt;
-        }
-    }
-
-    public static void main(String[] args) {
-        PolárGenerátor g = new PolárGenerátor();
-        for(int i=0; i<10; ++i)
-            System.out.println(g.következő());
-    }
-}]]>
+			<textobject>
+				<textdata fileref="./files/welch/polargen/polargen.java" />
+			</textobject>
 		</programlisting>
 
 		<para>
-			[...]
-		</para>
-
-		<para>
+			A módosított polártranszformációs generátor argumentum két
+			véletlenszerű érték generálása alkalmazható.
 			Próbáljuk is ki!
 		</para>
 
@@ -86,12 +46,11 @@ $ /java/bin/java polargen.java
 0.9084531239664848
 -1.4472688950554047
 -1.6250659297425345
--0.7791586500972545
-$]]>
+-0.7791586500972545]]>
 		</screen>
 
 		<para>
-			A program 10 darab véletlenszerűen generált számot köp ki, ahogyan
+			A program 10 darab véletlenszerűen generált normalizált számot köp ki, ahogyan
 			azt várjuk is.
 		</para>
     </section>
@@ -155,7 +114,9 @@ $]]>
 
         <para>
 			Megoldás forrása:
-			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp</link>
+			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">
+				gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp
+			</link>
 		</para>
 
 		<para>
@@ -177,7 +138,9 @@ $]]>
         <title>Mozgató szemantika</title>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
-			TBA
+			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp">
+				https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp
+			</link>
 		</para>
 
 		<para>

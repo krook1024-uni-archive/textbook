@@ -1,13 +1,13 @@
-public class PolárGenerátor {
-    boolean nincsTárolt = true;
-    double tárolt;
-    public PolárGenerátor() {
+public class PolarGenerator {
+    boolean nincsTarolt = true;
+    double tarolt;
+    public PolarGenerator() {
 
-        nincsTárolt = true;
+        nincsTarolt = true;
 
     }
-    public double következő() {
-        if(nincsTárolt) {
+    public double kovetkezo() {
+        if(nincsTarolt) {
             double u1, u2, v1, v2, w;
             do {
                 u1 = Math.random();
@@ -22,20 +22,20 @@ public class PolárGenerátor {
 
             double r = Math.sqrt((-2*Math.log(w))/w);
 
-            tárolt = r*v2;
-            nincsTárolt = !nincsTárolt;
+            tarolt = r*v2;
+            nincsTarolt = !nincsTarolt;
 
             return r*v1;
 
         } else {
-            nincsTárolt = !nincsTárolt;
-            return tárolt;
+            nincsTarolt = !nincsTarolt;
+            return tarolt;
         }
     }
 
     public static void main(String[] args) {
-        PolárGenerátor g = new PolárGenerátor();
+        PolarGenerator g = new PolarGenerator();
         for(int i=0; i<10; ++i)
-            System.out.println(g.következő());
+            System.out.println(g.kovetkezo());
     }
 }
