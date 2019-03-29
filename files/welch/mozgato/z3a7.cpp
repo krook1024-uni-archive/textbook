@@ -1,8 +1,8 @@
 // z3a7.cpp
 
-#include <iostream>		// mert olvassuk a std::cin, írjuk a std::cout csatornákat
-#include <cmath>		// mert vonunk gyököt a szóráshoz: std::sqrt
-#include <fstream>		// fájlból olvasunk, írunk majd
+#include <iostream>
+#include <cmath>
+#include <fstream>
 
 class LZWBinFa
 {
@@ -68,7 +68,6 @@ public:
         kiir (&gyoker, os);
     }
 
-private:
     class Csomopont
     {
     public:
@@ -112,7 +111,11 @@ private:
     double szorasosszeg;
 
 	//nocopy
-	LZWBinFa (const LZWBinFa &);
+
+	LZWBinFa (const LZWBinFa & regi) {
+		gyoker = masol(regi.gyoker, regi.fa);
+	}
+
     LZWBinFa & operator= (const LZWBinFa &);
 
     void kiir (Csomopont * elem, std::ostream & os)
@@ -128,6 +131,7 @@ private:
             --melyseg;
         }
     }
+
     void szabadit (Csomopont * elem)
     {
         if (elem != NULL)
@@ -137,6 +141,38 @@ private:
             delete elem;
         }
     }
+
+
+	Csomopont* masol (Csomopont *elem, Csomopont *regifa ) {
+		Csomopont * ujelem = NULL;
+		if ( elem != NULL ) {
+			switch (elem->getBetu()) {
+				case '/':
+					ujelem = new Csomopont ( '/' );
+					break;
+
+				case '0':
+					ujelem = new Csomopont ( '1' );
+					break;
+
+				case '1':
+					ujelem = new Csomopont ( '0' );
+					break;
+
+				default:
+					std::cerr<<"HIBA!"<<std::endl;
+					break;
+			}
+
+		ujelem->ujEgyesGyermek ( masol ( elem->egyesGyermek (), regifa ) );
+		ujelem->ujNullasGyermek ( masol ( elem->nullasGyermek (), regifa ) );
+
+		if ( regifa == elem )
+			fa = ujelem;
+		}
+
+		return ujelem;
+	}
 
 protected:
     Csomopont gyoker;

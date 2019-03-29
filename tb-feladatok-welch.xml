@@ -6,23 +6,94 @@
         </keywordset>
     </info>
     <section>
-        <title>Első osztályom</title>
+		<title>Első osztályom</title>
+
         <para>
-            Valósítsd meg C++-ban és Java-ban az módosított polártranszformációs algoritmust! A matek háttér
-            teljesen irreleváns, csak annyiban érdekes, hogy az algoritmus egy számítása során két normálist
-            számol ki, az egyiket elspájzolod és egy további logikai taggal az osztályban jelzed, hogy van vagy
-            nincs eltéve kiszámolt szám.
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat... térj ki arra is, hogy a JDK forrásaiban a Sun programozói
-            pont úgy csinálták meg ahogyan te is, azaz az OO nemhogy nem nehéz, hanem éppen természetes neked!
-        </para>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+		</para>
+
+		<programlisting language="Java">
+<![CDATA[public class PolárGenerátor {
+    boolean nincsTárolt = true;
+    double tárolt;
+
+    public PolárGenerátor() {
+        nincsTárolt = true;
+    }
+
+    public double következő() {
+        if(nincsTárolt) {
+            double u1, u2, v1, v2, w;
+            do {
+                u1 = Math.random();
+                u2 = Math.random();
+
+                v1 = 2*u1 - 1;
+                v2 = 2*u2 - 1;
+
+                w = v1*v1 + v2*v2;
+
+            } while(w > 1);
+
+            double r = Math.sqrt((-2*Math.log(w))/w);
+
+            tárolt = r*v2;
+            nincsTárolt = !nincsTárolt;
+
+            return r*v1;
+
+        } else {
+            nincsTárolt = !nincsTárolt;
+            return tárolt;
+        }
+    }
+
+    public static void main(String[] args) {
+        PolárGenerátor g = new PolárGenerátor();
+        for(int i=0; i<10; ++i)
+            System.out.println(g.következő());
+    }
+}]]>
+		</programlisting>
+
+		<para>
+			[...]
+		</para>
+
+		<para>
+			Próbáljuk is ki!
+		</para>
+
+		<screen>
+<![CDATA[$ /java/bin/java polargen.java
+-0.7353431820414118
+-0.33784190028284766
+0.7750031835316805
+0.5524713543467192
+-0.5380423283211784
+1.512849268596637
+2.7148874695500966
+-0.23688836801277952
+-0.3238588036816322
+-0.7963150809415576
+$ /java/bin/java polargen.java
+-0.6566325405553158
+0.40465899229436114
+0.08634239512228409
+-0.9470321445590416
+0.1926238606249351
+0.7705517022243931
+0.9084531239664848
+-1.4472688950554047
+-1.6250659297425345
+-0.7791586500972545
+$]]>
+		</screen>
+
+		<para>
+			A program 10 darab véletlenszerűen generált számot köp ki, ahogyan
+			azt várjuk is.
+		</para>
     </section>
 
     <section>
@@ -35,7 +106,11 @@
 			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
 				gh/krook1024/textbook/master/files/welch/z3a7.cpp
 			</link>
-        </para>
+		</para>
+		<para>
+			A LZWBinFa osztály felépíti a bemeneti fájl bináris fáját. Használata a következőképp
+			néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.
+		</para>
     </section>
 
     <section>
@@ -44,7 +119,16 @@
             Járd be az előző (inorder bejárású) fát pre- és posztorder is!
         </para>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<emphasis role="strong">Megoldás forrása (preorder):</emphasis>
+		</para>
+		<para>
+			<emphasis role="strong">Megoldás forrása (postorder):</emphasis>
+		</para>
+		<para>
+			Preorder bejárás esetén [...]
+		</para>
+		<para>
+			Postorder bejárás esetén pedig [...]
 		</para>
     </section>
 
@@ -53,13 +137,13 @@
         <para>
             Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
             osztálya. A gyökér csomópont legyen kompozícióban a fával!
-        </para>
+		</para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
+				gh/krook1024/textbook/master/files/welch/z3a7.cpp
+			</link>
+		</para>
     </section>
 
     <section>
@@ -85,21 +169,80 @@
 			a gyökérnek, majd az ebből kapott mutatót behelyettesítjük az
 			olyan helykre, ahol egyébként a gyökér változóra hivatkoztunk.
 			Ez a gyakorlatban annyit jelent, hogy eltávolítunk a kódból néhány
-			címképző operátort (<emphasis>i</emphasis>).
+			címképző operátort (<emphasis>&amp;</emphasis>).
 		</para>
     </section>
 
     <section>
         <title>Mozgató szemantika</title>
         <para>
-            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
-            értékadásra alapozva!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			TBA
+		</para>
+
+		<para>
+			A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a destruktort
+			értjük. A bináris fák másolásához és mozgatásához rekurzív mozgató, és
+			másoló függvényekre lesz szükségünk. Lássuk is ezeket.
+		</para>
+
+		<programlisting language="C++">
+<![CDATA[Csomopont *  masol ( Csomopont * elem, Csomopont * regifa ) {
+     Csomopont * ujelem = NULL;
+     if ( elem != NULL ) {
+         switch (elem->getBetu()) {
+			 case '/':
+				 ujelem = new Csomopont ( '/' );
+				 break;
+
+			 case '0':
+				 ujelem = new Csomopont ( '1' );
+				 break;
+
+			 case '1':
+				 ujelem = new Csomopont ( '0' );
+				 break;
+
+			 default:
+				 std::cerr<<"HIBA!"<<std::endl;
+				 break;
+         }
+
+		 ujelem->ujEgyesGyermek(
+			 masol(elem->egyesGyermek(), regifa)
+		 );
+
+		 ujelem->ujNullasGyermek(
+			 masol(elem->nullasGyermek(), regifa)
+		 );
+
+         if ( regifa == elem )
+              fa = ujelem;
+     }
+     return ujelem;
+}]]>
+		</programlisting>
+
+		<para>
+			Az LZWBinFa osztályunk úgy épül fel, hogy az <code>LZWBinFa</code>
+			osztályon belül megtalálhatóak beágyazott <code>Csomopont</code>
+			osztályú objektumok, ezek alkotják a fát.
+			Ebből következik, hogy a fát úgy tudjuk másolni, hogy
+			ezeket a beágyazott csomópontokat másoljuk, rekurzívan.
+		</para>
+
+		<para>
+			A fenti kódcsipet a rekurzív másoló függvényünk, amit a másoló
+			konstruktorból hívunk meg, olyan módon, hogy átadjuk neki a
+			a gyökeret és magát a fát.
+		</para>
+
+		<programlisting language="C++">
+<![CDATA[LZWBinFa ( const LZWBinFa & regi ) {
+	std::cout << "LZWBinFa copy ctor" << std::endl;
+	gyoker =  masol ( regi.gyoker, regi.fa ) ;
+}]]>
+		</programlisting>
+
 	</section>
 </chapter>
