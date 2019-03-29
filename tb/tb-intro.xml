@@ -55,7 +55,6 @@
                     </para>
 				</listitem>
 				<listitem>
-
 <tip>
               <title>Bátf41 Haxor Stream</title>
               <para>
@@ -65,7 +64,6 @@
                   csatornán található.
               </para>
             </tip>
-
 				</listitem>
             </itemizedlist>
         </section>
@@ -87,14 +85,11 @@
 				ablakkezelő rendszer, melynek előnye, hogy minden teljesen testreszabható. Az én konfigurációmról beágyazok
 				egy képet lentebb.
 			</para>
-
 			<mediaobject>
 				<imageobject>
 					<imagedata fileref="../pictures/screenshot.png" width="100%"/>
 				</imageobject>
 			</mediaobject>
-
 		</section>
-
     </chapter>
 </part>

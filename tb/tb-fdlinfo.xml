@@ -1,5 +1,4 @@
 <info xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
-
     <xi:include href="tb-title.xml">
         <xi:fallback>
             <para>
@@ -7,7 +6,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-subtitle.xml">
         <xi:fallback>
             <para>
@@ -15,7 +13,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-titleabbrev.xml">
         <xi:fallback>
             <para>
@@ -23,7 +20,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-authors.xml">
         <xi:fallback>
             <para>
@@ -31,7 +27,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-edt.xml">
         <xi:fallback>
             <para>
@@ -39,7 +34,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
 	<xi:include href="tb-revhistory.xml">
         <xi:fallback>
             <para>

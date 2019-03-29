@@ -152,7 +152,10 @@
     <section>
 		<title>A Mandelbrot halmaz CUDA megvalósítása</title>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis> TBA
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu">
+				https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu
+			</link>
         </para>
 		<para>
 			A CUDA az nVidia kártyák által használt API a kártyák vezérlésére

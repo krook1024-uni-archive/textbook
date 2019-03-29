@@ -3,7 +3,6 @@
       xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       version="5.1" xml:lang="hu">
-
     <xi:include href="tb/tb-fdlinfo.xml">
         <xi:fallback>
             <para>
@@ -11,7 +10,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb/tb-motto.xml">
         <xi:fallback>
             <para>
@@ -19,7 +17,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb/tb-pre.xml">
         <xi:fallback>
             <para>
@@ -27,7 +24,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb/tb-intro.xml">
         <xi:fallback>
             <para>
@@ -35,7 +31,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok.xml">
         <xi:fallback>
             <para>
@@ -43,7 +38,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok2.xml">
         <xi:fallback>
             <para>
@@ -51,7 +45,6 @@
             </para>
         </xi:fallback>
 	</xi:include>
-
     <xi:include href="tb/tb-bib.xml">
         <xi:fallback>
             <para>
@@ -59,7 +52,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
 	<xi:include href="tb/tb-ack.xml">
 		<xi:fallback>
 			<para>
@@ -67,7 +59,6 @@
 			</para>
 			</xi:fallback>
 	</xi:include>
-
 	<xi:include href="tb/tb-copy.xml">
         <xi:fallback>
             <para>
@@ -75,5 +66,4 @@
             </para>
         </xi:fallback>
     </xi:include>
-
 </book>

@@ -86,10 +86,6 @@ $ /java/bin/java polargen.java
     <section>
         <title>Tag a gyökér</title>
         <para>
-            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
-            osztálya. A gyökér csomópont legyen kompozícióban a fával!
-		</para>
-        <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
 				gh/krook1024/textbook/master/files/welch/z3a7.cpp
@@ -99,11 +95,7 @@ $ /java/bin/java polargen.java
     <section>
         <title>Mutató a gyökér</title>
         <para>
-            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a
-            fával!
-		</para>
-        <para>
-			Megoldás forrása:
+			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">
 				gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp
 			</link>
@@ -182,5 +174,30 @@ $ /java/bin/java polargen.java
 	gyoker =  masol ( regi.gyoker, regi.fa ) ;
 }]]>
 		</programlisting>
+		<para>
+			Ha kipróbáljuk a programot akkor láthatjuk,hogy a másolókonstruktor működik.
+		</para>
+		<screen>
+<![CDATA[$ make
+LZWBinFa copy ctor
+------------0(3)
+---------0(2)
+------0(1)
+---/(0)
+---------0(2)
+------1(1)
+depth = 3
+mean = 2.5
+var = 0.707107
+------------1(3)
+---------1(2)
+------1(1)
+---/(0)
+---------1(2)
+------0(1)
+depth = 3
+mean = 2.5
+var = 0.707107]]>
+		</screen>
 	</section>
 </chapter>
