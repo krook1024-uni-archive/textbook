@@ -7,23 +7,19 @@
     </info>
     <section>
 		<title>Első osztályom</title>
-
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>
-
 		<programlisting language="Java">
 			<textobject>
 				<textdata fileref="./files/welch/polargen/polargen.java" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			A módosított polártranszformációs generátor argumentum két
 			véletlenszerű érték generálása alkalmazható.
 			Próbáljuk is ki!
 		</para>
-
 		<screen>
 <![CDATA[$ /java/bin/java polargen.java
 -0.7353431820414118
@@ -48,13 +44,11 @@ $ /java/bin/java polargen.java
 -1.6250659297425345
 -0.7791586500972545]]>
 		</screen>
-
 		<para>
 			A program 10 darab véletlenszerűen generált normalizált számot köp ki, ahogyan
 			azt várjuk is.
 		</para>
     </section>
-
     <section>
         <title>LZW</title>
         <para>
@@ -71,7 +65,6 @@ $ /java/bin/java polargen.java
 			néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.
 		</para>
     </section>
-
     <section>
         <title>Fabejárás</title>
         <para>
@@ -90,7 +83,6 @@ $ /java/bin/java polargen.java
 			Postorder bejárás esetén pedig [...]
 		</para>
     </section>
-
     <section>
         <title>Tag a gyökér</title>
         <para>
@@ -104,26 +96,22 @@ $ /java/bin/java polargen.java
 			</link>
 		</para>
     </section>
-
     <section>
         <title>Mutató a gyökér</title>
         <para>
             Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a
             fával!
 		</para>
-
         <para>
 			Megoldás forrása:
 			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">
 				gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp
 			</link>
 		</para>
-
 		<para>
 			Ebben a programban úgy írtuk át a már meglévő BinFa
 			programunkat, hogy a bináris fánk gyökere mutató legyen.
 		</para>
-
 		<para>
 			A módosítások elvégzése egyszerű, mechanikus folyamat.
 			A gyökér csomópont definíciójánál foglalunk helyet a heapen
@@ -133,7 +121,6 @@ $ /java/bin/java polargen.java
 			címképző operátort (<emphasis>&amp;</emphasis>).
 		</para>
     </section>
-
     <section>
         <title>Mozgató szemantika</title>
         <para>
@@ -142,13 +129,11 @@ $ /java/bin/java polargen.java
 				https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp
 			</link>
 		</para>
-
 		<para>
 			A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a destruktort
 			értjük. A bináris fák másolásához és mozgatásához rekurzív mozgató, és
 			másoló függvényekre lesz szükségünk. Lássuk is ezeket.
 		</para>
-
 		<programlisting language="C++">
 <![CDATA[Csomopont *  masol ( Csomopont * elem, Csomopont * regifa ) {
      Csomopont * ujelem = NULL;
@@ -157,35 +142,28 @@ $ /java/bin/java polargen.java
 			 case '/':
 				 ujelem = new Csomopont ( '/' );
 				 break;
-
 			 case '0':
 				 ujelem = new Csomopont ( '1' );
 				 break;
-
 			 case '1':
 				 ujelem = new Csomopont ( '0' );
 				 break;
-
 			 default:
 				 std::cerr<<"HIBA!"<<std::endl;
 				 break;
          }
-
 		 ujelem->ujEgyesGyermek(
 			 masol(elem->egyesGyermek(), regifa)
 		 );
-
 		 ujelem->ujNullasGyermek(
 			 masol(elem->nullasGyermek(), regifa)
 		 );
-
          if ( regifa == elem )
               fa = ujelem;
      }
      return ujelem;
 }]]>
 		</programlisting>
-
 		<para>
 			Az LZWBinFa osztályunk úgy épül fel, hogy az <code>LZWBinFa</code>
 			osztályon belül megtalálhatóak beágyazott <code>Csomopont</code>
@@ -193,19 +171,16 @@ $ /java/bin/java polargen.java
 			Ebből következik, hogy a fát úgy tudjuk másolni, hogy
 			ezeket a beágyazott csomópontokat másoljuk, rekurzívan.
 		</para>
-
 		<para>
 			A fenti kódcsipet a rekurzív másoló függvényünk, amit a másoló
 			konstruktorból hívunk meg, olyan módon, hogy átadjuk neki a
 			a gyökeret és magát a fát.
 		</para>
-
 		<programlisting language="C++">
 <![CDATA[LZWBinFa ( const LZWBinFa & regi ) {
 	std::cout << "LZWBinFa copy ctor" << std::endl;
 	gyoker =  masol ( regi.gyoker, regi.fa ) ;
 }]]>
 		</programlisting>
-
 	</section>
 </chapter>

@@ -7,14 +7,12 @@
     </info>
     <section>
 		<title>Végtelen ciklus</title>
-
         <caution>
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutoráltam Füleky Ladislav-ot.
             </para>
         </caution>
-
 		<para>
 			<emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
 		</para>
@@ -28,7 +26,6 @@
 			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzor időt
 			kapni, a processzor használatunk (megközelítőleg) 0 százalék lesz.
 		</para>
-
 		<para>
 			<emphasis role="strong">Dolgoztassunk 100 százalékban egy szálat:</emphasis>
 		</para>
@@ -40,7 +37,6 @@
 		<para>
 			Természetesen itt semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
 		</para>
-
 		<para>
 			<emphasis role="strong">Dolgoztassuk meg az összes szálat 100 százalékban:</emphasis>
 		</para>
@@ -54,7 +50,6 @@
 			függvényt sikerült írnunk, benne a végtelen ciklussal, egyszerűen megoldhatjuk, hogy az alkalmazásunk
 			magához vegye a fennmaradó szabad processzor idő 100 százalékát.
 		</para>
-
 		<para>
 			Egy másik megoldásban az OpenMP függvénykönyvtárat használva is megoldható a feladat,
 			lényegesen kevesebb, mindössze 5 sornyi kóddal.
@@ -64,14 +59,12 @@
 				<textdata fileref="./files/turing/infinite_2threads_omp.c" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			A különbség a kettő megoldás között az, hogy a pthreads egy alacsony
 			szintű POSIX API, melyben jóval több irányításunk van a szálak fölött,
 			míg az OMP egy magasabb szintű könyvtár mely szinte mindent megcsinál
 			helyettünk, ezzel kivéve az irányítást a kezünkből.
 		</para>
-
         <para>
 			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzor időt
 			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Meglehetősen kíváncsi
@@ -82,7 +75,6 @@
 			milliszekundumban nem tart igényt processzor időre, ennek megfelelően az OS nem is oszt számára időt.
         </para>
     </section>
-
     <section>
         <title>Lefagyott, nem fagyott, akkor most mi van?</title>
         <para>
@@ -97,7 +89,6 @@
         </para>
         <programlisting language="c"><![CDATA[Program T100
 {
-
 	boolean Lefagy(Program P)
 	{
 		 if(P-ben van végtelen ciklus)
@@ -105,7 +96,6 @@
 		 else
 			return false;
 	}
-
 	main(Input Q)
 	{
 		Lefagy(Q)
@@ -126,7 +116,6 @@ false]]></screen>
         </para>
         <programlisting language="c"><![CDATA[Program T1000
 {
-
 	boolean Lefagy(Program P)
 	{
 		 if(P-ben van végtelen ciklus)
@@ -134,7 +123,6 @@ false]]></screen>
 		 else
 			return false;
 	}
-
 	boolean Lefagy2(Program P)
 	{
 		 if(Lefagy(P))
@@ -142,17 +130,14 @@ false]]></screen>
 		 else
 			for(;;);
 	}
-
 	main(Input Q)
 	{
 		Lefagy2(Q)
 	}
-
 }]]></programlisting>
         <programlisting><![CDATA[]]></programlisting>
         <para>
             Mit fog kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
-
             <itemizedlist>
                 <listitem>
                     <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>
@@ -178,7 +163,6 @@ false]]></screen>
 			summát kaphatnánk.
 		</para>
     </section>
-
     <section>
         <title>Változók értékének felcserélése</title>
         <para>
@@ -187,25 +171,21 @@ false]]></screen>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>
-
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/turing/swap.c" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			Logikai utasítás nélkül például összeadással oldható meg két változó
 			cseréje. A fenti programot kipróbálva láthatjuk, hogy a programunk
 			működik.
 		</para>
-
 		<screen>
 <![CDATA[$ ./a.out
 x=3 y=7
 x=7 y=3]]>
 		</screen>
-
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/turing/swap_xor.c" />
@@ -240,7 +220,6 @@ a=00000111, b=00000011]]>
 			helyet cserélnek.
 		</para>
     </section>
-
     <section>
         <title>Labdapattogás</title>
         <para>
@@ -263,8 +242,6 @@ a=00000111, b=00000011]]>
 		<para>
 			A program lényeges része a ciklusmagban van, ezt nézzük meg sorról sorra.
 		</para>
-
-
 		<programlisting>
 <![CDATA[xj = (xj - 1) % mx;]]>
 		</programlisting>
@@ -273,15 +250,12 @@ a=00000111, b=00000011]]>
 			legyen a saját értékénél egyel kisebb értéknek és a
 			terminál szélességének a kétszeresének a hányadosával.
 		</para>
-
 		<programlisting>
 <![CDATA[xk = (xk + 1) % mx;]]>
 		</programlisting>
 		<para>
 			Ugyanezt elvégezzük az xk változóval is.
 		</para>
-
-
 		<programlisting>
 <![CDATA[yj = (yj - 1) % my;
 yk = (yk + 1) % my;]]>
@@ -289,8 +263,6 @@ yk = (yk + 1) % my;]]>
 		<para>
 			Itt ugyanezt elvégezzük az <emphasis>y</emphasis> tengelyen is.
 		</para>
-
-
 		<programlisting>
 <![CDATA[clear();]]>
 		</programlisting>
@@ -299,8 +271,6 @@ yk = (yk + 1) % my;]]>
 			kirajzolásból adódóan. Ezzel készülünk fel a következő képkocka
 			kirajzolására.
 		</para>
-
-
 		<programlisting>
 <![CDATA[mvprintw(abs((yj + (my - yk)) / 2),
 abs((xj + (mx - xk)) / 2), "o");]]>
@@ -310,8 +280,6 @@ abs((xj + (mx - xk)) / 2), "o");]]>
 			függvényt. Ez a függvény kiírat egy karaktert a megadott x és y koordinátáknak
 			megfelelően a képernyőn valahol.
 		</para>
-
-
 		<programlisting>
 <![CDATA[refresh();
 usleep(30000);]]>
@@ -321,7 +289,6 @@ usleep(30000);]]>
 			majd váruk 30000 mikroszekundumnyi időt.
 		</para>
     </section>
-
     <section>
         <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
         <para>
@@ -338,7 +305,6 @@ usleep(30000);]]>
 			hogy hányszor tudtuk balra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
         </para>
     </section>
-
     <section>
         <title>Helló, Google!</title>
         <para>
@@ -363,10 +329,8 @@ usleep(30000);]]>
 			érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
         </para>
 	</section>
-
     <section>
 		<title>100 éves a Brun tétel</title>
-
 		<para>
 			Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
 		</para>
@@ -375,7 +339,6 @@ usleep(30000);]]>
 				<textdata fileref="./files/turing/primek.r" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			A prímszámok olyan számok, melyek csak önmagukkal és eggyel osztva nem adnak maradékot.
 			Az ikerprímek pedig olyan príszmámok, melyek különbsége kettő.
@@ -408,7 +371,6 @@ usleep(30000);]]>
 			</mediaobject>
 		</figure>
 	</section>
-
     <section>
         <title>A Monty Hall probléma</title>
         <para>
@@ -445,5 +407,4 @@ usleep(30000);]]>
 			A <computeroutput>0.4994657</computeroutput> pedig az előbbi kettőnek a hányadosa.
 		</para>
     </section>
-
 </chapter>

@@ -5,7 +5,6 @@
             <keyword/>
         </keywordset>
 	</info>
-
     <section>
         <title>Hangyaszimulációk</title>
         <para>
@@ -22,7 +21,6 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
 	</section>
-
     <section>
         <title>Java életjáték</title>
         <para>
@@ -39,7 +37,6 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
 	</section>
-
     <section>
         <title>Qt C++ életjáték</title>
         <para>
@@ -74,10 +71,8 @@
 			</mediaobject>
 		</figure>
 	</section>
-
     <section>
 		<title>BrainB Benchmark</title>
-
 		<figure>
 			<title>BrainB Benchmark</title>
 			<mediaobject>
@@ -86,22 +81,18 @@
 				</imageobject>
 			</mediaobject>
 		</figure>
-
         <para>
 			Megoldás forrása:
 			<link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>
 		</para>
-
 		<para>
 			A játék célja hogy pár perc játékidő után az egy E-Sport "profilt" állítson elő
 			a játékosról, próbálja megjósolni, hogy az adott játékosból mennyire lehet
 			jó E-sportoló.
 		</para>
-
 		<para>
 			A programot kipróbálhatjuk mi is a következő parancsok kiadásával: (OpenCV-re szükségünk lesz)
 		</para>
-
 		<screen><![CDATA[$ git clone https://github.com/nbatfai/esport-talent-search
 $ cd esport-talent-search
 $ mkdir build && cd build
@@ -109,11 +100,9 @@ $ qmake ..
 $ make
 $ ./BrainB]]>
 		</screen>
-
         <para>
 			Az én eredményem 3 perc játék után a következő lett:
 		</para>
-
 		<screen>
 <![CDATA[NEMESPOR BrainB Test 6.0.3
 time      : 1809
@@ -138,5 +127,4 @@ time      : 3:0
 U R about 5.71552 Kilobytes]]>
 		</screen>
     </section>
-
 </chapter>

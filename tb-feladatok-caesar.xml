@@ -5,23 +5,19 @@
             <keyword/>
         </keywordset>
 	</info>
-
     <section>
 		<title><type>double **</type> háromszögmátrix</title>
-
         <caution>
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
         </caution>
-
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/caesar/doubleharomszog.c"/>
 			</textobject>
 		</programlisting>
-
         <para>
 			Ebben a példában a C nyelv fő jellegzetességével foglalkozunk,
 			ami nem az egyszerűsége, hanem a dinamikus memóriakezelés.
@@ -34,7 +30,6 @@
 			elemű tömbjeink lesznek, hanem azokat majd dinamikusan
 			foglaljuk le.
 		</para>
-
 		<para>
 			A program úgy működik, hogy elsőnek megadjuk, hogy hányszor
 			hányas tömböt szeretnénk létrehozni, és ezt eltároljuk a db változóba.
@@ -44,7 +39,6 @@
 			tömböt (ezek lesznek a sorok), amelyek a következő lépésben szintén
 			tartalmazni fognak 5 db tömböt (ezek pedig az oszlopok).
 		</para>
-
 		<para>
 			Egy alsó háromszögmátrix egy olyan mátrix, melyben a főátló felett csupán
 			nullák vannak. A programunk egy kvadratikus háromszögmátrixot készít el,
@@ -52,7 +46,6 @@
 			ahol az i a sor	száma, a j pedig az oszlop száma. A +1 azért kell, hogy ne osszunk
 			nullával véletlenül se.
 		</para>
-
 		<screen>
 <![CDATA[$ gcc doubleharomszog.c  && ./a.out
 Mutato cime: 0x7fffbc435de0
@@ -64,7 +57,6 @@ Elso sor cime: 0x5567bca696a0
 |4.00  2.00  1.00  1.00  0.00  |
 |5.00  2.00  1.00  1.00  1.00  |]]>
 		</screen>
-
 		<para>
 			A feladat tanulsága, hogy a [] jelek valóban csak a
 			fordító adta kényelmi funkció. C-ben azt a kifejezést, hogy
@@ -74,7 +66,6 @@ Elso sor cime: 0x5567bca696a0
 			<code language="c">(*(*hm + 1)+1)</code>.
 		</para>
 	</section>
-
     <section>
         <title>C EXOR titkosító</title>
 		<programlisting language="c">
@@ -82,7 +73,6 @@ Elso sor cime: 0x5567bca696a0
 				<textdata fileref="./files/caesar/xor_e.c" />
 			</textobject>
 		</programlisting>
-
         <para>
         	Az XOR titkosító programunk meglehetősen egyszerűen működik. Az
 			argumentumból kiolvassuk a kulcsot majd a <code>while</code>
@@ -96,24 +86,19 @@ Elso sor cime: 0x5567bca696a0
 			egyszerűen inspektálhatja, vagy fájlba írhatja a kimenetet,
 			legalábbis UNIX-jellegű operációs rendszerek alatt.
 		</para>
-
 		<para>
 			Természetesen ugyanezzel a kóddal és a kulcs ismeretében,
 			a generált titkosított állomány vissza is fejthető.
 		</para>
 	</section>
-
     <section>
 		<title>Java EXOR titkosító</title>
-
         <caution>
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutoráltam Füleky Ladislavot.
             </para>
         </caution>
-
-
 		<programlisting language="java">
 			<textobject>
 				<textdata fileref="./files/caesar/java/XorEncode.java"/>
@@ -133,7 +118,6 @@ Elso sor cime: 0x5567bca696a0
 			kiíratjuk a végeredményt.
 		</para>
 	</section>
-
     <section>
         <title>C EXOR törő</title>
 		<para>
@@ -145,7 +129,6 @@ Elso sor cime: 0x5567bca696a0
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/caesar/xor_c.c">gh/krook1024/textbook/master/files/caesar/xor_c.c</link>
 		</para>
-
 		<para>
 			Ez a program csak olyan állományok feltörésére alkalmas,
 			amelyeknek a kulcsa csak számokból áll, és 8 karakter
@@ -165,37 +148,30 @@ Elso sor cime: 0x5567bca696a0
 			hogy minél gyorsabban végezzünk a töréssel.
 		</para>
 	</section>
-
     <section>
 		<title>Neurális OR, AND és EXOR kapu</title>
-
         <caution>
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutorált Tóth Attila.
             </para>
         </caution>
-
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
 		</para>
-
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>
 		</para>
-
         <para>
 			Ebben az R programban egy neurális hálót építünk fel. Egy
 			neurális háló lényegében úgy működik, hogy megadjuk neki,
 			hogy milyen bemenetre milyen kimenetet kell adnia, majd
 			ő megprobálja ezt mesterségesen utánozni.
 		</para>
-
 		<para>
 			A programot futtatva a program kimenetét vizualizálva kapjuk,
 			melyeket alább beágyozva láthat az olvasó is.
 		</para>
-
 		<figure>
 			<title>Neurális OR kapu</title>
 			<mediaobject>
@@ -204,19 +180,16 @@ Elso sor cime: 0x5567bca696a0
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			Erről az ábráról leolvasható, hogy 149 lépés alatt
 			0.000001 hibával sikerült megtanítani a neurális
 			hálónkat az OR utasítás elvégzésére.
 		</para>
-
 		<programlisting language="R">
 <![CDATA[a1    <- c(0,1,0,1)
 a2    <- c(0,0,1,1)
 OR    <- c(0,1,1,1)]]>
 		</programlisting>
-
 		<para>
 			A hálót úgy építettük fel, hogy megadtuk, hogy milyen
 			bemenetre milyen kimenetet kell adjon az OR (pl 0 OR 0 = 0;
@@ -224,7 +197,6 @@ OR    <- c(0,1,1,1)]]>
 			minden mást, beleértve a teljes matematikai hátteret, az R
 			és a <code>neuralnet</code> könyvtár végezte helyettünk.
 		</para>
-
 		<figure>
 			<title>Neurális OR, AND kapu</title>
 			<mediaobject>
@@ -233,12 +205,10 @@ OR    <- c(0,1,1,1)]]>
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			Ezen az ábrán viszont látjuk, hogy az OR és AND
 			megtanulásához már 359 lépés kellett.
 		</para>
-
 		<figure>
 			<title>Neurális EXOR kapu</title>
 			<mediaobject>
@@ -247,13 +217,11 @@ OR    <- c(0,1,1,1)]]>
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			Az EXOR megtanulásához 94 lépés volt elegendő, ám a hiba itt
 			elég magas, 0.5. Emiatt a következő lépésben új módszerekhez
 			folymodunk, úgynevezett rejtett neuronokat iktatunk be.
 		</para>
-
 		<figure>
 			<title>Neurális XOR kapu</title>
 			<mediaobject>
@@ -262,51 +230,42 @@ OR    <- c(0,1,1,1)]]>
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			Az új EXOR megtanulásához esetünkben 123 lépés volt szükséges, ám
 			a hibát sikerült lecsökkentenünk 0-ra, olyan módon, hogy
 			extra 14 rejtett neuront iktattunk be, 3 különböző szinten.
 		</para>
 	</section>
-
     <section>
         <title>Hiba-visszaterjesztéses perceptron</title>
-
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>
-
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/caesar/perceptron/main.cc" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			Tekintve hogy a program meglehetősen könnyen olvasható,
 			eltekintenék a soronkénti magyarázástól, hiszen itt
 			semmi mágikust nem történik.
 		</para>
-
         <para>
 			Ebben a programban kipróbáljuk a Perceptron osztályt egy
 			viszonylag egyszerű program keretében. Ez a program mindössze
 			annyit csinál, hogy a bemenetén érkező képnek végigmegy az összes
 			pixelén, és számolja a piros színkomponenst.
 		</para>
-
 		<para>
 			Az olvasó kényelmének érdekében ismét létrehoztunk egy makefilet,
 			ami a tesztünket is lefuttatja, és ha minden jól megy, csak az eredményt
 			adja vissza. Próbáljuk is ki ezzel fordítani a programunkat:
 		</para>
-
 		<screen>
 <![CDATA[$ make
 0.500964]]>
 		</screen>
-
 		<para>
 			Itt a kimenet közelítőleg 0.5, ez azt jelenti, hogy a piros
 			színkomponens jelenléte 50% az egész képben. Ez ránézésre

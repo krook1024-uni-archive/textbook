@@ -7,14 +7,12 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
-
 		<para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
 				github/krook1024/textbook/mandelbrot
 			</link>
 		</para>
-
 		<para>
 			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen.
 			A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
@@ -29,7 +27,6 @@
 			</inlineequation>
 			abszolútértekben korlátos.
 		</para>
-
 		<para>
 			Amennyiben a forrásfájlt egyszerűen <code>make</code>-el lefordítjuk,
 			úgy láthatjuk, hogy létrejön a kimenet.png, hiszen a
@@ -37,7 +34,6 @@
 			lefordítsa, hanem futtassa is a programunkat <code>kimenet.png</code>
 			kimenettel. A kimenetet be is ágyazom, mert meglehetősen látványos.
 		</para>
-
 		<figure>
 			<title>A Mandelbrot halmaz a komplex síkon</title>
 			<mediaobject>
@@ -49,12 +45,10 @@
 				</textobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy
 			wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
 		</para>
-
 		<para>
 			Ebben a programban viszont nem használjuk a <code>std::complex</code>
 			osztályt, amit a C++ biztosít, hanem egyszerűen magunknak
@@ -66,7 +60,6 @@
 			az erre alkalmas pixeleket.
 		</para>
     </section>
-
     <section>
         <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
        <para>
@@ -75,20 +68,17 @@
 				github/krook1024/textbook/mandelb/mandelbrot_komplex/
 		   </link>
 	   </para>
-
 		<para>
 			Ebben a programban, hasonlóan az előzőhöz, a Mandelbrot halmazt
 			ábrázoltatjuk. A különbség csupán annyi, hogy itt a beépített
 			<code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
 			struktúrát írnánk a komplex számok tárolására.
 		</para>
-
 		<para>
 			Ha elkészítünk egy egyszerű <code>Makefile</code>t a programhoz, úgy
 			szintén	egyszerű lesz azt futtatni. Nem meglepő, hogy ugyanazt a
 			kimenetet adja, mint az előző programunk.
 		</para>
-
 		<para>
 			A <code language="c++">std::complex</code> osztály használata jár némi előnnyel,
 			például lehetőséget ad kényelmesebb, elegánsabb változó definiálsára
@@ -96,35 +86,28 @@
 			ahol az első rész a szám valós része, a másik pedig a szám imaginárius
 			része).
 		</para>
-
     </section>
-
     <section>
 		<title>Biomorfok</title>
-
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
         </para>
-
 		<para>
 			A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
 			is a komplex számsíkon ábrázolható függvényeket nézünk meg, és ezek
 			ábrázolásának C++ megvalósításait. Kedvcsinálóként előbb nézzünk meg egy pár
 			biomorfot.
 		</para>
-
 		<mediaobject>
 			<imageobject>
 				<imagedata fileref="./pictures/biomorf1.png" width="50%"/>
 			</imageobject>
 		</mediaobject>
-
 		<mediaobject>
 			<imageobject>
 				<imagedata fileref="./pictures/biomorf2.jpg" width="50%"/>
 			</imageobject>
 		</mediaobject>
-
 		<para>
 			A biomorfok szoros kapcsolatban vannak a Mandelbrot-halmazzal,
 			ám itt a
@@ -134,22 +117,18 @@
 			</inlineequation>
 			képletet lecseréljük másra.
 		</para>
-
 		<para>
 			Az egyszerűség kedvéért itt is létrehoztunk egy Makefilet, így a
 			<code>make</code> parancs kiadásával lefuttatható a programunk, feltéve
 			hogy telepítettük a png++ könyvtárat és működik a g++-unk.
 		</para>
-
 		<screen>
 <![CDATA[$ make]]>
 		</screen>
-
 		<para>
 			Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png
 			fájlunk, amit beágyazva meg is tekinthet az olvasó.
 		</para>
-
 		<figure>
 			<title>A generált biomorf</title>
 			<mediaobject>
@@ -161,7 +140,6 @@
 				</textobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			Magán a formán kívül észrevehető további különbség az, hogy
 			színes ábrát kaptunk a Mandelbrot-halmazos programunkkal ellentétben.
@@ -171,7 +149,6 @@
 			ezt használjuk fel egy adott pixel színezésére.
 		</para>
     </section>
-
     <section>
 		<title>A Mandelbrot halmaz CUDA megvalósítása</title>
         <para>
@@ -205,39 +182,32 @@
 		<para>
 			A dokumentációt olvasva hamar rájöhetünk, hogy mit is jelentenek ezek.
 			A <code>__device__</code> minősítővel rendelkeznek a magán a GPU-n futó függvények.
-
 			A <code>__global__</code> minősítővel az úgynevezett "kernel" rendelkezik. Ezen belül
 			igyekszünk megvalósítani a párhuzamosítást.
-
 			Ezekre úgy gondoljunk, mint például a <code>short int a;</code> kifejezés során,
 			ahol a <code>short</code> a minősítő, az <code>int</code> a típus, az
 			<code>a</code> pedig a változó neve.
-
 			Minden más pedig hoszt-oldalon fut, tehát a gazdagépen, a processzoron.
 		</para>
 		<para>
 			Ennyi előképzettséggel viszont már lássuk a kódot!
 		</para>
-
 		<programlisting language="C++">
 			<textobject>
 				<textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
 			</textobject>
 		</programlisting>
-
 		<para>
 			Segítséggképpen itt is mellékeltem egy <filename>Makefile</filename>-t, amivel könnyen és egyszerűen
 			fordítható a program, feltéve, hogy a CUDA telepítre van a számítógépünkre, és van
 			erre alkalmas kártyánk. Amennyiben ezek szükséges feltételek teljesülnek, de mégsem
 			működne, próbáljuk meg a <filename>Makefile</filename>-ban korrigálni a fordító abszolút elérési útvonalát.
 		</para>
-
 		<para>
 			Hogyha fordítjuk és futtatjuk a programot, akkor láthatjuk hogy létrejön
 			a <filename>mandel.png</filename> állományunk, amely szokás szerint be
 			lesz ágyazva az olvasó számára.
 		</para>
-
 		<figure>
 			<title>Mandelbrot halmaz CUDA-val</title>
 			<mediaobject>
@@ -246,14 +216,12 @@
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<screen>
 <![CDATA[$ make
 16
 0.159764
 $ ]]>
 		</screen>
-
 		<para>
 			A program kimenetéből látszik, hogy jóval gyorsabb mint a C++ és C-s verziók,
 			ahol akár fél percet is várnunk kellett egy-egy ábra elkészülésére, itt viszont
@@ -262,7 +230,6 @@ $ ]]>
 			jelentős.
 		</para>
     </section>
-
     <section>
         <title>Mandelbrot nagyító és utazó C++ nyelven</title>
         <para>
@@ -295,13 +262,11 @@ $ ]]>
 					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel1.png" width="32%"/>
 				</imageobject>
 			</inlinemediaobject>
-
 			<inlinemediaobject>
 				<imageobject>
 					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel2.png" width="32%"/>
 				</imageobject>
 			</inlinemediaobject>
-
 			<inlinemediaobject>
 				<imageobject>
 					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel3.png" width="32%"/>
@@ -309,7 +274,6 @@ $ ]]>
 			</inlinemediaobject>
 		</para>
     </section>
-
     <section>
         <title>Mandelbrot nagyító és utazó Java nyelven</title>
 		<para>
@@ -330,9 +294,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
 public class HelloFX extends Application {
-
     @Override
     public void start(Stage stage) {
         String javaVersion = System.getProperty("java.version");
@@ -342,11 +304,9 @@ public class HelloFX extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
-
 }]]>
 		</programlisting>
 		<para>
@@ -356,7 +316,6 @@ public class HelloFX extends Application {
 			egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
 			megvalósítani.
 		</para>
-
 		<figure>
 			<title>Mandelbrot nagyító és utazó Java nyelven</title>
 			<mediaobject>
@@ -365,11 +324,9 @@ public class HelloFX extends Application {
 				</imageobject>
 			</mediaobject>
 		</figure>
-
 		<para>
 			A végeredmény itt látható. A forrásfájlok pedig megtalálhatóak a repóban.
 		</para>
-
 		<para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb">https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb</link>

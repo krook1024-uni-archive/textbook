@@ -5,7 +5,6 @@
             <keyword/>
         </keywordset>
     </info>
-
     <section>
         <title>A BPP algoritmus Java megvalósítása</title>
         <para>
@@ -14,13 +13,12 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>        
-
+    </section>
     <section>
         <title>Java osztályok a Pi-ben</title>
         <para>
@@ -30,12 +28,10 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása:                
+            Megoldás forrása:
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
-    </section>        
-        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-</chapter>                
+    </section>
+</chapter>

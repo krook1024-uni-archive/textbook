@@ -7,7 +7,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-chomsky.xml">
         <xi:fallback>
             <para>
@@ -15,7 +14,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-caesar.xml">
         <xi:fallback>
             <para>
@@ -23,7 +21,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-mandelbrot.xml">
         <xi:fallback>
             <para>
@@ -31,7 +28,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-welch.xml">
         <xi:fallback>
             <para>
@@ -39,7 +35,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-conway.xml">
         <xi:fallback>
             <para>
@@ -47,7 +42,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-schwarzenegger.xml">
         <xi:fallback>
             <para>
@@ -55,7 +49,6 @@
             </para>
         </xi:fallback>
     </xi:include>
-
     <xi:include href="tb-feladatok-chaitin.xml">
         <xi:fallback>
             <para>
@@ -63,7 +56,6 @@
             </para>
         </xi:fallback>
 	</xi:include>
-
     <xi:include href="tb-feladatok-gutenberg.xml">
         <xi:fallback>
             <para>
@@ -71,5 +63,4 @@
             </para>
         </xi:fallback>
     </xi:include>
-
 </part>

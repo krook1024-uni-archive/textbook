@@ -8,7 +8,6 @@
     <section>
         <title>Iteratív és rekurzív faktoriális Lisp-ben</title>
         <para>
-
         </para>
         <para>
             Megoldás videó:
@@ -17,7 +16,6 @@
             Megoldás forrása:
         </para>
     </section>
-
     <section>
         <title>Weizenbaum Eliza programja</title>
         <para>
@@ -30,7 +28,6 @@
             Megoldás forrása:
         </para>
     </section>
-
     <section>
         <title>Gimp Scheme Script-fu: króm effekt</title>
         <para>
@@ -47,7 +44,6 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>
-
     <section>
         <title>Gimp Scheme Script-fu: név mandala</title>
         <para>
@@ -64,7 +60,6 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>
-
     <section>
         <title>Lambda</title>
         <para>
@@ -80,7 +75,6 @@
             Tanulságok, tapasztalatok, magyarázat...
         </para>
     </section>
-
     <section>
         <title>Omega</title>
         <para>
@@ -92,5 +86,4 @@
             Megoldás forrása:
         </para>
     </section>
-
 </chapter>
