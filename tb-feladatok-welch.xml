@@ -68,20 +68,88 @@ $ /java/bin/java polargen.java
     <section>
         <title>Fabejárás</title>
         <para>
-            Járd be az előző (inorder bejárású) fát pre- és posztorder is!
-        </para>
-        <para>
-			<emphasis role="strong">Megoldás forrása (preorder):</emphasis>
+			<emphasis role="strong">Megoldás forrása:</emphasis>
+			<link xlink:href="TBA">TBA</link>
 		</para>
 		<para>
-			<emphasis role="strong">Megoldás forrása (postorder):</emphasis>
+			Preorder bejárás esetén a gyökérrel kezdünk, majd bejárjuk a baloldali részfát,
+			azt követően pedig a jobboldali részfát.
 		</para>
 		<para>
-			Preorder bejárás esetén [...]
+			Postorder bejárás esetén pedig szintén a gyökérrel kezdünk, viszont a jobboldali
+			részfával folytatjuk, és a baloldali részfával végzünk.
 		</para>
 		<para>
-			Postorder bejárás esetén pedig [...]
+			Inorder bejárás esetén a bal oldali részfát követően bejárjuk a gyökeret,
+			majd a jobboldali részfát.
 		</para>
+		<para>
+			A program futtatása mostmár a következőképpen néz ki:
+			<code>./binfa befile -o kifile [o/r]</code> ahol az o postorder,
+			az r pedig preorder bejárást jelent. De mindezt a Makefile
+			tartalmazza, tehát az olvasó könnyen és egyszerűen kipróbálhatja
+			és tanulmányozhatja a programot.
+		</para>
+		<screen>
+<![CDATA[========PREORDER BEJARAS=========
+---------------0(5)
+------------0(4)
+---------------1(5)
+---------0(3)
+---------------0(5)
+------------1(4)
+------------------0(6)
+---------------1(5)
+------------------1(6)
+------0(2)
+---------------0(5)
+------------0(4)
+---------1(3)
+------------------0(6)
+---------------0(5)
+------------1(4)
+---------------1(5)
+---/(1)
+---------0(3)
+------------1(4)
+------1(2)
+---------------0(5)
+------------0(4)
+---------1(3)
+------------1(4)
+depth = 5
+mean = 4.09091
+var = 0.700649
+========POSTORDER BEJARAS========
+------------1(4)
+---------1(3)
+------------0(4)
+---------------0(5)
+------1(2)
+------------1(4)
+---------0(3)
+---/(1)
+---------------1(5)
+------------1(4)
+---------------0(5)
+------------------0(6)
+---------1(3)
+------------0(4)
+---------------0(5)
+------0(2)
+------------------1(6)
+---------------1(5)
+------------------0(6)
+------------1(4)
+---------------0(5)
+---------0(3)
+---------------1(5)
+------------0(4)
+---------------0(5)
+depth = 5
+mean = 4.09091
+var = 0.700649]]>
+		</screen>
     </section>
     <section>
         <title>Tag a gyökér</title>
