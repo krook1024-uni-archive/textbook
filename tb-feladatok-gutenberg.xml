@@ -5,13 +5,56 @@
 			<keyword/>
 		</keywordset>
 	</info>
+	<!-- === -->
 	<section>
 		<title>Programozási alapfogalmak</title>
 		<para>
+			Programozási nyelvek között megkülönböztetünk imperatív és deklaratív
+			programozási nyelveket. Az imperatív nyelvekkel ez a könyv nem foglalkozik.
+			A deklaratív nyelvek pedig a hagyományos nyelvek, amiket ismerünk, s
+			látunk ebben a könyvben is.
+		</para>
+		<para>
+			Emelett különbséget teszünk alacsony-, és magasszintű programozási
+			nyelvek között is. Alacsony szintű nyelv például az Assembly, mely
+			ugyan ember számára olvasható, de csak nehezen értelmezhető. Vegyünk egy
+			Assembly helloworld példát.
+		</para>
+		<programlisting>
+<![CDATA[org 100h
+mov dx,msg
+mov ah,9
+int 21h
+mov ah,4Ch
+int 21h
+msg db 'Hello, World!',0Dh,0Ah,'$']]>
+		</programlisting>
+		<para>
+			Látható, hogy míg C-ben néhány angol szó ismeretével el tudunk igazodni
+			egy programon, Assemblyben rögtön nehezebb dolgunk lesz.
+		</para>
+		<para>
+			Egy magasszintű programozási nyelv attól magasszíntű, hogy sok úgynevezett
+			absztrakciós rétegen megy át, míg gépi kód lesz belőle, amit a processzor
+			értelmezni tud. Hagyományosan, mint például a C-ben is, amit mi, emberek írunk,
+			azt úgy hívjuk, hogy forráskód, amiből a fordító csinál majd a számítógép
+			számára értelmezhető kódot. Ahhoz, hogy a fordító ezt el tudja végezni,
+			nekünk pontos nyelvtani szabályokat kell követnünk a programunk írása során.
 		</para>
 	</section>
+	<!-- === -->
 	<section>
-		<title>Kernighan &amp; Ritchie</title>
+		<title>Juhász István – Magas szintű programozási nyelvek</title>
+		<para>
+			Helló, Pici.
+		</para>
+	</section>
+	<!-- === -->
+	<section>
+		<title>Kernighan &amp; Ritchie – A C programozási nyelv</title>
+		<para>
+			<emphasis role="strong">Alapismeretek</emphasis>
+		</para>
 		<para>
 			A könyv a Hello, World! C változatával indít, ami a könyvben
 			a következőképp néz ki;
@@ -42,6 +85,70 @@ $ ]]>
 			karaktertömböket (sztringeket), és a változók érvényességét, avagy
 			milyen scope-ban milyen változó látszik.
 			Egyszóval tényleg az abszolút minimumot.
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Típusok, operátorok, kifejezések</emphasis>
+		</para>
+		<para>
+			C-ben az alapvető típusok a <code>char, int, float, double</code>. Ezekhez hozzájöhetnek
+			úgynevezett minősítők, mint a <code>short, long</code>. C-ben lehetőségünk
+			van arra, hogy saját típusokat definiáljunk, ezt megtehetjük a <code>typedef</code>
+			utasítással. Egész állandókat megadhatunk <code>1234</code> formában, ez minden
+			külön jelzés nélkül <code>int</code> típusú. Néhány különleges karaktert úgyneveztt
+			<emphasis>escape string</emphasis>ekkel adhatunk meg, mint például az újsor karakter
+			(<code>\n</code>), ezek mindig backslashhel kezdődnek. C-ben változók deklarálása a következőképp
+			néz ki (példa): <code>int a, b = 4, c = b; char c, sor[1000];</code>. Tehát
+			a változó típusával kezdünk, majd megadjuk a nevét, és opcionálisan kezdőértéket adunk neki.
+			Amennyiben szögletes zárójelek között ([]) megadunk egy számot, úgy tömböt deklarálunk, és
+			a szám a tömb mérete lesz. C-ben a következő aritmetikai operátorok működnek:
+			<code>
+				% maradékos osztás,
+				(+, -, *, /) magyarázat nélkül
+			</code>.
+			Emellett vannak logikai és relációs operátorok, melyek a következők:
+			<code>
+				<![CDATA[
+				>, >=, <, <=,
+				==, !=
+				]]>
+			</code>.
+			A típusok közötti átváltás nehézkes C-ben, nincsen egyszerű és elegáns mód arra,
+			hogy például egy int típusú változát char tömbbé változtassunk.
+			Inkrementáló és dekrementáló operátorok azok az egyoperandusú operátorok, melyek
+			egy változó értékét növelik, vagy csökkentik. Például: <code>++i</code>.
+			Vannak még bitenkénti logikai operátorok, ezek úgy működnek, hogy
+			logikai műveleteket (pl. konjunkció, diszjunkció) végeznek el a változó, vagy konstans
+			bináris alakjával és egy másik változóval, vagy konstanssal. Például a következő kifejezés:
+			<code><![CDATA[int b = 3 & 4;]]></code>. Az olvasó feladata eldönteni, hogy a b változónak
+			mennyi lesz az értéke.
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Vezérlési szerkezetek</emphasis>
+		</para>
+		<para>
+			A 3.3-as fejezetben tárgyalva.
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Függvények és a program szerkezete</emphasis>
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Mutatók és tömbök</emphasis>
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Struktúrák</emphasis>
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Adatbevitel és adatkivitel</emphasis>
+		</para>
+		<!-- === -->
+		<para>
+			<emphasis role="strong">Kapcsolódás a UNIX op. rendszerhez</emphasis>
 		</para>
 	</section>
 	<section>
