@@ -64,12 +64,32 @@ $ /java/bin/java polargen.java
 			A LZWBinFa osztály felépíti a bemeneti fájl bináris fáját. Használata a következőképp
 			néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.
 		</para>
+		<para>
+			Egy bináris fát a következőképpen építhetünk fel:
+		</para>
+		<itemizedlist>
+			<listitem>
+				<para>
+					amennyiben 0-st kell betenni a fába, úgy megnézzük, hogy
+					az aktuális csomópont tartalmaz e 0-s elemet
+					<itemizedlist>
+						<listitem><para>amennyiben nem tartalmaz, úgy betesszük a nullás gyermekének a 0-t</para></listitem>
+						<listitem><para>amennyiben már tartalmaz, úgy készítünk egy új csomópontot és az ő gyermekeként tesszük be a 0-st</para></listitem>
+			</itemizedlist>
+			</para>
+		</listitem>
+		</itemizedlist>
+			<para>
+				A lépések ugyanezek 1-es betétele esetén is.
+			</para>
     </section>
     <section>
         <title>Fabejárás</title>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="TBA">TBA</link>
+			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras">
+				https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras
+			</link>
 		</para>
 		<para>
 			Preorder bejárás esetén a gyökérrel kezdünk, majd bejárjuk a baloldali részfát,
