@@ -7,7 +7,7 @@
 	</info>
 	<!-- === -->
 	<section>
-		<title>Programozási alapfogalmak</title>
+		<title>Juhász István – Magas szintű programozási nyelvek</title>
 		<para>
 			Programozási nyelvek között megkülönböztetünk imperatív és deklaratív
 			programozási nyelveket. Az imperatív nyelvekkel ez a könyv nem foglalkozik.
@@ -41,12 +41,103 @@ msg db 'Hello, World!',0Dh,0Ah,'$']]>
 			számára értelmezhető kódot. Ahhoz, hogy a fordító ezt el tudja végezni,
 			nekünk pontos nyelvtani szabályokat kell követnünk a programunk írása során.
 		</para>
-	</section>
-	<!-- === -->
-	<section>
-		<title>Juhász István – Magas szintű programozási nyelvek</title>
 		<para>
-			Helló, Pici.
+			A fordítóprogramok olyan programok, amelyek a magas szintű programozási
+			nyelven megírt szöveget lefordítják gépi nyelvre. Eszközei a következők:
+		</para>
+		<itemizedlist>
+			<listitem><para>lexikális elemzés, </para></listitem>
+			<listitem><para>szintaktikai elemzés, </para></listitem>
+			<listitem><para>szemantikai elemzés, </para></listitem>
+			<listitem><para>kódgenerálás.</para></listitem>
+		</itemizedlist>
+		<para>
+			Minden program alapelemei a karakterek, ezekből állnak össze a
+			bonyolultabb nyelvi elemek, mint a
+		</para>
+		<itemizedlist>
+			<listitem><para>lexikális egységek, </para></listitem>
+			<listitem><para>szintaktikai egységek, </para></listitem>
+			<listitem><para>utasítások, </para></listitem>
+			<listitem><para>programegységek, </para></listitem>
+			<listitem><para>fordítási egységek, </para></listitem>
+			<listitem><para>program.</para></listitem>
+		</itemizedlist>
+		<para>
+			A legtöbb programozási nyelvben megtalálható az <emphasis>egész</emphasis>
+			típus. Néhány nyelv ismeri ezeknek az előjelezett, és előjel nélküli
+			változatát is (C-ben <code>unsigned</code> minősítővel adható meg).
+			Alapvetőek még a valós típusok, melyek belső ábrázolása lebegőpontos.
+			Ezen kívül gyakran megtalálatóak a <emphasis>karakter</emphasis>
+			és <emphasis>karakterlánc</emphasis> típusok is.
+		</para>
+		<para>
+			A nevesített konstans olyan eszköz, mely három komponensből áll, ezek:
+			név, típus, érték. A lényege, hogy néha beszélő neveket adunk nekik,
+			ezáltal könnyebben olvashatóvá téve a kódunkat. C-ben így néz ki egy
+			nevesített konstans:
+			<code language="c">#define név érték</code>.
+		</para>
+		<para>
+			<emphasis role="strong">Alapelemek programozási nyelvekben</emphasis>
+		</para>
+		<para>
+			A C nyelv vonatkozásában a következőket lehet elmondani.
+		</para>
+		<itemizedlist>
+			<listitem><para>aritmetikai típusok
+				<itemizedlist>
+					<listitem><para>egész (int)</para></listitem>
+					<listitem><para>karakter (char)</para></listitem>
+					<listitem><para>valós (float, double)</para></listitem>
+				</itemizedlist>
+			</para></listitem>
+			<listitem><para>származtatott típusok
+				<itemizedlist>
+					<listitem><para>tömb</para></listitem>
+					<listitem><para>függvény</para></listitem>
+					<listitem><para>mutató</para></listitem>
+					<listitem><para>struktúra</para></listitem>
+					<listitem><para>union</para></listitem>
+				</itemizedlist>
+			</para></listitem>
+			<listitem><para><code>void</code> típus</para></listitem>
+		</itemizedlist>
+		<para>
+			Az eljárásorientált nyelvekben a programot felbonthatjuk úgynevezett
+			programalegységekre. Ezeket bizonyos programozási nyelvekben együtt
+			kell fordítani, míg másokban, köztük C-ben is, külön-külön
+			fordíthatóak, és készöbb összekapcsolhatóak egy úgynevezett
+			<emphasis>linker</emphasis> segítségével.
+		</para>
+		<para>
+			Változók hatásköréről is beszélnünk kell. A hatáskör egy változóra
+			vonatkozik, és azt mondja meg, hogy a változó értéke honnan
+			érhető el. A hatáskör mindig befelé terjed, kifelé soha. Vegyük például az alábbi C
+			programot:
+		</para>
+		<programlisting language="C">
+<![CDATA[#include <stdio.h>
+int a = 1;
+int main(void) {
+	int b = 3;
+	{
+		int c = 4;
+		printf("%d\n", c);
+	}
+	printf("%d\n", b);
+	for(int i=0; i < 1; i++)
+	{
+		printf("%d\n", i);
+	}
+	printf("%d\n", i);
+	return 1;
+}]]>
+		</programlisting>
+		<para>
+			Mit gondolunk, mi lesz a program kimenete? Lefordul egyáltalán?
+			Próbáljuk elemezni a változók hatáskörét, hogy melyik változó milyen scopeból
+			látszik.
 		</para>
 	</section>
 	<!-- === -->
