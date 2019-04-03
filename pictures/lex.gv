@@ -1,0 +1,6 @@
+digraph lex {
+	node [shape = box];
+	"bemeneti fájl" -> "lex"
+	"lex" -> "gcc"
+	"gcc" -> "bináris állomány"
+}

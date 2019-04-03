@@ -190,17 +190,22 @@ $]]>
     </section>
     <section>
         <title>Saját lexikális elemző</title>
-        <para>
-            Írj olyan programot, ami számolja a bemenetén megjelenő valós számokat!
-            Nem elfogadható olyan megoldás, amely maga olvassa betűnként a bemenetet,
-			a feladat lényege, hogy lexert használjunk, azaz óriások vállán álljunk
-			és ne kispályázzunk!
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
+		<para>
+			A program működési elve a következő:
+		</para>
+		<figure>
+			<title>Lexikális elemző</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="./pictures/lex.png" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para>
+			Látható, hogy az általunk írt állomány (<emphasis>lex.l</emphasis>)
+			először bekerül a lex nevű programba, majd annak a kimenetét tudjuk
+			lefordítani a fordítóval, esetünkben GCC-vel. Az ebből kapott bináris
+			fájlt tudjuk majd futtatni is.
 		</para>
 		<programlisting language="c">
 			<textobject>

@@ -1,0 +1,7 @@
+digraph G {
+	nodesep=1.5;
+	node [shape = circle];
+	m1 [label = ""];
+	m2 [label = ""];
+	m3 [label = ""];
+}

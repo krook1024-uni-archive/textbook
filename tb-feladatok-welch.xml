@@ -89,7 +89,7 @@ $ /java/bin/java polargen.java
 			<title>A 011010 bináris fája</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="./pictures/binfa.png" width="50%"/>
+					<imagedata fileref="./pictures/binfa.png" />
 				</imageobject>
 			</mediaobject>
 		</figure>
