@@ -46,7 +46,9 @@ $ /java/bin/java polargen.java
 		</screen>
 		<para>
 			A program 10 darab véletlenszerűen generált normalizált számot köp ki, ahogyan
-			azt várjuk is.
+			azt várjuk is. Az OO előnye itt látszik meg, hiszen a matematikai háttér
+			számunkra úgymond lényegtelen, és ezt az osztály el is rejti a programozó
+			szeme elől. A programunk mégis működik.
 		</para>
     </section>
     <section>
@@ -189,6 +191,10 @@ var = 0.700649]]>
 			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
 				gh/krook1024/textbook/master/files/welch/z3a7.cpp
 			</link>
+		</para>
+		<para>
+			Ebben az esetben felhasnzáljuk a már megírt LZWBinFa programot, mely
+			eleve úgy lett megírva, hogy a gyökér kompozícióban van a fával.
 		</para>
     </section>
     <section>
