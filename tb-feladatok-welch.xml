@@ -219,7 +219,12 @@ var = 0.700649]]>
 		</para>
     </section>
     <section>
-        <title>Mozgató szemantika</title>
+		<title>Mozgató szemantika</title>
+		<note>
+			<para>
+				Ebben a feladatban tutoráltam Rácz Andrást!
+			</para>
+		</note>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp">

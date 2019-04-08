@@ -44,7 +44,22 @@
 			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/conway/Sejtauto">
 				https://github.com/krook1024/textbook/tree/master/files/conway/Sejtauto
 			</link>
-        </para>
+		</para>
+		<para>
+			Az életjáték bármelyik vírusnál nagyobb bénulást okozott az informatikában
+			az 1970-es években. Mindenki ezzel akart játszani, nézni a monitorokon a
+			program kimenetét, ezzel már-már bénulást okozva az akkori szamítógépes redszereknek,
+			melyet időosztással lehetett igénybe venni, elsősorban kutatási célokra.
+		</para>
+		<para>
+			A John Conway-féle életjátékban nagyon egyszerű szabályok uralkodnak:
+		</para>
+		<itemizedlist>
+			<listitem><para>Minden sejt amelynek két vagy három szomszédja van, életben marad</para></listitem>
+			<listitem><para>Minden sejt amelynek négy vagy több szomszédja van, meghal</para></listitem>
+			<listitem><para>Minden sejt amelynek kevesebb mint kettő szomszédja van, meghal</para></listitem>
+			<listitem><para>Ha egy üres cellának pontosan három élő sejt vesz körül, ott új sejt szülteik</para></listitem>
+		</itemizedlist>
         <para>
 			A Qt már ismerős lehet, hiszen már a Mandelbrotos fejezetünkben
 			előkerült. Most ismét felélesztjük, és a John H. Conway féle
@@ -91,7 +106,13 @@
 			jó E-sportoló.
 		</para>
 		<para>
-			A programot kipróbálhatjuk mi is a következő parancsok kiadásával: (OpenCV-re szükségünk lesz)
+			A játék során a lényeg hogy a Samu Entropy entrópia közepén
+			megjelenő fekete pöttyön tartsuk az egeret, ameddig csak tudjuk.
+			Ez az entrópia a játék során folymatosan mozog, zizeg, alábújik
+			más entrópiáknak, ezzel nehezítve a dolgunkat.
+		</para>
+		<para>
+			A programot kipróbálhatja bárki a következő parancsok kiadásával: (OpenCV-re szükségünk lesz)
 		</para>
 		<screen><![CDATA[$ git clone https://github.com/nbatfai/esport-talent-search
 $ cd esport-talent-search
