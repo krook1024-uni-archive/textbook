@@ -6,73 +6,73 @@
         </keywordset>
     </info>
     <section>
-		<title>Végtelen ciklus</title>
+        <title>Végtelen ciklus</title>
         <caution>
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutoráltam Füleky Ladislavot.
             </para>
         </caution>
-		<para>
-			<emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/infinite_0cpu.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Amennyiben egy végtelen ciklusban <code language="c">sleep(1)</code> rendszerhívással
-			jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzor időt
-			kapni, a processzor használatunk (megközelítőleg) 0 százalék lesz.
-		</para>
-		<para>
-			<emphasis role="strong">Dolgoztassunk 100 százalékban egy szálat:</emphasis>
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/infinite.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Természetesen itt semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
-		</para>
-		<para>
-			<emphasis role="strong">Dolgoztassuk meg az összes szálat 100 százalékban:</emphasis>
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/infinite_2threads.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Ebben az esetben a <code>pthreads.h</code> adta előnyöknél fogva, és bízva abban, hogy threadsafe
-			függvényt sikerült írnunk, benne a végtelen ciklussal, egyszerűen megoldhatjuk, hogy az alkalmazásunk
-			magához vegye a fennmaradó szabad processzor idő 100 százalékát.
-		</para>
-		<para>
-			Egy másik megoldásban az OpenMP függvénykönyvtárat használva is megoldható a feladat,
-			lényegesen kevesebb, mindössze 5 sornyi kóddal.
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/infinite_2threads_omp.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			A különbség a kettő megoldás között az, hogy a pthreads egy alacsony
-			szintű POSIX API, melyben jóval több irányításunk van a szálak fölött,
-			míg az OMP egy magasabb szintű könyvtár mely szinte mindent megcsinál
-			helyettünk, ezzel kivéve az irányítást a kezünkből.
-		</para>
         <para>
-			A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzor időt
-			igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Meglehetősen kíváncsi
-			voltam hogy mi is történik ilyenkor a háttérben. Némi utánajárás után meg is találtam a választ, mi szerint
-			az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt hiszi, hogy rengeteg dolga van a
-			programnak, így ki is osztja neki az összes rendelkezésre álló processzor időt. Ezzel szemben a
-			<code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
-			milliszekundumban nem tart igényt processzor időre, ennek megfelelően az OS nem is oszt számára időt.
+            <emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/infinite_0cpu.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Amennyiben egy végtelen ciklusban <code language="c">sleep(1)</code> rendszerhívással
+            jelezzük az OS számára, hogy a következő 1 milliszekundumban nem kívánunk processzor időt
+            kapni, a processzor használatunk (megközelítőleg) 0 százalék lesz.
+        </para>
+        <para>
+            <emphasis role="strong">Dolgoztassunk 100 százalékban egy szálat:</emphasis>
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/infinite.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Természetesen itt semmi extra, egy végtelen ciklussal elérhetjük a kívánt hatást.
+        </para>
+        <para>
+            <emphasis role="strong">Dolgoztassuk meg az összes szálat 100 százalékban:</emphasis>
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/infinite_2threads.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Ebben az esetben a <code>pthreads.h</code> adta előnyöknél fogva, és bízva abban, hogy threadsafe
+            függvényt sikerült írnunk, benne a végtelen ciklussal, egyszerűen megoldhatjuk, hogy az alkalmazásunk
+            magához vegye a fennmaradó szabad processzor idő 100 százalékát.
+        </para>
+        <para>
+            Egy másik megoldásban az OpenMP függvénykönyvtárat használva is megoldható a feladat,
+            lényegesen kevesebb, mindössze 5 sornyi kóddal.
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/infinite_2threads_omp.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            A különbség a kettő megoldás között az, hogy a pthreads egy alacsony
+            szintű POSIX API, melyben jóval több irányításunk van a szálak fölött,
+            míg az OMP egy magasabb szintű könyvtár mely szinte mindent megcsinál
+            helyettünk, ezzel kivéve az irányítást a kezünkből.
+        </para>
+        <para>
+            A feladat érdekességét számomra az adta, hogy C-ben egy üres ciklusmag nagyságrendekkel több processzor időt
+            igényel, mint egy olyan ami tegyük fel <code language="c">sleep(1)</code>-t tartalmaz. Meglehetősen kíváncsi
+            voltam hogy mi is történik ilyenkor a háttérben. Némi utánajárás után meg is találtam a választ, mi szerint
+            az történik, hogy míg egy üres ciklusmag esetén az operációs rendszer azt hiszi, hogy rengeteg dolga van a
+            programnak, így ki is osztja neki az összes rendelkezésre álló processzor időt. Ezzel szemben a
+            <code language="c">sleep(1)</code> jelzi az operációs rendszer számára, hogy a következő 1
+            milliszekundumban nem tart igényt processzor időre, ennek megfelelően az OS nem is oszt számára időt.
         </para>
     </section>
     <section>
@@ -89,17 +89,17 @@
         </para>
         <programlisting language="c"><![CDATA[Program T100
 {
-	boolean Lefagy(Program P)
-	{
-		 if(P-ben van végtelen ciklus)
-			return true;
-		 else
-			return false;
-	}
-	main(Input Q)
-	{
-		Lefagy(Q)
-	}
+    boolean Lefagy(Program P)
+    {
+         if(P-ben van végtelen ciklus)
+            return true;
+         else
+            return false;
+    }
+    main(Input Q)
+    {
+        Lefagy(Q)
+    }
 }]]></programlisting>
         <para>
             A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudokódjára:
@@ -116,24 +116,24 @@ false]]></screen>
         </para>
         <programlisting language="c"><![CDATA[Program T1000
 {
-	boolean Lefagy(Program P)
-	{
-		 if(P-ben van végtelen ciklus)
-			return true;
-		 else
-			return false;
-	}
-	boolean Lefagy2(Program P)
-	{
-		 if(Lefagy(P))
-			return true;
-		 else
-			for(;;);
-	}
-	main(Input Q)
-	{
-		Lefagy2(Q)
-	}
+    boolean Lefagy(Program P)
+    {
+         if(P-ben van végtelen ciklus)
+            return true;
+         else
+            return false;
+    }
+    boolean Lefagy2(Program P)
+    {
+         if(Lefagy(P))
+            return true;
+         else
+            for(;;);
+    }
+    main(Input Q)
+    {
+        Lefagy2(Q)
+    }
 }]]></programlisting>
         <programlisting><![CDATA[]]></programlisting>
         <para>
@@ -150,18 +150,18 @@ false]]></screen>
             függvényt, azaz a T100 program nem is létezik.
         </para>
         <para>
-			A lefagyó program problémája majdnem egyidős a programozással. Annak idején Alan Turing (aki megalkotta
-			a Turing-gép fogalmát) matematikai eszközökkel keresztül bizonyította meg, hogy ilyen programot nem lehet
-			írni. Míg egyszerű programok esetében ránézésére meg lehet mondani, hogy le fog-e fagyni, bonyolultabb
-			programok esetében ezt eldönteni is nehezebb.
-		</para>
-		<para>
-			Tehát amennyiben a bizonyítás ellenére nekünk sikerülne egy ilyen
-			programot írnunk, valószínű, hogy nem kellene dolgoznunk soha életünkben,
-			hiszen rengeteg pénzt érne.
-			Egy ilyen program tömérdek problémát megoldana, amelyekért szép
-			summát kaphatnánk.
-		</para>
+            A lefagyó program problémája majdnem egyidős a programozással. Annak idején Alan Turing (aki megalkotta
+            a Turing-gép fogalmát) matematikai eszközökkel keresztül bizonyította meg, hogy ilyen programot nem lehet
+            írni. Míg egyszerű programok esetében ránézésére meg lehet mondani, hogy le fog-e fagyni, bonyolultabb
+            programok esetében ezt eldönteni is nehezebb.
+        </para>
+        <para>
+            Tehát amennyiben a bizonyítás ellenére nekünk sikerülne egy ilyen
+            programot írnunk, valószínű, hogy nem kellene dolgoznunk soha életünkben,
+            hiszen rengeteg pénzt érne.
+            Egy ilyen program tömérdek problémát megoldana, amelyekért szép
+            summát kaphatnánk.
+        </para>
     </section>
     <section>
         <title>Változók értékének felcserélése</title>
@@ -169,140 +169,140 @@ false]]></screen>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
         </para>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/swap.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Logikai utasítás nélkül például összeadással oldható meg két változó
-			cseréje. A fenti programot kipróbálva láthatjuk, hogy a programunk
-			működik.
-		</para>
-		<screen>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/swap.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Logikai utasítás nélkül például összeadással oldható meg két változó
+            cseréje. A fenti programot kipróbálva láthatjuk, hogy a programunk
+            működik.
+        </para>
+        <screen>
 <![CDATA[$ ./a.out
 x=3 y=7
 x=7 y=3]]>
-		</screen>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/swap_xor.c" />
-			</textobject>
-		</programlisting>
+        </screen>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/swap_xor.c" />
+            </textobject>
+        </programlisting>
         <para>
-			Két változó értékét megcserélhetjük még az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
-			Az <emphasis>XOR</emphasis> operátor bitenként végzi el a kizáró vagy logikai műveletet a bemeneteken.
-			A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
-			programunkat, a következőképp: (ne ijedjünk meg a sok <code>#define</code>-tól, ezeket makrónak hívják, és
-			ahhoz kellenek, hogy a megértést segítendő kettes számrendszerben láthassuk a számokat)
-		</para>
-		<programlisting language="c" startinglinenumber="14">
-			<textobject>
-				<textdata fileref="./files/turing/swap_xor_m.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Erre a kimenet a következőképp alakul:
-		</para>
-		<screen>
+            Két változó értékét megcserélhetjük még az <emphasis>XOR</emphasis> operátorral, segédváltozó használata nélkül.
+            Az <emphasis>XOR</emphasis> operátor bitenként végzi el a kizáró vagy logikai műveletet a bemeneteken.
+            A fentebbi kód értelmet nyer, hogyha megnézzük, hogy mi történik a memóriában. Ehhez szerkesszük egy kicsit a
+            programunkat, a következőképp: (ne ijedjünk meg a sok <code>#define</code>-tól, ezeket makrónak hívják, és
+            ahhoz kellenek, hogy a megértést segítendő kettes számrendszerben láthassuk a számokat)
+        </para>
+        <programlisting language="c" startinglinenumber="14">
+            <textobject>
+                <textdata fileref="./files/turing/swap_xor_m.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Erre a kimenet a következőképp alakul:
+        </para>
+        <screen>
 <![CDATA[a=00000011, b=00000111
 a=00000100, b=00000111
 a=00000100, b=00000011
 a=00000111, b=00000011]]>
-		</screen>
-		<para>
-			Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
-			a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredménye jelenik meg.
-			Ezek után még egyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán még egyszer
-			az eredeti sorrendben. Ekkor az eredeti <emphasis>a</emphasis> és az eredeti <emphasis>b</emphasis>
-			helyet cserélnek.
-		</para>
+        </screen>
+        <para>
+            Ebben a formában könnyebben nyomonkövethető, hogy mi történik a háttérben. Az első kimeneti sor
+            a kiinduló állapotot tükrözi. A második sorban már a kizáró vagy eredménye jelenik meg.
+            Ezek után még egyszer elvégezzük ezt a lépést, csak fordított sorrendben, aztán még egyszer
+            az eredeti sorrendben. Ekkor az eredeti <emphasis>a</emphasis> és az eredeti <emphasis>b</emphasis>
+            helyet cserélnek.
+        </para>
     </section>
     <section>
         <title>Labdapattogás</title>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
         </para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/ball.c" />
-			</textobject>
-		</programlisting>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/ball.c" />
+            </textobject>
+        </programlisting>
         <para>
-			Ez a példa minta példája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
-			hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
-			esnek a konzolunkon (azaz a megjeleníthető koordinátákon).
-		</para>
-		<para>
-			A fenti kód egy megoldása a problémának. Itt az <code>ncurses</code> függvény könyvtárat
-			vesszük használatba, mely terminálos interfészek (TUI-k) létrehozására lett elkészítve.
-		</para>
-		<para>
-			A program lényeges része a ciklusmagban van, ezt nézzük meg sorról sorra.
-		</para>
-		<programlisting>
+            Ez a példa minta példája lehetne a programozás és a matematika felbonthatatlan kapcsolatának. Itt a lényeg,
+            hogy olyan függvényt találjunk, ami leírja a labda pattogását, de mégsem vesz fel olyan értékeket, amik kívül
+            esnek a konzolunkon (azaz a megjeleníthető koordinátákon).
+        </para>
+        <para>
+            A fenti kód egy megoldása a problémának. Itt az <code>ncurses</code> függvény könyvtárat
+            vesszük használatba, mely terminálos interfészek (TUI-k) létrehozására lett elkészítve.
+        </para>
+        <para>
+            A program lényeges része a ciklusmagban van, ezt nézzük meg sorról sorra.
+        </para>
+        <programlisting>
 <![CDATA[xj = (xj - 1) % mx;]]>
-		</programlisting>
-		<para>
-			Az xj változó értékét beállítjuk úgy, hogy az a maradéka
-			legyen a saját értékénél egyel kisebb értéknek és a
-			terminál szélességének a kétszeresének a hányadosával.
-		</para>
-		<programlisting>
+        </programlisting>
+        <para>
+            Az xj változó értékét beállítjuk úgy, hogy az a maradéka
+            legyen a saját értékénél egyel kisebb értéknek és a
+            terminál szélességének a kétszeresének a hányadosával.
+        </para>
+        <programlisting>
 <![CDATA[xk = (xk + 1) % mx;]]>
-		</programlisting>
-		<para>
-			Ugyanezt elvégezzük az xk változóval is.
-		</para>
-		<programlisting>
+        </programlisting>
+        <para>
+            Ugyanezt elvégezzük az xk változóval is.
+        </para>
+        <programlisting>
 <![CDATA[yj = (yj - 1) % my;
 yk = (yk + 1) % my;]]>
-		</programlisting>
-		<para>
-			Itt ugyanezt elvégezzük az <emphasis>y</emphasis> tengelyen is.
-		</para>
-		<programlisting>
+        </programlisting>
+        <para>
+            Itt ugyanezt elvégezzük az <emphasis>y</emphasis> tengelyen is.
+        </para>
+        <programlisting>
 <![CDATA[clear();]]>
-		</programlisting>
-		<para>
-			Letöröljük a képernyőt, hogy ne maradjon fent a labdánk az előző
-			kirajzolásból adódóan. Ezzel készülünk fel a következő képkocka
-			kirajzolására.
-		</para>
-		<programlisting>
+        </programlisting>
+        <para>
+            Letöröljük a képernyőt, hogy ne maradjon fent a labdánk az előző
+            kirajzolásból adódóan. Ezzel készülünk fel a következő képkocka
+            kirajzolására.
+        </para>
+        <programlisting>
 <![CDATA[mvprintw(abs((yj + (my - yk)) / 2),
 abs((xj + (mx - xk)) / 2), "o");]]>
-		</programlisting>
-		<para>
-			Itt rajzoljuk ki a labdát magát, ehhez meghívjuk az <code>mvprintw</code>
-			függvényt. Ez a függvény kiírat egy karaktert a megadott x és y koordinátáknak
-			megfelelően a képernyőn valahol.
-		</para>
-		<programlisting>
+        </programlisting>
+        <para>
+            Itt rajzoljuk ki a labdát magát, ehhez meghívjuk az <code>mvprintw</code>
+            függvényt. Ez a függvény kiírat egy karaktert a megadott x és y koordinátáknak
+            megfelelően a képernyőn valahol.
+        </para>
+        <programlisting>
 <![CDATA[refresh();
 usleep(30000);]]>
-		</programlisting>
-		<para>
-			A refresh függvény szükséges, hogy kimenetet lássunk a terminál ablakunkban,
-			majd váruk 30000 mikroszekundumnyi időt.
-		</para>
+        </programlisting>
+        <para>
+            A refresh függvény szükséges, hogy kimenetet lássunk a terminál ablakunkban,
+            majd váruk 30000 mikroszekundumnyi időt.
+        </para>
     </section>
     <section>
         <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/szohossz.c" />
-			</textobject>
-		</programlisting>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/szohossz.c" />
+            </textobject>
+        </programlisting>
         <para>
-			A szóhossz megállapítására használhatunk egy <code language="c">int</code> típusú változót, melyet
-			inicializálunk <code>1</code>-el, majd addig shifteljük balra, amíg csak tudjuk. Ha megszámoljuk,
-			hogy hányszor tudtuk balra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
+            A szóhossz megállapítására használhatunk egy <code language="c">int</code> típusú változót, melyet
+            inicializálunk <code>1</code>-el, majd addig shifteljük balra, amíg csak tudjuk. Ha megszámoljuk,
+            hogy hányszor tudtuk balra shiftelni, megkapjuk a szóhosszt az adott számítógépen.
         </para>
     </section>
     <section>
@@ -316,75 +316,75 @@ usleep(30000);]]>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/turing/pr.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Ezt az algoritmust a Googlenél fejlesztette ki Larry Page (innen a neve; PageRank) és Sergey Brin.
-			Vélték felfedezni, hogy minél több oldal mutat egy oldalra, annak az oldalnak az értéke annál nagyobb.
-			Persze ez nem ilyen egyszerű, a nagyobb értékű weboldalak "voksai" többet érnek. Egy oldal
-			fontossága az alapján dől el, hogy hány másik oldal mutat ő rá.
-		</para>
-		<para>
-			Természetesen a Googlenél ennek az algoritmusnak egy jócskán módosított változata fut, mely
-			nem is publikus, hiszen akkor mindenki kereső szolgáltatást indíthatna szabadidejében.
-			Azt is fontos megjegyezni, hogy a fent látott példa az algoritmus egyszerűsített változata,
-			ez már magában hordoz hibákat, és némi eltérést. Például a zsákutca hiba, miszerint zsákutcába
-			érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/turing/pr.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Ezt az algoritmust a Googlenél fejlesztette ki Larry Page (innen a neve; PageRank) és Sergey Brin.
+            Vélték felfedezni, hogy minél több oldal mutat egy oldalra, annak az oldalnak az értéke annál nagyobb.
+            Persze ez nem ilyen egyszerű, a nagyobb értékű weboldalak "voksai" többet érnek. Egy oldal
+            fontossága az alapján dől el, hogy hány másik oldal mutat ő rá.
         </para>
-	</section>
+        <para>
+            Természetesen a Googlenél ennek az algoritmusnak egy jócskán módosított változata fut, mely
+            nem is publikus, hiszen akkor mindenki kereső szolgáltatást indíthatna szabadidejében.
+            Azt is fontos megjegyezni, hogy a fent látott példa az algoritmus egyszerűsített változata,
+            ez már magában hordoz hibákat, és némi eltérést. Például a zsákutca hiba, miszerint zsákutcába
+            érkezünk, amennyiben olyan oldalt találunk, amely nem mutat másikra.
+        </para>
+    </section>
     <section>
-		<title>100 éves a Brun tétel</title>
-		<caution>
-			<title>Tutorált</title>
-			<para>
-				Ebben a feladatban tutoráltam Duszka Ákos Attilát.
-			</para>
-		</caution>
-		<para>
-			Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
-		</para>
-		<programlisting language="R">
-			<textobject>
-				<textdata fileref="./files/turing/primek.r" />
-			</textobject>
-		</programlisting>
-		<para>
-			A prímszámok olyan számok, melyek csak önmagukkal és eggyel osztva nem adnak maradékot.
-			Az ikerprímek pedig olyan príszmámok, melyek különbsége kettő.
-		</para>
-		<para>
-			A Brun tétel azt mondja ki, hogy ha vesszük az ikerprímek reciprokát, majd elkezdjük
-			összeadni őket, pl.
-			<inlineequation>
-					<alt role="tex">\left(\frac{1}{3} + \frac{1}{5}\right) + \left(\frac{1}{5} + \frac{1}{7}\right) + ...</alt>
-				<mathphrase>
-				</mathphrase>
-			</inlineequation>,
-			akkor ez a sor egy B<subscript>2</subscript> (Brun-)konstanshoz fog konvergálni.
-			Ez a felfedezés viszont nem oldja meg az ikerprímek számának problémáját, hiszen arról nem nyilatkozik,
-			hogy a sor véges, vagy végtelen.
-		</para>
-		<para>
-			Ez a program az ikerprímeket ábrázolja egy koordináta rendszerben, melyen jól megfigyelhető hogy valóban
-			a B<subscript>2</subscript> konstanshoz tartunk.
-		</para>
-		<figure>
-			<title>A B<subscript>2</subscript> konstans közelítése</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="pictures/Brun.png" />
-				</imageobject>
-				<textobject>
-					<phrase>A B<subscript>2</subscript> konstans közelítése</phrase>
-				</textobject>
-			</mediaobject>
-		</figure>
-	</section>
+        <title>100 éves a Brun tétel</title>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
+        </para>
+        <programlisting language="R">
+            <textobject>
+                <textdata fileref="./files/turing/primek.r" />
+            </textobject>
+        </programlisting>
+        <para>
+            A prímszámok olyan számok, melyek csak önmagukkal és eggyel osztva nem adnak maradékot.
+            Az ikerprímek pedig olyan príszmámok, melyek különbsége kettő.
+        </para>
+        <para>
+            A Brun tétel azt mondja ki, hogy ha vesszük az ikerprímek reciprokát, majd elkezdjük
+            összeadni őket, pl.
+            <inlineequation>
+                    <alt role="tex">\left(\frac{1}{3} + \frac{1}{5}\right) + \left(\frac{1}{5} + \frac{1}{7}\right) + ...</alt>
+                <mathphrase>
+                </mathphrase>
+            </inlineequation>,
+            akkor ez a sor egy B<subscript>2</subscript> (Brun-)konstanshoz fog konvergálni.
+            Ez a felfedezés viszont nem oldja meg az ikerprímek számának problémáját, hiszen arról nem nyilatkozik,
+            hogy a sor véges, vagy végtelen.
+        </para>
+        <para>
+            Ez a program az ikerprímeket ábrázolja egy koordináta rendszerben, melyen jól megfigyelhető hogy valóban
+            a B<subscript>2</subscript> konstanshoz tartunk.
+        </para>
+        <figure>
+            <title>A B<subscript>2</subscript> konstans közelítése</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="pictures/Brun.png" />
+                </imageobject>
+                <textobject>
+                    <phrase>A B<subscript>2</subscript> konstans közelítése</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+    </section>
     <section>
         <title>A Monty Hall probléma</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Duszka Ákos Attilát.
+            </para>
+        </caution>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
         </para>
@@ -392,31 +392,31 @@ usleep(30000);]]>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R</link>
         </para>
         <para>
-			Ebben a példában megismerkedhettünk az R programozási nyelvvel, amely egy főleg statisztikai
-			számításokra alkalmas, interpreteres nyelv. Ennek köszönhetően a Monthy Hall problémára alkotott
-			R program forrása (is) könnyen olvasható és értelmezhető.
-		</para>
-		<para>
-			A Monty Hall probléma egy TV showból ered, melyben három ajtó közül kell választanunk,
-			az egyik kinyitásával megtalálhatjuk a kincset, a másik kettővel pedig nem. Itt a szimulációban
-			azt vizsgáljuk, hogy érdemes-e váltogatni, hogy mikor melyik ajtót nyitjuk ki, vagy érdemesebb
-			ugyanannál az ajtónál maradni a játék körei során.
-		</para>
-		<screen>
+            Ebben a példában megismerkedhettünk az R programozási nyelvvel, amely egy főleg statisztikai
+            számításokra alkalmas, interpreteres nyelv. Ennek köszönhetően a Monthy Hall problémára alkotott
+            R program forrása (is) könnyen olvasható és értelmezhető.
+        </para>
+        <para>
+            A Monty Hall probléma egy TV showból ered, melyben három ajtó közül kell választanunk,
+            az egyik kinyitásával megtalálhatjuk a kincset, a másik kettővel pedig nem. Itt a szimulációban
+            azt vizsgáljuk, hogy érdemes-e váltogatni, hogy mikor melyik ajtót nyitjuk ki, vagy érdemesebb
+            ugyanannál az ajtónál maradni a játék körei során.
+        </para>
+        <screen>
 <![CDATA[$ Rscript montyhall.r
 [1] "Kiserletek szama: 10000000"
 [1] 3330958
 [1] 6669042
 [1] 0.4994657
 [1] 10000000]]>
-		</screen>
-		<para>
-			A program kimenetét elemezve azt láthatjuk, hogy <computeroutput>100000000</computeroutput> iteráció után az eredmény
-			az, hogy mindenképp érdemes váltogatni az ajtóinkat, ugyanis így megközelítőleg 50 százalékos javulást
-			érhetünk el.
-			Itt a <computeroutput>3330958</computeroutput> azt mutatja, hogy az összes esetből ennyiszer nyerünk úgy, ha nem változtatunk
-			az ajtónkon, amin benyitunk. A <computeroutput>6669042</computeroutput> pedig a nyertes esetek száma.
-			A <computeroutput>0.4994657</computeroutput> pedig az előbbi kettőnek a hányadosa.
-		</para>
+        </screen>
+        <para>
+            A program kimenetét elemezve azt láthatjuk, hogy <computeroutput>100000000</computeroutput> iteráció után az eredmény
+            az, hogy mindenképp érdemes váltogatni az ajtóinkat, ugyanis így megközelítőleg 50 százalékos javulást
+            érhetünk el.
+            Itt a <computeroutput>3330958</computeroutput> azt mutatja, hogy az összes esetből ennyiszer nyerünk úgy, ha nem változtatunk
+            az ajtónkon, amin benyitunk. A <computeroutput>6669042</computeroutput> pedig a nyertes esetek száma.
+            A <computeroutput>0.4994657</computeroutput> pedig az előbbi kettőnek a hányadosa.
+        </para>
     </section>
 </chapter>

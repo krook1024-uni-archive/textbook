@@ -7,108 +7,108 @@
     </info>
     <section>
         <title>Decimálisból unárisba átváltó Turing gép</title>
-		<figure>
-			<title>Példa ilyen Turing-gépre</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./pictures/Turing.png" width="100%" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<para>
-			Ránézésre a téma eléggé száraznak és unalmasnak hangozhat,
-			azonban hogyha jobban beleássunk magunkat a témába,
-			rájöhetünk, hogy meglehetősen izgalmas tud lenni olykor.
-			Programozóként nem szabad megijednünk a Turing-gépektől
-			valamint alkalmazásuktól.
-		</para>
-		<para>
-			Az unáris számrendszer egy olyan egyszerű számrendszer,
-			ahol vonalakkal, húzásokkal ábrázoljuk a számokat.
-			Egy vonal egyet jelent, és összeadva kell értelmezni
-			ezeket (pl. <code>||| = 3</code>). Ez a Turing-gép ezt
-			az átváltást végzi el.
-		</para>
-		<para>
-			C-ben a következőképpen nézne ez ki:
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/chomsky/binary-to-unary.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			Itt mindösszesen annyi történik, hogy bekérünk egy számot,
-			majd ötös csoportokban kiíratjuk a vonalkákat.
-		</para>
-		<screen>
+        <figure>
+            <title>Példa ilyen Turing-gépre</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/Turing.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ránézésre a téma eléggé száraznak és unalmasnak hangozhat,
+            azonban hogyha jobban beleássunk magunkat a témába,
+            rájöhetünk, hogy meglehetősen izgalmas tud lenni olykor.
+            Programozóként nem szabad megijednünk a Turing-gépektől
+            valamint alkalmazásuktól.
+        </para>
+        <para>
+            Az unáris számrendszer egy olyan egyszerű számrendszer,
+            ahol vonalakkal, húzásokkal ábrázoljuk a számokat.
+            Egy vonal egyet jelent, és összeadva kell értelmezni
+            ezeket (pl. <code>||| = 3</code>). Ez a Turing-gép ezt
+            az átváltást végzi el.
+        </para>
+        <para>
+            C-ben a következőképpen nézne ez ki:
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/chomsky/binary-to-unary.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            Itt mindösszesen annyi történik, hogy bekérünk egy számot,
+            majd ötös csoportokban kiíratjuk a vonalkákat.
+        </para>
+        <screen>
 <![CDATA[$ ./a.out
 Please enter a decimal number you'd like to convert to unary: 50
 ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |||||
 $ ./a.out
 Please enter a decimal number you'd like to convert to unary: 51
 ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| ||||| |]]>
-		</screen>
+        </screen>
     </section>
     <section>
         <title>Az a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript> nyelv nem környezetfüggetlen</title>
         <para>
             Mutass be legalább két környezetfüggő generatív grammatikát, amely ezt a nyelvet generálja!
-		</para>
-		<orderedlist numeration="upperroman">
-			<listitem>
-				<para>
-					Legyenek <emphasis>S, X, Y</emphasis> változók.
-					Legyen <emphasis>a, b, c</emphasis> konstansok.
-				</para>
-				<para>
-					<emphasis>S -> abc, S->aXbc, Xb -> bX, Xc -> Ybcc, bY -> Yb, Ay > aax, Ay -> aa</emphasis>
-				</para>
-				<screen>
+        </para>
+        <orderedlist numeration="upperroman">
+            <listitem>
+                <para>
+                    Legyenek <emphasis>S, X, Y</emphasis> változók.
+                    Legyen <emphasis>a, b, c</emphasis> konstansok.
+                </para>
+                <para>
+                    <emphasis>S -> abc, S->aXbc, Xb -> bX, Xc -> Ybcc, bY -> Yb, Ay > aax, Ay -> aa</emphasis>
+                </para>
+                <screen>
 <![CDATA[S
 aXbc
 abXc (Xc -> Ybcc)
 abYbcc]]>
-				</screen>
-				<itemizedlist>
-					<listitem><para>S <code>(S->aXbc)</code></para></listitem>
-					<listitem><para>aXbc <code>(Xb->bX)</code></para></listitem>
-					<listitem><para>abXc <code>(Xc->Ybcc)</code></para></listitem>
-					<listitem><para>abYbcc <code>(bY->Yb)</code></para></listitem>
-					<listitem><para>aYbbcc <code>(aY->aa)</code></para></listitem>
-					<listitem><para>aabbcc</para></listitem>
-				</itemizedlist>
-			</listitem>
-			<listitem>
-				<para>
-					Legyenek <emphasis>S, X, Y</emphasis> változók.
-					Legyen <emphasis>a, b, c</emphasis> konstansok.
-				</para>
-				<para>
-					<emphasis>A -> aAB, A -> aC, CB -> bCc, cB -> Bc, C -> bc</emphasis>
-				</para>
-				<itemizedlist>
-					<listitem><para>A <code>(A->aAB)</code></para></listitem>
-					<listitem><para>aAB <code>(A->aC)</code></para></listitem>
-					<listitem><para>aaCB <code>(CB->bCc)</code></para></listitem>
-					<listitem><para>aaabCc <code>(C->bc)</code></para></listitem>
-					<listitem><para>aabbcc</para></listitem>
-				</itemizedlist>
-			</listitem>
-		</orderedlist>
+                </screen>
+                <itemizedlist>
+                    <listitem><para>S <code>(S->aXbc)</code></para></listitem>
+                    <listitem><para>aXbc <code>(Xb->bX)</code></para></listitem>
+                    <listitem><para>abXc <code>(Xc->Ybcc)</code></para></listitem>
+                    <listitem><para>abYbcc <code>(bY->Yb)</code></para></listitem>
+                    <listitem><para>aYbbcc <code>(aY->aa)</code></para></listitem>
+                    <listitem><para>aabbcc</para></listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para>
+                    Legyenek <emphasis>S, X, Y</emphasis> változók.
+                    Legyen <emphasis>a, b, c</emphasis> konstansok.
+                </para>
+                <para>
+                    <emphasis>A -> aAB, A -> aC, CB -> bCc, cB -> Bc, C -> bc</emphasis>
+                </para>
+                <itemizedlist>
+                    <listitem><para>A <code>(A->aAB)</code></para></listitem>
+                    <listitem><para>aAB <code>(A->aC)</code></para></listitem>
+                    <listitem><para>aaCB <code>(CB->bCc)</code></para></listitem>
+                    <listitem><para>aaabCc <code>(C->bc)</code></para></listitem>
+                    <listitem><para>aabbcc</para></listitem>
+                </itemizedlist>
+            </listitem>
+        </orderedlist>
         <para>
-			Noam Chomsky az 50-es években élt és alkotott, nyelvészként végzett, ami
-			azért lássuk be, nem annyira meglepő, hiszen a mai napig sok
-			programozó kerül ki a nyelvész szakmából, hiszen sok a hasonlóság
-			a két szakma között.
-		</para>
-		<para>
-			Chomsky a Chomsky-féle nyelvosztályok megalkotója. A fent látottak pedig
-			bizonyítékok arra, hogy az
-			a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript>
-			nyelv nem környezetfüggetlen, hiszen kettő nyelvtant is megadtunk, amik
-			ezt a nyelvet generálják (valamint példákat rájuk).
-		</para>
+            Noam Chomsky az 50-es években élt és alkotott, nyelvészként végzett, ami
+            azért lássuk be, nem annyira meglepő, hiszen a mai napig sok
+            programozó kerül ki a nyelvész szakmából, hiszen sok a hasonlóság
+            a két szakma között.
+        </para>
+        <para>
+            Chomsky a Chomsky-féle nyelvosztályok megalkotója. A fent látottak pedig
+            bizonyítékok arra, hogy az
+            a<superscript>n</superscript>b<superscript>n</superscript>c<superscript>n</superscript>
+            nyelv nem környezetfüggetlen, hiszen kettő nyelvtant is megadtunk, amik
+            ezt a nyelvet generálják (valamint példákat rájuk).
+        </para>
     </section>
     <section>
         <title>Hivatkozási nyelv</title>
@@ -116,77 +116,77 @@ abYbcc]]>
             A <citation>KERNIGHANRITCHIE</citation> könyv C referencia-kézikönyv/Utasítások melléklete alapján definiáld
             BNF-ben a C utasítás fogalmát!
             Majd mutass be olyan kódcsipeteket, amelyek adott szabvánnyal nem fordulnak (például C89), mással (például C99) igen.
-		</para>
-		<para>
-			C-ben az utasítás fogalmát Bachus-Naur formában megadhatjuk	a következőképpen.
-			Ezt a következő logika mentén olvassuk;
-			Mi az <code>utasítás</code>? <code>címkézett_utasítás</code> VAGY
-			<code>összetett_utasítás</code> VAGY stb...
-			Ezen logika mentén olvassuk a következő szabálysorozatot! A
-			szabályokat érdemes hátulról (visszafelé) olvasni.
-		</para>
-		<programlisting>
-			<![CDATA[
+        </para>
+        <para>
+            C-ben az utasítás fogalmát Bachus-Naur formában megadhatjuk a következőképpen.
+            Ezt a következő logika mentén olvassuk;
+            Mi az <code>utasítás</code>? <code>címkézett_utasítás</code> VAGY
+            <code>összetett_utasítás</code> VAGY stb...
+            Ezen logika mentén olvassuk a következő szabálysorozatot! A
+            szabályokat érdemes hátulról (visszafelé) olvasni.
+        </para>
+        <programlisting>
+            <![CDATA[
 utasítás ::=
-	címkézett_utasítás
-	| kifejezésutasítás
-	| összetett_utasítás
-	| kiválasztó_utasítás
-	| iterációs_utasítás
-	| vezérlésátadó_utasítás
+    címkézett_utasítás
+    | kifejezésutasítás
+    | összetett_utasítás
+    | kiválasztó_utasítás
+    | iterációs_utasítás
+    | vezérlésátadó_utasítás
 címkézett_utasítás ::=
-	azonosító : utasítás
-	case állandó_kifejezés : utasítás
-	default : utasítás
+    azonosító : utasítás
+    case állandó_kifejezés : utasítás
+    default : utasítás
 kifejezésutasítás ::= kifejezés ;
 összetett_utasítás ::= { deklarációs_lista  utasítás_lista }
 deklarációs_lista ::= deklaráció | deklarációs_lista deklaráció
 utasítás_lista ::= utasítás | utasítás_lista utasítás
 kiválasztó_utasítás ::=
-	if ( kifejezés ) utasítás
-	| if ( kifejezés ) utasítás else utasítás
-	| switch ( kifejezés ) utasítás
+    if ( kifejezés ) utasítás
+    | if ( kifejezés ) utasítás else utasítás
+    | switch ( kifejezés ) utasítás
 iterációs_utasítás ::=
-	while ( kifejezés ) utasítás
-	| do utasítás while ( kifejezés ) ;
-	| for ( kifejezés ; kifejezés ; kifejezés ) utasítás
+    while ( kifejezés ) utasítás
+    | do utasítás while ( kifejezés ) ;
+    | for ( kifejezés ; kifejezés ; kifejezés ) utasítás
 vezérlésátadó_utasítás ::=
-	goto azonosító ;
-	| continue ;
-	| break ;
-	| return kifejezés ;]]>
-		</programlisting>
+    goto azonosító ;
+    | continue ;
+    | break ;
+    | return kifejezés ;]]>
+        </programlisting>
         <para>
-			Előfordul olyan kódcsipet, mely az egyik C verzióval hibátlanul lefordul,
-			míg más C verzió fordítója hibát dob rá.
-			Nézzünk meg erre egy konkrét példát, ahol a csipetünk C99-el fordul,
-			azonban C89-el nem.
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/chomsky/c99.c" />
-			</textobject>
-		</programlisting>
-		<para>
-			A fenti csipet talán a leglátványosabb példája ennek. Próbáljuk
-			meg lefordítani ezt C89 verzióval.
-		</para>
-		<screen>
+            Előfordul olyan kódcsipet, mely az egyik C verzióval hibátlanul lefordul,
+            míg más C verzió fordítója hibát dob rá.
+            Nézzünk meg erre egy konkrét példát, ahol a csipetünk C99-el fordul,
+            azonban C89-el nem.
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/chomsky/c99.c" />
+            </textobject>
+        </programlisting>
+        <para>
+            A fenti csipet talán a leglátványosabb példája ennek. Próbáljuk
+            meg lefordítani ezt C89 verzióval.
+        </para>
+        <screen>
 <![CDATA[$ gcc -std=c89 c99.c
 c99.c: In function ‘main’:
 c99.c:4:2: error: ‘for’ loop initial declarations are only allowed in C99 or C11 mode
   for(int i=0; i < 5; i++);
   ^~~
 c99.c:4:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code]]>
-		</screen>
-		<para>
-			Látható hogy a fordító a barátunk, megoldást is kínál a problémánkra.
-			Amennyiben az általa javasolt opciókkal fordítunk, semmi probléma nincs.
-		</para>
-		<screen>
+        </screen>
+        <para>
+            Látható hogy a fordító a barátunk, megoldást is kínál a problémánkra.
+            Amennyiben az általa javasolt opciókkal fordítunk, semmi probléma nincs.
+        </para>
+        <screen>
 <![CDATA[$ gcc -std=c99 c99.c
 $]]>
-		</screen>
+        </screen>
     </section>
     <section>
         <title>Saját lexikális elemző</title>
@@ -196,92 +196,92 @@ $]]>
                 Ebben a feladatban tutoráltam Duszka Ákos Attilát.
             </para>
         </caution>
-		<para>
-			A program működési elve a következő:
-		</para>
-		<figure>
-			<title>Lexikális elemző</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./pictures/lex.png" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<para>
-			Látható, hogy az általunk írt állomány (<emphasis>lex.l</emphasis>)
-			először bekerül a lex nevű programba, majd annak a kimenetét tudjuk
-			lefordítani a fordítóval, esetünkben GCC-vel. Az ebből kapott bináris
-			fájlt tudjuk majd futtatni is.
-		</para>
-		<programlisting language="c">
-			<textobject>
-				<textdata fileref="./files/chomsky/lex.l" />
-			</textobject>
-		</programlisting>
-		<para>
-			Itt a lex által ránk ruházott előnyöknél fogva egyszerűen csak
-			megadjuk a definíciót, majd hagyjuk, hogy az óriások, akiknek a vállán
-			állunk, dolgozzanak helyettünk.
-		</para>
-		<para>
-			Amit fent látunk, az nem más, mint a lex definíciónk. A programnak
-			megmondjuk, hogy mi értelmes, esetünkben ezt a
-			<code>[-+]?([0-9]*\.[0-9]+|[0-9]+)</code>
-			sor jelenti.
-			Természetes nyelven olvasva ezalatt annyit értünk, hogy
-			bármely szám nullától kilencig, akárhányszor előfordulása érvényes.
-			A következő sorban az <code>.|\n {}</code> utasítás alapján minden
-			más bemenetet ignorálunk.
-		</para>
-		<para>
-			Kicsit részletesebben a valós szám regex definícióján:
-		</para>
-		<itemizedlist>
-			<listitem>
-				<para><code>[-+]?</code></para>
-				<para>'-' vagy '+', egyszer, vagy nullaszor</para>
-			</listitem>
-			<listitem>
-				<para><code>(</code></para>
-				<para>Csoport kezdete</para>
-			</listitem>
-			<listitem>
-				<para><code>[0-9]*</code></para>
-				<para>Szám nullától kilencig, akárhányszor (ez a pont előtti rész)</para>
-			</listitem>
-			<listitem>
-				<para><code>\.</code></para>
-				<para>Szó szerint vett '.' (pont)</para>
-			</listitem>
-			<listitem>
-				<para><code>[0-9]+</code></para>
-				<para>Szám nullátok kilencig, akárhányszor</para>
-			</listitem>
-			<listitem>
-				<para><code>|</code></para>
-				<para>Logikai vagy</para>
-			</listitem>
-			<listitem>
-				<para><code>[0-9]+</code></para>
-				<para>Szám nullától kilencig, akárhányszor</para>
-			</listitem>
-			<listitem>
-				<para><code>)</code></para>
-				<para>Csoport vége</para>
-			</listitem>
-		</itemizedlist>
-		<para>
-			Látszik, hogy a reguláris kifejezésünk felépítése egyszerű. Elsőnek
-			keresünk előjelet (negatív vagy pozitív) <emphasis role="strong">ÉS</emphasis>
-			keressük az egészrészt valamint a törtrészt <emphasis role="strong">VAGY</emphasis>
-			csak egészrészt.
-		</para>
-		<para>
-			Ebből az egyszerűnek tűnő kódból majd a <code>lex</code> farag nekünk
-			egy értelmes C kódot, amit lefordítva láthatjuk is, hogy a programunk
-			működik.
-		</para>
-		<screen>
+        <para>
+            A program működési elve a következő:
+        </para>
+        <figure>
+            <title>Lexikális elemző</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/lex.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Látható, hogy az általunk írt állomány (<emphasis>lex.l</emphasis>)
+            először bekerül a lex nevű programba, majd annak a kimenetét tudjuk
+            lefordítani a fordítóval, esetünkben GCC-vel. Az ebből kapott bináris
+            fájlt tudjuk majd futtatni is.
+        </para>
+        <programlisting language="c">
+            <textobject>
+                <textdata fileref="./files/chomsky/lex.l" />
+            </textobject>
+        </programlisting>
+        <para>
+            Itt a lex által ránk ruházott előnyöknél fogva egyszerűen csak
+            megadjuk a definíciót, majd hagyjuk, hogy az óriások, akiknek a vállán
+            állunk, dolgozzanak helyettünk.
+        </para>
+        <para>
+            Amit fent látunk, az nem más, mint a lex definíciónk. A programnak
+            megmondjuk, hogy mi értelmes, esetünkben ezt a
+            <code>[-+]?([0-9]*\.[0-9]+|[0-9]+)</code>
+            sor jelenti.
+            Természetes nyelven olvasva ezalatt annyit értünk, hogy
+            bármely szám nullától kilencig, akárhányszor előfordulása érvényes.
+            A következő sorban az <code>.|\n {}</code> utasítás alapján minden
+            más bemenetet ignorálunk.
+        </para>
+        <para>
+            Kicsit részletesebben a valós szám regex definícióján:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para><code>[-+]?</code></para>
+                <para>'-' vagy '+', egyszer, vagy nullaszor</para>
+            </listitem>
+            <listitem>
+                <para><code>(</code></para>
+                <para>Csoport kezdete</para>
+            </listitem>
+            <listitem>
+                <para><code>[0-9]*</code></para>
+                <para>Szám nullától kilencig, akárhányszor (ez a pont előtti rész)</para>
+            </listitem>
+            <listitem>
+                <para><code>\.</code></para>
+                <para>Szó szerint vett '.' (pont)</para>
+            </listitem>
+            <listitem>
+                <para><code>[0-9]+</code></para>
+                <para>Szám nullátok kilencig, akárhányszor</para>
+            </listitem>
+            <listitem>
+                <para><code>|</code></para>
+                <para>Logikai vagy</para>
+            </listitem>
+            <listitem>
+                <para><code>[0-9]+</code></para>
+                <para>Szám nullától kilencig, akárhányszor</para>
+            </listitem>
+            <listitem>
+                <para><code>)</code></para>
+                <para>Csoport vége</para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            Látszik, hogy a reguláris kifejezésünk felépítése egyszerű. Elsőnek
+            keresünk előjelet (negatív vagy pozitív) <emphasis role="strong">ÉS</emphasis>
+            keressük az egészrészt valamint a törtrészt <emphasis role="strong">VAGY</emphasis>
+            csak egészrészt.
+        </para>
+        <para>
+            Ebből az egyszerűnek tűnő kódból majd a <code>lex</code> farag nekünk
+            egy értelmes C kódot, amit lefordítva láthatjuk is, hogy a programunk
+            működik.
+        </para>
+        <screen>
 <![CDATA[$ lex lex.l
 $ gcc lex.yy.c -o lex
 $ ./lex
@@ -298,7 +298,7 @@ Valost talaltam: 3.1415
 Valost talaltam: 1.4142
 ...
 ]]>
-		</screen>
+        </screen>
     </section>
     <section>
         <title>l33t.l</title>
@@ -309,9 +309,9 @@ Valost talaltam: 1.4142
             </para>
         </caution>
         <para>
-			Megoldás forrása:
-		</para>
-		<screen>
+            Megoldás forrása:
+        </para>
+        <screen>
 <![CDATA[$ lex 1337.l  && gcc lex.yy.c && ./a.out
 hello, world!
 h3ll0, w0rld!
@@ -327,42 +327,42 @@ loveu
 10/3u
 Using a lexer is fun!
 Us1ng 4 l3x3r 1s fvn!]]>
-		</screen>
+        </screen>
         <para>
-			Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
-			Ezt a programot megadtuk a következő egyszerű szabályokkal, hogy
-			specifikus bemenetre mit adjon, minden mást pedig írjon le úgy, ahogy kapta.
-			Ezzel a módszerrel sokkal egyszerűbb volt a feladatot megoldani,
-			mint magunknak olvasni a bemenetet, és keresni benne a kicserélendő
-			karakterláncokat.
-		</para>
-		<programlisting language="c">
+            Fedezzük fel, hogy az óriások vállán állás nagyon jövedelmező.
+            Ezt a programot megadtuk a következő egyszerű szabályokkal, hogy
+            specifikus bemenetre mit adjon, minden mást pedig írjon le úgy, ahogy kapta.
+            Ezzel a módszerrel sokkal egyszerűbb volt a feladatot megoldani,
+            mint magunknak olvasni a bemenetet, és keresni benne a kicserélendő
+            karakterláncokat.
+        </para>
+        <programlisting language="c">
 <![CDATA[...
 %%
-"a"		{ printf("4");				}
-"c"		{ printf("k");				}
-"e"		{ printf("3");				}
-"o"		{ printf("0");				}
-"i"		{ printf("1");				}
-"t"		{ printf("7");				}
-"q"		{ printf("kw");				}
-"A"		{ printf("/-\\");			}
-"B"		{ printf("13");				}
-"C"		{ printf("K");				}
-"E"		{ printf("3");				}
-"I"		{ printf("1");				}
-"V"		{ printf("\\/");			}
-"bye" 	{ printf("bai");			}
-"and" 	{ printf("nd");				}
-"dude" 	{ printf("d00d");			}
+"a"     { printf("4");              }
+"c"     { printf("k");              }
+"e"     { printf("3");              }
+"o"     { printf("0");              }
+"i"     { printf("1");              }
+"t"     { printf("7");              }
+"q"     { printf("kw");             }
+"A"     { printf("/-\\");           }
+"B"     { printf("13");             }
+"C"     { printf("K");              }
+"E"     { printf("3");              }
+"I"     { printf("1");              }
+"V"     { printf("\\/");            }
+"bye"   { printf("bai");            }
+"and"   { printf("nd");             }
+"dude"  { printf("d00d");           }
 [...]
-.|\n	{ printf("%s", yytext);		}
+.|\n    { printf("%s", yytext);     }
 %%
 ...]]>
-		</programlisting>
+        </programlisting>
     </section>
     <section>
-		<title>A források olvasása</title>
+        <title>A források olvasása</title>
         <caution>
             <title>Tutorált</title>
             <para>
@@ -389,97 +389,97 @@ Us1ng 4 l3x3r 1s fvn!]]>
             <listitem>
                 <programlisting language="c"><![CDATA[if(signal(SIGINT, SIG_IGN)!=SIG_IGN)
 signal(SIGINT, jelkezelo);]]></programlisting>
-				<para>
-					Ha a SIGINT jelkezelése nincs ignorálva, akkor innentől fogva
-					<code>jelkezelo</code> végezze a jelkezelést.
-				</para>
-			</listitem>
+                <para>
+                    Ha a SIGINT jelkezelése nincs ignorálva, akkor innentől fogva
+                    <code>jelkezelo</code> végezze a jelkezelést.
+                </para>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
-				<para>
-					Végezzük el ötször, hogy... (prefix increment)
-				</para>
-			</listitem>
+                <programlisting language="c"><![CDATA[for(i=0; i<5; ++i)]]></programlisting>
+                <para>
+                    Végezzük el ötször, hogy... (prefix increment)
+                </para>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[for(i=0; i<5; i++)]]></programlisting>
-				<para>
-					Végezzük el ötször, hogy... (postfix increment)
-				</para>
-			</listitem>
+                <programlisting language="c"><![CDATA[for(i=0; i<5; i++)]]></programlisting>
+                <para>
+                    Végezzük el ötször, hogy... (postfix increment)
+                </para>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
-				<para>
-					Nem lehet megmondani, hogy mi fog történni, mert
-					az i-t már használjuk ciklusváltozónak is, valamint
-					arra is, hogy a tömb elemét beállítsuk. Nem érdemes
-					olyan kódot írni, ami valamilyen kiértékelődési
-					sorrendet feltételez, ez pedig pont olyan.
-				</para>
-				<programlisting language="c">
-					<textobject>
-						<textdata fileref="./files/chomsky/hiba_4.c" />
-					</textobject>
-				</programlisting>
-			</listitem>
+                <programlisting language="c"><![CDATA[for(i=0; i<5; tomb[i] = i++)]]></programlisting>
+                <para>
+                    Nem lehet megmondani, hogy mi fog történni, mert
+                    az i-t már használjuk ciklusváltozónak is, valamint
+                    arra is, hogy a tömb elemét beállítsuk. Nem érdemes
+                    olyan kódot írni, ami valamilyen kiértékelődési
+                    sorrendet feltételez, ez pedig pont olyan.
+                </para>
+                <programlisting language="c">
+                    <textobject>
+                        <textdata fileref="./files/chomsky/hiba_4.c" />
+                    </textobject>
+                </programlisting>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
-				<para>
-					A kód nehezen olvashatósága mellett kétséges a kiértékelődési
-					sorrend is.
-				</para>
-				<para>
-					Azt mondjuk, hogy legyen i=0, valamint ha i kisebb mint n,
-					és a d rákövetkezője megegyezik az s rákövetkezőjével, akkor
-					növeljük meg az i-t egyel.
-				</para>
-				<programlisting language="c">
-					<textobject>
-						<textdata fileref="./files/chomsky/hiba_5.c" />
-					</textobject>
-				</programlisting>
-				<para>
-					Ha ezt a csipetet beágyazzuk egy programba, és futtatjuk,
-					akkor láthatjuk, hogy nem teljesen az történik, mint
-					aimt szerettünk volna.
-				</para>
-			</listitem>
+                <programlisting language="c"><![CDATA[for(i=0; i<n && (*d++ = *s++); ++i)]]></programlisting>
+                <para>
+                    A kód nehezen olvashatósága mellett kétséges a kiértékelődési
+                    sorrend is.
+                </para>
+                <para>
+                    Azt mondjuk, hogy legyen i=0, valamint ha i kisebb mint n,
+                    és a d rákövetkezője megegyezik az s rákövetkezőjével, akkor
+                    növeljük meg az i-t egyel.
+                </para>
+                <programlisting language="c">
+                    <textobject>
+                        <textdata fileref="./files/chomsky/hiba_5.c" />
+                    </textobject>
+                </programlisting>
+                <para>
+                    Ha ezt a csipetet beágyazzuk egy programba, és futtatjuk,
+                    akkor láthatjuk, hogy nem teljesen az történik, mint
+                    aimt szerettünk volna.
+                </para>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
-				<para>
-					Itt az történik, hogy egy printf függvény argumentumában
-					próbáljuk inkrementálni a változókat, melyre nem lehetünk
-					abban biztosak, hogy milyen sorrendben fognak kiértékelődni.
-					Megbizonyosodhatunk róla, hogy a program nem a kívánt eredményt
-					fogja visszaadni, hogyha megpróbáljuk lefuttatni.
-				</para>
-				<programlisting language="c">
-					<textobject>
-						<textdata fileref="./files/chomsky/hiba_6.c" />
-					</textobject>
-				</programlisting>
-			</listitem>
+                <programlisting language="c"><![CDATA[printf("%d %d", f(a, ++a), f(++a, a));]]></programlisting>
+                <para>
+                    Itt az történik, hogy egy printf függvény argumentumában
+                    próbáljuk inkrementálni a változókat, melyre nem lehetünk
+                    abban biztosak, hogy milyen sorrendben fognak kiértékelődni.
+                    Megbizonyosodhatunk róla, hogy a program nem a kívánt eredményt
+                    fogja visszaadni, hogyha megpróbáljuk lefuttatni.
+                </para>
+                <programlisting language="c">
+                    <textobject>
+                        <textdata fileref="./files/chomsky/hiba_6.c" />
+                    </textobject>
+                </programlisting>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
-				<para>
-					Írassuk ki az f függvény a-ra való outputját, valamint
-					magát az a-t is.
-				</para>
-			</listitem>
+                <programlisting language="c"><![CDATA[printf("%d %d", f(a), a);]]></programlisting>
+                <para>
+                    Írassuk ki az f függvény a-ra való outputját, valamint
+                    magát az a-t is.
+                </para>
+            </listitem>
             <listitem>
-				<programlisting language="c"><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
-				<para>
-					Itt is problémába ütközünk, hiszen az f függvény referencia
-					szerint kapja meg az a változót, tehát másolás nélkül.
-					Ebben az esetben az f függvény közvetlenül tudja módosítani
-					az a változót, emiatt megint kétséges a kiértékelődési
-					sorrend, valamit a kód is meglehetősen "rossz minőségű".
-				</para>
-				<programlisting language="c">
-					<textobject>
-						<textdata fileref="./files/chomsky/hiba_8.c" />
-					</textobject>
-				</programlisting>
-			</listitem>
+                <programlisting language="c"><![CDATA[printf("%d %d", f(&a), a);]]></programlisting>
+                <para>
+                    Itt is problémába ütközünk, hiszen az f függvény referencia
+                    szerint kapja meg az a változót, tehát másolás nélkül.
+                    Ebben az esetben az f függvény közvetlenül tudja módosítani
+                    az a változót, emiatt megint kétséges a kiértékelődési
+                    sorrend, valamit a kód is meglehetősen "rossz minőségű".
+                </para>
+                <programlisting language="c">
+                    <textobject>
+                        <textdata fileref="./files/chomsky/hiba_8.c" />
+                    </textobject>
+                </programlisting>
+            </listitem>
         </orderedlist>
     </section>
     <section>
@@ -492,62 +492,62 @@ $(\forall x \exists y ((x<y)\wedge(y \text{ prím})\wedge(SSy \text{ prím})))$
 $(\exists y \forall x (x \text{ prím}) \supset (x<y)) $
 $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
 ]]></programlisting>
-		<para>
-			A LaTeX-ről annyit kell tudni, hogy ez egy szövegformázó rendszer, amelyet
-			matematikusok előszeretettel használnak dokumentumok és prezentációk formázására,
-			de jelen van a nyomdákban is. Használata a tanulási fázist követően egyáltalán
-			nem megerőltető, véleményem szerint kényelmesebb is mint egy Word dokumentumot szerkesztgetni,
-			valamint jóval több testreszabhatóságot rejt, melyek pár leütésre vannak, és az összkép még
-			így is sokkal szebb, mint bármelyik konkurenséé.
-		</para>
-		<para>
-			Az egyszerűség kedvéért ezen sorokat betesszük egy logikus.tex fájlba, majd
-			lefordítjuk a forrást egy segédprogram használatával, hogy könnyebben olvasható legyen.
-		</para>
-		<programlisting>
+        <para>
+            A LaTeX-ről annyit kell tudni, hogy ez egy szövegformázó rendszer, amelyet
+            matematikusok előszeretettel használnak dokumentumok és prezentációk formázására,
+            de jelen van a nyomdákban is. Használata a tanulási fázist követően egyáltalán
+            nem megerőltető, véleményem szerint kényelmesebb is mint egy Word dokumentumot szerkesztgetni,
+            valamint jóval több testreszabhatóságot rejt, melyek pár leütésre vannak, és az összkép még
+            így is sokkal szebb, mint bármelyik konkurenséé.
+        </para>
+        <para>
+            Az egyszerűség kedvéért ezen sorokat betesszük egy logikus.tex fájlba, majd
+            lefordítjuk a forrást egy segédprogram használatával, hogy könnyebben olvasható legyen.
+        </para>
+        <programlisting>
 <![CDATA[$ pandoc -t latex logikus.tex -o logikus.pdf]]>
-		</programlisting>
-		<para>
-			Az elkészült dokumentumot alább beágyazva megtalálhatja az olvasó is.
-		</para>
-		<figure>
-			<title>LaTeX forrás lefordítva</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./files/chomsky/logikus.png" width="60%" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<para>
-			Az Ar egy elsőrendű matematikai logikai nyelv. Az elsőrendű nyelveket
-			azért éri meg tanulmányoznunk, mert kiválóan lehet vele a világunkat
-			modellezni.
-		</para>
-		<para>
-			Ezek az elsőrendű logikai kifejezések lefordítva természetes szövegre:
-		</para>
-		<itemizedlist>
-			<listitem>
-				<para>
-					A prímszámok száma végtelen.
-				</para>
-			</listitem>
-			<listitem>
-				<para>
-					Végtelen sok ikerprím van.
-				</para>
-			</listitem>
-			<listitem>
-				<para>
-					A prímszámok száma véges.
-				</para>
-			</listitem>
-			<listitem>
-				<para>
-					A prímszámok száma véges.
-				</para>
-			</listitem>
-		</itemizedlist>
+        </programlisting>
+        <para>
+            Az elkészült dokumentumot alább beágyazva megtalálhatja az olvasó is.
+        </para>
+        <figure>
+            <title>LaTeX forrás lefordítva</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/chomsky/logikus.png" width="60%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Az Ar egy elsőrendű matematikai logikai nyelv. Az elsőrendű nyelveket
+            azért éri meg tanulmányoznunk, mert kiválóan lehet vele a világunkat
+            modellezni.
+        </para>
+        <para>
+            Ezek az elsőrendű logikai kifejezések lefordítva természetes szövegre:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    A prímszámok száma végtelen.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Végtelen sok ikerprím van.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A prímszámok száma véges.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A prímszámok száma véges.
+                </para>
+            </listitem>
+        </itemizedlist>
     </section>
     <section>
         <title>Deklaráció</title>
@@ -585,54 +585,54 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
             <listitem>
                 <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>
             </listitem>
-		</itemizedlist>
-		<programlisting language="c++">
-			<textobject>
-				<textdata fileref="./files/chomsky/dek.c" />
-			</textobject>
-		</programlisting>
+        </itemizedlist>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/chomsky/dek.c" />
+            </textobject>
+        </programlisting>
        <para>
             Mit vezetnek be a programba a következő nevek?
         </para>
-		<programlisting language="c"><![CDATA[int a;]]></programlisting>
-		<para>
-			egész
-		</para>
-		<programlisting language="c"><![CDATA[int *b = &a;]]></programlisting>
-		<para>
-			egészre mutató mutató
-		</para>
-		<programlisting language="c"><![CDATA[int &r = a;]]></programlisting>
-		<para>
-			egész referenciája C++ban
-		</para>
-		<programlisting language="c"><![CDATA[int c[5];]]></programlisting>
-		<para>
-			egészek tömbje
-		</para>
-		<programlisting language="c"><![CDATA[int (&tr)[5] = c;]]></programlisting>
-		<para>
-			egészek tömbjének referenciája
-		</para>
-		<programlisting language="c"><![CDATA[int *d[5];]]></programlisting>
-		<para>
-			egészek tömbjére mutató mutató
-		</para>
-		<programlisting language="c"><![CDATA[int *h ();]]></programlisting>
-		<para>
-			egészre mutató mutatót visszaadó függvény
-		</para>
-		<programlisting language="c"><![CDATA[int *(*l) ();]]></programlisting>
-		<para>
-			egészre mutatóra mutató mutatót visszaadó függvény
-		</para>
-		<programlisting language="c"><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
-		<para>
-			két egészet kapó, egy egészre mutató mutatót visszaadó függvény
-		</para>
-		<programlisting language="c"><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
-		<para>
-			két egészet kapó, egy egészet visszaadó függvényre mutató mutató
-		</para>
+        <programlisting language="c"><![CDATA[int a;]]></programlisting>
+        <para>
+            egész
+        </para>
+        <programlisting language="c"><![CDATA[int *b = &a;]]></programlisting>
+        <para>
+            egészre mutató mutató
+        </para>
+        <programlisting language="c"><![CDATA[int &r = a;]]></programlisting>
+        <para>
+            egész referenciája C++ban
+        </para>
+        <programlisting language="c"><![CDATA[int c[5];]]></programlisting>
+        <para>
+            egészek tömbje
+        </para>
+        <programlisting language="c"><![CDATA[int (&tr)[5] = c;]]></programlisting>
+        <para>
+            egészek tömbjének referenciája
+        </para>
+        <programlisting language="c"><![CDATA[int *d[5];]]></programlisting>
+        <para>
+            egészek tömbjére mutató mutató
+        </para>
+        <programlisting language="c"><![CDATA[int *h ();]]></programlisting>
+        <para>
+            egészre mutató mutatót visszaadó függvény
+        </para>
+        <programlisting language="c"><![CDATA[int *(*l) ();]]></programlisting>
+        <para>
+            egészre mutatóra mutató mutatót visszaadó függvény
+        </para>
+        <programlisting language="c"><![CDATA[int (*v (int c)) (int a, int b)]]></programlisting>
+        <para>
+            két egészet kapó, egy egészre mutató mutatót visszaadó függvény
+        </para>
+        <programlisting language="c"><![CDATA[int (*(*z) (int)) (int, int);]]></programlisting>
+        <para>
+            két egészet kapó, egy egészet visszaadó függvényre mutató mutató
+        </para>
     </section>
 </chapter>

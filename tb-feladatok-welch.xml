@@ -6,21 +6,21 @@
         </keywordset>
     </info>
     <section>
-		<title>Első osztályom</title>
+        <title>Első osztályom</title>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-		</para>
-		<programlisting language="Java">
-			<textobject>
-				<textdata fileref="./files/welch/polargen/polargen.java" />
-			</textobject>
-		</programlisting>
-		<para>
-			A módosított polártranszformációs generátor argumentum két
-			véletlenszerű érték generálása alkalmazható.
-			Próbáljuk is ki!
-		</para>
-		<screen>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+        </para>
+        <programlisting language="Java">
+            <textobject>
+                <textdata fileref="./files/welch/polargen/polargen.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            A módosított polártranszformációs generátor argumentum két
+            véletlenszerű érték generálása alkalmazható.
+            Próbáljuk is ki!
+        </para>
+        <screen>
 <![CDATA[$ /java/bin/java polargen.java
 -0.7353431820414118
 -0.33784190028284766
@@ -43,13 +43,13 @@ $ /java/bin/java polargen.java
 -1.4472688950554047
 -1.6250659297425345
 -0.7791586500972545]]>
-		</screen>
-		<para>
-			A program 10 darab véletlenszerűen generált normalizált számot köp ki, ahogyan
-			azt várjuk is. Az OO előnye itt látszik meg, hiszen a matematikai háttér
-			számunkra úgymond lényegtelen, és ezt az osztály el is rejti a programozó
-			szeme elől. A programunk mégis működik.
-		</para>
+        </screen>
+        <para>
+            A program 10 darab véletlenszerűen generált normalizált számot köp ki, ahogyan
+            azt várjuk is. Az OO előnye itt látszik meg, hiszen a matematikai háttér
+            számunkra úgymond lényegtelen, és ezt az osztály el is rejti a programozó
+            szeme elől. A programunk mégis működik.
+        </para>
     </section>
     <section>
         <title>LZW</title>
@@ -57,44 +57,44 @@ $ /java/bin/java polargen.java
             Valósítsd meg C-ben az LZW algoritmus fa-építését!
         </para>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
-				gh/krook1024/textbook/master/files/welch/z3a7.cpp
-			</link>
-		</para>
-		<para>
-			A LZWBinFa osztály felépíti a bemeneti fájl bináris fáját. Használata a következőképp
-			néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.
-		</para>
-		<para>
-			Egy bináris fát a következőképpen építhetünk fel:
-		</para>
-		<itemizedlist>
-			<listitem>
-				<para>
-					amennyiben 0-st kell betenni a fába, úgy megnézzük, hogy
-					az aktuális csomópont tartalmaz e 0-s elemet
-					<itemizedlist>
-						<listitem><para>amennyiben nem tartalmaz, úgy betesszük a nullás gyermekének a 0-t</para></listitem>
-						<listitem><para>amennyiben már tartalmaz, úgy készítünk egy új csomópontot és az ő gyermekeként tesszük be a 0-st</para></listitem>
-			</itemizedlist>
-			</para>
-		</listitem>
-		</itemizedlist>
-		<para>
-			A lépések ugyanezek 1-es betétele esetén is.
-		</para>
-		<para>
-			Tekintsünk meg egy példát is: rajzoljuk fel a 011010 bináris fáját!
-		</para>
-		<figure>
-			<title>A 011010 bináris fája</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./pictures/binfa.png" />
-				</imageobject>
-			</mediaobject>
-		</figure>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
+                gh/krook1024/textbook/master/files/welch/z3a7.cpp
+            </link>
+        </para>
+        <para>
+            A LZWBinFa osztály felépíti a bemeneti fájl bináris fáját. Használata a következőképp
+            néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.
+        </para>
+        <para>
+            Egy bináris fát a következőképpen építhetünk fel:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    amennyiben 0-st kell betenni a fába, úgy megnézzük, hogy
+                    az aktuális csomópont tartalmaz e 0-s elemet
+                    <itemizedlist>
+                        <listitem><para>amennyiben nem tartalmaz, úgy betesszük a nullás gyermekének a 0-t</para></listitem>
+                        <listitem><para>amennyiben már tartalmaz, úgy készítünk egy új csomópontot és az ő gyermekeként tesszük be a 0-st</para></listitem>
+            </itemizedlist>
+            </para>
+        </listitem>
+        </itemizedlist>
+        <para>
+            A lépések ugyanezek 1-es betétele esetén is.
+        </para>
+        <para>
+            Tekintsünk meg egy példát is: rajzoljuk fel a 011010 bináris fáját!
+        </para>
+        <figure>
+            <title>A 011010 bináris fája</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/binfa.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>Fabejárás</title>
@@ -105,31 +105,31 @@ $ /java/bin/java polargen.java
             </para>
         </caution>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras">
-				https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras
-			</link>
-		</para>
-		<para>
-			Preorder bejárás esetén a gyökérrel kezdünk, majd bejárjuk a baloldali részfát,
-			azt követően pedig a jobboldali részfát.
-		</para>
-		<para>
-			Postorder bejárás esetén pedig szintén a gyökérrel kezdünk, viszont a jobboldali
-			részfával folytatjuk, és a baloldali részfával végzünk.
-		</para>
-		<para>
-			Inorder bejárás esetén a bal oldali részfát követően bejárjuk a gyökeret,
-			majd a jobboldali részfát.
-		</para>
-		<para>
-			A program futtatása mostmár a következőképpen néz ki:
-			<code>./binfa befile -o kifile [o/r]</code> ahol az o postorder,
-			az r pedig preorder bejárást jelent. De mindezt a Makefile
-			tartalmazza, tehát az olvasó könnyen és egyszerűen kipróbálhatja
-			és tanulmányozhatja a programot.
-		</para>
-		<screen>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras">
+                https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras
+            </link>
+        </para>
+        <para>
+            Preorder bejárás esetén a gyökérrel kezdünk, majd bejárjuk a baloldali részfát,
+            azt követően pedig a jobboldali részfát.
+        </para>
+        <para>
+            Postorder bejárás esetén pedig szintén a gyökérrel kezdünk, viszont a jobboldali
+            részfával folytatjuk, és a baloldali részfával végzünk.
+        </para>
+        <para>
+            Inorder bejárás esetén a bal oldali részfát követően bejárjuk a gyökeret,
+            majd a jobboldali részfát.
+        </para>
+        <para>
+            A program futtatása mostmár a következőképpen néz ki:
+            <code>./binfa befile -o kifile [o/r]</code> ahol az o postorder,
+            az r pedig preorder bejárást jelent. De mindezt a Makefile
+            tartalmazza, tehát az olvasó könnyen és egyszerűen kipróbálhatja
+            és tanulmányozhatja a programot.
+        </para>
+        <screen>
 <![CDATA[========PREORDER BEJARAS=========
 ---------------0(5)
 ------------0(4)
@@ -188,115 +188,116 @@ var = 0.700649
 depth = 5
 mean = 4.09091
 var = 0.700649]]>
-		</screen>
+        </screen>
     </section>
     <section>
         <title>Tag a gyökér</title>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
-				gh/krook1024/textbook/master/files/welch/z3a7.cpp
-			</link>
-		</para>
-		<para>
-			Ebben az esetben felhasnzáljuk a már megírt LZWBinFa programot, mely
-			eleve úgy lett megírva, hogy a gyökér kompozícióban van a fával.
-		</para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/z3a7.cpp">
+                gh/krook1024/textbook/master/files/welch/z3a7.cpp
+            </link>
+        </para>
+        <para>
+            Ebben az esetben felhasnzáljuk a már megírt LZWBinFa programot, mely
+            eleve úgy lett megírva, hogy a gyökér kompozícióban van a fával.
+        </para>
     </section>
     <section>
         <title>Mutató a gyökér</title>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">
-				gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp
-			</link>
-		</para>
-		<para>
-			Ebben a programban úgy írtuk át a már meglévő BinFa
-			programunkat, hogy a bináris fánk gyökere mutató legyen.
-		</para>
-		<para>
-			A módosítások elvégzése egyszerű, mechanikus folyamat.
-			A gyökér csomópont definíciójánál foglalunk helyet a heapen
-			a gyökérnek, majd az ebből kapott mutatót behelyettesítjük az
-			olyan helykre, ahol egyébként a gyökér változóra hivatkoztunk.
-			Ez a gyakorlatban annyit jelent, hogy eltávolítunk a kódból néhány
-			címképző operátort (<emphasis>&amp;</emphasis>).
-		</para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp">
+                gh/krook1024/textbook/master/files/welch/mutato-a-gyoker/z3a7.cpp
+            </link>
+        </para>
+        <para>
+            Ebben a programban úgy írtuk át a már meglévő BinFa
+            programunkat, hogy a bináris fánk gyökere mutató legyen.
+        </para>
+        <para>
+            A módosítások elvégzése egyszerű, mechanikus folyamat.
+            A gyökér csomópont definíciójánál foglalunk helyet a heapen
+            a gyökérnek, majd az ebből kapott mutatót behelyettesítjük az
+            olyan helykre, ahol egyébként a gyökér változóra hivatkoztunk.
+            Ez a gyakorlatban annyit jelent, hogy eltávolítunk a kódból néhány
+            címképző operátort (<emphasis>&amp;</emphasis>).
+        </para>
     </section>
     <section>
-		<title>Mozgató szemantika</title>
-		<note>
-			<para>
-				Ebben a feladatban tutoráltam Rácz Andrást!
-			</para>
-		</note>
+        <title>Mozgató szemantika</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Rácz Andrást!
+            </para>
+        </caution>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp">
-				https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp
-			</link>
-		</para>
-		<para>
-			A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a destruktort
-			értjük. A bináris fák másolásához és mozgatásához rekurzív mozgató, és
-			másoló függvényekre lesz szükségünk. Lássuk is ezeket.
-		</para>
-		<programlisting language="C++">
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp">
+                https://github.com/krook1024/textbook/blob/master/files/welch/mozgato/z3a8.cpp
+            </link>
+        </para>
+        <para>
+            A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a destruktort
+            értjük. A bináris fák másolásához és mozgatásához rekurzív mozgató, és
+            másoló függvényekre lesz szükségünk. Lássuk is ezeket.
+        </para>
+        <programlisting language="C++">
 <![CDATA[Csomopont *  masol ( Csomopont * elem, Csomopont * regifa ) {
      Csomopont * ujelem = NULL;
      if ( elem != NULL ) {
          switch (elem->getBetu()) {
-			 case '/':
-				 ujelem = new Csomopont ( '/' );
-				 break;
-			 case '0':
-				 ujelem = new Csomopont ( '1' );
-				 break;
-			 case '1':
-				 ujelem = new Csomopont ( '0' );
-				 break;
-			 default:
-				 std::cerr<<"HIBA!"<<std::endl;
-				 break;
+             case '/':
+                 ujelem = new Csomopont ( '/' );
+                 break;
+             case '0':
+                 ujelem = new Csomopont ( '1' );
+                 break;
+             case '1':
+                 ujelem = new Csomopont ( '0' );
+                 break;
+             default:
+                 std::cerr<<"HIBA!"<<std::endl;
+                 break;
          }
-		 ujelem->ujEgyesGyermek(
-			 masol(elem->egyesGyermek(), regifa)
-		 );
-		 ujelem->ujNullasGyermek(
-			 masol(elem->nullasGyermek(), regifa)
-		 );
+         ujelem->ujEgyesGyermek(
+             masol(elem->egyesGyermek(), regifa)
+         );
+         ujelem->ujNullasGyermek(
+             masol(elem->nullasGyermek(), regifa)
+         );
          if ( regifa == elem )
               fa = ujelem;
      }
      return ujelem;
 }]]>
-		</programlisting>
-		<para>
-			Az LZWBinFa osztályunk úgy épül fel, hogy az <code>LZWBinFa</code>
-			osztályon belül megtalálhatóak beágyazott <code>Csomopont</code>
-			osztályú objektumok, ezek alkotják a fát.
-			Ebből következik, hogy a fát úgy tudjuk másolni, hogy
-			ezeket a beágyazott csomópontokat másoljuk, rekurzívan.
-		</para>
-		<para>
-			A fenti kódcsipet a rekurzív másoló függvényünk, amit a másoló
-			konstruktorból hívunk meg, olyan módon, hogy átadjuk neki a
-			a gyökeret és magát a fát.
-		</para>
-		<programlisting language="C++">
+        </programlisting>
+        <para>
+            Az LZWBinFa osztályunk úgy épül fel, hogy az <code>LZWBinFa</code>
+            osztályon belül megtalálhatóak beágyazott <code>Csomopont</code>
+            osztályú objektumok, ezek alkotják a fát.
+            Ebből következik, hogy a fát úgy tudjuk másolni, hogy
+            ezeket a beágyazott csomópontokat másoljuk, rekurzívan.
+        </para>
+        <para>
+            A fenti kódcsipet a rekurzív másoló függvényünk, amit a másoló
+            konstruktorból hívunk meg, olyan módon, hogy átadjuk neki a
+            a gyökeret és magát a fát.
+        </para>
+        <programlisting language="C++">
 <![CDATA[LZWBinFa ( const LZWBinFa & regi ) {
-	std::cout << "LZWBinFa copy ctor" << std::endl;
-	gyoker =  masol ( regi.gyoker, regi.fa ) ;
+    std::cout << "LZWBinFa copy ctor" << std::endl;
+    gyoker =  masol ( regi.gyoker, regi.fa ) ;
 }]]>
-		</programlisting>
-		<para>
-			A másolókonstruktort úgy teszteljük, hogy nem referencia szerint
-			adjuk át egy egyszerű függvénynek a fánkat, hanem érték szerint,
-			ilyenkor a fa másolódik.
-			Ha kipróbáljuk a programot akkor láthatjuk,hogy a másolókonstruktorunk működik.
-		</para>
-		<screen>
+        </programlisting>
+        <para>
+            A másolókonstruktort úgy teszteljük, hogy nem referencia szerint
+            adjuk át egy egyszerű függvénynek a fánkat, hanem érték szerint,
+            ilyenkor a fa másolódik.
+            Ha kipróbáljuk a programot akkor láthatjuk,hogy a másolókonstruktorunk működik.
+        </para>
+        <screen>
 <![CDATA[$ make
 LZWBinFa copy ctor
 ------------0(3)
@@ -317,20 +318,20 @@ var = 0.707107
 depth = 3
 mean = 2.5
 var = 0.707107]]>
-		</screen>
-		<para>
-			Ennek alapjára most készítsük el a mozgatókonstruktort is. Ez alatt azt értjük,
-			hogy felül fogjuk terhelni a '=' operátort (operator overloading).
-		</para>
-		<programlisting language="C++">
+        </screen>
+        <para>
+            Ennek alapjára most készítsük el a mozgatókonstruktort is. Ez alatt azt értjük,
+            hogy felül fogjuk terhelni a '=' operátort (operator overloading).
+        </para>
+        <programlisting language="C++">
 <![CDATA[LZWBinFa & operator=(LZWBinFa & regi) {
-	std::cout << "mozgato ctor" << std::endl;
-	this->gyoker = regi.gyoker;
-	this->fa = regi.fa;
-	return *this;
+    std::cout << "mozgato ctor" << std::endl;
+    this->gyoker = regi.gyoker;
+    this->fa = regi.fa;
+    return *this;
 }]]>
-		</programlisting>
-		<screen>
+        </programlisting>
+        <screen>
 <![CDATA[LZWBinFa copy ctor
 ------------0(3)
 ---------0(2)
@@ -417,11 +418,11 @@ var = 0.700649
 depth = 5
 mean = 4.09091
 var = 0.700649]]>
-		</screen>
-		<para>
-			A kimenetünkön megjelenneik mind a "mozgato ctor" és "copy ctor"
-			üzenetek, melyeket indikátorokként ültettünk el a forráskódban,
-			hogy láthassuk, működnek-e.
-		</para>
-	</section>
+        </screen>
+        <para>
+            A kimenetünkön megjelenneik mind a "mozgato ctor" és "copy ctor"
+            üzenetek, melyeket indikátorokként ültettünk el a forráskódban,
+            hogy láthassuk, működnek-e.
+        </para>
+    </section>
 </chapter>

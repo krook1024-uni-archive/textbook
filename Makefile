@@ -10,7 +10,7 @@ turing.gv: pictures/turing.gv
 	@dot -Tpng pictures/turing.gv -o pictures/Turing.png
 
 tb_fdl.pdf: tb-fdl.xml tb.xls turing.gv
-	@dblatex tb-fdl.xml -p tb.xls -T simple
+	@dblatex tb-fdl.xml -p tb.xls -T native
 
 .PHONY: validate_tb_fdl_hu
 validate_tb_fdl_hu:

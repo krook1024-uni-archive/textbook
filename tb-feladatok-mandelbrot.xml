@@ -1,5 +1,5 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
-	<info>
+    <info>
         <title>Helló, Mandelbrot!</title>
         <keywordset>
             <keyword/>
@@ -7,297 +7,297 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
-		<para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
-				github/krook1024/textbook/mandelbrot
-			</link>
-		</para>
-		<para>
-			Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen.
-			A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
-			<inlineequation>
-				<alt role="tex">f_c(z) = z^2 + c</alt>
-				<mathphrase/>
-			</inlineequation>
-			függvény képére, s nullától iterálva nem divergál, tehát a
-			<inlineequation>
-				<alt role="tex">f_c(0), f_c(f_c(0)), ...</alt>
-				<mathphrase/>
-			</inlineequation>
-			abszolútértekben korlátos.
-		</para>
-		<para>
-			Amennyiben a forrásfájlt egyszerűen <code>make</code>-el lefordítjuk,
-			úgy láthatjuk, hogy létrejön a kimenet.png, hiszen a
-			<code>Makefile</code>-unkban úgy adtuk meg, hogy a forrást ne csak
-			lefordítsa, hanem futtassa is a programunkat <code>kimenet.png</code>
-			kimenettel. A kimenetet be is ágyazom, mert meglehetősen látványos.
-		</para>
-		<figure>
-			<title>A Mandelbrot halmaz a komplex síkon</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/mandelbrot/kimenet.png" width="50%"/>
-				</imageobject>
-				<textobject>
-					<phrase>A Mandelbrot halmaz</phrase>
-				</textobject>
-			</mediaobject>
-		</figure>
-		<para>
-			A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy
-			wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
-		</para>
-		<para>
-			Ebben a programban viszont nem használjuk a <code>std::complex</code>
-			osztályt, amit a C++ biztosít, hanem egyszerűen magunknak
-			adunk meg egy <code>Komplex</code> struktúrát, mely egyszerűen
-			tartalmaz két double változót, ami megfeleltethető a komplex számok
-			valós és imaginárius értékeinek. A további működési elv mindössze
-			annyi, hogy megadunk egy halmazt, amelyre a megadott egyenletünk
-			illeszkedik, majd végigmegyünk ezen a halmazon, és beszínezzük
-			az erre alkalmas pixeleket.
-		</para>
+        <para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
+                github/krook1024/textbook/mandelbrot
+            </link>
+        </para>
+        <para>
+            Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen.
+            A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
+            <inlineequation>
+                <alt role="tex">f_c(z) = z^2 + c</alt>
+                <mathphrase/>
+            </inlineequation>
+            függvény képére, s nullától iterálva nem divergál, tehát a
+            <inlineequation>
+                <alt role="tex">f_c(0), f_c(f_c(0)), ...</alt>
+                <mathphrase/>
+            </inlineequation>
+            abszolútértekben korlátos.
+        </para>
+        <para>
+            Amennyiben a forrásfájlt egyszerűen <code>make</code>-el lefordítjuk,
+            úgy láthatjuk, hogy létrejön a kimenet.png, hiszen a
+            <code>Makefile</code>-unkban úgy adtuk meg, hogy a forrást ne csak
+            lefordítsa, hanem futtassa is a programunkat <code>kimenet.png</code>
+            kimenettel. A kimenetet be is ágyazom, mert meglehetősen látványos.
+        </para>
+        <figure>
+            <title>A Mandelbrot halmaz a komplex síkon</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/mandelbrot/kimenet.png" width="50%"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A Mandelbrot halmaz</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A program alapját a <emphasis>png++</emphasis> C++ könyvtár adja, amely egy
+            wrapper a C-s <emphasis>libpng</emphasis> könyvtárra.
+        </para>
+        <para>
+            Ebben a programban viszont nem használjuk a <code>std::complex</code>
+            osztályt, amit a C++ biztosít, hanem egyszerűen magunknak
+            adunk meg egy <code>Komplex</code> struktúrát, mely egyszerűen
+            tartalmaz két double változót, ami megfeleltethető a komplex számok
+            valós és imaginárius értékeinek. A további működési elv mindössze
+            annyi, hogy megadunk egy halmazt, amelyre a megadott egyenletünk
+            illeszkedik, majd végigmegyünk ezen a halmazon, és beszínezzük
+            az erre alkalmas pixeleket.
+        </para>
     </section>
     <section>
         <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
        <para>
-		   <emphasis role="strong">Megoldás forrása:</emphasis>
-		   <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot_komplex">
-				github/krook1024/textbook/mandelb/mandelbrot_komplex/
-		   </link>
-	   </para>
-		<para>
-			Ebben a programban, hasonlóan az előzőhöz, a Mandelbrot halmazt
-			ábrázoltatjuk. A különbség csupán annyi, hogy itt a beépített
-			<code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
-			struktúrát írnánk a komplex számok tárolására.
-		</para>
-		<para>
-			Ha elkészítünk egy egyszerű <code>Makefile</code>t a programhoz, úgy
-			szintén	egyszerű lesz azt futtatni. Nem meglepő, hogy ugyanazt a
-			kimenetet adja, mint az előző programunk.
-		</para>
-		<para>
-			A <code language="c++">std::complex</code> osztály használata jár némi előnnyel,
-			például lehetőséget ad kényelmesebb, elegánsabb változó definiálsára
-			(pl. <code language="c++">C = {MINX + j * dx, MAXY - i * dy};</code>,
-			ahol az első rész a szám valós része, a másik pedig a szám imaginárius
-			része).
-		</para>
+           <emphasis role="strong">Megoldás forrása:</emphasis>
+           <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot_komplex">
+                github/krook1024/textbook/mandelb/mandelbrot_komplex/
+           </link>
+       </para>
+        <para>
+            Ebben a programban, hasonlóan az előzőhöz, a Mandelbrot halmazt
+            ábrázoltatjuk. A különbség csupán annyi, hogy itt a beépített
+            <code>std::complex</code> osztályt használjuk, ahelyett, hogy saját
+            struktúrát írnánk a komplex számok tárolására.
+        </para>
+        <para>
+            Ha elkészítünk egy egyszerű <code>Makefile</code>t a programhoz, úgy
+            szintén egyszerű lesz azt futtatni. Nem meglepő, hogy ugyanazt a
+            kimenetet adja, mint az előző programunk.
+        </para>
+        <para>
+            A <code language="c++">std::complex</code> osztály használata jár némi előnnyel,
+            például lehetőséget ad kényelmesebb, elegánsabb változó definiálsára
+            (pl. <code language="c++">C = {MINX + j * dx, MAXY - i * dy};</code>,
+            ahol az első rész a szám valós része, a másik pedig a szám imaginárius
+            része).
+        </para>
     </section>
     <section>
-		<title>Biomorfok</title>
+        <title>Biomorfok</title>
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
         </para>
-		<para>
-			A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
-			is a komplex számsíkon ábrázolható függvényeket nézünk meg, és ezek
-			ábrázolásának C++ megvalósításait. Kedvcsinálóként előbb nézzünk meg egy pár
-			biomorfot.
-		</para>
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="./pictures/biomorf1.png" width="50%"/>
-			</imageobject>
-		</mediaobject>
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="./pictures/biomorf2.jpg" width="50%"/>
-			</imageobject>
-		</mediaobject>
-		<para>
-			A biomorfok szoros kapcsolatban vannak a Mandelbrot-halmazzal,
-			ám itt a
-			<inlineequation>
-				<alt role="tex">f_c(z) = z^2 + c</alt>
-				<mathphrase/>
-			</inlineequation>
-			képletet lecseréljük másra.
-		</para>
-		<para>
-			Az egyszerűség kedvéért itt is létrehoztunk egy Makefilet, így a
-			<code>make</code> parancs kiadásával lefuttatható a programunk, feltéve
-			hogy telepítettük a png++ könyvtárat és működik a g++-unk.
-		</para>
-		<screen>
+        <para>
+            A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
+            is a komplex számsíkon ábrázolható függvényeket nézünk meg, és ezek
+            ábrázolásának C++ megvalósításait. Kedvcsinálóként előbb nézzünk meg egy pár
+            biomorfot.
+        </para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/biomorf1.png" width="50%"/>
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/biomorf2.jpg" width="50%"/>
+            </imageobject>
+        </mediaobject>
+        <para>
+            A biomorfok szoros kapcsolatban vannak a Mandelbrot-halmazzal,
+            ám itt a
+            <inlineequation>
+                <alt role="tex">f_c(z) = z^2 + c</alt>
+                <mathphrase/>
+            </inlineequation>
+            képletet lecseréljük másra.
+        </para>
+        <para>
+            Az egyszerűség kedvéért itt is létrehoztunk egy Makefilet, így a
+            <code>make</code> parancs kiadásával lefuttatható a programunk, feltéve
+            hogy telepítettük a png++ könyvtárat és működik a g++-unk.
+        </para>
+        <screen>
 <![CDATA[$ make]]>
-		</screen>
-		<para>
-			Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png
-			fájlunk, amit beágyazva meg is tekinthet az olvasó.
-		</para>
-		<figure>
-			<title>A generált biomorf</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/biomorf/bmorf.png" width="50%"/>
-				</imageobject>
-				<textobject>
-					<phrase>A generált biomorf</phrase>
-				</textobject>
-			</mediaobject>
-		</figure>
-		<para>
-			Magán a formán kívül észrevehető további különbség az, hogy
-			színes ábrát kaptunk a Mandelbrot-halmazos programunkkal ellentétben.
-			A program működési elve az említett módon hasonló, csak más képlettel
-			dolgozunk, valamint a színezést úgy valósítjuk meg, hogy az iteráció
-			számát maradékosan osztjuk 255-el, így kapunk egy RGB színkódot, és
-			ezt használjuk fel egy adott pixel színezésére.
-		</para>
+        </screen>
+        <para>
+            Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png
+            fájlunk, amit beágyazva meg is tekinthet az olvasó.
+        </para>
+        <figure>
+            <title>A generált biomorf</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/biomorf/bmorf.png" width="50%"/>
+                </imageobject>
+                <textobject>
+                    <phrase>A generált biomorf</phrase>
+                </textobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Magán a formán kívül észrevehető további különbség az, hogy
+            színes ábrát kaptunk a Mandelbrot-halmazos programunkkal ellentétben.
+            A program működési elve az említett módon hasonló, csak más képlettel
+            dolgozunk, valamint a színezést úgy valósítjuk meg, hogy az iteráció
+            számát maradékosan osztjuk 255-el, így kapunk egy RGB színkódot, és
+            ezt használjuk fel egy adott pixel színezésére.
+        </para>
     </section>
     <section>
-		<title>A Mandelbrot halmaz CUDA megvalósítása</title>
-		<caution>
-			<title>Tutorált</title>
-			<para>
-				Ebben a feladatban tutoráltam Tóth Attilát.
-			</para>
-		</caution>
+        <title>A Mandelbrot halmaz CUDA megvalósítása</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Tóth Attilát.
+            </para>
+        </caution>
         <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu">
-				https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu
-			</link>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu">
+                https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu
+            </link>
         </para>
-		<para>
-			A CUDA az nVidia kártyák által használt API a kártyák vezérlésére
-			nagyobb teljesítménnyel, mint például az OpenGL. A CUDA jelen van a legtöbb
-			mai játékban, vagy streamer, videóvágó szoftverben. A teljesítménynövekedést
-			párhuzamos számítással érik el, több "magot" dolgoztatnak a videókártyán egyszerre.
-			Ezen kívül használható másra is az interfész, nem csak grafikus dolgok programozására.
-			Például széles körben elterjedt szokás CUDA kártyákkal "bányászni" különböző
-			kriptovalutákat.
-		</para>
-		<para>
-			CUDA programok fejlesztéséhez hasznos olvasmány lehet a dokumentáció, amely
-			a következő linken található meg;
-			<link xlink:href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</link>.
-		</para>
-		<para>
-			Tekintsük meg a forráskódot egy pillanatra. A kód már ismerős lehet,
-			hiszen ugyan azt az algoritmust taglaljuk az egész fejezetben.
-			Megjelenik a Mandelbrot-halmaz számító while cuklusunk, a png++, és minden egyéb
-			megszokott csipet amit ebben a fejezetben olvashattunk.
-		</para>
-		<para>
-			A fő különbséget az adja, hogy most a CUDA API-n keresztül kell
-			dolgoznunk. Itt újdonságképpen jelennek meg a <code>__device__</code>,
-			<code>__global__</code> és hasonló jellegű szövegek.
-		</para>
-		<para>
-			A dokumentációt olvasva hamar rájöhetünk, hogy mit is jelentenek ezek.
-			A <code>__device__</code> minősítővel rendelkeznek a magán a GPU-n futó függvények.
-			A <code>__global__</code> minősítővel az úgynevezett "kernel" rendelkezik. Ezen belül
-			igyekszünk megvalósítani a párhuzamosítást.
-			Ezekre úgy gondoljunk, mint például a <code>short int a;</code> kifejezés során,
-			ahol a <code>short</code> a minősítő, az <code>int</code> a típus, az
-			<code>a</code> pedig a változó neve.
-			Minden más pedig hoszt-oldalon fut, tehát a gazdagépen, a processzoron.
-		</para>
-		<para>
-			Ennyi előképzettséggel viszont már lássuk a kódot!
-		</para>
-		<programlisting language="C++">
-			<textobject>
-				<textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
-			</textobject>
-		</programlisting>
-		<para>
-			Segítséggképpen itt is mellékeltem egy <filename>Makefile</filename>-t, amivel könnyen és egyszerűen
-			fordítható a program, feltéve, hogy a CUDA telepítre van a számítógépünkre, és van
-			erre alkalmas kártyánk. Amennyiben ezek szükséges feltételek teljesülnek, de mégsem
-			működne, próbáljuk meg a <filename>Makefile</filename>-ban korrigálni a fordító abszolút elérési útvonalát.
-		</para>
-		<para>
-			Hogyha fordítjuk és futtatjuk a programot, akkor láthatjuk hogy létrejön
-			a <filename>mandel.png</filename> állományunk, amely szokás szerint be
-			lesz ágyazva az olvasó számára.
-		</para>
-		<figure>
-			<title>Mandelbrot halmaz CUDA-val</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/cuda_mandel/mandel.png" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<screen>
+        <para>
+            A CUDA az nVidia kártyák által használt API a kártyák vezérlésére
+            nagyobb teljesítménnyel, mint például az OpenGL. A CUDA jelen van a legtöbb
+            mai játékban, vagy streamer, videóvágó szoftverben. A teljesítménynövekedést
+            párhuzamos számítással érik el, több "magot" dolgoztatnak a videókártyán egyszerre.
+            Ezen kívül használható másra is az interfész, nem csak grafikus dolgok programozására.
+            Például széles körben elterjedt szokás CUDA kártyákkal "bányászni" különböző
+            kriptovalutákat.
+        </para>
+        <para>
+            CUDA programok fejlesztéséhez hasznos olvasmány lehet a dokumentáció, amely
+            a következő linken található meg;
+            <link xlink:href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</link>.
+        </para>
+        <para>
+            Tekintsük meg a forráskódot egy pillanatra. A kód már ismerős lehet,
+            hiszen ugyan azt az algoritmust taglaljuk az egész fejezetben.
+            Megjelenik a Mandelbrot-halmaz számító while cuklusunk, a png++, és minden egyéb
+            megszokott csipet amit ebben a fejezetben olvashattunk.
+        </para>
+        <para>
+            A fő különbséget az adja, hogy most a CUDA API-n keresztül kell
+            dolgoznunk. Itt újdonságképpen jelennek meg a <code>__device__</code>,
+            <code>__global__</code> és hasonló jellegű szövegek.
+        </para>
+        <para>
+            A dokumentációt olvasva hamar rájöhetünk, hogy mit is jelentenek ezek.
+            A <code>__device__</code> minősítővel rendelkeznek a magán a GPU-n futó függvények.
+            A <code>__global__</code> minősítővel az úgynevezett "kernel" rendelkezik. Ezen belül
+            igyekszünk megvalósítani a párhuzamosítást.
+            Ezekre úgy gondoljunk, mint például a <code>short int a;</code> kifejezés során,
+            ahol a <code>short</code> a minősítő, az <code>int</code> a típus, az
+            <code>a</code> pedig a változó neve.
+            Minden más pedig hoszt-oldalon fut, tehát a gazdagépen, a processzoron.
+        </para>
+        <para>
+            Ennyi előképzettséggel viszont már lássuk a kódot!
+        </para>
+        <programlisting language="C++">
+            <textobject>
+                <textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
+            </textobject>
+        </programlisting>
+        <para>
+            Segítséggképpen itt is mellékeltem egy <filename>Makefile</filename>-t, amivel könnyen és egyszerűen
+            fordítható a program, feltéve, hogy a CUDA telepítre van a számítógépünkre, és van
+            erre alkalmas kártyánk. Amennyiben ezek szükséges feltételek teljesülnek, de mégsem
+            működne, próbáljuk meg a <filename>Makefile</filename>-ban korrigálni a fordító abszolút elérési útvonalát.
+        </para>
+        <para>
+            Hogyha fordítjuk és futtatjuk a programot, akkor láthatjuk hogy létrejön
+            a <filename>mandel.png</filename> állományunk, amely szokás szerint be
+            lesz ágyazva az olvasó számára.
+        </para>
+        <figure>
+            <title>Mandelbrot halmaz CUDA-val</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/cuda_mandel/mandel.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <screen>
 <![CDATA[$ make
 16
 0.159764
 $ ]]>
-		</screen>
-		<para>
-			A program kimenetéből látszik, hogy jóval gyorsabb mint a C++ és C-s verziók,
-			ahol akár fél percet is várnunk kellett egy-egy ábra elkészülésére, itt viszont
-			a másodperc törtrésze alatt elkészült a kép, mindez egy olyan számítógépen,
-			amiben egy átlagos videókártya van és SSD nincs. Tehát a sebességnövekedés
-			jelentős.
-		</para>
+        </screen>
+        <para>
+            A program kimenetéből látszik, hogy jóval gyorsabb mint a C++ és C-s verziók,
+            ahol akár fél percet is várnunk kellett egy-egy ábra elkészülésére, itt viszont
+            a másodperc törtrésze alatt elkészült a kép, mindez egy olyan számítógépen,
+            amiben egy átlagos videókártya van és SSD nincs. Tehát a sebességnövekedés
+            jelentős.
+        </para>
     </section>
     <section>
         <title>Mandelbrot nagyító és utazó C++ nyelven</title>
         <para>
-			<emphasis>
-				Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
-				egérrel kiválasztva vizualizálja onnan a komplex iteráció bejárta z<subscript>n</subscript> komplex számokat
-			</emphasis>
-		</para>
-        <para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito">https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito</link>
+            <emphasis>
+                Építs GUI-t a Mandelbrot algoritmusra, lehessen egérrel nagyítani egy területet, illetve egy pontot
+                egérrel kiválasztva vizualizálja onnan a komplex iteráció bejárta z<subscript>n</subscript> komplex számokat
+            </emphasis>
         </para>
-		<para>
-			A feladat megvalósításához a Qt Creator nevű szoftvert fogjuk használni, mely egy több platformon
-			átívelő keretrendszer elsősorban grafikus alkalmazások készítésére. A Qt nagyon népszerű választás
-			a nagyobb projektek körében is, például a Qt az alapja a VLC-nek, és még sok más <emphasis role="strong">szabad szoftvernek</emphasis>.
-		</para>
-		<para>
-			Ebben a programban alapul vesszük a már meglévő Mandelbrot-halmaz számító C++ programunkat, és egy
-			más kontextusba ültetjük be. Természetesen ez még nem lenne elég, hanem el kell készítenünk
-			hozzá Qt Creatorban a felületet, valamint némi extra kódot. Ez a kód a repóban megtalálható.
-		</para>
-		<para>
-			A program hasznáalta során az egérrel jelölünk ki egy adott területet, melyet az
-			újra renderel és betölt. A programról használat közben beillesztek néhány képernyőképet.
-		</para>
-		<para>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel1.png" width="32%"/>
-				</imageobject>
-			</inlinemediaobject>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel2.png" width="32%"/>
-				</imageobject>
-			</inlinemediaobject>
-			<inlinemediaobject>
-				<imageobject>
-					<imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel3.png" width="32%"/>
-				</imageobject>
-			</inlinemediaobject>
-		</para>
+        <para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito">https://github.com/krook1024/textbook/tree/master/files/mandelb/mandel_nagyito</link>
+        </para>
+        <para>
+            A feladat megvalósításához a Qt Creator nevű szoftvert fogjuk használni, mely egy több platformon
+            átívelő keretrendszer elsősorban grafikus alkalmazások készítésére. A Qt nagyon népszerű választás
+            a nagyobb projektek körében is, például a Qt az alapja a VLC-nek, és még sok más <emphasis role="strong">szabad szoftvernek</emphasis>.
+        </para>
+        <para>
+            Ebben a programban alapul vesszük a már meglévő Mandelbrot-halmaz számító C++ programunkat, és egy
+            más kontextusba ültetjük be. Természetesen ez még nem lenne elég, hanem el kell készítenünk
+            hozzá Qt Creatorban a felületet, valamint némi extra kódot. Ez a kód a repóban megtalálható.
+        </para>
+        <para>
+            A program hasznáalta során az egérrel jelölünk ki egy adott területet, melyet az
+            újra renderel és betölt. A programról használat közben beillesztek néhány képernyőképet.
+        </para>
+        <para>
+            <inlinemediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel1.png" width="32%"/>
+                </imageobject>
+            </inlinemediaobject>
+            <inlinemediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel2.png" width="32%"/>
+                </imageobject>
+            </inlinemediaobject>
+            <inlinemediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/mandelb/mandel_nagyito/img/mandel3.png" width="32%"/>
+                </imageobject>
+            </inlinemediaobject>
+        </para>
     </section>
     <section>
         <title>Mandelbrot nagyító és utazó Java nyelven</title>
-		<para>
-			A feladat megoldásához az OpenJFX 11-et fogjuk használni. Az OpenJFX projekt weboldala
-			megtalálható itt:
-			<link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
-			Az OpenJFX, hasonlóan a Qt-hoz, egy keretrendszer grafikus felületek készítéséhez.
-			Előnye, hogy kiváló útmutatást adnak ahhoz, hogy miképp és hogyan tudjuk elkezdeni a saját
-			projektünket.
-		</para>
-		<para>
-			Például egy egyszerű program, ami nem csinál mást, csak kiírja az OpenJFX és a Java
-			verzióját egy grafikus ablakban a következőképpen néz ki:
-		</para>
-		<programlisting language="java">
+        <para>
+            A feladat megoldásához az OpenJFX 11-et fogjuk használni. Az OpenJFX projekt weboldala
+            megtalálható itt:
+            <link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
+            Az OpenJFX, hasonlóan a Qt-hoz, egy keretrendszer grafikus felületek készítéséhez.
+            Előnye, hogy kiváló útmutatást adnak ahhoz, hogy miképp és hogyan tudjuk elkezdeni a saját
+            projektünket.
+        </para>
+        <para>
+            Például egy egyszerű program, ami nem csinál mást, csak kiírja az OpenJFX és a Java
+            verzióját egy grafikus ablakban a következőképpen néz ki:
+        </para>
+        <programlisting language="java">
 <![CDATA[import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -317,28 +317,28 @@ public class HelloFX extends Application {
         launch();
     }
 }]]>
-		</programlisting>
-		<para>
-			Szerencsénkre C++ és Java között egyszerű a fordítás, néhány nyelvi sajátosságon,
-			könyvtáron, valamint a mutatókon kívül semmit sem kell változtatnunk. Esetünkben
-			a Mandelbrot-halmaz számító programunk C++ változatához képest mindössze
-			egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
-			megvalósítani.
-		</para>
-		<figure>
-			<title>Mandelbrot nagyító és utazó Java nyelven</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="./pictures/java_utazo.png" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<para>
-			A végeredmény itt látható. A forrásfájlok pedig megtalálhatóak a repóban.
-		</para>
-		<para>
-			<emphasis role="strong">Megoldás forrása:</emphasis>
-			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb">https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb</link>
-		</para>
+        </programlisting>
+        <para>
+            Szerencsénkre C++ és Java között egyszerű a fordítás, néhány nyelvi sajátosságon,
+            könyvtáron, valamint a mutatókon kívül semmit sem kell változtatnunk. Esetünkben
+            a Mandelbrot-halmaz számító programunk C++ változatához képest mindössze
+            egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
+            megvalósítani.
+        </para>
+        <figure>
+            <title>Mandelbrot nagyító és utazó Java nyelven</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/java_utazo.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A végeredmény itt látható. A forrásfájlok pedig megtalálhatóak a repóban.
+        </para>
+        <para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb">https://github.com/krook1024/textbook/tree/master/files/mandelb/java_mandelb</link>
+        </para>
     </section>
 </chapter>

@@ -14,14 +14,14 @@
             Megoldás videó:
         </para>
         <para>
-			Megoldás forrása:
-			<link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">
-				https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol
-			</link>
+            Megoldás forrása:
+            <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">
+                https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol
+            </link>
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-		</para>
+        </para>
     </section>
     <section>
         <title>Szoftmax R MNIST</title>

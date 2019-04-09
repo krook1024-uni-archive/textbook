@@ -55,7 +55,7 @@
                 <emphasis>XInclude: tb-chaitin.xml file not found</emphasis>
             </para>
         </xi:fallback>
-	</xi:include>
+    </xi:include>
     <xi:include href="tb-feladatok-gutenberg.xml">
         <xi:fallback>
             <para>

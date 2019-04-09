@@ -44,7 +44,7 @@
                 <emphasis>XInclude: tb/tb-feladatok2.xml file not found</emphasis>
             </para>
         </xi:fallback>
-	</xi:include>
+    </xi:include>
     <xi:include href="tb/tb-bib.xml">
         <xi:fallback>
             <para>
@@ -52,14 +52,14 @@
             </para>
         </xi:fallback>
     </xi:include>
-	<xi:include href="tb/tb-ack.xml">
-		<xi:fallback>
-			<para>
-				<emphasis>XInclude: tb/tb-ack.xml file not found</emphasis>
-			</para>
-			</xi:fallback>
-	</xi:include>
-	<xi:include href="tb/tb-copy.xml">
+    <xi:include href="tb/tb-ack.xml">
+        <xi:fallback>
+            <para>
+                <emphasis>XInclude: tb/tb-ack.xml file not found</emphasis>
+            </para>
+            </xi:fallback>
+    </xi:include>
+    <xi:include href="tb/tb-copy.xml">
         <xi:fallback>
             <para>
                 <emphasis>XInclude: tb/tb-bib.xml file not found</emphasis>

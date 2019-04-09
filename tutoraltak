@@ -1,15 +1,44 @@
 #!/usr/bin/env sh
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-LINE='\033[0;33m'
-NC='\033[0m'
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+LINE=$(tput setaf 3)
+NC=$(tput sgr0)
 line="$LINE======================================================================$NC"
 
+
+# TODO megcsinálni hogy akkor is működjön, ha egyszerre tutoráltam és tutorált vagyok
+
+print_tutoraltjaim() {
+	grep "tutoráltam" tb-feladatok*.xml -B 4 | \
+		tr -s ' ' | \
+		grep "title\|tutorált" | grep -v "<title>Tutorált" |\
+		# sed 's@tb-feladatok-@@g' | sed 's@.xml@@g' |\
+		sed 's@tb-feladatok-.*xml. @\t@g' |\
+		sed 's@<type>@@g' | sed 's@</type>@@g' |\
+		sed 's@<title>@'"\n $(tput setaf 4)"'@g' |\
+		sed 's@</title>@'"$(tput sgr0)"'@g' |\
+		tr -s ' '
+}
+
+print_tutoraloim() {
+	grep "tutorált " tb-feladatok*.xml -B 4 | \
+		tr -s ' ' | \
+		grep "title\|tutorált" | grep -v "<title>Tutorált" |\
+		# sed 's@tb-feladatok-@@g' | sed 's@.xml@@g' |\
+		sed 's@tb-feladatok-.*xml. @\t@g' |\
+		sed 's@<type>@@g' | sed 's@</type>@@g' |\
+		sed 's@<title>@'"\n $(tput setaf 4)"'@g' |\
+		sed 's@</title>@'"$(tput sgr0)"'@g' |\
+		tr -s ' '
+}
+
 echo -e "$line"
-echo -e "$RED"Tutoráltak:"$NC" "$(cat tb-feladatok* | grep -c 'tutoráltam')"
-grep 'tutoráltam ' tb-feladatok* | tr -s " " | tr -s "	"
+echo -e "$RED"Tutoráltak:"$NC" $(cat tb-feladatok* | grep -c 'tutoráltam')
+print_tutoraltjaim
+
 echo -e "$line"
-echo -e "$GREEN"Engem tutoráltak:"$NC" "$(grep 'tutorált ' tb-feladatok* | wc -l)"
-grep 'tutorált ' tb-feladatok* | tr -s " " | tr -s "	"
+echo -e "$GREEN"Tutorálóim:"$NC" $(cat tb-feladatok* | grep -c 'tutorált ')
+print_tutoraloim
+
 echo -e "$line"
