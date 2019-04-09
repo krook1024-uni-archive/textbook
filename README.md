@@ -28,7 +28,8 @@ make
 
 ## Tutorálások / tutoráltak számolása
 
-![tutoraltak.png](pictures/tutoraltak.png)
-
+<p align="center">
+	<img width="630" height="430" src="pictures/tutoraltak.png">
+</p>
 
 *Forkolva innen: https://gitlab.com/nbatfai/bhax/tree/master/thematic_tutorials/bhax_textbook (@0f1de1ee)*
