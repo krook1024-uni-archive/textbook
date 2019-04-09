@@ -1,6 +1,6 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
 	<info>
-		<title>Helló, Gutenberg!</title>
+		<title>Helló, Guttenberg!</title>
 		<keywordset>
 			<keyword/>
 		</keywordset>
@@ -247,6 +247,66 @@ $ ]]>
 		<para>
 			<emphasis>A könyvet még nem sikerült beszereznem ezért az olvasónapló
 			megírását halasztani vagyok kénytelen.</emphasis>
+		</para>
+		<para>
+			1-16
+			17-59
+			93-96
+		</para>
+		<para>
+			A könyv a C++ és C összehasonlításával indít, de még nem tér rá a C++
+			OOP tulajdonságaira, csak az alapokat fekteti le, hogy miben lett
+			más/jobb a C++ mint a C. A "veszélyes" dolgokat próbálták meg lecserélni
+			jobbakra, biztonságosabbakra.
+		</para>
+		<para>
+			A könyv kitér arra, hogy mi változott a függvénydefiníciókban, a main függvény
+			definicíóira, típusokra, tehát az alapokra.
+		</para>
+		<para>
+			C++-ban lehetőségünk van függvénynevek túlterhelésére, nézzünk is erre egy példát a könyvből,
+			mert ez egy nagyon érdekes dolog, ami a C++ előnye a C-vel szemben.
+		</para>
+		<programlisting language="c++">
+<![CDATA[#include <time.h>
+struct Time {
+	int Hour;
+	int Minute;
+}
+void PrintTime(struct Time time) { // 1-es változat
+	printf("Hour: %d, Minute: %d", time.Hour, time.Minute);
+}
+void PrintTime(int hour, int minute) { // 2-es változat
+	printf("Hour: %d, Minute: %d", time.Hour, time.Minute);
+}]]>
+		</programlisting>
+		<para>
+			Itt azt láthatjuk, hogy egy függvénynévnek két definíciót is megadtunk, csak
+			más paraméterlistával. Ezzel azt érjük el, hogy a PrintTime függvényünk hívható
+			<code>printTime(time)</code> és <code>printTime(9, 32)</code> módokon egyaránt.
+			Próbáljuk is ki!
+		</para>
+		<programlisting language="c++">
+<![CDATA[int main() {
+	Time time = { 3, 4 };
+	printTime(time); // 1-es változatot hívja
+	printTime(9, 32); // 2-es változatot hívja
+	return 0;
+}]]>
+		</programlisting>
+		<para>
+			Egy másik hasznos előnye a C++-nak a referenciák bevezetése. Ez lehetővé
+			teszi a referencia szerinti paraméterátadást függvényeknek, ami azt jelenti,
+			hogy van egy új, effektív módunk paraméterek átadására. Amennyiben mutató
+			szerint adjuk át a paramétereket, úgy a programunk nehezen olvashatóvá
+			válik, amennyiben pedig érték szerint, úgy másolódnak a változók, és nem lesz
+			effektív a programunk.
+		</para>
+		<para>
+			A következő fejezetben a könyv az objektumokról ír, osztályokról, láthatósági
+			szabályokról, konstruktorokról, destruktorokról, valamint a friend osztályokról.
+			Emellett szó esik beágyazott osztályokról, beágyazott függvényekről, melyek olyan
+			osztályok és függvények, amelyek egy osztályon belül lettek definiálva.
 		</para>
 	</section>
 </chapter>
