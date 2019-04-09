@@ -9,7 +9,7 @@
 
 ## Letöltés
 
-A könyv minnden commit alkalmával frissül és letölthető a következő linken:  
+A könyv pdf változata minden commit alkalmával frissül és letölthető a következő linken:  
 [⬇ Letöltés](https://github.com/krook1024/textbook/releases)
 
 ## Fordítás
