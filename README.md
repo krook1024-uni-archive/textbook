@@ -22,5 +22,9 @@ sudo pacman -Sy --needed --noconfirm dblatex graphviz texlive-langextra texlive-
 make
 ```
 
+## Tutorálások / tutoráltak számolása
+
+![tutoraltak.png](pictures/tutoraltak.png)
+
 
 *Forkolva innen: https://gitlab.com/nbatfai/bhax/tree/master/thematic_tutorials/bhax_textbook (@0f1de1ee)*
