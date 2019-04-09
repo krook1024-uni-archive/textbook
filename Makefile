@@ -4,7 +4,7 @@ fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
 
 .PHONY: tutoraltak
 tutoraltak:
-	@./tutoraltak.sh
+	@./tutoraltak
 
 turing.gv: pictures/turing.gv
 	@dot -Tpng pictures/turing.gv -o pictures/Turing.png

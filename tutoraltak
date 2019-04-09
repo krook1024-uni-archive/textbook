@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+LINE='\033[0;33m'
+NC='\033[0m'
+line="$LINE======================================================================$NC"
+
+echo -e "$line"
+echo -e "$RED"Tutoráltak:"$NC" "$(cat tb-feladatok* | grep -c 'tutoráltam')"
+grep 'tutoráltam ' tb-feladatok* | tr -s " 	"
+echo -e "$line"
+echo -e "$GREEN"Engem tutoráltak:"$NC" "$(grep 'tutorált ' tb-feladatok* | wc -l)"
+grep 'tutorált ' tb-feladatok* | tr -s " 	"
+echo -e "$line"
