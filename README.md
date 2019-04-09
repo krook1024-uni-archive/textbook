@@ -16,6 +16,7 @@ A könyv minnden commit alkalmával frissül és letölthető a következő link
 
 <details>
 <summary>Kattints a kinyitáshoz</summary>
+
 - Ubuntu:
 ```bash
 sudo apt install -y docbook docbook-xml docbook-xsl xsltproc build-essential dblatex graphviz texlive-lang-european
@@ -27,6 +28,7 @@ make
 sudo pacman -Sy --needed --noconfirm dblatex graphviz texlive-langextra texlive-science docbook-xsl docbook-xml
 make
 ```
+
 </details>
 
 ## Tutorálások / tutoráltak számolása
