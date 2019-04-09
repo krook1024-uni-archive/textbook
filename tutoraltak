@@ -8,8 +8,8 @@ line="$LINE=====================================================================
 
 echo -e "$line"
 echo -e "$RED"Tutoráltak:"$NC" "$(cat tb-feladatok* | grep -c 'tutoráltam')"
-grep 'tutoráltam ' tb-feladatok* | tr -s " 	"
+grep 'tutoráltam ' tb-feladatok* | tr -s " " | tr -s "	"
 echo -e "$line"
 echo -e "$GREEN"Engem tutoráltak:"$NC" "$(grep 'tutorált ' tb-feladatok* | wc -l)"
-grep 'tutorált ' tb-feladatok* | tr -s " 	"
+grep 'tutorált ' tb-feladatok* | tr -s " " | tr -s "	"
 echo -e "$line"

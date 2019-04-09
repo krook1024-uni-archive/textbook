@@ -307,6 +307,12 @@ usleep(30000);]]>
     </section>
     <section>
         <title>Helló, Google!</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorált Duszka Ákos Attila.
+            </para>
+        </caution>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
@@ -331,6 +337,12 @@ usleep(30000);]]>
 	</section>
     <section>
 		<title>100 éves a Brun tétel</title>
+		<caution>
+			<title>Tutorált</title>
+			<para>
+				Ebben a feladatban tutoráltam Duszka Ákos Attilát.
+			</para>
+		</caution>
 		<para>
 			Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
 		</para>

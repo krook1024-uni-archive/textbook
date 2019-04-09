@@ -12,7 +12,7 @@
             <para>
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
-        </caution>
+		</caution>
 		<programlisting language="c">
 			<textobject>
 				<textdata fileref="./files/caesar/doubleharomszog.c"/>
@@ -98,7 +98,13 @@ Elso sor cime: 0x5567bca696a0
             <para>
                 Ebben a feladatban tutoráltam Füleky Ladislavot.
             </para>
-        </caution>
+		</caution>
+		<caution>
+			<title>Tutorált</title>
+			<para>
+				Ebben a feladatban tutoráltam Tóth Atillát.
+			</para>
+		</caution>
 		<programlisting language="java">
 			<textobject>
 				<textdata fileref="./files/caesar/java/XorEncode.java"/>
@@ -154,6 +160,12 @@ Elso sor cime: 0x5567bca696a0
             <title>Tutorált</title>
             <para>
                 Ebben a feladatban tutorált Tóth Attila.
+            </para>
+		</caution>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Duszka Ákos Attilát.
             </para>
         </caution>
         <para>
@@ -238,6 +250,12 @@ OR    <- c(0,1,1,1)]]>
 	</section>
     <section>
         <title>Hiba-visszaterjesztéses perceptron</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorált Duszka Ákos Attilát.
+            </para>
+        </caution>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 		</para>

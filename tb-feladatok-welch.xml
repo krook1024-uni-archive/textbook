@@ -98,6 +98,12 @@ $ /java/bin/java polargen.java
     </section>
     <section>
         <title>Fabejárás</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorált Duszka Ákos Attila.
+            </para>
+        </caution>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/tree/master/files/welch/fabejaras">

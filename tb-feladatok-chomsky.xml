@@ -190,6 +190,12 @@ $]]>
     </section>
     <section>
         <title>Saját lexikális elemző</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Duszka Ákos Attilát.
+            </para>
+        </caution>
 		<para>
 			A program működési elve a következő:
 		</para>
@@ -296,6 +302,12 @@ Valost talaltam: 1.4142
     </section>
     <section>
         <title>l33t.l</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutoráltam Duszka Ákos Attilát.
+            </para>
+        </caution>
         <para>
 			Megoldás forrása:
 		</para>

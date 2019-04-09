@@ -151,6 +151,12 @@
     </section>
     <section>
 		<title>A Mandelbrot halmaz CUDA megvalósítása</title>
+		<caution>
+			<title>Tutorált</title>
+			<para>
+				Ebben a feladatban tutoráltam Tóth Attilát.
+			</para>
+		</caution>
         <para>
 			<emphasis role="strong">Megoldás forrása:</emphasis>
 			<link xlink:href="https://github.com/krook1024/textbook/blob/master/files/mandelb/cuda_mandel/cuda_mandel.cu">
