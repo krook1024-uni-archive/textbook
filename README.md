@@ -1,7 +1,11 @@
 # 📚 textbook
 
+
 [![Build Status](https://travis-ci.org/krook1024/textbook.png?branch=master)](https://travis-ci.org/krook1024/textbook)
 
+<p align="center">
+  <img width="595" height="842" src="pictures/firstPage.png">
+</p>
 
 ## Letöltés
 
