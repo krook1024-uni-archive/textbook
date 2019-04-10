@@ -121,6 +121,22 @@ model.evaluate(x_test, y_test)
             A Keras deep dreamben mindenféle kábítószer használata nélkül tekintehetünk meg olyan példákat,
             mint egy LSD trippen. A látvány egyszerre hátborzongató és különleges.
         </para>
+        <para>
+            Ebben a fejezetben kitérnék a Python fejlesztés egyik kulcselemére, a virtuális
+            környezeketre (<emphasis>virutalenv, venv</emphasis>). A virtuális környezetek előnye,
+            hogy egy-egy program dependenciáit (könyvtárak, stb) nem kell globális, a root
+            felhasználóval telepítenünk, elég azt egy virtuális környezetben telepíteni, a projekt
+            mappáján belül. A legjobb az, hogy ezeket a letöltött dependenciákat nem kell
+            a verziókezelőnkkel kezeltetni, elég ha berakjuk őket célszerűen
+            egy <filename>requirements.txt</filename> fájlba, és bárki aki fejleszteni akarja a
+            projektünket, vagy dolgozni rajta, telepítheti, anélkül hogy rendszergazdai
+            jogosultságai lennének az adott gépen. Egy-egy könyvtár verziószámát is megadhatjuk,
+            akár a minimálist, akár a maximálist abból.
+        </para>
+        <para>
+            Itt látható néhány deep dreammel generált kép. Forrás:
+            <link xlink:href="https://www.google.hu/search?q=deepdream">https://www.google.hu/search?q=deepdream</link>.
+        </para>
         <mediaobject>
             <imageobject>
                 <imagedata fileref="./pictures/deepdream/1.jpg" width="48%"/>
@@ -136,11 +152,55 @@ model.evaluate(x_test, y_test)
                 <imagedata fileref="./pictures/deepdream/3.jpeg" width="48%" />
             </imageobject>
         </mediaobject>
+        <para>
+            Ha ezek a képek elynerték a tetszésünket, próbáljuk ki a deep dreamet mi magunk is,
+            hiszen csinálhatunk ilyet a kedvenc képeinkből is.
+        </para>
+        <screen>
+<![CDATA[
+$ virtualenv -p /usr/bin/python3 venv # Készítsük el a virtuális környezetet
+Running virtualenv with interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/b1/Repos/textbook/files/svajci/deepd/venv/bin/python3
+Also creating executable in /home/b1/Repos/textbook/files/svajci/deepd/venv/bin/python
+Installing setuptools, pip, wheel...
+done
+$ source venv/bin/activate # Aktiváljuk a virtuális környezetet
+(venv) $ pip3 install tensorflow keras pillow # Telepítsük a Keras-t
+[...]
+(venv) $ pip3 freeze > requirements.txt # Mentsük el a dependenciákat
+[...]
+]]>
+        </screen>
+        <para>
+            Immáron használhatjuk is a deepdreamet, feltéve, hogy minden úgy ment,
+            ahogy mennie kell. Próbáljuk ki saját képekkel! Alább látható néhány
+            az én próbálkozásaimból. A programkódot olvasva láthatjuk, hogy a beállítások
+            tweakelhetők.
+        </para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./files/svajci/deepd/results/1.png" width="48%" />
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./files/svajci/deepd/results/2.png" width="48%" />
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./files/svajci/deepd/results/3.png" width="48%" />
+            </imageobject>
+        </mediaobject>
     </section>
     <section>
         <title>Minecraft-MALMÖ</title>
         <para>
             A Minecraft-MALMÖ egy programozható ágens kiegészítő a Minecraft játékhoz.
+            A projekt GitHub oldala a következő címen érhető el:
+            <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>.
+            Ezen a címen találunk példaprogramokat is, valamint remek dokumentációt.
         </para>
     </section>
 </chapter>
