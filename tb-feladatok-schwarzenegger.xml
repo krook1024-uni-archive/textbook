@@ -11,16 +11,14 @@
             Python
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
+            <emphasis role="strong">Megoldás forrása:</emphasis>
             <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">
                 https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol
             </link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A TensorFlow egy nyílt forráskódú szabad szoftver, amit a Google is használ, illetve
+            fejleszt.
         </para>
     </section>
     <section>
