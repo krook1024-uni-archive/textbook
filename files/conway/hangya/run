@@ -4,9 +4,10 @@ nullify() {
 	"$@" >/dev/null 2>&1
 }
 
+rm -rf build
 mkdir build
 cd build || exit 1
 nullify qmake ../myrmecologist.pro
 nullify make -j4
-./myrmecologist -w 250 -m 150 -n 400 -t 10 -p 5 -f 80 -d 0 -a 255 -i 3 -s 3 -c 22
+nullify ./myrmecologist -w 250 -m 150 -n 400 -t 10 -p 5 -f 80 -d 0 -a 255 -i 3 -s 3 -c 22
 rm -rf build

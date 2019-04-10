@@ -18,7 +18,10 @@
             készíts UML osztálydiagramot is!
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="https://github.com/krook1024/textbook/"></link>
+            Megoldás forrása:
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/conway/hangya">
+                https://github.com/krook1024/textbook/tree/master/files/conway/hangya
+            </link>
         </para>
         <para>
             Tudjuk, hogy ahogy a hangyák közlekednek, úgy feromonnyomokat hagynak maguk
@@ -26,8 +29,11 @@
             közlekednek, így találnak haza, vagy éppen élelemlelőhelyekre.
         </para>
         <para>
-            Ezeket próbáljuk meg szimulálni ebben a programban.
+            Ezeket próbáljuk meg szimulálni ebben a programban. Az olvasó kényelméért
+            egy <filename>run</filename> szkriptet létrehoztam, így a program egyszerűen,
+            egy parancs kiadásával futtatható (Qt telepítés szükséges).
         </para>
+        <screen><![CDATA[$ ./run]]></screen>
         <figure>
             <title>Hangyaszimulációk futás közben</title>
             <mediaobject>
@@ -36,6 +42,26 @@
                 </imageobject>
             </mediaobject>
         </figure>
+        <para>
+            Az UML osztálydiagram általában reverse engineeringnél jön számításba,
+            hiszen az eddig megtudott információkat jól lehet ábrázolni rajta.
+            Viszont ennél a tulajdonságánál fogva könnyítheti a megértést
+            (pláne ha a felesleges, figyelemelterelő adatokat elrejtjük, ilyenkor úgy sem kell), ha egy
+            olyan programhoz generálunk osztálydiagrammot, aminek a forráskódját
+            ismerjük. Ezt tesszük mi most.
+        </para>
+        <figure>
+            <title>Hangyaszimulációk UML osztálydiagram</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/conway/hangya/class diagram.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Erről az ábráráról leolvashatóak a legfontosabb adatok; osztályok, és azokba
+            beágyazott függvények, adattagok, stb.
+        </para>
     </section>
     <section>
         <title>Java életjáték</title>
