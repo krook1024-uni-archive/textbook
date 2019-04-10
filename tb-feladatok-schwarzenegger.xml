@@ -18,8 +18,70 @@
         </para>
         <para>
             A TensorFlow egy nyílt forráskódú szabad szoftver, amit a Google is használ, illetve
-            fejleszt.
+            fejleszt. A TensorFlow-val bárki egyszerűen végezhet mesterséges intelligenciához
+            kapcsolódó kísérleteket, kutatásokat.
         </para>
+        <para>
+            Most mi is pár ilyet nézünk meg. A fejezet olvasása előtt nézzük meg és familiarizáljuk
+            magunkat a Bazel Build (<link xlink:href="https://bazel.build/">https://bazel.build/</link>)
+            rendszerrel, mely kelleni fog nekünk a C++-os TensorFlow
+            projektek fordításához.
+        </para>
+        <para>
+            Az első program amit megtekintünk Pythonban nem csinál mást, csak
+            összeszoroz két számot neurális hálók segítségével. Lássuk is a
+            programot!
+        </para>
+        <programlisting language="python">
+            <textobject>
+                <textdata fileref="./files/svajci/twicetwo/twicetwo.py" />
+            </textobject>
+        </programlisting>
+        <para>
+            A számítási ábra ehhez a következőképp néz ki:
+        </para>
+        <figure>
+            <title>2*2 számítási ábra</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/twicetwo.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Az <emphasis role="strong">MNIST</emphasis> egy kézírásfelismerő adatbázis, mely számok kézzel írt változatát képes felismerni.
+        </para>
+        <figure>
+            <title>Példák az MNIST adatbázisból</title>
+             <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/MnistExamples.png" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A kódot ehhez átvesszük a TensorFlow weboldaláról, íme:
+            <link xlink:href="https://www.tensorflow.org/tutorials">https://www.tensorflow.org/tutorials</link>.
+        </para>
+        <programlisting language="python">
+<![CDATA[
+import tensorflow as tf
+mnist = tf.keras.datasets.mnist
+(x_train, y_train),(x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(512, activation=tf.nn.relu),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10, activation=tf.nn.softmax)
+])
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+model.fit(x_train, y_train, epochs=5)
+model.evaluate(x_test, y_test)
+]]>
+        </programlisting>
     </section>
     <section>
         <title>Szoftmax R MNIST</title>
@@ -27,13 +89,8 @@
             R
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Ebben a példában ugyanazt a kézírásfelismerést nézzük majd meg, mint a Pythonos példában,
+            azonban még ehhez szükségem lesz némi plussz jártasságra az R nyelvben.
         </para>
     </section>
     <section>
@@ -57,27 +114,33 @@
             Keras
         </para>
         <para>
-            Megoldás videó:
-        </para>
-        <para>
             Megoldás forrása:
+            <link xlink:href="https://github.com/keras-team/keras/blob/master/examples/deep_dream.py">https://github.com/keras-team/keras/blob/master/examples/deep_dream.py</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A Keras deep dreamben mindenféle kábítószer használata nélkül tekintehetünk meg olyan példákat,
+            mint egy LSD trippen. A látvány egyszerre hátborzongató és különleges.
         </para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/deepdream/1.jpg" width="48%"/>
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/deepdream/2.jpeg" width="48%"/>
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/deepdream/3.jpeg" width="48%" />
+            </imageobject>
+        </mediaobject>
     </section>
     <section>
-        <title>Robotpszichológia</title>
+        <title>Minecraft-MALMÖ</title>
         <para>
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A Minecraft-MALMÖ egy programozható ágens kiegészítő a Minecraft játékhoz.
         </para>
     </section>
 </chapter>
