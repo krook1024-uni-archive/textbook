@@ -7,19 +7,35 @@
     </info>
     <section>
         <title>Hangyaszimulációk</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorált Rácz András.
+            </para>
+        </caution>
         <para>
             Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
             készíts UML osztálydiagramot is!
         </para>
         <para>
-            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+            Megoldás forrása: <link xlink:href="https://github.com/krook1024/textbook/"></link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>
+            Tudjuk, hogy ahogy a hangyák közlekednek, úgy feromonnyomokat hagynak maguk
+            után, és így útvonalakat hoznak létre. Ezeken a nyomvonalakon később ők és társaik
+            közlekednek, így találnak haza, vagy éppen élelemlelőhelyekre.
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Ezeket próbáljuk meg szimulálni ebben a programban.
         </para>
+        <figure>
+            <title>Hangyaszimulációk futás közben</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/hangya.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>Java életjáték</title>
