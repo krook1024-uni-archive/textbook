@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
@@ -13,10 +13,9 @@ print_tutoraltjaim() {
 	grep "tutoráltam" tb-feladatok*.xml -B 4 | \
 		tr -s ' ' | \
 		grep "title\|tutorált" | grep -v "<title>Tutorált" |\
-		# sed 's@tb-feladatok-@@g' | sed 's@.xml@@g' |\
 		sed 's@tb-feladatok-.*xml. @\t@g' |\
 		sed 's@<type>@@g' | sed 's@</type>@@g' |\
-		sed 's@<title>@'"\n $(tput setaf 4)"'@g' |\
+		sed 's@<title>@'"\n> $(tput setaf 4)"'@g' |\
 		sed 's@</title>@'"$(tput sgr0)"'@g' |\
 		tr -s ' '
 }
@@ -25,10 +24,9 @@ print_tutoraloim() {
 	grep "tutorált " tb-feladatok*.xml -B 4 | \
 		tr -s ' ' | \
 		grep "title\|tutorált" | grep -v "<title>Tutorált" |\
-		# sed 's@tb-feladatok-@@g' | sed 's@.xml@@g' |\
 		sed 's@tb-feladatok-.*xml. @\t@g' |\
 		sed 's@<type>@@g' | sed 's@</type>@@g' |\
-		sed 's@<title>@'"\n $(tput setaf 4)"'@g' |\
+		sed 's@<title>@'"\n> $(tput setaf 4)"'@g' |\
 		sed 's@</title>@'"$(tput sgr0)"'@g' |\
 		tr -s ' '
 }
