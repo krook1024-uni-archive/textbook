@@ -323,8 +323,13 @@ public class HelloFX extends Application {
             könyvtáron, valamint a mutatókon kívül semmit sem kell változtatnunk. Esetünkben
             a Mandelbrot-halmaz számító programunk C++ változatához képest mindössze
             egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
-            megvalósítani.
+            megvalósítani. Nézzük is meg a kódot!
         </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/mandelb/java_mandelb/Mandelb.java" />
+            </textobject>
+        </programlisting>
         <figure>
             <title>Mandelbrot nagyító és utazó Java nyelven</title>
             <mediaobject>

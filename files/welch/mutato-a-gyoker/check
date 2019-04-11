@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+rm -- ki a.out a.out
+g++ -g3 mutato_a_gyok.cpp && valgrind --leak-check=full --track-origins=yes ./a.out be -o ki
+rm -- vgcore.*

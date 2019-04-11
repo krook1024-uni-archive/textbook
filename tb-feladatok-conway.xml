@@ -54,13 +54,16 @@
             <title>Hangyaszimulációk UML osztálydiagram</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="./files/conway/hangya/class diagram.png"/>
+                    <imagedata fileref="./files/conway/hangya/class diagram.png" width="100%"/>
                 </imageobject>
             </mediaobject>
         </figure>
         <para>
+            Az osztálydiagrammot legenerálhatjuk például az Umbrello nevű programmal,
+            ami része a KDE családnak. A projekt weboldala elérhető itt:
+            <link xlink:href="https://umbrello.kde.org/installation.php">https://umbrello.kde.org/installation.php</link>.
             Erről az ábráráról leolvashatóak a legfontosabb adatok; osztályok, és azokba
-            beágyazott függvények, adattagok, stb.
+            beágyazott függvények, konstruktorok, destruktorok, adattagok, stb.
         </para>
     </section>
     <section>
