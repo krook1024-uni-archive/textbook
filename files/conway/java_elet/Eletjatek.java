@@ -5,7 +5,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 class Eletjatek {
-
 	@Override
 	public void start(Stage stage) {
 		Scene scene = new Scene(/* TODO */, 640, 480);
