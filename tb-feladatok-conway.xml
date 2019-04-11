@@ -73,10 +73,25 @@
             Megoldás videó:
         </para>
         <para>
-            Megoldás forrása: <link xlink:href=""></link>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
         </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/conway/java_elet/Eletjatek.java" />
+            </textobject>
+        </programlisting>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
+        </para>
+        <para>
+            Ebben a példában is a már bemutatott OpenJFX könyvtárat fogjuk használni a
+            grafikus felület kezelésére. A projekt weboldala elérhető a következő címen:
+            <link xlink:href="https://openjfx.io/">https://openjfx.io/</link>.
+        </para>
+        <para>
+            A projekt futtatására az olvasó kényelmét szolgálandó létrehoztam egy
+            <filename>run</filename> szkriptet, ezzel egy parancs kiadásával futtatható
+            a program.
         </para>
     </section>
     <section>
