@@ -8,25 +8,74 @@
     <section>
         <title>Iteratív és rekurzív faktoriális Lisp-ben</title>
         <para>
+            A LISP a második legrégebbi magas szintű programozási nyelv a Fortran után.
+            A használatához nem kell mást tennünk, mint telepíteni egy Lisp futtató
+            programot, esetünkben, GNU/Linux alatt a <filename>clisp</filename> megteszi.
+            A programokat majd <computeroutput>clisp fájlnév.lisp</computeroutput> módon
+            kell futtatnunk.
         </para>
         <para>
-            Megoldás videó:
+            A LISP érdekessége, hogy a kifejezéseket nem a megszokott, C-s módon, hanem
+            prefix alakban kéri. Ez azt takarja, hogy például <code>(3 + 2)</code> helyett
+            azt írnánk, hogy <code>(+ 3 2)</code>.
         </para>
         <para>
-            Megoldás forrása:
+            Egy egyszerű LISP program a Hello, world! kiíratására így néz ki:
+        </para>
+        <programlisting language="LISP">
+            <![CDATA[(write-line "Hello World")]]>
+        </programlisting>
+        <para>
+            Az iteratív faktoriális számoltatást a következőképp oldjuk meg:
+        </para>
+        <programlisting language="LISP"><xi:include href="./files/chaitin/LISP/iter.lisp"
+                                                    parse="text" />
+        </programlisting>
+        <para>
+            A rekurzív példa ettől egyszerűbb:
+        </para>
+        <programlisting language="LISP"><xi:include href="./files/chaitin/LISP/reku.lisp"
+                                                    parse="text" />
+        </programlisting>
+        <para>
+            Természetesen mindkét program a következő eredményt
+            produkálja:
+        </para>
+        <screen>
+<![CDATA[$ clisp iter.lisp
+120
+$ clisp reku.lisp
+120
+]]>
+        </screen>
+        <para>
+            Tehát a helyes választ, azaz 5! = 120-at kapjuk.
         </para>
     </section>
     <section>
         <title>Weizenbaum Eliza programja</title>
         <para>
-            Éleszd fel Weizenbaum Eliza programját!
+            A programot Joseph Weizenbaum tervezte az MIT-n, 1966-ban, és a célja
+            vele az volt, hogy a mai chatbotokhoz (pl. Cleverbot) hasonlót alkosson.
+            A program úgy működik, hogy tartalmaz sok-sok szót, kifejezést, és ezekre
+            mintaválaszokat, melybe behellyettesíti a user-től kapott inputot, enekk
+            hatására úgy látszik, valódi emberrel beszélkedünk.
         </para>
         <para>
-            Megoldás videó:
+            A programot úgy futtathatjuk, ha lehúzzuk a következő weboldalról:
+            <link xlink:href="http://norvig.com/paip/README.html">
+                http://norvig.com/paip/README.html
+            </link>
+            , majd a következő módon (abból a mappából, ahova kicsomagoltuk) elindítjuk:
         </para>
-        <para>
-            Megoldás forrása:
-        </para>
+        <programlisting language="Lisp">
+<![CDATA[$ clisp
+> (load "auxfns.lisp")
+> (load "eliza.lisp")
+> (eliza)
+ELIZA>
+]]>
+        </programlisting>
     </section>
     <section>
         <title>Gimp Scheme Script-fu: króm effekt</title>
@@ -58,32 +107,6 @@
         </para>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>
-    <section>
-        <title>Lambda</title>
-        <para>
-            Hasonlítsd össze a következő programokat!
-        </para>
-        <para>
-            Megoldás videó: <link xlink:href=""></link>
-        </para>
-        <para>
-            Megoldás forrása: <link xlink:href=""></link>
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
-    </section>
-    <section>
-        <title>Omega</title>
-        <para>
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
         </para>
     </section>
 </chapter>

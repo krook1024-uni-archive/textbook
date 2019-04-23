@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+rm -rf -- ./*.class
+javac Sejtautomata.java
+java Sejtautomata
+rm -rf -- ./*.class

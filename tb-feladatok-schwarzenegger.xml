@@ -29,8 +29,9 @@
         </para>
         <para>
             Az első program amit megtekintünk Pythonban nem csinál mást, csak
-            összeszoroz két számot neurális hálók segítségével. Lássuk is a
-            programot!
+            összeszoroz két számot neurális hálók segítségével. Ezt úgy képzeljük
+            el, mint C-ben a hello worldöt, tehát a legegyszerűbb programot, amit
+            el tudunk készíteni. Lássuk is a programot!
         </para>
         <programlisting language="python">
             <textobject>
@@ -82,7 +83,29 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ]]>
         </programlisting>
+        <para>
+            A programot futtatva a következőket látjuk:
+        </para>
+        <screen>
+<![CDATA[$ ./mnist.py
+Epoch 1/5
+60000/60000 [==============================] - 13s 224us/sample - loss: 0.2188 - acc: 0.9359
+Epoch 2/5
+60000/60000 [==============================] - 13s 224us/sample - loss: 0.0956 - acc: 0.9702
+Epoch 3/5
+60000/60000 [==============================] - 14s 226us/sample - loss: 0.0678 - acc: 0.9783
+Epoch 4/5
+60000/60000 [==============================] - 13s 224us/sample - loss: 0.0536 - acc: 0.9829
+Epoch 5/5
+60000/60000 [==============================] - 13s 224us/sample - loss: 0.0457 - acc: 0.9853
+10000/10000 [==============================] - 1s 74us/sample - loss: 0.0685 - acc: 0.9804]]>
+        </screen>
+        <para>
+            Ezzel, mint láthatjuk, egy körülbelül 98 százalékos pontosággal
+            rendelkező hálózatot sikerült tanítanunk.
+        </para>
     </section>
+<!--
     <section>
         <title>Szoftmax R MNIST</title>
         <para>
@@ -93,6 +116,7 @@ model.evaluate(x_test, y_test)
             azonban még ehhez szükségem lesz némi plussz jártasságra az R nyelvben.
         </para>
     </section>
+-->
     <section>
         <title>Mély MNIST</title>
         <para>
