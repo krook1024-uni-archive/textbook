@@ -1,6 +1,9 @@
 # Vim swappies
 *.swp
 
+# Pdf files
+*.pdf
+
 # gcc binaries
 *.out
 
