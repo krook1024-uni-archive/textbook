@@ -1,7 +1,8 @@
 # 📚 textbook
 
-
+<!--
 [![Build Status](https://travis-ci.org/krook1024/textbook.png?branch=master)](https://travis-ci.org/krook1024/textbook)
+-->
 
 <p align="center">
   <img width="420" height="595" src="pictures/firstPage.png">
