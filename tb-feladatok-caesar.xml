@@ -13,11 +13,7 @@
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
         </caution>
-        <programlisting language="c">
-            <textobject>
-                <textdata fileref="./files/caesar/doubleharomszog.c"/>
-            </textobject>
-        </programlisting>
+        <programlisting language="c"><xi:include href="./files/caesar/doubleharomszog.c" parse="text" /></programlisting>
         <para>
             Ebben a példában a C nyelv fő jellegzetességével foglalkozunk,
             ami nem az egyszerűsége, hanem a dinamikus memóriakezelés.
