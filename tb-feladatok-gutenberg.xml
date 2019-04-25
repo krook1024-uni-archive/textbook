@@ -245,14 +245,10 @@ $ ]]>
     <section>
         <title>BME könyv</title>
         <para>
-            <emphasis>A könyvet még nem sikerült beszereznem ezért az olvasónapló
-            megírását halasztani vagyok kénytelen.</emphasis>
-        </para>
-        <para>
             [OK] 1-16
             [OK] 17-59
             [OK] 93-96
-            [  ] 73-90
+            [ok] 73-90
             [  ] 187-197
         </para>
         <para>
@@ -309,6 +305,54 @@ void PrintTime(int hour, int minute) { // 2-es változat
             szabályokról, konstruktorokról, destruktorokról, valamint a friend osztályokról.
             Emellett szó esik beágyazott osztályokról, beágyazott függvényekről, melyek olyan
             osztályok és függvények, amelyek egy osztályon belül lettek definiálva.
+        </para>
+        <para>
+            C++-ban az input/output interfész némi változtáson ment át a C-hez képest.
+            A standard library (pontosabb az istream és ostream osztályok) tagjai a
+            következő objektumok: <filename>cin, cout, cerr, clog</filename>. Az I/O
+            használatát legegyszerűbb egy példán keresztül elmagyarázni, tehát nézzünk is
+            egyet.
+        </para>
+        <programlisting language="c++"><xi:include href="./files/gutenberg/io.cc" parse="text" /></programlisting>
+        <para>
+            Ezen a példán keresztül látszik az is, hogy míg C-ben a <filename>char *</filename>
+            típuson kívül más módunk nem nagyon volt sztringek kezelésére, C++-ban
+            a <filename>string</filename> könyvtár szolgáltat egy fejlettebb interfészt
+            ehhez.
+        </para>
+        <para>
+            Kimenetre az eddigi <filename>printf</filename> helyett a <filename>std::cout</filename>
+            tagfüggvény lesz a segítségünkre, melynek szintaxisa a fenti példában szintén látható.
+        </para>
+        <para>
+            Production környezetben nem elfogadható az, hogyha hiba esetén a programunk
+            kilép, megáll, ezért kivételkezeőt használunk. Célunk, hogy minden úgy
+            menjen végbe, ahogy mi azt kigondoltuk, de ha nem, akkor se kelljen
+            kétségbe esnünk. A kivételkezelés is sokkan jobban érthető, értelmezhető
+            példán keresztül; tehát nézünk egyet.
+        </para>
+        <programlisting language="c++"><xi:include href="./files/gutenberg/ex.cc" parse="text" /></programlisting>
+        <para>
+            Nézzük meg ezt a példát, ahol egymásba ágyazott függvényekből dobunk egy
+            hibát, de nem kapjuk el rögtön.
+        </para>
+        <programlisting language="c++"><xi:include href="./files/gutenberg/ex2.cc" parse="text" /></programlisting>
+        <para>
+            Mit gondolunk, mi lesz a fenti program kimenete?
+        </para>
+        <screen>
+<![CDATA[$ g++ ex2.cc && ./a.out
+lefutó kód vagyok
+Hiba lépett fel! Üzenet: hoppá
+Program vége.
+]]>
+        </screen>
+        <para>
+            Amit itt látunk, az egy hívási lánc megvalósulása. Ugyan nem gondolnánk,
+            vagy nem elsőre, hogy egyéb kód is lefut amíg a dobott kivétel elkapása
+            zajlik. Azonban például ilyen kód a felszabaduló objektumok destruktorai,
+            mert amit a stacken hoztunk létre, ilyenkor felszabadul, és a destruktora
+            természetesen lefut.
         </para>
     </section>
 </chapter>
