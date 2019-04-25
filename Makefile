@@ -1,16 +1,9 @@
-all:	clean fdl tutoraltak
+all:	clean fdl
 
 fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
 
-.PHONY: tutoraltak
-tutoraltak:
-	@./tutoraltak
-
-turing.gv: pictures/turing.gv
-	@dot -Tpng pictures/turing.gv -o pictures/Turing.png
-
-tb_fdl.pdf: tb-fdl.xml tb.xls turing.gv
-	@dblatex tb-fdl.xml -p tb.xls -T native
+tb_fdl.pdf: tb-fdl.xml tb.xls
+	@dblatex -s tb/krook1024.sty -b xetex tb-fdl.xml -p tb.xls -d
 
 .PHONY: validate_tb_fdl_hu
 validate_tb_fdl_hu:
@@ -21,4 +14,3 @@ validate_tb_fdl_hu:
 .PHONY: clean
 clean:
 	@rm -f tb-fdl.pdf
-	@rm -f pictures/Turing.png

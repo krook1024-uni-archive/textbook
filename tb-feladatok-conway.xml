@@ -38,7 +38,7 @@
             <title>Hangyaszimulációk futás közben</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="./pictures/hangya.png"/>
+                    <imagedata fileref="./pictures/hangya.png" width="80%"/>
                 </imageobject>
             </mediaobject>
         </figure>
@@ -54,7 +54,7 @@
             <title>Hangyaszimulációk UML osztálydiagram</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="./files/conway/hangya/class diagram.png" width="100%"/>
+                    <imagedata fileref="./files/conway/hangya/class diagram.png" width="80%"/>
                 </imageobject>
             </mediaobject>
         </figure>

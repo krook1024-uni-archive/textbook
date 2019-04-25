@@ -1,0 +1,18 @@
+%%
+%% krook1024's favor of docbook
+%% This style is derivated from the docbook one
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{krook1024}[krook1024's docbook style favor]
+
+%% Just use the original package and pass the options
+\RequirePackageWithOptions{docbook}
+
+%% Nicer fonts
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+
+%% Redefine the paragraph layout
+\setlength\parskip{\medskipamount}
+\setlength\parindent{5pt}

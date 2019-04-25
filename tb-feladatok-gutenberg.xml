@@ -249,9 +249,11 @@ $ ]]>
             megírását halasztani vagyok kénytelen.</emphasis>
         </para>
         <para>
-            1-16
-            17-59
-            93-96
+            [OK] 1-16
+            [OK] 17-59
+            [OK] 93-96
+            [  ] 73-90
+            [  ] 187-197
         </para>
         <para>
             A könyv a C++ és C összehasonlításával indít, de még nem tér rá a C++
