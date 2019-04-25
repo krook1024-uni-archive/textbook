@@ -8,7 +8,7 @@ before_install:
 - sudo apt-get update -qq
 install:
 - sudo apt-get -qq install -y make xsltproc curl libxml2-utils
-- sudo apt-get -qq --no-install-recommends install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-lang-european ttf-dejavu ttf-dejavu-extra fonts-dejavu lmodern fonts-lmodern
+- sudo apt-get -qq install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-lang-european ttf-dejavu ttf-dejavu-extra fonts-dejavu lmodern fonts-lmodern
 - curl -L https://git.io/fhj4c | sudo bash
 script: make
 before_deploy:
