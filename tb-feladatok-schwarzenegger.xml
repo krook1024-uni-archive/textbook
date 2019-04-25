@@ -8,9 +8,6 @@
     <section>
         <title>Szoftmax Py MNIST</title>
         <para>
-            Python
-        </para>
-        <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
             <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">
                 https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol
@@ -102,7 +99,7 @@ Epoch 5/5
         </screen>
         <para>
             Ezzel, mint láthatjuk, egy körülbelül 98 százalékos pontosággal
-            rendelkező hálózatot sikerült tanítanunk.
+            rendelkező hálózatot sikerült megtanítanunk.
         </para>
     </section>
 <!--
@@ -119,24 +116,21 @@ Epoch 5/5
 -->
     <section>
         <title>Mély MNIST</title>
-        <para>
-            Python
-        </para>
-        <para>
-            Megoldás videó:
-        </para>
-        <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
-        </para>
+        <warning>
+            <title>Passzolt feladat</title>
+            <para>
+                Ezt a feladatot a SMNIST-es kutatáshoz való hozzájárulásomra hivatkozva
+                passzoltam.
+            </para>
+            <para>
+                Komment linkje: <link xlink:href="https://www.facebook.com/groups/udprog/permalink/1075942815926940/?comment_id=1080205895500632">
+                    https://www.facebook.com/groups/udprog/permalink/1075942815926940/?comment_id=1080205895500632
+                </link>
+            </para>
+        </warning>
     </section>
     <section>
         <title>Deep dream</title>
-        <para>
-            Keras
-        </para>
         <para>
             Megoldás forrása:
             <link xlink:href="https://github.com/keras-team/keras/blob/master/examples/deep_dream.py">https://github.com/keras-team/keras/blob/master/examples/deep_dream.py</link>
@@ -229,7 +223,10 @@ $ source venv/bin/activate # Aktiváljuk a virtuális környezetet
         <para>
             A Malmö telepítéséhez végezzük el a repóban javasoltakat, mely némi időt
             igényelhet, hiszen a dependenciák közé tartozik a Boost C++ könyvtár,
-            és ennek Python interfésze.
+            és ennek Python interfésze. Ha megadatik az az áldás, hogy Ubuntu 16.04
+            vagy 18.04-et futtatunk, úgy használjuk a repón belül a
+            <filename>scripts/build.sh</filename> szkriptet, mely elvégzi helyettünk
+            a piszkos munkát.
         </para>
         <para>
             A Malmö előnye, hogy a Minecraftot nem kell megvegyük, hiszen tartalmaz egy

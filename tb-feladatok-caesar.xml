@@ -251,7 +251,9 @@ OR    <- c(0,1,1,1)]]>
             </para>
         </caution>
         <para>
-            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <emphasis role="strong">Megoldás forrása:</emphasis> <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/caesar/perceptron">
+                https://github.com/krook1024/textbook/tree/master/files/caesar/perceptron
+            </link>
         </para>
         <programlisting language="c">
             <textobject>

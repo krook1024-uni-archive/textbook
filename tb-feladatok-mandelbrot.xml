@@ -90,7 +90,10 @@
     <section>
         <title>Biomorfok</title>
         <para>
-            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf</link>
+            <emphasis role="strong">Megoldás forrása:</emphasis> <link
+             xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">
+                https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf
+            </link>
         </para>
         <para>
             A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
