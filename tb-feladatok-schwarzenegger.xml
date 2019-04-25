@@ -226,5 +226,15 @@ $ source venv/bin/activate # Aktiváljuk a virtuális környezetet
             <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>.
             Ezen a címen találunk példaprogramokat is, valamint remek dokumentációt.
         </para>
+        <para>
+            A Malmö telepítéséhez végezzük el a repóban javasoltakat, mely némi időt
+            igényelhet, hiszen a dependenciák közé tartozik a Boost C++ könyvtár,
+            és ennek Python interfésze.
+        </para>
+        <para>
+            A Malmö előnye, hogy a Minecraftot nem kell megvegyük, hiszen tartalmaz egy
+            bináris változatot, amit bárki használhat, akinek feltett szándéka, hogy
+            ágenst programozzon Malmöben.
+        </para>
     </section>
 </chapter>
