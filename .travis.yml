@@ -9,10 +9,7 @@ before_install:
 install:
 - sudo apt-get install -y make
 - sudo apt-get install -y xsltproc
-- sudo apt-get -qq --no-install-recommends install docbook docbook-xml docbook-xsl dblatex \
-  texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended \
-  texlive-latex-recommended texlive-lang-european \
-  ttf-dejavu ttf-dejavu-extra fonts-dejavu lmodern fonts-lmodern
+- sudo apt-get -qq --no-install-recommends install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-lang-european ttf-dejavu ttf-dejavu-extra fonts-dejavu lmodern fonts-lmodern
 - sudo apt-get -qq install -y graphviz libxml2-utils
 - sudo apt-get -qq install -y curl
 - curl -L https://git.io/fhj4c | sudo bash
