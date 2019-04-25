@@ -3,15 +3,15 @@ branches:
   - master
 language: xml
 before_install:
-- wget -q -O - https://www.mongodb.org/static/pgp/server-3.2.pub | sudo apt-key add -
+- wget -qq -O - https://www.mongodb.org/static/pgp/server-3.2.pub | sudo apt-key add -
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-- sudo apt-get update -q
+- sudo apt-get update -qq
 install:
 - sudo apt-get install -y make
 - sudo apt-get install -y xsltproc
-- sudo apt-get -q --no-install-recommends install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-lang-european ttf-dejavu ttf-dejavu-extra
-- sudo apt-get -q install -y graphviz libxml2-utils
-- sudo apt-get -q install -y curl
+- sudo apt-get -qq --no-install-recommends install docbook docbook-xml docbook-xsl dblatex texlive-base texlive-binaries texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-lang-european ttf-dejavu ttf-dejavu-extra
+- sudo apt-get -qq install -y graphviz libxml2-utils
+- sudo apt-get -qq install -y curl
 - curl -L https://git.io/fhj4c | sudo bash
 script: make
 before_deploy:
