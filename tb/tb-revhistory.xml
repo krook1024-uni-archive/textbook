@@ -113,5 +113,17 @@
 			Travis build beállítva.
 			Welch elkezdve.
 		</revremark>
-	</revision>
+    </revision>
+    <revision>
+        <revnumber>?</revnumber>
+        <date>?</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Ez a lista nem feltétlen up to date.
+            Nézd meg itt;
+            <link xlink:href="https://github.com/krook1024/textbook/commits/master">
+                https://github.com/krook1024/textbook/commits/master
+			</link>
+        </revremark>
+    </revision>
 </revhistory>
