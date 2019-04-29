@@ -92,6 +92,19 @@ ELIZA>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
+        <warning>
+            <title>Passzolt feladat</title>
+            <para>
+                Ezt a feladatot Google Summer of Code elfoglaltságomra
+                hivatkozva passzoltam.
+            </para>
+            <para>
+                Proposalom elérhető itt: <link
+                    xlink:href="https://github.com/balabit/syslog-ng/wiki/GSoC-2019-Proposal:-Create-syslog-ng-configuration-snippets-for-VIM-(krook1024)">
+                    https://github.com/balabit/syslog-ng/wiki/GSoC-2019-Proposal:-Create-syslog-ng-configuration-snippets-for-VIM-(krook1024)
+                </link>
+                </para>
+        </warning>
     </section>
     <section>
         <title>Gimp Scheme Script-fu: név mandala</title>
@@ -108,5 +121,18 @@ ELIZA>
         <para>
             Tanulságok, tapasztalatok, magyarázat...
         </para>
+        <warning>
+            <title>Passzolt feladat</title>
+            <para>
+                Ezt a feladatot Google Summer of Code elfoglaltságomra
+                hivatkozva passzoltam.
+            </para>
+            <para>
+                Proposalom elérhető itt: <link
+                    xlink:href="https://github.com/balabit/syslog-ng/wiki/GSoC-2019-Proposal:-Create-syslog-ng-configuration-snippets-for-VIM-(krook1024)">
+                    https://github.com/balabit/syslog-ng/wiki/GSoC-2019-Proposal:-Create-syslog-ng-configuration-snippets-for-VIM-(krook1024)
+                </link>
+                </para>
+        </warning>
     </section>
 </chapter>
