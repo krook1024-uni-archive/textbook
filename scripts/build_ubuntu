@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# This script is mainly used to tell Travis what packages
+# to install before trying to build the book itself, but
+# you could use it to install the necessary packages for
+# yourself if you happen to be running Ubuntu.
+
+upd() {
+	sudo apt-get -qq update
+	sudo apt-get -qq upgrade
+}
+
+inst_pkg() {
+	sudo apt-get -qq install -y "$@" || exit
+}
+
+apply_db_patch() {
+	curl -L "https://git.io/fhj4c" | sudo bash
+}
+
+echo "Updating packages..."
+upd || exit 1
+
+echo "Installing dependencies and docbook"
+inst_pkg "make xsltproc curl libxml2-utils"
+inst_pkg "docbook docbook-xml docbook-xsl"
+inst_pkg "texlive-base texlive-binaries texlive-latex-base texlive-xetex"
+inst_pkg "texlive-fonts-recommended texlive-latex-recommended texlive-lang-european"
+inst_pkg "dblatex lmodern fonts-lmodern"
+
+echo "Applying patch for docbook"
+apply_db_patch || exit 1
