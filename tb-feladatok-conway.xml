@@ -75,8 +75,14 @@
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
         </para>
-        <programlisting language="java">
-            <xi:include href="./files/conway/Sejtauto_Java/Sejtautomata.java"  parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
+        <programlisting language="java"> <xi:include
+                href="./files/conway/Sejtauto_Java/Sejtautomata.java"  parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         </programlisting>
         <warning>
             <title>Figyelem! Deprecated szoftver!</title>

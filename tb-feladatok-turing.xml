@@ -16,6 +16,12 @@
         <para>
             <emphasis role="strong">Dolgoztassunk 1 szálat megközelítőleg 0 százalékban:</emphasis>
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/infinite_0cpu.c" />
@@ -29,6 +35,12 @@
         <para>
             <emphasis role="strong">Dolgoztassunk 100 százalékban egy szálat:</emphasis>
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/infinite.c" />
@@ -40,6 +52,12 @@
         <para>
             <emphasis role="strong">Dolgoztassuk meg az összes szálat 100 százalékban:</emphasis>
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/infinite_2threads.c" />
@@ -54,6 +72,12 @@
             Egy másik megoldásban az OpenMP függvénykönyvtárat használva is megoldható a feladat,
             lényegesen kevesebb, mindössze 5 sornyi kóddal.
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/infinite_2threads_omp.c" />
@@ -171,6 +195,12 @@ false]]></screen>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/swap.c" />
@@ -186,6 +216,12 @@ false]]></screen>
 x=3 y=7
 x=7 y=3]]>
         </screen>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/swap_xor.c" />
@@ -225,6 +261,12 @@ a=00000111, b=00000011]]>
         <para>
             Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
         </para>
+		<note>
+			<title>Módosított kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette és én módosítottam!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/ball.c" />
@@ -294,6 +336,12 @@ usleep(30000);]]>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/szohossz.c" />
@@ -316,6 +364,12 @@ usleep(30000);]]>
         <para>
             Megoldás videó: <link xlink:href=""></link>
         </para>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/turing/pr.c" />
@@ -340,6 +394,12 @@ usleep(30000);]]>
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
         </para>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
         <programlisting language="R">
             <textobject>
                 <textdata fileref="./files/turing/primek.r" />

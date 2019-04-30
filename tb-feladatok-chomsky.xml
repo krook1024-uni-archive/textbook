@@ -32,6 +32,12 @@
         <para>
             C-ben a következőképpen nézne ez ki:
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/chomsky/binary-to-unary.c" />
@@ -162,6 +168,12 @@ vezérlésátadó_utasítás ::=
             Nézzünk meg erre egy konkrét példát, ahol a csipetünk C99-el fordul,
             azonban C89-el nem.
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/chomsky/c99.c" />
@@ -213,6 +225,12 @@ $]]>
             lefordítani a fordítóval, esetünkben GCC-vel. Az ebből kapott bináris
             fájlt tudjuk majd futtatni is.
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/chomsky/lex.l" />
@@ -586,6 +604,12 @@ $(\exists y \forall x (y<x) \supset \neg (x \text{ prím}))$
                 <para>függvénymutató egy egészet visszaadó és két egészet kapó függvényre mutató mutatót visszaadó, egészet kapó függvényre</para>
             </listitem>
         </itemizedlist>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c++">
             <textobject>
                 <textdata fileref="./files/chomsky/dek.c" />

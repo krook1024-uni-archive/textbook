@@ -13,6 +13,18 @@
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
         </caution>
+        <note>
+            <title>Saját kódcsipet</title>
+            <para>
+                A következő kódcsipetet saját magam készítettem!
+            </para>
+        </note>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="c"><xi:include href="./files/caesar/doubleharomszog.c" parse="text" /></programlisting>
         <para>
             Ebben a példában a C nyelv fő jellegzetességével foglalkozunk,
@@ -64,6 +76,12 @@ Elso sor cime: 0x5567bca696a0
     </section>
     <section>
         <title>C EXOR titkosító</title>
+        <note>
+            <title>Saját kódcsipet</title>
+            <para>
+                A következő kódcsipetet saját magam készítettem!
+            </para>
+        </note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/caesar/xor_e.c" />
@@ -101,6 +119,12 @@ Elso sor cime: 0x5567bca696a0
                 Ebben a feladatban tutoráltam Tóth Atillát.
             </para>
         </caution>
+        <note>
+            <title>Saját kódcsipet</title>
+            <para>
+                A következő kódcsipetet saját magam készítettem!
+            </para>
+        </note>
         <programlisting language="java">
             <textobject>
                 <textdata fileref="./files/caesar/java/XorEncode.java"/>
@@ -129,8 +153,14 @@ Elso sor cime: 0x5567bca696a0
         </para>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
-            <link xlink:href="https://raw.githubusercontent.com/krook1024/textbook/master/files/caesar/xor_c.c">gh/krook1024/textbook/master/files/caesar/xor_c.c</link>
         </para>
+		<note>
+			<title>Módosított kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette és én módosítottam!
+			</para>
+		</note>
+        <programlisting language="C"><xi:include href="./files/caesar/xor_c.c" parse="text" /></programlisting>
         <para>
             Ez a program csak olyan állományok feltörésére alkalmas,
             amelyeknek a kulcsa csak számokból áll, és 8 karakter
@@ -161,6 +191,12 @@ Elso sor cime: 0x5567bca696a0
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/Koyw6IH5ScQ">https://youtu.be/Koyw6IH5ScQ</link>
         </para>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>
         </para>
@@ -251,6 +287,12 @@ OR    <- c(0,1,1,1)]]>
                 https://github.com/krook1024/textbook/tree/master/files/caesar/perceptron
             </link>
         </para>
+        <note>
+			<title>Módosított kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette, és én módosítottam!
+			</para>
+		</note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/caesar/perceptron/main.cc" />

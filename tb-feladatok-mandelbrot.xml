@@ -7,6 +7,12 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
             <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
@@ -204,6 +210,12 @@
         <para>
             Ennyi előképzettséggel viszont már lássuk a kódot!
         </para>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
         <programlisting language="C++">
             <textobject>
                 <textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
@@ -328,6 +340,12 @@ public class HelloFX extends Application {
             egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
             megvalósítani. Nézzük is meg a kódot!
         </para>
+		<note>
+			<title>Saját kódcsipet</title>
+			<para>
+				A következő kódcsipetet saját magam készítettem!
+			</para>
+		</note>
         <programlisting language="java">
             <textobject>
                 <textdata fileref="./files/mandelb/java_mandelb/Mandelb.java" />

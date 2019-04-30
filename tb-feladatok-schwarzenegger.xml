@@ -30,6 +30,13 @@
             el, mint C-ben a hello worldöt, tehát a legegyszerűbb programot, amit
             el tudunk készíteni. Lássuk is a programot!
         </para>
+		<note>
+			<title>Módosított kódcsipet</title>
+			<para>
+                A következő kódcsipetet Bátfai készítette és én módosítottam (deprecated
+                szintaktikai korszerűsítése)!
+			</para>
+		</note>
         <programlisting language="python">
             <textobject>
                 <textdata fileref="./files/svajci/twicetwo/twicetwo.py" />
@@ -61,6 +68,12 @@
             A kódot ehhez átvesszük a TensorFlow weboldaláról, íme:
             <link xlink:href="https://www.tensorflow.org/tutorials">https://www.tensorflow.org/tutorials</link>.
         </para>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+                A következő kódcsipetet átvettem a tensorflow.org/tutorials oldalról!
+			</para>
+		</note>
         <programlisting language="python">
 <![CDATA[
 import tensorflow as tf

@@ -10,6 +10,12 @@
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
         </para>
+		<note>
+			<title>Átvett kódcsipet</title>
+			<para>
+				A következő kódcsipetet Bátfai Norbert készítette!
+			</para>
+		</note>
         <programlisting language="Java">
             <textobject>
                 <textdata fileref="./files/welch/polargen/polargen.java" />
@@ -258,7 +264,7 @@ var = 0.700649]]>
                  ujelem = new Csomopont ( '0' );
                  break;
              default:
-                 std::cerr<<"HIBA!"<<std::endl;
+                 std::cerr << "HIBA!" << std::endl;
                  break;
          }
          ujelem->ujEgyesGyermek(
