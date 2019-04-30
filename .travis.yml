@@ -5,7 +5,7 @@ language: xml
 before_install:
 - wget -qq -O - https://www.mongodb.org/static/pgp/server-3.2.pub | sudo apt-key add -
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-- sudo apt-get update -qq
+- sudo apt-get update
 install:
 - sudo sh ./scripts/build_ubuntu
 - curl -L https://git.io/fhj4c | sudo bash
@@ -18,7 +18,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: "KiRsBq/ETH2mg0qcHvyfmI7VwFuphz5/8SfubzTW1TXxRdAsaXG8h93B51OjAbUWOmcsz4uLwrqNfVR6OwN1n8Wq2b1Qqba3/V9S2LHHxNwm9U1jaNfCMnEgk1UCFlFDjIlsjUmKvQXHakJENL6TC49dZe5XkOUVd5urRDwrzNIOqfnVdxpe9wCIHSoShlKIRCbFExHwQ/IUiSeVZJLbDwkqwUG2y0AWcb1nID2XzZgtE1kwPo8hSTC7T4uqi0dXBC0u8eqpK3IGl1C0KROWxsaRJgIHMx65SLV4SxyDneJZMsJAKiaylOUVPPYTp4186oCP4qECoH6BURiTr42mN06cfu3qaH+bN1ZLwgLbRfGiZTCewGyHZbBeLmM6xtU5E3/uH2/qMSuTRn8t9/fJcynrVfVA+OSJyb0lDOIgFyzsatd7qaM7DgQUmgDwrztVBoEVuehfBHxaFt1LaH0Gxcf9xHh9XqaY+7ZBuPUsiQowCkfxdvDjKuCQVm1n81BfuxrwqIpg9eWMkIy25R63aE7XJEwzHprZyFek2d/QBCxsiDyHfxfuXT2idZwGkJRC1L80ahrE0N00yTezkgaYQuevLswUk77hb941KwAke9Md3hXy48GkJbxesevIYMaOQ4P3CaezntHjruJKElhry18vGnj0340mH+9i1Y4KDro="
+    secure: "bdkMfKFDXsdbfOckRWwNSm/8FFfKbBpxGRUtPz5VAv/WCjWjpM/xyyVoENTj1kNbkM5aFF5OEZK6CQJRiv1IQFL97hWN6eCR2E9/Ng9all6Aw/uXUZGAcnCYlG1r2jo+gCtjNxQQMSg9h7BDuV4Qfs961ZCuXFy8wkooTCTv9s5LNE8WPns8IOlUQO6zvsvFewFe5+DhlvHlL7c5VdtKuQ9FMbkuj9mOYz1EzessixAOMh5LZlnJ6IRpjRb3a25LEkJFl9PHOXiTx0gdZngPM+aPC+YXj41t886NhtmhbH1DWg44W3pjtVNQMYMQ0rSzAWkidXz2icnt8gnY5eObdfib36XKwVz1MDcQ/v2iQitYCswJ6Y3/M9yExjoPzXA+e+dtvnblMRo27HrnCImegwZfqul9vCACIr1wIfDkvqYn951J1PgfrSRNW5jlmhBcGayAcWjJyhtYPbefiWuZT4OlEJqKNARVvONJ7jhlnoLYe9yEA0l4AN/RE4OK2YU6UVcvjwhQX2NPXlRHyLjGtrIL0KjnldmXnnr9FxnD5+0cRztYSdHW9tNMxARvv4ImxTj90XYgp2gOQvywAPicikqI+paYWCeVe0rmKSjsOBC/mheGOT0EgkoK/6ef3gvrMdpT/PR+d7NmnC9Wg+sxJex7/Ep+W0XZqeIksOpZIDA="
   file: tb-fdl.pdf
   on:
     repo: krook1024/textbook
