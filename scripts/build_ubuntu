@@ -18,11 +18,11 @@ apply_db_patch() {
 	curl -L "https://git.io/fhj4c" | sudo bash
 }
 
-echo "Updating packages..."
-upd || exit 1
+# echo "Updating packages..."
+# upd || exit 1
 
 echo "Installing dependencies and docbook"
-inst_pkg "make xsltproc curl libxml2-utils"
+inst_pkg "build-essential make xsltproc curl libxml2-utils"
 inst_pkg "docbook docbook-xml docbook-xsl"
 inst_pkg "texlive-base texlive-binaries texlive-latex-base texlive-xetex"
 inst_pkg "texlive-fonts-recommended texlive-latex-recommended texlive-lang-european"
