@@ -5,6 +5,7 @@ language: xml
 before_install:
 - wget -qq -O - https://www.mongodb.org/static/pgp/server-3.2.pub | sudo apt-key add -
 - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
 - sudo apt-get update
 install:
 - sudo sh ./scripts/build_ubuntu
