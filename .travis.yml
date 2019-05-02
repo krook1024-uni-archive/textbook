@@ -10,8 +10,9 @@ addons:
       - docbook-xml
       - docbook-xsl
       - texlive-binaries
+      - texlive-latex-base
+      - texlive-latex-extra
       - texlive-fonts-recommended
-      - texlive-xetex
       - dblatex
       - lmodern
       - fonts-lmodern
