@@ -2,7 +2,7 @@ all:	clean fdl
 
 fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
 
-travis:	clean validate_tb_fdl_hu tb_fdl.pdf
+travis:	clean validate_tb_fdl_hu tb_fdl.pdf_travis
 
 tb_fdl.pdf: tb-fdl.xml tb.xls
 	@dblatex -s tb/krook1024.sty -b xetex tb-fdl.xml -p tb.xls

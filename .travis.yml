@@ -28,11 +28,11 @@ install:
 
 script: make travis
 
-# before_deploy:
-# - git config --local user.name "krook1024"
-# - git config --local user.email "krook1024@gmail.com"
-# - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-# - git tag $TRAVIS_TAG
+before_deploy:
+- git config --local user.name "krook1024"
+- git config --local user.email "krook1024@gmail.com"
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+- git tag $TRAVIS_TAG
 
 deploy:
   provider: releases
@@ -40,7 +40,6 @@ deploy:
     secure: "bdkMfKFDXsdbfOckRWwNSm/8FFfKbBpxGRUtPz5VAv/WCjWjpM/xyyVoENTj1kNbkM5aFF5OEZK6CQJRiv1IQFL97hWN6eCR2E9/Ng9all6Aw/uXUZGAcnCYlG1r2jo+gCtjNxQQMSg9h7BDuV4Qfs961ZCuXFy8wkooTCTv9s5LNE8WPns8IOlUQO6zvsvFewFe5+DhlvHlL7c5VdtKuQ9FMbkuj9mOYz1EzessixAOMh5LZlnJ6IRpjRb3a25LEkJFl9PHOXiTx0gdZngPM+aPC+YXj41t886NhtmhbH1DWg44W3pjtVNQMYMQ0rSzAWkidXz2icnt8gnY5eObdfib36XKwVz1MDcQ/v2iQitYCswJ6Y3/M9yExjoPzXA+e+dtvnblMRo27HrnCImegwZfqul9vCACIr1wIfDkvqYn951J1PgfrSRNW5jlmhBcGayAcWjJyhtYPbefiWuZT4OlEJqKNARVvONJ7jhlnoLYe9yEA0l4AN/RE4OK2YU6UVcvjwhQX2NPXlRHyLjGtrIL0KjnldmXnnr9FxnD5+0cRztYSdHW9tNMxARvv4ImxTj90XYgp2gOQvywAPicikqI+paYWCeVe0rmKSjsOBC/mheGOT0EgkoK/6ef3gvrMdpT/PR+d7NmnC9Wg+sxJex7/Ep+W0XZqeIksOpZIDA="
   file: tb-fdl.pdf
   on:
-    tags: true
     repo: krook1024/textbook
   skip_cleanup: true
   prerelease: true
