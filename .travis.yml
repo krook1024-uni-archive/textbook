@@ -9,8 +9,7 @@ addons:
       - docbook
       - docbook-xml
       - docbook-xsl
-      - texlive-base
-      - texlive-core
+      - texlive-full
       - texlive-binaries
       - texlive-latex-base
       - texlive-fonts-recommended
