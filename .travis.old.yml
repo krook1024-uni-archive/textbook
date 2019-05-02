@@ -1,25 +1,4 @@
 dist: xenial
-addons:
-  apt:
-    packages:
-      - make
-      - xsltproc
-      - curl
-      - libxml2-utils
-      - docbook
-      - docbook-xml
-      - docbook-xsl
-      - texlive-base
-      - texlive-core
-      - texlive-binaries
-      - texlive-latex-base
-      - texlive-fonts-recommended
-      - texlive-latex-recommended
-      - texlive-xetex
-      - dblatex
-      - lmodern
-      - fonts-lmodern
-
 branches:
   only:
   - master
@@ -31,6 +10,7 @@ before_install:
 - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57
 - sudo apt-get update
 install:
+- sudo sh ./scripts/build_ubuntu
 - curl -L https://git.io/fhj4c | sudo bash
 script: make
 before_deploy:
