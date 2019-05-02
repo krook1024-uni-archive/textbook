@@ -68,6 +68,13 @@ $ /java/bin/java polargen.java
                 gh/krook1024/textbook/master/files/welch/z3a7.cpp
             </link>
         </para>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
+        <programlisting language="C++"><xi:include href="./files/welch/z3a7.cpp" parse="text" /></programlisting>
         <para>
             A LZWBinFa osztály felépíti a bemeneti fájl bináris fáját. Használata a következőképp
             néz ki: <code>./binfa [bemenő fájl] -o [kimenő fájl]</code>.

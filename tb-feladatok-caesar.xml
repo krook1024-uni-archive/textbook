@@ -13,12 +13,6 @@
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
         </caution>
-        <note>
-            <title>Saját kódcsipet</title>
-            <para>
-                A következő kódcsipetet saját magam készítettem!
-            </para>
-        </note>
 		<note>
 			<title>Saját kódcsipet</title>
 			<para>
@@ -200,6 +194,7 @@ Elso sor cime: 0x5567bca696a0
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>
         </para>
+        <programlisting language="R"><xi:include href="./files/caesar/r/nn.r" parse="text" /></programlisting>
         <para>
             Ebben az R programban egy neurális hálót építünk fel. Egy
             neurális háló lényegében úgy működik, hogy megadjuk neki,

@@ -7,18 +7,19 @@
     </info>
     <section>
         <title>A Mandelbrot halmaz</title>
-		<note>
-			<title>Átvett kódcsipet</title>
-			<para>
-				A következő kódcsipetet Bátfai Norbert készítette!
-			</para>
-		</note>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
             <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot">
                 github/krook1024/textbook/mandelbrot
             </link>
         </para>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
+        <programlisting language="C++"><xi:include href="./files/mandelb/mandelbrot/mandelbrot.cpp" parse="text" /></programlisting>
         <para>
             Ebben a C++ programban a Mandelbrot halmazt ábrázoljuk egy képen.
             A Mandelbrot halmaz egy olyan komplex halmaz, amely illeszkedik a
@@ -68,12 +69,19 @@
     </section>
     <section>
         <title>A Mandelbrot halmaz a <filename>std::complex</filename> osztállyal</title>
-       <para>
-           <emphasis role="strong">Megoldás forrása:</emphasis>
-           <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot_komplex">
+        <para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+            <link xlink:href="https://github.com/krook1024/textbook/tree/master/files/mandelb/mandelbrot_komplex">
                 github/krook1024/textbook/mandelb/mandelbrot_komplex/
-           </link>
-       </para>
+            </link>
+        </para>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
+        <programlisting language="C++"><xi:include href="./files/mandelb/mandelbrot_komplex/mandelbrot_komplex.cpp" parse="text" /></programlisting>
         <para>
             Ebben a programban, hasonlóan az előzőhöz, a Mandelbrot halmazt
             ábrázoltatjuk. A különbség csupán annyi, hogy itt a beépített
@@ -97,10 +105,17 @@
         <title>Biomorfok</title>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis> <link
-             xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">
+                xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf">
                 https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/Biomorf
             </link>
         </para>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
+        <programlisting language="C++"><xi:include href="./files/mandelb/biomorf/biomorf.cc" parse="text" /></programlisting>
         <para>
             A biomorfok szorosan kapcsolódnak a Mandelbrot-halmazhoz. Hasonlóan, itt
             is a komplex számsíkon ábrázolható függvényeket nézünk meg, és ezek
@@ -132,7 +147,7 @@
             hogy telepítettük a png++ könyvtárat és működik a g++-unk.
         </para>
         <screen>
-<![CDATA[$ make]]>
+            <![CDATA[$ make]]>
         </screen>
         <para>
             Hogyha kiadjuk a make parancsot, úgy létrejön egy bmorf.png
@@ -210,12 +225,12 @@
         <para>
             Ennyi előképzettséggel viszont már lássuk a kódot!
         </para>
-		<note>
-			<title>Átvett kódcsipet</title>
-			<para>
-				A következő kódcsipetet Bátfai Norbert készítette!
-			</para>
-		</note>
+        <note>
+            <title>Átvett kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette!
+            </para>
+        </note>
         <programlisting language="C++">
             <textobject>
                 <textdata fileref="./files/mandelb/cuda_mandel/cuda_mandel.cu" />
@@ -241,10 +256,10 @@
             </mediaobject>
         </figure>
         <screen>
-<![CDATA[$ make
-16
-0.159764
-$ ]]>
+            <![CDATA[$ make
+            16
+            0.159764
+            $ ]]>
         </screen>
         <para>
             A program kimenetéből látszik, hogy jóval gyorsabb mint a C++ és C-s verziók,
@@ -313,25 +328,25 @@ $ ]]>
             verzióját egy grafikus ablakban a következőképpen néz ki:
         </para>
         <programlisting language="java">
-<![CDATA[import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-public class HelloFX extends Application {
-    @Override
-    public void start(Stage stage) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        Scene scene = new Scene(new StackPane(l), 640, 480);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public static void main(String[] args) {
-        launch();
-    }
-}]]>
+            <![CDATA[import javafx.application.Application;
+            import javafx.scene.Scene;
+            import javafx.scene.control.Label;
+            import javafx.scene.layout.StackPane;
+            import javafx.stage.Stage;
+            public class HelloFX extends Application {
+            @Override
+            public void start(Stage stage) {
+            String javaVersion = System.getProperty("java.version");
+            String javafxVersion = System.getProperty("javafx.version");
+            Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
+            Scene scene = new Scene(new StackPane(l), 640, 480);
+            stage.setScene(scene);
+            stage.show();
+            }
+            public static void main(String[] args) {
+            launch();
+            }
+            }]]>
         </programlisting>
         <para>
             Szerencsénkre C++ és Java között egyszerű a fordítás, néhány nyelvi sajátosságon,
@@ -340,12 +355,12 @@ public class HelloFX extends Application {
             egy struct-ot kell átírjunk class-ra, valamint az utazást és a megjelenítést
             megvalósítani. Nézzük is meg a kódot!
         </para>
-		<note>
-			<title>Saját kódcsipet</title>
-			<para>
-				A következő kódcsipetet saját magam készítettem!
-			</para>
-		</note>
+        <note>
+            <title>Saját kódcsipet</title>
+            <para>
+                A következő kódcsipetet saját magam készítettem!
+            </para>
+        </note>
         <programlisting language="java">
             <textobject>
                 <textdata fileref="./files/mandelb/java_mandelb/Mandelb.java" />

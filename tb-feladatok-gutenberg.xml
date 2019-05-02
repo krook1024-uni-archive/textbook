@@ -245,13 +245,6 @@ $ ]]>
     <section>
         <title>BME könyv</title>
         <para>
-            [OK] 1-16
-            [OK] 17-59
-            [OK] 93-96
-            [ok] 73-90
-            [  ] 187-197
-        </para>
-        <para>
             A könyv a C++ és C összehasonlításával indít, de még nem tér rá a C++
             OOP tulajdonságaira, csak az alapokat fekteti le, hogy miben lett
             más/jobb a C++ mint a C. A "veszélyes" dolgokat próbálták meg lecserélni

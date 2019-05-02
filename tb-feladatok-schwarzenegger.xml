@@ -148,6 +148,13 @@ Epoch 5/5
             Megoldás forrása:
             <link xlink:href="https://github.com/keras-team/keras/blob/master/examples/deep_dream.py">https://github.com/keras-team/keras/blob/master/examples/deep_dream.py</link>
         </para>
+        <note>
+            <title>Módosított kódcsipet</title>
+            <para>
+                A következő kódcsipetet a keras-team készítette és én módosítottam!
+            </para>
+        </note>
+        <programlisting language="Python"><xi:include href="./files/svajci/deepd/deep_dream.py" parse="text" /></programlisting>
         <para>
             A Keras deep dreamben mindenféle kábítószer használata nélkül tekintehetünk meg olyan példákat,
             mint egy LSD trippen. A látvány egyszerre hátborzongató és különleges.
@@ -212,11 +219,6 @@ $ source venv/bin/activate # Aktiváljuk a virtuális környezetet
         <mediaobject>
             <imageobject>
                 <imagedata fileref="./files/svajci/deepd/results/1.png" width="48%" />
-            </imageobject>
-        </mediaobject>
-        <mediaobject>
-            <imageobject>
-                <imagedata fileref="./files/svajci/deepd/results/2.png" width="48%" />
             </imageobject>
         </mediaobject>
         <mediaobject>
