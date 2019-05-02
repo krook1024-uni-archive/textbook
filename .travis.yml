@@ -22,7 +22,7 @@ branches:
 language: xml
 install:
 - curl -L https://git.io/fhj4c | sudo bash
-script: make
+script: make travis
 before_deploy:
 - git config --local user.name "krook1024"
 - git config --local user.email "krook1024@gmail.com"
