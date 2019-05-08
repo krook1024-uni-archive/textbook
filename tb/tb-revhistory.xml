@@ -33,9 +33,9 @@
         <revremark>
             Perszonalizáció.
             Saját fork GitHubon:
-			<link xlink:href="https://github.com/krook1024/textbook">https://github.com/krook1024/textbook</link>
+            <link xlink:href="https://github.com/krook1024/textbook">https://github.com/krook1024/textbook</link>
         </revremark>
-	</revision>
+    </revision>
     <revision>
         <revnumber>0.0.5</revnumber>
         <date>2019-02-18</date>
@@ -44,75 +44,152 @@
             Meglévő kódsnittek behúzása.
             Magyarázatok megírásának elkezdése.
         </revremark>
-	</revision>
+    </revision>
     <revision>
         <revnumber>0.0.6</revnumber>
         <date>2019-02-20</date>
         <authorinitials>krook1024</authorinitials>
         <revremark>
-			Egy plusz olvasandó doksi (The Unix Koans of Master Foo).
-			Magyarázat a legtöbb első csokorbeli feladathoz.
+            Egy plusz olvasandó doksi (The Unix Koans of Master Foo).
+            Magyarázat a legtöbb első csokorbeli feladathoz.
         </revremark>
-	</revision>
-	<revision>
-		<revnumber>0.0.7</revnumber>
-		<date>2019-02-26</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			Az első csokor teljesen kész.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.0.8</revnumber>
-		<date>2019-02-26</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			A második csokor elkezdve.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.0.9</revnumber>
-		<date>2019-02-26</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			A második csokor nagyjából készen van.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.1.0</revnumber>
-		<date>2019-03-07</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			Munkálkodás a második csokron.
-			Harmadik csokor elkezdése.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.1.1</revnumber>
-		<date>2019-03-11</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			Harmadik csokor befejezve.
-			Negyedik csokor elkezdése.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.1.9</revnumber>
-		<date>2019-03-15</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			Caesar csokor kész.
-			Mandelbrot elkezdve.
-		</revremark>
-	</revision>
-	<revision>
-		<revnumber>0.2.1</revnumber>
-		<date>2019-03-23</date>
-		<authorinitials>krook1024</authorinitials>
-		<revremark>
-			Travis build beállítva.
-			Welch elkezdve.
-		</revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.7</revnumber>
+        <date>2019-02-26</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Az első csokor teljesen kész.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.8</revnumber>
+        <date>2019-02-26</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            A második csokor elkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.0.9</revnumber>
+        <date>2019-02-26</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            A második csokor nagyjából készen van.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.0</revnumber>
+        <date>2019-03-07</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Munkálkodás a második csokron.
+            Harmadik csokor elkezdése.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.1</revnumber>
+        <date>2019-03-11</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Harmadik csokor befejezve.
+            Negyedik csokor elkezdése.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.9</revnumber>
+        <date>2019-03-15</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Caesar csokor kész.
+            Mandelbrot elkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.10</revnumber>
+        <date>2019-03-23</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Travis build beállítva.
+            Welch elkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.11</revnumber>
+        <date>2019-03-24</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Mandelbrot fejezet elkészült.
+            Guttenberg fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.12</revnumber>
+        <date>2019-03-28</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Conway fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.13</revnumber>
+        <date>2019-03-29</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Welch fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.14</revnumber>
+        <date>2019-04-08</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Conway fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.15</revnumber>
+        <date>2019-04-10</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Munka a Conway fejezeten.
+            Schwarzenegger fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.16</revnumber>
+        <date>2019-04-10</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Scwarzenegger fejezet befejezve.
+            Conway fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.17</revnumber>
+        <date>2019-04-23</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Chaitin fejezet megkezdve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.18</revnumber>
+        <date>2019-04-25</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Váltás LaTeX backendről XeTeX
+            backendre, emelett saját stílus
+            elkészítve.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1.19</revnumber>
+        <date>2019-04-26</date>
+        <authorinitials>krook1024</authorinitials>
+        <revremark>
+            Munkálkodás a Guttenberg fejezeten (olvasónapló).
+        </revremark>
     </revision>
     <revision>
         <revnumber>?</revnumber>
@@ -123,7 +200,7 @@
             Nézd meg itt;
             <link xlink:href="https://github.com/krook1024/textbook/commits/master">
                 https://github.com/krook1024/textbook/commits/master
-			</link>
+            </link>
         </revremark>
     </revision>
 </revhistory>
