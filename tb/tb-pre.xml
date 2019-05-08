@@ -1,5 +1,5 @@
 <preface xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
-		xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <title>Előszó</title>
     <section>
         <title>Hogyan forgasd</title>
@@ -9,20 +9,20 @@
             feldolgozó videókat.
         </para>
         <para>
-			A könyv írása során igyekeztem minden forrást beágyazni, annak
-			érdekében, hogy ne kelljen folyamatosan új ablakokat megnyitni
-			a böngészőben.
-		</para>
+            A könyv írása során igyekeztem minden forrást beágyazni, annak
+            érdekében, hogy ne kelljen folyamatosan új ablakokat megnyitni
+            a böngészőben.
+        </para>
         <section>
             <title>Milyen nyelven nyomjuk?</title>
-			<itemizedlist>
-				<listitem><para>C (mutatók)</para></listitem>
-				<listitem><para>C++ (másoló és mozgató szemantika)</para></listitem>
-				<listitem><para>Java (lebutított C++)</para></listitem>
-				<listitem><para>R (vektoros szemlélet)</para></listitem>
-				<listitem><para>Python</para></listitem>
-				<listitem><para>Lisp, Prolog (lássunk ilyet is)</para></listitem>
-			</itemizedlist>
+            <itemizedlist>
+                <listitem><para>C (mutatók)</para></listitem>
+                <listitem><para>C++ (másoló és mozgató szemantika)</para></listitem>
+                <listitem><para>Java (lebutított C++)</para></listitem>
+                <listitem><para>R (vektoros szemlélet)</para></listitem>
+                <listitem><para>Python</para></listitem>
+                <listitem><para>Lisp, Prolog (lássunk ilyet is)</para></listitem>
+            </itemizedlist>
         </section>
     </section>
 </preface>

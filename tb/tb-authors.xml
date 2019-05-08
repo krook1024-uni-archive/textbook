@@ -25,21 +25,21 @@
                 <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/">https://arato.inf.unideb.hu/batfai.norbert/</link>
             </otheraddr>
         </address>
-	</author>
-	<author>
-		<personname>
-			<surname>Molnár</surname>
-			<firstname>Antal Albert</firstname>
-		</personname>
-		<affiliation>
-			<shortaffil>Hallgató, DE.</shortaffil>
-			<jobtitle>Hallgató</jobtitle>
-			<orgname>Debreceni Egyetem</orgname>
-			<orgdiv>Informatikai Kar</orgdiv>
-			<address>
-				<email>krook1024@gmail.com</email>
-				<email>krook@mailbox.unideb.hu</email>
-			</address>
-		</affiliation>
-	</author>
+    </author>
+    <author>
+        <personname>
+            <surname>Molnár</surname>
+            <firstname>Antal Albert</firstname>
+        </personname>
+        <affiliation>
+            <shortaffil>Hallgató, DE.</shortaffil>
+            <jobtitle>Hallgató</jobtitle>
+            <orgname>Debreceni Egyetem</orgname>
+            <orgdiv>Informatikai Kar</orgdiv>
+            <address>
+                <email>krook1024@gmail.com</email>
+                <email>krook@mailbox.unideb.hu</email>
+            </address>
+        </affiliation>
+    </author>
 </authorgroup>

@@ -25,16 +25,16 @@ int main(void)
 	int *g(void);
 
 	// Egeszre mutato mutatot visszaado fv.re mutato mutato
-	int *(* (*h)(void)) = h;
+	int *(*(*h)(void)) = h;
 
 	// Egeszet visszaado es ket egeszet kapo fvre mutato
 	// mutatot visszaado, egeszet kapo fv
-	int (* (*i)(int))(int, int);
+	int (*(*i)(int))(int, int);
 
 	// Fuggvenymutato egy egeszet visszaado  es ket egeszet
 	// kapo fvre mutato mutatot visszaado, egeszet kapo
 	// fvre
-	int (* (*j)(int))(int, int) = i;
+	int (*(*j)(int))(int, int) = i;
 
 	return 0;
 }

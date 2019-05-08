@@ -18,19 +18,19 @@
                     Typotex
                 </publishername>
             </publisher>
-			<pubdate>2005</pubdate>
-		</biblioentry>
-		<biblioentry xml:lang="en">
-			<abbrev>FOO</abbrev>
-			<title>The Unix Koans of Master Foo</title>
-			<authorgroup>
-				<author>
-					<personname>
-						<firstname>Eric</firstname>
-						<surname>Steven Raymond</surname>
-					</personname>
-				</author>
-			</authorgroup>
+            <pubdate>2005</pubdate>
+        </biblioentry>
+        <biblioentry xml:lang="en">
+            <abbrev>FOO</abbrev>
+            <title>The Unix Koans of Master Foo</title>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>Eric</firstname>
+                        <surname>Steven Raymond</surname>
+                    </personname>
+                </author>
+            </authorgroup>
         </biblioentry>
     </bibliodiv>
     <bibliodiv>

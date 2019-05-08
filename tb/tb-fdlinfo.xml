@@ -34,7 +34,7 @@
             </para>
         </xi:fallback>
     </xi:include>
-	<xi:include href="tb-revhistory.xml">
+    <xi:include href="tb-revhistory.xml">
         <xi:fallback>
             <para>
                 <emphasis>XInclude: tb-revhistory file not found</emphasis>

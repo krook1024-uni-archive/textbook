@@ -796,230 +796,185 @@ YY_DECL {
 #line 10 "1337.l"
 				{
 					printf("k");
-				}
-				YY_BREAK case 3:YY_RULE_SETUP
+				} YY_BREAK case 3:YY_RULE_SETUP
 #line 11 "1337.l"
 				{
 					printf("3");
-				}
-				YY_BREAK case 4:YY_RULE_SETUP
+				} YY_BREAK case 4:YY_RULE_SETUP
 #line 12 "1337.l"
 				{
 					printf("0");
-				}
-				YY_BREAK case 5:YY_RULE_SETUP
+				} YY_BREAK case 5:YY_RULE_SETUP
 #line 13 "1337.l"
 				{
 					printf("1");
-				}
-				YY_BREAK case 6:YY_RULE_SETUP
+				} YY_BREAK case 6:YY_RULE_SETUP
 #line 14 "1337.l"
 				{
 					printf("7");
-				}
-				YY_BREAK case 7:YY_RULE_SETUP
+				} YY_BREAK case 7:YY_RULE_SETUP
 #line 15 "1337.l"
 				{
 					printf("kw");
-				}
-				YY_BREAK case 8:YY_RULE_SETUP
+				} YY_BREAK case 8:YY_RULE_SETUP
 #line 16 "1337.l"
 				{
 					printf("/-\\");
-				}
-				YY_BREAK case 9:YY_RULE_SETUP
+				} YY_BREAK case 9:YY_RULE_SETUP
 #line 17 "1337.l"
 				{
 					printf("13");
-				}
-				YY_BREAK case 10:YY_RULE_SETUP
+				} YY_BREAK case 10:YY_RULE_SETUP
 #line 18 "1337.l"
 				{
 					printf("K");
-				}
-				YY_BREAK case 11:YY_RULE_SETUP
+				} YY_BREAK case 11:YY_RULE_SETUP
 #line 19 "1337.l"
 				{
 					printf("3");
-				}
-				YY_BREAK case 12:YY_RULE_SETUP
+				} YY_BREAK case 12:YY_RULE_SETUP
 #line 20 "1337.l"
 				{
 					printf("1");
-				}
-				YY_BREAK case 13:YY_RULE_SETUP
+				} YY_BREAK case 13:YY_RULE_SETUP
 #line 21 "1337.l"
 				{
 					printf("\\/");
-				}
-				YY_BREAK case 14:YY_RULE_SETUP
+				} YY_BREAK case 14:YY_RULE_SETUP
 #line 22 "1337.l"
 				{
 					printf("7");
-				}
-				YY_BREAK case 15:YY_RULE_SETUP
+				} YY_BREAK case 15:YY_RULE_SETUP
 #line 23 "1337.l"
 				{
 					printf("bai");
-				}
-				YY_BREAK case 16:YY_RULE_SETUP
+				} YY_BREAK case 16:YY_RULE_SETUP
 #line 24 "1337.l"
 				{
 					printf("nd");
-				}
-				YY_BREAK case 17:YY_RULE_SETUP
+				} YY_BREAK case 17:YY_RULE_SETUP
 #line 25 "1337.l"
 				{
 					printf("d00d");
-				}
-				YY_BREAK case 18:YY_RULE_SETUP
+				} YY_BREAK case 18:YY_RULE_SETUP
 #line 26 "1337.l"
 				{
 					printf("dog8");
-				}
-				YY_BREAK case 19:YY_RULE_SETUP
+				} YY_BREAK case 19:YY_RULE_SETUP
 #line 27 "1337.l"
 				{
 					printf("form");
-				}
-				YY_BREAK case 20:YY_RULE_SETUP
+				} YY_BREAK case 20:YY_RULE_SETUP
 #line 28 "1337.l"
 				{
 					printf("grill");
-				}
-				YY_BREAK case 21:YY_RULE_SETUP
+				} YY_BREAK case 21:YY_RULE_SETUP
 #line 29 "1337.l"
 				{
 					printf("guise");
-				}
-				YY_BREAK case 22:YY_RULE_SETUP
+				} YY_BREAK case 22:YY_RULE_SETUP
 #line 30 "1337.l"
 				{
 					printf("h4x");
-				}
-				YY_BREAK case 23:YY_RULE_SETUP
+				} YY_BREAK case 23:YY_RULE_SETUP
 #line 31 "1337.l"
 				{
 					printf("hi");
-				}
-				YY_BREAK case 24:YY_RULE_SETUP
+				} YY_BREAK case 24:YY_RULE_SETUP
 #line 32 "1337.l"
 				{
 					printf("j00");
-				}
-				YY_BREAK case 25:YY_RULE_SETUP
+				} YY_BREAK case 25:YY_RULE_SETUP
 #line 33 "1337.l"
 				{
 					printf("kewl");
-				}
-				YY_BREAK case 26:YY_RULE_SETUP
+				} YY_BREAK case 26:YY_RULE_SETUP
 #line 34 "1337.l"
 				{
 					printf("liek");
-				}
-				YY_BREAK case 27:YY_RULE_SETUP
+				} YY_BREAK case 27:YY_RULE_SETUP
 #line 35 "1337.l"
 				{
 					printf("lopl");
-				}
-				YY_BREAK case 28:YY_RULE_SETUP
+				} YY_BREAK case 28:YY_RULE_SETUP
 #line 36 "1337.l"
 				{
 					printf("m8");
-				}
-				YY_BREAK case 29:YY_RULE_SETUP
+				} YY_BREAK case 29:YY_RULE_SETUP
 #line 37 "1337.l"
 				{
 					printf("mastah");
-				}
-				YY_BREAK case 30:YY_RULE_SETUP
+				} YY_BREAK case 30:YY_RULE_SETUP
 #line 38 "1337.l"
 				{
 					printf("maximum");
-				}
-				YY_BREAK case 31:YY_RULE_SETUP
+				} YY_BREAK case 31:YY_RULE_SETUP
 #line 39 "1337.l"
 				{
 					printf("OMG");
-				}
-				YY_BREAK case 32:YY_RULE_SETUP
+				} YY_BREAK case 32:YY_RULE_SETUP
 #line 40 "1337.l"
 				{
 					printf("pwn");
-				}
-				YY_BREAK case 33:YY_RULE_SETUP
+				} YY_BREAK case 33:YY_RULE_SETUP
 #line 41 "1337.l"
 				{
 					printf("pl0x");
-				}
-				YY_BREAK case 34:YY_RULE_SETUP
+				} YY_BREAK case 34:YY_RULE_SETUP
 #line 42 "1337.l"
 				{
 					printf("powwah");
-				}
-				YY_BREAK case 35:YY_RULE_SETUP
+				} YY_BREAK case 35:YY_RULE_SETUP
 #line 43 "1337.l"
 				{
 					printf("pr0n");
-				}
-				YY_BREAK case 36:YY_RULE_SETUP
+				} YY_BREAK case 36:YY_RULE_SETUP
 #line 44 "1337.l"
 				{
 					printf("t3h");
-				}
-				YY_BREAK case 37:YY_RULE_SETUP
+				} YY_BREAK case 37:YY_RULE_SETUP
 #line 45 "1337.l"
 				{
 					printf("wen");
-				}
-				YY_BREAK case 38:YY_RULE_SETUP
+				} YY_BREAK case 38:YY_RULE_SETUP
 #line 46 "1337.l"
 				{
 					printf("wut");
-				}
-				YY_BREAK case 39:YY_RULE_SETUP
+				} YY_BREAK case 39:YY_RULE_SETUP
 #line 47 "1337.l"
 				{
 					printf("winnar");
-				}
-				YY_BREAK case 40:YY_RULE_SETUP
+				} YY_BREAK case 40:YY_RULE_SETUP
 #line 48 "1337.l"
 				{
 					printf("r");
-				}
-				YY_BREAK case 41:YY_RULE_SETUP
+				} YY_BREAK case 41:YY_RULE_SETUP
 #line 49 "1337.l"
 				{
 					printf("y");
-				}
-				YY_BREAK case 42:YY_RULE_SETUP
+				} YY_BREAK case 42:YY_RULE_SETUP
 #line 50 "1337.l"
 				{
 					printf("yass");
-				}
-				YY_BREAK case 43:YY_RULE_SETUP
+				} YY_BREAK case 43:YY_RULE_SETUP
 #line 51 "1337.l"
 				{
 					printf("ya/yea");
-				}
-				YY_BREAK case 44:YY_RULE_SETUP
+				} YY_BREAK case 44:YY_RULE_SETUP
 #line 52 "1337.l"
 				{
 					printf("see you");
-				}
-				YY_BREAK case 45:YY_RULE_SETUP
+				} YY_BREAK case 45:YY_RULE_SETUP
 #line 53 "1337.l"
 				{
 					printf("10/3u");
-				}
-				YY_BREAK case 46:
+				} YY_BREAK case 46:
 /* rule 46 can match eol */
 				 YY_RULE_SETUP
 #line 54 "1337.l"
 				{
 					printf("%s", yytext);
-				}
-				YY_BREAK case 47:YY_RULE_SETUP
+				} YY_BREAK case 47:YY_RULE_SETUP
 #line 55 "1337.l"
 				 ECHO;
 				YY_BREAK
@@ -1039,9 +994,8 @@ YY_DECL {
 					*yy_cp = (yy_hold_char);
 					YY_RESTORE_YY_MORE_OFFSET
 					    if
-					    (YY_CURRENT_BUFFER_LVALUE->
-					     yy_buffer_status ==
-					     YY_BUFFER_NEW) {
+					    (YY_CURRENT_BUFFER_LVALUE->yy_buffer_status
+					     == YY_BUFFER_NEW) {
 						/* We're scanning a new file or input source.  It's
 						 * possible that this happened because the user
 						 * just pointed yyin at a new source and called
@@ -1052,13 +1006,11 @@ YY_DECL {
 						 * back-up) that will match for the new input source.
 						 */
 						(yy_n_chars) =
-						    YY_CURRENT_BUFFER_LVALUE->
-						    yy_n_chars;
-						YY_CURRENT_BUFFER_LVALUE->
-						    yy_input_file =
-						    yyin;
-						YY_CURRENT_BUFFER_LVALUE->
-						    yy_buffer_status =
+						    YY_CURRENT_BUFFER_LVALUE->yy_n_chars;
+						YY_CURRENT_BUFFER_LVALUE->yy_input_file
+						    = yyin;
+						YY_CURRENT_BUFFER_LVALUE->yy_buffer_status
+						    =
 						    YY_BUFFER_NORMAL;
 					}
 
@@ -1171,8 +1123,8 @@ YY_DECL {
 
 						case EOB_ACT_LAST_MATCH:
 							(yy_c_buf_p) =
-							    &YY_CURRENT_BUFFER_LVALUE->
-							    yy_ch_buf[(yy_n_chars)];
+							    &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf
+							    [(yy_n_chars)];
 
 							yy_current_state
 							    =
@@ -1328,9 +1280,7 @@ static int yy_get_next_buffer(void)
 		    ((yy_n_chars) >> 1);
 		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf =
 		    (char *)yyrealloc((void *)
-				      YY_CURRENT_BUFFER_LVALUE->
-				      yy_ch_buf,
-				      (yy_size_t) new_size);
+				      YY_CURRENT_BUFFER_LVALUE->yy_ch_buf, (yy_size_t) new_size);
 		if (!YY_CURRENT_BUFFER_LVALUE->yy_ch_buf)
 			YY_FATAL_ERROR
 			    ("out of dynamic memory in yy_get_next_buffer()");
@@ -1469,8 +1419,7 @@ static int input(void)
 		 * valid NUL; if not, then we've hit the end of the buffer.
 		 */
 		if ((yy_c_buf_p) <
-		    &YY_CURRENT_BUFFER_LVALUE->
-		    yy_ch_buf[(yy_n_chars)])
+		    &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars)])
 			/* This was really a NUL. */
 			*(yy_c_buf_p) = '\0';
 

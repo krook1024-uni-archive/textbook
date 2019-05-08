@@ -18,7 +18,7 @@ print_tutoraltjaim() {
 		sed 's@<title>@'"\n> $(tput setaf 4)"'@g' |\
 		sed 's@</title>@'"$(tput sgr0)"'@g' |\
 		tr -s ' '
-}
+	}
 
 print_tutoraloim() {
 	grep "tutorált " tb-feladatok*.xml -B 4 | \
@@ -29,7 +29,7 @@ print_tutoraloim() {
 		sed 's@<title>@'"\n> $(tput setaf 4)"'@g' |\
 		sed 's@</title>@'"$(tput sgr0)"'@g' |\
 		tr -s ' '
-}
+	}
 
 echo -e "$line"
 echo -e "$RED"Tutoráltak:"$NC" $(cat tb-feladatok* | grep -c 'tutoráltam')

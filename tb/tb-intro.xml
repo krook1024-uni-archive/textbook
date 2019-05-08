@@ -13,37 +13,37 @@
         </info>
         <section>
             <title>Mi a programozás?</title>
-			<para>
-				A programozás problémamegoldás. Sokféle és sokszínű.
-				Trial and error.
-				És abból nagyon sok.
-			</para>
-			<para>
-				A programozás ötlete vonzónak tűnik, de nem való mindenkinek.
-				Amennyiben számodra jól hangzik ugyan azt a kódcsipetet bámulni órákig,
-				hibákat javítani, akkor a legjobb helyen jársz. Ellenkező
-				esetben előfordulhat, hogy a programozás (és ez a könyv) mégsem
-				neked való.
-			</para>
-			<para>
-				Elméletben a programozók szigorú, lefektetett szabályok és nyelvtanok alapján alkotnak kódot.
-				Ezzel szemben a valóságban ők is csak emberek. Rengeteg időt töltenek saját, vagy mások hibáinak javításával,
-				tanulással, stb. Értetlenül ülnek a számítógép felett, mikor három napnyi hibakeresés után még mindig nem
-				találtak megoldást, vagy éppen mikor az általuk hibásnak feltételezett kód (látszólag) jól működik.
-			</para>
-		</section>
+            <para>
+                A programozás problémamegoldás. Sokféle és sokszínű.
+                Trial and error.
+                És abból nagyon sok.
+            </para>
+            <para>
+                A programozás ötlete vonzónak tűnik, de nem való mindenkinek.
+                Amennyiben számodra jól hangzik ugyan azt a kódcsipetet bámulni órákig,
+                hibákat javítani, akkor a legjobb helyen jársz. Ellenkező
+                esetben előfordulhat, hogy a programozás (és ez a könyv) mégsem
+                neked való.
+            </para>
+            <para>
+                Elméletben a programozók szigorú, lefektetett szabályok és nyelvtanok alapján alkotnak kódot.
+                Ezzel szemben a valóságban ők is csak emberek. Rengeteg időt töltenek saját, vagy mások hibáinak javításával,
+                tanulással, stb. Értetlenül ülnek a számítógép felett, mikor három napnyi hibakeresés után még mindig nem
+                találtak megoldást, vagy éppen mikor az általuk hibásnak feltételezett kód (látszólag) jól működik.
+            </para>
+        </section>
         <section>
             <title>Milyen doksikat olvassak el?</title>
             <itemizedlist>
                 <listitem>
                     <para>Olvasgasd a kézikönyv lapjait, kezd a <command>man man</command> parancs kiadásával. A C programozásban
-                    a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a
-                    <command>man 3 sleep</command> lapot</para>
+                        a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a
+                        <command>man 3 sleep</command> lapot</para>
                 </listitem>
-				<listitem>
-					<para><citation>FOO</citation></para>
-				</listitem>
-				<listitem>
+                <listitem>
+                    <para><citation>FOO</citation></para>
+                </listitem>
+                <listitem>
                     <para><citation>KERNIGHANRITCHIE</citation></para>
                 </listitem>
                 <listitem>
@@ -53,43 +53,43 @@
                     <para>Az igazi kockák persze csemegéznek a C nyelvi szabvány
                         <link xlink:href="https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf">ISO/IEC 9899:2017</link> kódcsipeteiből is.
                     </para>
-				</listitem>
-				<listitem>
-<tip>
-              <title>Bátf41 Haxor Stream</title>
-              <para>
-                  A feladatokkal kapcsolatos élő adásokat sugároz
-                  a <link xlink:href="https://www.twitch.tv/nbatfai">https://www.twitch.tv/nbatfai</link> csatorna,
-                  melynek permanens archívuma a <link xlink:href="https://www.youtube.com/c/nbatfai">https://www.youtube.com/c/nbatfai</link>
-                  csatornán található.
-              </para>
-            </tip>
-				</listitem>
+                </listitem>
+                <listitem>
+                    <tip>
+                        <title>Bátf41 Haxor Stream</title>
+                        <para>
+                            A feladatokkal kapcsolatos élő adásokat sugároz
+                            a <link xlink:href="https://www.twitch.tv/nbatfai">https://www.twitch.tv/nbatfai</link> csatorna,
+                            melynek permanens archívuma a <link xlink:href="https://www.youtube.com/c/nbatfai">https://www.youtube.com/c/nbatfai</link>
+                            csatornán található.
+                        </para>
+                    </tip>
+                </listitem>
             </itemizedlist>
         </section>
-		<section>
-			<title>A Battlestation</title>
-			<para>
-				A könyv egy ThinkPad X230 ultrabookon íródott, Arch Linux alatt. C fordító: gcc, szövegszerkesztő: vim.
-				Ez a setup megengedte számomra, hogy soha ne kelljen elhagynom a terminált és egy kellemes, a saját igényeimnek
-				megfelelően kialakított környezetben dolgozhassak.
-			</para>
-			<para>
-				Az Arch Linux egy bleeding-edge operációs rendszer, melynek használata nagyon egyszerű, és hosszútávon
-				rengeteg időt spórol meg, amennyiben elsajátítjuk. A bleeding-edge azt jelenti, hogy a fejlesztők
-				igyekeznek minden csomagból a legfrissebbet elérhetővé tenni a felhasználók számára a lehető
-				leggyorsabban.
-			</para>
-			<para>
-				Az Arch Linux sok ablakkezelőt támogat, az én választásom pedig az i3-ra esett. Ez egy billentyűzet-orientált
-				ablakkezelő rendszer, melynek előnye, hogy minden teljesen testreszabható. Az én konfigurációmról beágyazok
-				egy képet lentebb.
-			</para>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="../pictures/screenshot.png" width="100%"/>
-				</imageobject>
-			</mediaobject>
-		</section>
+        <section>
+            <title>A Battlestation</title>
+            <para>
+                A könyv egy ThinkPad X230 ultrabookon íródott, Arch Linux alatt. C fordító: gcc, szövegszerkesztő: vim.
+                Ez a setup megengedte számomra, hogy soha ne kelljen elhagynom a terminált és egy kellemes, a saját igényeimnek
+                megfelelően kialakított környezetben dolgozhassak.
+            </para>
+            <para>
+                Az Arch Linux egy bleeding-edge operációs rendszer, melynek használata nagyon egyszerű, és hosszútávon
+                rengeteg időt spórol meg, amennyiben elsajátítjuk. A bleeding-edge azt jelenti, hogy a fejlesztők
+                igyekeznek minden csomagból a legfrissebbet elérhetővé tenni a felhasználók számára a lehető
+                leggyorsabban.
+            </para>
+            <para>
+                Az Arch Linux sok ablakkezelőt támogat, az én választásom pedig az i3-ra esett. Ez egy billentyűzet-orientált
+                ablakkezelő rendszer, melynek előnye, hogy minden teljesen testreszabható. Az én konfigurációmról beágyazok
+                egy képet lentebb.
+            </para>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../pictures/screenshot.png" width="100%"/>
+                </imageobject>
+            </mediaobject>
+        </section>
     </chapter>
 </part>
