@@ -252,9 +252,25 @@ var = 0.700649]]>
             </link>
         </para>
         <para>
-            A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a destruktort
-            értjük. A bináris fák másolásához és mozgatásához rekurzív mozgató, és
-            másoló függvényekre lesz szükségünk. Lássuk is ezeket.
+            A mozgató szemantika alatt másoló-, és mozgató-konstruktorokat és a
+            destruktort értjük. A bináris fák másolásához és mozgatásához
+            rekurzív mozgató, és másoló függvényekre lesz szükségünk. Lássuk is
+            ezeket.
+        </para>
+        <para>
+            A névből következtetve gondolhatnánk, hogy egy szimpla
+            <filename>std::move</filename> függvényhívás adekvát lehet
+            számunkra, azonban nem ez a helyzet. Az
+            <filename>std::move</filename> jobbérték referenciát csinál
+            a bemenetéből, valamint hívja annak mozgatókonstruktorát.
+            A mozgatókonstruktorok <filename>C++11</filename> feature.
+        </para>
+        <para>
+            <link
+                xlink:href="https://stackoverflow.com/questions/3413470/what-is-stdmove-and-when-should-it-be-used/27026280#27026280">
+                Ezt a linket érdemes elolvasni a <filename>std::move</filename>
+                függvény kapcsán.
+            </link>
         </para>
         <programlisting language="C++">
 <![CDATA[Csomopont *  masol ( Csomopont * elem, Csomopont * regifa ) {
