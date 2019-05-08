@@ -65,8 +65,23 @@ Elso sor cime: 0x5567bca696a0
             <code language="c">hm[1][1]</code> legalább háromféleképpen
             fejezhetjük ki, melyek a következők:
             <code language="c">(*hm[1]+1)</code>, vagy
-            <code language="c">(*(*hm + 1)+1)</code>.
+            <code language="c">(*(*hm + 1)+1)</code>. Ennek magyarázata,
+            hogy míg a fejünkben egy kétdimenziós tömb kétdimenziós
+            ábrázolásmódban jelenik meg, addig a memóriában mindez sorfolytonosan
+            van ábrázolva.
         </para>
+        <para>
+            Tekintsük meg a következő képet a feladat könnyebb megértéséhez.
+            A képet Bátfai Norbert készítette és én módosítottam.
+        </para>
+        <figure>
+            <title><filename>double**</filename> háromszögmátrix</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/doublecscs.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>C EXOR titkosító</title>
