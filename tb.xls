@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
-
     <xsl:param name="latex.hyperparam">colorlinks,linkcolor=black,citecolor=blue,urlcolor=blue,pdfstartview=FitBH</xsl:param>
     <xsl:param name="glossterm.auto.link">1</xsl:param>
     <xsl:param name="doc.publisher.show">1</xsl:param>
@@ -16,5 +15,12 @@
         <xsl:call-template name="inline.italicseq"/>
     </xsl:template>
     <xsl:param name="textdata.default.encoding">utf-8</xsl:param>
-
+    <xsl:param name="shade.verbatim" select="1"/>
+    <xsl:attribute-set name="shade.verbatim.style">
+        <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
+        <xsl:attribute name="border-width">0.5pt</xsl:attribute>
+        <xsl:attribute name="border-style">solid</xsl:attribute>
+        <xsl:attribute name="border-color">#575757</xsl:attribute>
+        <xsl:attribute name="padding">3pt</xsl:attribute>
+    </xsl:attribute-set>
 </xsl:stylesheet>
