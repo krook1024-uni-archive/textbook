@@ -413,9 +413,8 @@ usleep(30000);]]>
             A Brun tétel azt mondja ki, hogy ha vesszük az ikerprímek reciprokát, majd elkezdjük
             összeadni őket, pl.
             <inlineequation>
-                    <alt role="tex">\left(\frac{1}{3} + \frac{1}{5}\right) + \left(\frac{1}{5} + \frac{1}{7}\right) + ...</alt>
-                <mathphrase>
-                </mathphrase>
+                <alt role="tex">\left(\frac{1}{3} + \frac{1}{5}\right) + \left(\frac{1}{5} + \frac{1}{7}\right) + ...</alt>
+                <mathphrase></mathphrase>
             </inlineequation>,
             akkor ez a sor egy B<subscript>2</subscript> (Brun-)konstanshoz fog konvergálni.
             Ez a felfedezés viszont nem oldja meg az ikerprímek számának problémáját, hiszen arról nem nyilatkozik,

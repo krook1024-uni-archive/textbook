@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+pdflatex matrix.tex
+convert -density 300 matrix.pdf matrix.png
+convert -trim matrix.png matrix.png

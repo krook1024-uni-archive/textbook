@@ -13,12 +13,43 @@
                 Ebben a feladatban tutoráltam Őz Ágostont.
             </para>
         </caution>
-		<note>
-			<title>Saját kódcsipet</title>
-			<para>
-				A következő kódcsipetet saját magam készítettem!
-			</para>
-		</note>
+        <para>
+            Mátrix alatt egy
+            <inlineequation>
+                <alt role="tex">m \times n</alt><mathphrase></mathphrase>
+            </inlineequation>-es számtábláztot értünk, melynek elemeire
+            <inlineequation>
+                <alt role="tex">M_{ij}</alt><mathphrase></mathphrase>
+            </inlineequation> formában hivatkozhatunk, ahol
+            <inlineequation>
+                <alt role="tex">i \text{ és } j</alt><mathphrase></mathphrase>
+            </inlineequation> respektíven a sor és oszlop számát jelölik.
+        </para>
+        <figure>
+            <title>Mátrix</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./files/caesar/matrix/matrix.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Egy mátrix kvadratikus, ha
+            <inlineequation>
+                <alt role="tex">i = j.</alt><mathphrase></mathphrase>
+            </inlineequation>
+            Egy mátrix főátlója alatt az
+            <inlineequation>
+                <alt role="tex">(a_{11}, a_{22}, a_{33}, ...)</alt><mathphrase></mathphrase>
+            </inlineequation> szám k-ast értjük. Egy mátrix felső háromszögmátrix,
+            ha a főátlója felett csupa 0 értékek szerepelnek.
+        </para>
+        <note>
+            <title>Saját kódcsipet</title>
+            <para>
+                A következő kódcsipetet saját magam készítettem!
+            </para>
+        </note>
         <programlisting language="c"><xi:include href="./files/caesar/doubleharomszog.c" parse="text" /></programlisting>
         <para>
             Ebben a példában a C nyelv fő jellegzetességével foglalkozunk,
@@ -49,15 +80,15 @@
             nullával véletlenül se.
         </para>
         <screen>
-<![CDATA[$ gcc doubleharomszog.c  && ./a.out
-Mutato cime: 0x7fffbc435de0
-Sorok tombjenek cime: 0x5567bca69670
-Elso sor cime: 0x5567bca696a0
-|1.00  0.00  0.00  0.00  0.00  |
-|2.00  1.00  0.00  0.00  0.00  |
-|3.00  1.00  1.00  0.00  0.00  |
-|4.00  2.00  1.00  1.00  0.00  |
-|5.00  2.00  1.00  1.00  1.00  |]]>
+            <![CDATA[$ gcc doubleharomszog.c  && ./a.out
+            Mutato cime: 0x7fffbc435de0
+            Sorok tombjenek cime: 0x5567bca69670
+            Elso sor cime: 0x5567bca696a0
+            |1.00  0.00  0.00  0.00  0.00  |
+            |2.00  1.00  0.00  0.00  0.00  |
+            |3.00  1.00  1.00  0.00  0.00  |
+            |4.00  2.00  1.00  1.00  0.00  |
+            |5.00  2.00  1.00  1.00  1.00  |]]>
         </screen>
         <para>
             A feladat tanulsága, hogy a [] jelek valóban csak a
@@ -163,12 +194,12 @@ Elso sor cime: 0x5567bca696a0
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
         </para>
-		<note>
-			<title>Módosított kódcsipet</title>
-			<para>
-				A következő kódcsipetet Bátfai Norbert készítette és én módosítottam!
-			</para>
-		</note>
+        <note>
+            <title>Módosított kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette és én módosítottam!
+            </para>
+        </note>
         <programlisting language="C"><xi:include href="./files/caesar/xor_c.c" parse="text" /></programlisting>
         <para>
             Ez a program csak olyan állományok feltörésére alkalmas,
@@ -234,9 +265,9 @@ Elso sor cime: 0x5567bca696a0
             hálónkat az OR utasítás elvégzésére.
         </para>
         <programlisting language="R">
-<![CDATA[a1    <- c(0,1,0,1)
-a2    <- c(0,0,1,1)
-OR    <- c(0,1,1,1)]]>
+            <![CDATA[a1    <- c(0,1,0,1)
+            a2    <- c(0,0,1,1)
+            OR    <- c(0,1,1,1)]]>
         </programlisting>
         <para>
             A hálót úgy építettük fel, hogy megadtuk, hogy milyen
@@ -298,11 +329,11 @@ OR    <- c(0,1,1,1)]]>
             </link>
         </para>
         <note>
-			<title>Módosított kódcsipet</title>
-			<para>
-				A következő kódcsipetet Bátfai Norbert készítette, és én módosítottam!
-			</para>
-		</note>
+            <title>Módosított kódcsipet</title>
+            <para>
+                A következő kódcsipetet Bátfai Norbert készítette, és én módosítottam!
+            </para>
+        </note>
         <programlisting language="c">
             <textobject>
                 <textdata fileref="./files/caesar/perceptron/main.cc" />
@@ -325,8 +356,8 @@ OR    <- c(0,1,1,1)]]>
             adja vissza. Próbáljuk is ki ezzel fordítani a programunkat:
         </para>
         <screen>
-<![CDATA[$ make
-0.500964]]>
+            <![CDATA[$ make
+            0.500964]]>
         </screen>
         <para>
             Itt a kimenet közelítőleg 0.5, ez azt jelenti, hogy a piros
