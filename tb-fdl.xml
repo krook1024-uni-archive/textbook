@@ -62,7 +62,7 @@
     <xi:include href="tb/tb-copy.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb/tb-bib.xml file not found</emphasis>
+                <emphasis>XInclude: tb/tb-copy.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
