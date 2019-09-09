@@ -1,37 +1,52 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
     <info>
         <title>Helló, Arroway!</title>
-        <keywordset>
-            <keyword/>
-        </keywordset>
     </info>
     <section>
-        <title>A BPP algoritmus Java megvalósítása</title>
+        <title>OO szemlélet</title>
         <para>
+            A módosított polártranszformációs normális generátor beprogramozása Java nyelven. Mutassunk rá, hogy a mi természetes saját megoldásunk (az algoritmus egyszerre két normálist állít elő, kell egy példánytag, amely a nem visszaadottat tárolja és egy logikai tag, hogy van-e tárolt vagy futtatni kell az algot.) és az OpenJDK, Oracle JDK-ban a Sun által adott OO szervezés ua.!
         </para>
         <para>
-            Megoldás videó:
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
         </para>
         <para>
-            Megoldás forrása:
-        </para>
-        <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
         </para>
     </section>
     <section>
-        <title>Java osztályok a Pi-ben</title>
+        <title>Homokozó</title>
         <para>
-            Az előző feladat kódját fejleszd tovább: vizsgáld, hogy Vannak-e Java osztályok a Pi hexadecimális kifejtésében!
+            Írjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön! Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani és minden máris működik (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy attribútum pointer, referencia vagy tagként tartalmazott legyen).
         </para>
         <para>
-            Megoldás videó:
+            Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!
+        </para>
+    </section>
+    <section>
+        <title>"Gagyi"</title>
+        <para>
+            Az ismert formális
+            <code language="C"><![CDATA[while (x <= t && x >= t && t != x);]]></code>
+            tesztkérdéstípusra adj a szokásosnál (miszerint x, t az egyik esetben az objektum által hordozott érték, a másikban meg az objektum referenciája) "mélyebb" választ, írj Java példaprogramot mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát építsd a JDK Integer.java forrására3, hogy a 128-nál inkluzív objektum
+        </para>
+    </section>
+    <section>
+        <title>Yoda</title>
+        <para>
+            Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll, ha nem követjük a Yoda conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
+        </para>
+    </section>
+    <section>
+        <title>Kódolás from scratch </title>
+        <para>
+            Induljunk ki ebből a tudományos közleményből: http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus megvalósítását!
         </para>
         <para>
-            Megoldás forrása:
+            Megoldás forrása: <link xlink:href="https://github.com/krook1024/BBP">https://github.com/krook1024/BBP</link>
         </para>
         <para>
-            Tanulságok, tapasztalatok, magyarázat...
+            A BBP algoritmus a pí jegyeinek gyors kiszámítására született algoritmus.
         </para>
     </section>
 </chapter>

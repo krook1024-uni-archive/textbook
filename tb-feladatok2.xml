@@ -3,7 +3,7 @@
     <xi:include href="tb-feladatok2-arroway.xml">
         <xi:fallback>
             <para>
-                <emphasis>XInclude: tb-motto.xml file not found</emphasis>
+                <emphasis>XInclude: tb-feladatok2-arroway.xml file not found</emphasis>
             </para>
         </xi:fallback>
     </xi:include>
