@@ -162,16 +162,18 @@
 			Ahogy az a fenti példaprogramban látszik, az osztályokat a
 			következőképpen hozhatjuk létre.
 		</para>
-		<programlisting>
-			<![CDATA[public class Hallgato {
-				String nev;
-				String neptun_kod;
-				float tanulmanyi_atlag;
-				int osztondij;
-				void osztondijEmel(int novekmeny) {
-					osztondij += novekmeny;
-				}
-			}
+		<programlisting language="java">
+			<![CDATA[
+public class Hallgato {
+	String nev;
+	String neptun_kod;
+	float tanulmanyi_atlag;
+	int osztondij;
+
+	void osztondijEmel(int novekmeny) {
+		osztondij += novekmeny;
+	}
+}
 			]]>
 		</programlisting>
 		<para>
@@ -190,8 +192,10 @@
 		<para>
 			Egy osztályt lehet példányosítani az alábbi módon;
 		</para>
-		<programlisting>
-			<![CDATA[hallgato = new Hallgato();]]>
+		<programlisting language="java">
+			<![CDATA[
+hallgato = new Hallgato();
+			]]>
 		</programlisting>
 		<para>
 			A könyv ír a láthatóságokról is. A Java nyelv láthatóságai a
