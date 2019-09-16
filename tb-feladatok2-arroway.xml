@@ -73,31 +73,59 @@
 			fel a megszokott módon. A forráskód egy az egyben az előző felvonásban
 			tárgyalt C++ verzió átirata, a pointerek nélkül, melyek Javában nem léteznek.
 		</para>
+        <figure>
+            <title>LZWBinFa generátor böngészős változata</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/binfa_1.png" width="100%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<figure>
+			<title>LZWBinFa generátor böngészős változatának kimenete</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/binfa_2.png" width="100%" />
+                </imageobject>
+			</mediaobject>
+		</figure>
     </section>
     <section>
         <title>"Gagyi"</title>
         <para>
             Az ismert formális
             <code language="C"><![CDATA[while (x <= t && x >= t && t != x);]]></code>
-            tesztkérdéstípusra adj a szokásosnál (miszerint x, t az egyik esetben az objektum által hordozott érték, a másikban meg az objektum referenciája) "mélyebb" választ, írj Java példaprogramot mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát építsd a JDK Integer.java forrására3, hogy a 128-nál inkluzív objektum
+			tesztkérdéstípusra adj a szokásosnál (miszerint x, t az egyik
+			esetben az objektum által hordozott érték, a másikban meg az
+			objektum referenciája) "mélyebb" választ, írj Java példaprogramot
+			mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát
+			építsd a JDK Integer.java forrására3, hogy a 128-nál inkluzív
+			objektum
         </para>
     </section>
     <section>
         <title>Yoda</title>
         <para>
-            Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll, ha nem követjük a Yoda conditions-t! https://en.wikipedia.org/wiki/Yoda_conditions
+			Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll,
+			ha nem követjük a Yoda conditions-t!
+			https://en.wikipedia.org/wiki/Yoda_conditions
         </para>
     </section>
     <section>
         <title>Kódolás from scratch </title>
-        <para>
-            Induljunk ki ebből a tudományos közleményből: http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus megvalósítását!
+		<para>
+			Induljunk ki ebből a tudományos közleményből:
+			http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf és csak
+			ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus
+			megvalósítását!
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="https://github.com/krook1024/BBP">https://github.com/krook1024/BBP</link>
+			Megoldás forrása: <link
+				xlink:href="https://github.com/krook1024/BBP">https://github.com/krook1024/BBP</link>
         </para>
         <para>
-            A BBP algoritmus a pí jegyeinek gyors kiszámítására született algoritmus.
+			A BBP algoritmus a pí jegyeinek gyors kiszámítására született
+			algoritmus.
         </para>
     </section>
 </chapter>

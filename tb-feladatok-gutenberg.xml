@@ -9,16 +9,16 @@
     <section>
         <title>Juhász István – Magas szintű programozási nyelvek</title>
         <para>
-            Programozási nyelvek között megkülönböztetünk imperatív és deklaratív
-            programozási nyelveket. Az imperatív nyelvekkel ez a könyv nem foglalkozik.
-            A deklaratív nyelvek pedig a hagyományos nyelvek, amiket ismerünk, s
-            látunk ebben a könyvben is.
+			Programozási nyelvek között megkülönböztetünk imperatív és
+			deklaratív programozási nyelveket. Az imperatív nyelvekkel ez a
+			könyv nem foglalkozik.  A deklaratív nyelvek pedig a hagyományos
+			nyelvek, amiket ismerünk, s látunk ebben a könyvben is.
         </para>
         <para>
-            Emelett különbséget teszünk alacsony-, és magasszintű programozási
-            nyelvek között is. Alacsony szintű nyelv például az Assembly, mely
-            ugyan ember számára olvasható, de csak nehezen értelmezhető. Vegyünk egy
-            Assembly helloworld példát.
+			Emelett különbséget teszünk alacsony-, és magasszintű programozási
+			nyelvek között is. Alacsony szintű nyelv például az Assembly, mely
+			ugyan ember számára olvasható, de csak nehezen értelmezhető.
+			Vegyünk egy Assembly helloworld példát.
         </para>
         <programlisting>
 <![CDATA[org 100h
@@ -34,16 +34,18 @@ msg db 'Hello, World!',0Dh,0Ah,'$']]>
             egy programon, Assemblyben rögtön nehezebb dolgunk lesz.
         </para>
         <para>
-            Egy magasszintű programozási nyelv attól magasszíntű, hogy sok úgynevezett
-            absztrakciós rétegen megy át, míg gépi kód lesz belőle, amit a processzor
-            értelmezni tud. Hagyományosan, mint például a C-ben is, amit mi, emberek írunk,
-            azt úgy hívjuk, hogy forráskód, amiből a fordító csinál majd a számítógép
-            számára értelmezhető kódot. Ahhoz, hogy a fordító ezt el tudja végezni,
-            nekünk pontos nyelvtani szabályokat kell követnünk a programunk írása során.
+			Egy magasszintű programozási nyelv attól magasszíntű, hogy sok
+			úgynevezett absztrakciós rétegen megy át, míg gépi kód lesz belőle,
+			amit a processzor értelmezni tud. Hagyományosan, mint például a
+			C-ben is, amit mi, emberek írunk, azt úgy hívjuk, hogy forráskód,
+			amiből a fordító csinál majd a számítógép számára értelmezhető
+			kódot. Ahhoz, hogy a fordító ezt el tudja végezni, nekünk pontos
+			nyelvtani szabályokat kell követnünk a programunk írása során.
         </para>
         <para>
-            A fordítóprogramok olyan programok, amelyek a magas szintű programozási
-            nyelven megírt szöveget lefordítják gépi nyelvre. Eszközei a következők:
+			A fordítóprogramok olyan programok, amelyek a magas szintű
+			programozási nyelven megírt szöveget lefordítják gépi nyelvre.
+			Eszközei a következők:
         </para>
         <itemizedlist>
             <listitem><para>lexikális elemzés, </para></listitem>
@@ -52,8 +54,8 @@ msg db 'Hello, World!',0Dh,0Ah,'$']]>
             <listitem><para>kódgenerálás.</para></listitem>
         </itemizedlist>
         <para>
-            Minden program alapelemei a karakterek, ezekből állnak össze a
-            bonyolultabb nyelvi elemek, mint a
+			Minden program alapelemei a karakterek, ezekből állnak össze a
+			bonyolultabb nyelvi elemek, mint a
         </para>
         <itemizedlist>
             <listitem><para>lexikális egységek, </para></listitem>
@@ -72,10 +74,10 @@ msg db 'Hello, World!',0Dh,0Ah,'$']]>
             és <emphasis>karakterlánc</emphasis> típusok is.
         </para>
         <para>
-            A nevesített konstans olyan eszköz, mely három komponensből áll, ezek:
-            név, típus, érték. A lényege, hogy néha beszélő neveket adunk nekik,
-            ezáltal könnyebben olvashatóvá téve a kódunkat. C-ben így néz ki egy
-            nevesített konstans:
+			A nevesített konstans olyan eszköz, mely három komponensből áll,
+			ezek: név, típus, érték. A lényege, hogy néha beszélő neveket adunk
+			nekik, ezáltal könnyebben olvashatóvá téve a kódunkat. C-ben így
+			néz ki egy nevesített konstans:
             <code language="c">#define név érték</code>.
         </para>
         <para>
@@ -104,17 +106,18 @@ msg db 'Hello, World!',0Dh,0Ah,'$']]>
             <listitem><para><code>void</code> típus</para></listitem>
         </itemizedlist>
         <para>
-            Az eljárásorientált nyelvekben a programot felbonthatjuk úgynevezett
-            programalegységekre. Ezeket bizonyos programozási nyelvekben együtt
-            kell fordítani, míg másokban, köztük C-ben is, külön-külön
-            fordíthatóak, és készöbb összekapcsolhatóak egy úgynevezett
+			Az eljárásorientált nyelvekben a programot felbonthatjuk
+			úgynevezett programalegységekre. Ezeket bizonyos programozási
+			nyelvekben együtt kell fordítani, míg másokban, köztük C-ben is,
+			külön-külön fordíthatóak, és készöbb összekapcsolhatóak egy
+			úgynevezett
             <emphasis>linker</emphasis> segítségével.
         </para>
         <para>
-            Változók hatásköréről is beszélnünk kell. A hatáskör egy változóra
-            vonatkozik, és azt mondja meg, hogy a változó értéke honnan
-            érhető el. A hatáskör mindig befelé terjed, kifelé soha. Vegyük például az alábbi C
-            programot:
+			Változók hatásköréről is beszélnünk kell. A hatáskör egy változóra
+			vonatkozik, és azt mondja meg, hogy a változó értéke honnan érhető
+			el. A hatáskör mindig befelé terjed, kifelé soha. Vegyük például az
+			alábbi C programot:
         </para>
         <programlisting language="C">
 <![CDATA[#include <stdio.h>
@@ -135,9 +138,9 @@ int main(void) {
 }]]>
         </programlisting>
         <para>
-            Mit gondolunk, mi lesz a program kimenete? Lefordul egyáltalán?
-            Próbáljuk elemezni a változók hatáskörét, hogy melyik változó milyen scopeból
-            látszik.
+			Mit gondolunk, mi lesz a program kimenete? Lefordul egyáltalán?
+			Próbáljuk elemezni a változók hatáskörét, hogy melyik változó
+			milyen scopeból látszik.
         </para>
     </section>
     <!-- === -->
@@ -169,30 +172,34 @@ $ ]]>
             de talán lépjünk is ezen tovább.
         </para>
         <para>
-            Az első fejezetben a könyv a legalapvetőbb C utasításokon
-            megy végig. Ismerteti a C-ben használatos típusokat, változókezelést,
-            ciklusokat (<code>for, while, do-while</code>), I/O utasításokat,
-            tömböket, függvényeket, függvények használatát, argumentumkezelést,
-            karaktertömböket (sztringeket), és a változók érvényességét, avagy
-            milyen scope-ban milyen változó látszik.
-            Egyszóval tényleg az abszolút minimumot.
+			Az első fejezetben a könyv a legalapvetőbb C utasításokon megy
+			végig. Ismerteti a C-ben használatos típusokat, változókezelést,
+			ciklusokat (<code>for, while, do-while</code>), I/O utasításokat,
+			tömböket, függvényeket, függvények használatát, argumentumkezelést,
+			karaktertömböket (sztringeket), és a változók érvényességét, avagy
+			milyen scope-ban milyen változó látszik.  Egyszóval tényleg az
+			abszolút minimumot.
         </para>
         <!-- === -->
         <para>
             <emphasis role="strong">Típusok, operátorok, kifejezések</emphasis>
         </para>
         <para>
-            C-ben az alapvető típusok a <code>char, int, float, double</code>. Ezekhez hozzájöhetnek
-            úgynevezett minősítők, mint a <code>short, long</code>. C-ben lehetőségünk
-            van arra, hogy saját típusokat definiáljunk, ezt megtehetjük a <code>typedef</code>
-            utasítással. Egész állandókat megadhatunk <code>1234</code> formában, ez minden
-            külön jelzés nélkül <code>int</code> típusú. Néhány különleges karaktert úgyneveztt
-            <emphasis>escape string</emphasis>ekkel adhatunk meg, mint például az újsor karakter
-            (<code>\n</code>), ezek mindig backslashhel kezdődnek. C-ben változók deklarálása a következőképp
-            néz ki (példa): <code>int a, b = 4, c = b; char c, sor[1000];</code>. Tehát
-            a változó típusával kezdünk, majd megadjuk a nevét, és opcionálisan kezdőértéket adunk neki.
-            Amennyiben szögletes zárójelek között ([]) megadunk egy számot, úgy tömböt deklarálunk, és
-            a szám a tömb mérete lesz. C-ben a következő aritmetikai operátorok működnek:
+			C-ben az alapvető típusok a <code>char, int, float, double</code>.
+			Ezekhez hozzájöhetnek úgynevezett minősítők, mint a <code>short,
+				long</code>. C-ben lehetőségünk van arra, hogy saját típusokat
+			definiáljunk, ezt megtehetjük a <code>typedef</code> utasítással.
+			Egész állandókat megadhatunk <code>1234</code> formában, ez minden
+			külön jelzés nélkül <code>int</code> típusú. Néhány különleges
+			karaktert úgyneveztt <emphasis>escape string</emphasis>ekkel
+			adhatunk meg, mint például az újsor karakter (<code>\n</code>),
+			ezek mindig backslashhel kezdődnek. C-ben változók deklarálása a
+			következőképp néz ki (példa): <code>int a, b = 4, c = b; char c,
+				sor[1000];</code>. Tehát a változó típusával kezdünk, majd
+			megadjuk a nevét, és opcionálisan kezdőértéket adunk neki.
+			Amennyiben szögletes zárójelek között ([]) megadunk egy számot, úgy
+			tömböt deklarálunk, és a szám a tömb mérete lesz. C-ben a következő
+			aritmetikai operátorok működnek:
             <code>
                 % maradékos osztás,
                 (+, -, *, /) magyarázat nélkül
@@ -204,15 +211,17 @@ $ ]]>
                 ==, !=
                 ]]>
             </code>.
-            A típusok közötti átváltás nehézkes C-ben, nincsen egyszerű és elegáns mód arra,
-            hogy például egy int típusú változát char tömbbé változtassunk.
-            Inkrementáló és dekrementáló operátorok azok az egyoperandusú operátorok, melyek
-            egy változó értékét növelik, vagy csökkentik. Például: <code>++i</code>.
-            Vannak még bitenkénti logikai operátorok, ezek úgy működnek, hogy
-            logikai műveleteket (pl. konjunkció, diszjunkció) végeznek el a változó, vagy konstans
-            bináris alakjával és egy másik változóval, vagy konstanssal. Például a következő kifejezés:
-            <code><![CDATA[int b = 3 & 4;]]></code>. Az olvasó feladata eldönteni, hogy a b változónak
-            mennyi lesz az értéke.
+			A típusok közötti átváltás nehézkes C-ben, nincsen egyszerű és
+			elegáns mód arra, hogy például egy int típusú változát char tömbbé
+			változtassunk.  Inkrementáló és dekrementáló operátorok azok az
+			egyoperandusú operátorok, melyek egy változó értékét növelik, vagy
+			csökkentik. Például: <code>++i</code>.  Vannak még bitenkénti
+			logikai operátorok, ezek úgy működnek, hogy logikai műveleteket
+			(pl. konjunkció, diszjunkció) végeznek el a változó, vagy konstans
+			bináris alakjával és egy másik változóval, vagy konstanssal.
+			Például a következő kifejezés: <code><![CDATA[int b = 3 &
+				4;]]></code>. Az olvasó feladata eldönteni, hogy a b változónak
+			mennyi lesz az értéke.
         </para>
         <!-- === -->
         <para>
@@ -245,18 +254,19 @@ $ ]]>
     <section>
         <title>BME könyv</title>
         <para>
-            A könyv a C++ és C összehasonlításával indít, de még nem tér rá a C++
-            OOP tulajdonságaira, csak az alapokat fekteti le, hogy miben lett
-            más/jobb a C++ mint a C. A "veszélyes" dolgokat próbálták meg lecserélni
-            jobbakra, biztonságosabbakra.
+			A könyv a C++ és C összehasonlításával indít, de még nem tér rá a
+			C++ OOP tulajdonságaira, csak az alapokat fekteti le, hogy miben
+			lett más/jobb a C++ mint a C. A "veszélyes" dolgokat próbálták meg
+			lecserélni jobbakra, biztonságosabbakra.
         </para>
         <para>
-            A könyv kitér arra, hogy mi változott a függvénydefiníciókban, a main függvény
-            definicíóira, típusokra, tehát az alapokra.
+			A könyv kitér arra, hogy mi változott a függvénydefiníciókban, a
+			main függvény definicíóira, típusokra, tehát az alapokra.
         </para>
         <para>
-            C++-ban lehetőségünk van függvénynevek túlterhelésére, nézzünk is erre egy példát a könyvből,
-            mert ez egy nagyon érdekes dolog, ami a C++ előnye a C-vel szemben.
+			C++-ban lehetőségünk van függvénynevek túlterhelésére, nézzünk is
+			erre egy példát a könyvből, mert ez egy nagyon érdekes dolog, ami a
+			C++ előnye a C-vel szemben.
         </para>
         <programlisting language="c++">
 <![CDATA[#include <time.h>
@@ -272,10 +282,10 @@ void PrintTime(int hour, int minute) { // 2-es változat
 }]]>
         </programlisting>
         <para>
-            Itt azt láthatjuk, hogy egy függvénynévnek két definíciót is megadtunk, csak
-            más paraméterlistával. Ezzel azt érjük el, hogy a PrintTime függvényünk hívható
-            <code>printTime(time)</code> és <code>printTime(9, 32)</code> módokon egyaránt.
-            Próbáljuk is ki!
+			Itt azt láthatjuk, hogy egy függvénynévnek két definíciót is
+			megadtunk, csak más paraméterlistával. Ezzel azt érjük el, hogy a
+			PrintTime függvényünk hívható <code>printTime(time)</code> és
+			<code>printTime(9, 32)</code> módokon egyaránt.  Próbáljuk is ki!
         </para>
         <programlisting language="c++">
 <![CDATA[int main() {
@@ -286,48 +296,51 @@ void PrintTime(int hour, int minute) { // 2-es változat
 }]]>
         </programlisting>
         <para>
-            Egy másik hasznos előnye a C++-nak a referenciák bevezetése. Ez lehetővé
-            teszi a referencia szerinti paraméterátadást függvényeknek, ami azt jelenti,
-            hogy van egy új, effektív módunk paraméterek átadására. Amennyiben mutató
-            szerint adjuk át a paramétereket, úgy a programunk nehezen olvashatóvá
-            válik, amennyiben pedig érték szerint, úgy másolódnak a változók, és nem lesz
-            effektív a programunk.
+			Egy másik hasznos előnye a C++-nak a referenciák bevezetése. Ez
+			lehetővé teszi a referencia szerinti paraméterátadást
+			függvényeknek, ami azt jelenti, hogy van egy új, effektív módunk
+			paraméterek átadására. Amennyiben mutató szerint adjuk át a
+			paramétereket, úgy a programunk nehezen olvashatóvá válik,
+			amennyiben pedig érték szerint, úgy másolódnak a változók, és nem
+			lesz effektív a programunk.
         </para>
         <para>
-            A következő fejezetben a könyv az objektumokról ír, osztályokról, láthatósági
-            szabályokról, konstruktorokról, destruktorokról, valamint a friend osztályokról.
-            Emellett szó esik beágyazott osztályokról, beágyazott függvényekről, melyek olyan
-            osztályok és függvények, amelyek egy osztályon belül lettek definiálva.
+			A következő fejezetben a könyv az objektumokról ír, osztályokról,
+			láthatósági szabályokról, konstruktorokról, destruktorokról,
+			valamint a friend osztályokról.  Emellett szó esik beágyazott
+			osztályokról, beágyazott függvényekről, melyek olyan osztályok és
+			függvények, amelyek egy osztályon belül lettek definiálva.
         </para>
         <para>
-            C++-ban az input/output interfész némi változtáson ment át a C-hez képest.
-            A standard library (pontosabb az istream és ostream osztályok) tagjai a
-            következő objektumok: <filename>cin, cout, cerr, clog</filename>. Az I/O
-            használatát legegyszerűbb egy példán keresztül elmagyarázni, tehát nézzünk is
-            egyet.
+			C++-ban az input/output interfész némi változtáson ment át a C-hez
+			képest.  A standard library (pontosabb az istream és ostream
+			osztályok) tagjai a következő objektumok: <filename>cin, cout,
+				cerr, clog</filename>. Az I/O használatát legegyszerűbb egy
+			példán keresztül elmagyarázni, tehát nézzünk is egyet.
         </para>
         <programlisting language="c++"><xi:include href="./files/gutenberg/io.cc" parse="text" /></programlisting>
         <para>
-            Ezen a példán keresztül látszik az is, hogy míg C-ben a <filename>char *</filename>
-            típuson kívül más módunk nem nagyon volt sztringek kezelésére, C++-ban
-            a <filename>string</filename> könyvtár szolgáltat egy fejlettebb interfészt
-            ehhez.
+			Ezen a példán keresztül látszik az is, hogy míg C-ben a
+			<filename>char *</filename> típuson kívül más módunk nem nagyon
+			volt sztringek kezelésére, C++-ban a <filename>string</filename>
+			könyvtár szolgáltat egy fejlettebb interfészt ehhez.
         </para>
         <para>
-            Kimenetre az eddigi <filename>printf</filename> helyett a <filename>std::cout</filename>
-            tagfüggvény lesz a segítségünkre, melynek szintaxisa a fenti példában szintén látható.
+			Kimenetre az eddigi <filename>printf</filename> helyett a
+			<filename>std::cout</filename> tagfüggvény lesz a segítségünkre,
+			melynek szintaxisa a fenti példában szintén látható.
         </para>
         <para>
-            Production környezetben nem elfogadható az, hogyha hiba esetén a programunk
-            kilép, megáll, ezért kivételkezeőt használunk. Célunk, hogy minden úgy
-            menjen végbe, ahogy mi azt kigondoltuk, de ha nem, akkor se kelljen
-            kétségbe esnünk. A kivételkezelés is sokkan jobban érthető, értelmezhető
-            példán keresztül; tehát nézünk egyet.
+			Production környezetben nem elfogadható az, hogyha hiba esetén a
+			programunk kilép, megáll, ezért kivételkezeőt használunk. Célunk,
+			hogy minden úgy menjen végbe, ahogy mi azt kigondoltuk, de ha nem,
+			akkor se kelljen kétségbe esnünk. A kivételkezelés is sokkan jobban
+			érthető, értelmezhető példán keresztül; tehát nézünk egyet.
         </para>
         <programlisting language="c++"><xi:include href="./files/gutenberg/ex.cc" parse="text" /></programlisting>
         <para>
-            Nézzük meg ezt a példát, ahol egymásba ágyazott függvényekből dobunk egy
-            hibát, de nem kapjuk el rögtön.
+			Nézzük meg ezt a példát, ahol egymásba ágyazott függvényekből
+			dobunk egy hibát, de nem kapjuk el rögtön.
         </para>
         <programlisting language="c++"><xi:include href="./files/gutenberg/ex2.cc" parse="text" /></programlisting>
         <para>
@@ -341,11 +354,11 @@ Program vége.
 ]]>
         </screen>
         <para>
-            Amit itt látunk, az egy hívási lánc megvalósulása. Ugyan nem gondolnánk,
-            vagy nem elsőre, hogy egyéb kód is lefut amíg a dobott kivétel elkapása
-            zajlik. Azonban például ilyen kód a felszabaduló objektumok destruktorai,
-            mert amit a stacken hoztunk létre, ilyenkor felszabadul, és a destruktora
-            természetesen lefut.
+			Amit itt látunk, az egy hívási lánc megvalósulása. Ugyan nem
+			gondolnánk, vagy nem elsőre, hogy egyéb kód is lefut amíg a dobott
+			kivétel elkapása zajlik. Azonban például ilyen kód a felszabaduló
+			objektumok destruktorai, mert amit a stacken hoztunk létre,
+			ilyenkor felszabadul, és a destruktora természetesen lefut.
         </para>
     </section>
 </chapter>

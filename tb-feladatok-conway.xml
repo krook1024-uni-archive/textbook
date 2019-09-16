@@ -14,8 +14,9 @@
             </para>
         </caution>
         <para>
-            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
-            készíts UML osztálydiagramot is!
+			Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról
+			utólag reverse engineering jelleggel készíts UML osztálydiagramot
+			is!
         </para>
         <para>
             Megoldás forrása:
@@ -24,14 +25,16 @@
             </link>
         </para>
         <para>
-            Tudjuk, hogy ahogy a hangyák közlekednek, úgy feromonnyomokat hagynak maguk
-            után, és így útvonalakat hoznak létre. Ezeken a nyomvonalakon később ők és társaik
-            közlekednek, így találnak haza, vagy éppen élelemlelőhelyekre.
+			Tudjuk, hogy ahogy a hangyák közlekednek, úgy feromonnyomokat
+			hagynak maguk után, és így útvonalakat hoznak létre. Ezeken a
+			nyomvonalakon később ők és társaik közlekednek, így találnak haza,
+			vagy éppen élelemlelőhelyekre.
         </para>
         <para>
-            Ezeket próbáljuk meg szimulálni ebben a programban. Az olvasó kényelméért
-            egy <filename>run</filename> szkriptet létrehoztam, így a program egyszerűen,
-            egy parancs kiadásával futtatható (Qt telepítés szükséges).
+			Ezeket próbáljuk meg szimulálni ebben a programban. Az olvasó
+			kényelméért egy <filename>run</filename> szkriptet létrehoztam, így
+			a program egyszerűen, egy parancs kiadásával futtatható (Qt
+			telepítés szükséges).
         </para>
         <screen><![CDATA[$ ./run]]></screen>
         <figure>
@@ -43,12 +46,13 @@
             </mediaobject>
         </figure>
         <para>
-            Az UML osztálydiagram általában reverse engineeringnél jön számításba,
-            hiszen az eddig megtudott információkat jól lehet ábrázolni rajta.
-            Viszont ennél a tulajdonságánál fogva könnyítheti a megértést
-            (pláne ha a felesleges, figyelemelterelő adatokat elrejtjük, ilyenkor úgy sem kell), ha egy
-            olyan programhoz generálunk osztálydiagrammot, aminek a forráskódját
-            ismerjük. Ezt tesszük mi most.
+			Az UML osztálydiagram általában reverse engineeringnél jön
+			számításba, hiszen az eddig megtudott információkat jól lehet
+			ábrázolni rajta.  Viszont ennél a tulajdonságánál fogva könnyítheti
+			a megértést (pláne ha a felesleges, figyelemelterelő adatokat
+			elrejtjük, ilyenkor úgy sem kell), ha egy olyan programhoz
+			generálunk osztálydiagrammot, aminek a forráskódját ismerjük. Ezt
+			tesszük mi most.
         </para>
         <figure>
             <title>Hangyaszimulációk UML osztálydiagram</title>
@@ -59,11 +63,13 @@
             </mediaobject>
         </figure>
         <para>
-            Az osztálydiagrammot legenerálhatjuk például az Umbrello nevű programmal,
-            ami része a KDE családnak. A projekt weboldala elérhető itt:
-            <link xlink:href="https://umbrello.kde.org/installation.php">https://umbrello.kde.org/installation.php</link>.
-            Erről az ábráráról leolvashatóak a legfontosabb adatok; osztályok, és azokba
-            beágyazott függvények, konstruktorok, destruktorok, adattagok, stb.
+			Az osztálydiagrammot legenerálhatjuk például az Umbrello nevű
+			programmal, ami része a KDE családnak. A projekt weboldala elérhető
+			itt: <link
+				xlink:href="https://umbrello.kde.org/installation.php">https://umbrello.kde.org/installation.php</link>.
+			Erről az ábráráról leolvashatóak a legfontosabb adatok; osztályok,
+			és azokba beágyazott függvények, konstruktorok, destruktorok,
+			adattagok, stb.
         </para>
     </section>
     <section>
@@ -87,15 +93,16 @@
         <warning>
             <title>Figyelem! Deprecated szoftver!</title>
             <para>
-                A program a már deprecated AWT grafikus függvénykönyvtárat használja, melyet
-                már a mai napon nem használnánk. Helyette próbáljunk meg valami korszerűbbet,
-                például OpenJFX-et használni!
+				A program a már deprecated AWT grafikus függvénykönyvtárat
+				használja, melyet már a mai napon nem használnánk. Helyette
+				próbáljunk meg valami korszerűbbet, például OpenJFX-et
+				használni!
             </para>
         </warning>
         <para>
-            A program futtatására az olvasó kényelmét szolgálandó létrehoztam egy
-            <filename>run</filename> szkriptet, ezzel egy parancs kiadásával futtatható
-            a program.
+			A program futtatására az olvasó kényelmét szolgálandó létrehoztam
+			egy <filename>run</filename> szkriptet, ezzel egy parancs
+			kiadásával futtatható a program.
         </para>
         <para>
             A programot futtatva láthatjuk a sikló-kilövőt.
@@ -110,13 +117,15 @@
             </link>
         </para>
         <para>
-            Az életjáték bármelyik vírusnál nagyobb bénulást okozott az informatikában
-            az 1970-es években. Mindenki ezzel akart játszani, nézni a monitorokon a
-            program kimenetét, ezzel már-már bénulást okozva az akkori szamítógépes redszereknek,
-            melyet időosztással lehetett igénybe venni, elsősorban kutatási célokra.
+			Az életjáték bármelyik vírusnál nagyobb bénulást okozott az
+			informatikában az 1970-es években. Mindenki ezzel akart játszani,
+			nézni a monitorokon a program kimenetét, ezzel már-már bénulást
+			okozva az akkori szamítógépes redszereknek, melyet időosztással
+			lehetett igénybe venni, elsősorban kutatási célokra.
         </para>
         <para>
-            A John Conway-féle életjátékban nagyon egyszerű szabályok uralkodnak:
+			A John Conway-féle életjátékban nagyon egyszerű szabályok
+			uralkodnak:
         </para>
         <itemizedlist>
             <listitem><para>Minden sejt amelynek két vagy három szomszédja van, életben marad</para></listitem>
@@ -125,13 +134,15 @@
             <listitem><para>Ha egy üres cellának pontosan három élő sejt vesz körül, ott új sejt szülteik</para></listitem>
         </itemizedlist>
         <para>
-            A Qt már ismerős lehet, hiszen már a Mandelbrotos fejezetünkben
-            előkerült. Most ismét felélesztjük, és a John H. Conway féle
-            életjátékot fogjuk kipróbálni.
+			A Qt már ismerős lehet, hiszen már a Mandelbrotos fejezetünkben
+			előkerült. Most ismét felélesztjük, és a John H. Conway féle
+			életjátékot fogjuk kipróbálni.
         </para>
         <para>
-            Szokás szerint egyszerűen a mappába lépve a <filename>./run</filename> parancsot kiadva le fog fordulni és futtatva lesz a program.
-            Futás közbeni képeket alább találhat meg az olvasó.
+			Szokás szerint egyszerűen a mappába lépve a
+			<filename>./run</filename> parancsot kiadva le fog fordulni és
+			futtatva lesz a program.  Futás közbeni képeket alább találhat meg
+			az olvasó.
         </para>
         <figure>
             <title>Qt C++ életjáték</title>
@@ -165,9 +176,9 @@
             <link xlink:href="https://github.com/nbatfai/esport-talent-search">https://github.com/nbatfai/esport-talent-search</link>
         </para>
         <para>
-            A játék célja hogy pár perc játékidő után az egy E-Sport "profilt" állítson elő
-            a játékosról, próbálja megjósolni, hogy az adott játékosból mennyire lehet
-            jó E-sportoló.
+			A játék célja hogy pár perc játékidő után az egy E-Sport "profilt"
+			állítson elő a játékosról, próbálja megjósolni, hogy az adott
+			játékosból mennyire lehet jó E-sportoló.
         </para>
         <para>
             A játék során a lényeg hogy a Samu Entropy entrópia közepén
@@ -176,7 +187,8 @@
             más entrópiáknak, ezzel nehezítve a dolgunkat.
         </para>
         <para>
-            A programot kipróbálhatja bárki a következő parancsok kiadásával: (OpenCV-re szükségünk lesz)
+			A programot kipróbálhatja bárki a következő parancsok kiadásával:
+			(OpenCV-re szükségünk lesz)
         </para>
         <screen><![CDATA[$ git clone https://github.com/nbatfai/esport-talent-search
 $ cd esport-talent-search

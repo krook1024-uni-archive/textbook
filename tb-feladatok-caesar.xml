@@ -187,9 +187,8 @@
     <section>
         <title>C EXOR törő</title>
         <para>
-            <emphasis>
-                Írj egy olyan C programot, amely megtöri az első feladatban előállított titkos szövegeket!
-            </emphasis>
+			<emphasis> Írj egy olyan C programot, amely megtöri az első
+				feladatban előállított titkos szövegeket!  </emphasis>
         </para>
         <para>
             <emphasis role="strong">Megoldás forrása:</emphasis>
@@ -331,7 +330,8 @@
         <note>
             <title>Módosított kódcsipet</title>
             <para>
-                A következő kódcsipetet Bátfai Norbert készítette, és én módosítottam!
+				A következő kódcsipetet Bátfai Norbert készítette, és én
+				módosítottam!
             </para>
         </note>
         <programlisting language="c">
@@ -351,9 +351,10 @@
             pixelén, és számolja a piros színkomponenst.
         </para>
         <para>
-            Az olvasó kényelmének érdekében ismét létrehoztunk egy makefilet,
-            ami a tesztünket is lefuttatja, és ha minden jól megy, csak az eredményt
-            adja vissza. Próbáljuk is ki ezzel fordítani a programunkat:
+			Az olvasó kényelmének érdekében ismét létrehoztunk egy makefilet,
+			ami a tesztünket is lefuttatja, és ha minden jól megy, csak az
+			eredményt adja vissza. Próbáljuk is ki ezzel fordítani a
+			programunkat:
         </para>
         <screen>
             <![CDATA[$ make

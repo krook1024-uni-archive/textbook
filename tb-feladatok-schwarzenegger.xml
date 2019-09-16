@@ -14,27 +14,29 @@
             </link>
         </para>
         <para>
-            A TensorFlow egy nyílt forráskódú szabad szoftver, amit a Google is használ, illetve
-            fejleszt. A TensorFlow-val bárki egyszerűen végezhet mesterséges intelligenciához
-            kapcsolódó kísérleteket, kutatásokat.
+			A TensorFlow egy nyílt forráskódú szabad szoftver, amit a Google is
+			használ, illetve fejleszt. A TensorFlow-val bárki egyszerűen
+			végezhet mesterséges intelligenciához kapcsolódó kísérleteket,
+			kutatásokat.
         </para>
         <para>
-            Most mi is pár ilyet nézünk meg. A fejezet olvasása előtt nézzük meg és familiarizáljuk
-            magunkat a Bazel Build (<link xlink:href="https://bazel.build/">https://bazel.build/</link>)
-            rendszerrel, mely kelleni fog nekünk a C++-os TensorFlow
-            projektek fordításához.
+			Most mi is pár ilyet nézünk meg. A fejezet olvasása előtt nézzük
+			meg és familiarizáljuk magunkat a Bazel Build (<link
+				xlink:href="https://bazel.build/">https://bazel.build/</link>)
+			rendszerrel, mely kelleni fog nekünk a C++-os TensorFlow projektek
+			fordításához.
         </para>
         <para>
-            Az első program amit megtekintünk Pythonban nem csinál mást, csak
-            összeszoroz két számot neurális hálók segítségével. Ezt úgy képzeljük
-            el, mint C-ben a hello worldöt, tehát a legegyszerűbb programot, amit
-            el tudunk készíteni. Lássuk is a programot!
+			Az első program amit megtekintünk Pythonban nem csinál mást, csak
+			összeszoroz két számot neurális hálók segítségével. Ezt úgy
+			képzeljük el, mint C-ben a hello worldöt, tehát a legegyszerűbb
+			programot, amit el tudunk készíteni. Lássuk is a programot!
         </para>
 		<note>
 			<title>Módosított kódcsipet</title>
 			<para>
-                A következő kódcsipetet Bátfai készítette és én módosítottam (deprecated
-                szintaktikai korszerűsítése)!
+				A következő kódcsipetet Bátfai készítette és én módosítottam
+				(deprecated szintaktikai korszerűsítése)!
 			</para>
 		</note>
         <programlisting language="python">
@@ -54,7 +56,8 @@
             </mediaobject>
         </figure>
         <para>
-            Az <emphasis role="strong">MNIST</emphasis> egy kézírásfelismerő adatbázis, mely számok kézzel írt változatát képes felismerni.
+			Az <emphasis role="strong">MNIST</emphasis> egy kézírásfelismerő
+			adatbázis, mely számok kézzel írt változatát képes felismerni.
         </para>
         <figure>
             <title>Példák az MNIST adatbázisból</title>
@@ -71,7 +74,8 @@
 		<note>
 			<title>Átvett kódcsipet</title>
 			<para>
-                A következő kódcsipetet átvettem a tensorflow.org/tutorials oldalról!
+				A következő kódcsipetet átvettem a tensorflow.org/tutorials
+				oldalról!
 			</para>
 		</note>
         <programlisting language="python">
@@ -151,25 +155,30 @@ Epoch 5/5
         <note>
             <title>Módosított kódcsipet</title>
             <para>
-                A következő kódcsipetet a keras-team készítette és én módosítottam!
+				A következő kódcsipetet a keras-team készítette és én
+				módosítottam!
             </para>
         </note>
         <programlisting language="Python"><xi:include href="./files/svajci/deepd/deep_dream.py" parse="text" /></programlisting>
         <para>
-            A Keras deep dreamben mindenféle kábítószer használata nélkül tekintehetünk meg olyan példákat,
-            mint egy LSD trippen. A látvány egyszerre hátborzongató és különleges.
+			A Keras deep dreamben mindenféle kábítószer használata nélkül
+			tekintehetünk meg olyan példákat, mint egy LSD trippen. A látvány
+			egyszerre hátborzongató és különleges.
         </para>
         <para>
-            Ebben a fejezetben kitérnék a Python fejlesztés egyik kulcselemére, a virtuális
-            környezeketre (<emphasis>virutalenv, venv</emphasis>). A virtuális környezetek előnye,
-            hogy egy-egy program dependenciáit (könyvtárak, stb) nem kell globális, a root
-            felhasználóval telepítenünk, elég azt egy virtuális környezetben telepíteni, a projekt
-            mappáján belül. A legjobb az, hogy ezeket a letöltött dependenciákat nem kell
-            a verziókezelőnkkel kezeltetni, elég ha berakjuk őket célszerűen
-            egy <filename>requirements.txt</filename> fájlba, és bárki aki fejleszteni akarja a
-            projektünket, vagy dolgozni rajta, telepítheti, anélkül hogy rendszergazdai
-            jogosultságai lennének az adott gépen. Egy-egy könyvtár verziószámát is megadhatjuk,
-            akár a minimálist, akár a maximálist abból.
+			Ebben a fejezetben kitérnék a Python fejlesztés egyik kulcselemére,
+			a virtuális környezeketre (<emphasis>virutalenv, venv</emphasis>).
+			A virtuális környezetek előnye, hogy egy-egy program dependenciáit
+			(könyvtárak, stb) nem kell globális, a root felhasználóval
+			telepítenünk, elég azt egy virtuális környezetben telepíteni, a
+			projekt mappáján belül. A legjobb az, hogy ezeket a letöltött
+			dependenciákat nem kell a verziókezelőnkkel kezeltetni, elég ha
+			berakjuk őket célszerűen egy <filename>requirements.txt</filename>
+			fájlba, és bárki aki fejleszteni akarja a projektünket, vagy
+			dolgozni rajta, telepítheti, anélkül hogy rendszergazdai
+			jogosultságai lennének az adott gépen. Egy-egy könyvtár
+			verziószámát is megadhatjuk, akár a minimálist, akár a maximálist
+			abból.
         </para>
         <para>
             Itt látható néhány deep dreammel generált kép. Forrás:
@@ -230,23 +239,25 @@ $ source venv/bin/activate # Aktiváljuk a virtuális környezetet
     <section>
         <title>Minecraft-MALMÖ</title>
         <para>
-            A Minecraft-MALMÖ egy programozható ágens kiegészítő a Minecraft játékhoz.
-            A projekt GitHub oldala a következő címen érhető el:
-            <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>.
-            Ezen a címen találunk példaprogramokat is, valamint remek dokumentációt.
+			A Minecraft-MALMÖ egy programozható ágens kiegészítő a Minecraft
+			játékhoz.  A projekt GitHub oldala a következő címen érhető el:
+			<link
+				xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>.
+			Ezen a címen találunk példaprogramokat is, valamint remek
+			dokumentációt.
         </para>
         <para>
-            A Malmö telepítéséhez végezzük el a repóban javasoltakat, mely némi időt
-            igényelhet, hiszen a dependenciák közé tartozik a Boost C++ könyvtár,
-            és ennek Python interfésze. Ha megadatik az az áldás, hogy Ubuntu 16.04
-            vagy 18.04-et futtatunk, úgy használjuk a repón belül a
-            <filename>scripts/build.sh</filename> szkriptet, mely elvégzi helyettünk
-            a piszkos munkát.
+			A Malmö telepítéséhez végezzük el a repóban javasoltakat, mely némi
+			időt igényelhet, hiszen a dependenciák közé tartozik a Boost C++
+			könyvtár, és ennek Python interfésze. Ha megadatik az az áldás,
+			hogy Ubuntu 16.04 vagy 18.04-et futtatunk, úgy használjuk a repón
+			belül a <filename>scripts/build.sh</filename> szkriptet, mely
+			elvégzi helyettünk a piszkos munkát.
         </para>
         <para>
-            A Malmö előnye, hogy a Minecraftot nem kell megvegyük, hiszen tartalmaz egy
-            bináris változatot, amit bárki használhat, akinek feltett szándéka, hogy
-            ágenst programozzon Malmöben.
+			A Malmö előnye, hogy a Minecraftot nem kell megvegyük, hiszen
+			tartalmaz egy bináris változatot, amit bárki használhat, akinek
+			feltett szándéka, hogy ágenst programozzon Malmöben.
         </para>
     </section>
 </chapter>

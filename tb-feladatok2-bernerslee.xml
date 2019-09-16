@@ -13,15 +13,19 @@
 		</para>
         <itemizedlist>
             <listitem>
-                <para>C++: Benedek Zoltán, Levendovszky Tihamér Szoftverfejlesztés C++ nyelven </para>
+				<para>C++: Benedek Zoltán, Levendovszky Tihamér
+					Szoftverfejlesztés C++ nyelven </para>
             </listitem>
             <listitem>
-                <para>Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz programozóknak 5.0 I-II. </para>
+				<para>Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz
+					programozóknak 5.0 I-II. </para>
             </listitem>
             <listitem>
-                <para>Python: Forstner Bertalan, Ekler Péter, Kelényi Imre: Bevezetés a mobilprogramozásba. </para>
+				<para>Python: Forstner Bertalan, Ekler Péter, Kelényi Imre:
+					Bevezetés a mobilprogramozásba. </para>
                 <para>
-                    Gyors prototípus-fejlesztés Python és Java nyelven (35-51 oldal)
+					Gyors prototípus-fejlesztés Python és Java nyelven (35-51
+					oldal)
                 </para>
             </listitem>
         </itemizedlist>
@@ -207,7 +211,74 @@ hallgato = new Hallgato();
 		</para>
 		<para>
 			A következő fontos dolog amiről beszélnünk kell, az a konstruktorok
-			és a destruktorok.
+			és a destruktorok. Ahogyan a nevük is hordozza, ezek olyan
+			metódusok, amelyek egy adott objektum létrejöttekor, illetve
+			törlésükkor futnak le.
+		</para>
+		<para>
+			A konstruktor nevének meg kell egyeznie az osztály nevével,
+			visszatérési típusa nincsen. A szerepe, hogy egy objektumot
+			felkészít olyan adatokkal, amiket már tudunk a létrehozásakor.
+			Alább nézünk egy példát egy konstruktorra, illetve destruktorra.
+		</para>
+		<para>
+			A destruktor szerepe itt a C++-beli szerepével ellentétben
+			<emphasis role="strong">nem</emphasis> az ún. <emphasis>garbage
+				collection</emphasis>, avagy szemétgyűjtés, hanem az olyan
+			feladatok elvégzése, amelyeket szükséges az objektum törlődése
+			előtt elvégeznünk. Lefutásáról csak annyit érdemes feltételezni,
+			hogy az előtt fut le, hogy az objektum által lefoglalt terület
+			újrahasznosításra kerülne. Fontos, hogy a destruktor
+			<filename>protected, void</filename> és paraméter nélküli legyen.
+		</para>
+		<para>
+			Lássuk a példákat.
+		</para>
+		<programlisting language="java">
+			<![CDATA[
+public class Hallgato {
+	String nev;
+	String neptun_kod;
+	float tanulmanyi_atlag;
+	int osztondij;
+
+	public Hallgato(String nev, String neptun_kod) {
+		this.nev = nev;
+		this.neptun_kod = neptun_kod;
+	}
+
+	protected void finalize() {
+		osztondij = 0;
+	}
+}
+			]]>
+		</programlisting>
+		<para>
+			Tegyük fel, hogy a Hallgato osztályt szeretnénk továbbfejleszteni,
+			azonban olyan munkahelyen dolgozunk, ahol nincs hozzáférésünk,
+			autoritásunk, hogy ezt megtegyük. Egy dolog amit tehetünk, hogy
+			kiterjesztjük az osztályt, új mezőket és metódusokat helyezünk el
+			benne. Ilyenkor öröklődés megy végbe.
+		</para>
+		<para>
+			Az öröklődés lényege, hogy az új osztály "megörökli" az ős osztály
+			tulajdonságait, mezőit, metódusait. Lássunk erre is egy példát.
+		</para>
+		<programlisting language="java">
+			<![CDATA[
+public class Alumni extends Hallgato {
+	int graduation_year;
+}
+			]]>
+		</programlisting>
+		<para>
+			Itt az <classname>Alumni</classname> osztály a
+			<classname>Hallgato</classname> osztályra építkezve jön létre,
+			valamint tartalmaz egy extra <varname>graduation_year</varname>
+			mezőt is.
+		</para>
+		<para>
+			<emphasis role="strong">5. fejezet -- Kivételkezelés</emphasis>
 		</para>
 	</section>
 	<section>

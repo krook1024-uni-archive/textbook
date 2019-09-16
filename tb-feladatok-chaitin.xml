@@ -8,16 +8,17 @@
     <section>
         <title>Iteratív és rekurzív faktoriális Lisp-ben</title>
         <para>
-            A LISP a második legrégebbi magas szintű programozási nyelv a Fortran után.
-            A használatához nem kell mást tennünk, mint telepíteni egy Lisp futtató
-            programot, esetünkben, GNU/Linux alatt a <filename>clisp</filename> megteszi.
-            A programokat majd <computeroutput>clisp fájlnév.lisp</computeroutput> módon
-            kell futtatnunk.
+			A LISP a második legrégebbi magas szintű programozási nyelv a
+			Fortran után.  A használatához nem kell mást tennünk, mint
+			telepíteni egy Lisp futtató programot, esetünkben, GNU/Linux alatt
+			a <filename>clisp</filename> megteszi.  A programokat majd
+			<computeroutput>clisp fájlnév.lisp</computeroutput> módon kell
+			futtatnunk.
         </para>
         <para>
-            A LISP érdekessége, hogy a kifejezéseket nem a megszokott, C-s módon, hanem
-            prefix alakban kéri. Ez azt takarja, hogy például <code>(3 + 2)</code> helyett
-            azt írnánk, hogy <code>(+ 3 2)</code>.
+			A LISP érdekessége, hogy a kifejezéseket nem a megszokott, C-s
+			módon, hanem prefix alakban kéri. Ez azt takarja, hogy például
+			<code>(3 + 2)</code> helyett azt írnánk, hogy <code>(+ 3 2)</code>.
         </para>
         <para>
             Egy egyszerű LISP program a Hello, world! kiíratására így néz ki:
@@ -55,18 +56,20 @@ $ clisp reku.lisp
     <section>
         <title>Weizenbaum Eliza programja</title>
         <para>
-            A programot Joseph Weizenbaum tervezte az MIT-n, 1966-ban, és a célja
-            vele az volt, hogy a mai chatbotokhoz (pl. Cleverbot) hasonlót alkosson.
-            A program úgy működik, hogy tartalmaz sok-sok szót, kifejezést, és ezekre
-            mintaválaszokat, melybe behellyettesíti a user-től kapott inputot, enekk
-            hatására úgy látszik, valódi emberrel beszélkedünk.
+			A programot Joseph Weizenbaum tervezte az MIT-n, 1966-ban, és a
+			célja vele az volt, hogy a mai chatbotokhoz (pl. Cleverbot)
+			hasonlót alkosson.  A program úgy működik, hogy tartalmaz sok-sok
+			szót, kifejezést, és ezekre mintaválaszokat, melybe behellyettesíti
+			a user-től kapott inputot, enekk hatására úgy látszik, valódi
+			emberrel beszélkedünk.
         </para>
         <para>
-            A programot úgy futtathatjuk, ha lehúzzuk a következő weboldalról:
+			A programot úgy futtathatjuk, ha lehúzzuk a következő weboldalról:
             <link xlink:href="http://norvig.com/paip/README.html">
                 http://norvig.com/paip/README.html
             </link>
-            , majd a következő módon (abból a mappából, ahova kicsomagoltuk) elindítjuk:
+			, majd a következő módon (abból a mappából, ahova kicsomagoltuk)
+			elindítjuk:
         </para>
         <programlisting language="Lisp">
 <![CDATA[$ clisp
@@ -80,8 +83,8 @@ ELIZA>
     <section>
         <title>Gimp Scheme Script-fu: króm effekt</title>
         <para>
-            Írj olyan script-fu kiterjesztést a GIMP programhoz, amely megvalósítja a króm effektet egy
-            bemenő szövegre!
+			Írj olyan script-fu kiterjesztést a GIMP programhoz, amely
+			megvalósítja a króm effektet egy bemenő szövegre!
         </para>
         <para>
             Megoldás videó: <link xlink:href="https://youtu.be/OKdAkI_c7Sc">https://youtu.be/OKdAkI_c7Sc</link>
