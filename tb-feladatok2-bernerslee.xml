@@ -3,14 +3,20 @@
         <title>Helló, Berners-Lee!</title>
     </info>
     <section>
-        <title>Olvasónapló</title>
+		<title>Olvasónapló</title>
+		<para>
+			A "Helló, Berners-Lee!" c. fejezetben az alábbi könyveket dolgozzuk
+			fel. A fő szálunk egy Java és C++ összehasonlítás lesz, amit akár
+			rövidre zárhatnánk annyival, hogy a két nyelvben más a
+			memóriakezelés, azonban be kell látnunk, hogy a különbség nem
+			csupány ennyi.
+		</para>
         <itemizedlist>
             <listitem>
                 <para>C++: Benedek Zoltán, Levendovszky Tihamér Szoftverfejlesztés C++ nyelven </para>
             </listitem>
             <listitem>
-                <para>C++: Benedek Zoltán, Levendovszky Tihamér Szoftverfejlesztés C++ nyelven
-et al. Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz programozóknak 5.0 I-II. </para>
+                <para>Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz programozóknak 5.0 I-II. </para>
             </listitem>
             <listitem>
                 <para>Python: Forstner Bertalan, Ekler Péter, Kelényi Imre: Bevezetés a mobilprogramozásba. </para>
@@ -19,5 +25,135 @@ et al. Java: Nyékyné Dr. Gaizler Judit et al. Java 2 útikalauz programozókna
                 </para>
             </listitem>
         </itemizedlist>
-    </section>
+	</section>
+	<section>
+		<title>Java versus C++</title>
+		<para>
+			<emphasis role="strong">1. fejezet</emphasis>
+		</para>
+		<para>
+			A Java nyelv teljesen objektumorientált, azaz osztályokból
+			felépülő. Egy osztályt mezők és metódusok alkothatnak, az osztályok
+			pedig programokat. Nézzük is meg a legegyszerűbb Java programot.
+		</para>
+		<programlisting language="java">
+<![CDATA[public class Hello {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+		}
+	}
+]]>
+		</programlisting>
+		<para>
+			A Java nyelvben bevált szokás, hogy a fájlneveinket a benne
+			található osztályok nevével egyeztetjük össze, tehát a fenti
+			példaprogramot <filename>Hello.java</filename> néven mentsük el.
+		</para>
+		<para>
+			Bár a C++ nyelv is objektum-orientált, mégsem mondhatjuk, hogy a
+			szemlélete azonos lenne a Javával. Mint tudjuk, a legtöbb C program
+			C++ program is, és ezzel már találtunk is egy kivételhalmazt. Míg a
+			C++ enged változókat, függvényeket, eljárásokat létrehozni
+			osztályokon kívül is, Javában erre nincsen lehetőség.
+		</para>
+		<para>
+			A példaprogramon keresztül bemutatják a fordítás működését is
+			Javaban, mely szintén teljesen eltér a C++-étól. Míg a legtöbb
+			modern C++ fordító a C++ kódot gépi kódra fordítja, a Java
+			fordító bájtkódot hoz létre a JVM (Java Virtuális Gép) részére.
+		</para>
+		<para>
+			A Java kezdeti sikereit a weboldalakba építhető ún. applet-eknek
+			köszönhette. Ezek többségben egyszerű programok voltak, melyeket
+			manapság már nem használnak olyan széles körben.
+		</para>
+		<para>
+			A könyv ismerteti a változótípusokat, melyeket itt is megemlítünk,
+			hiszen egy nyelv jellemzése során ez fontos szempont. Itt nagy
+			eltérésről nem beszélhetünk a C++-szal szemben.
+		</para>
+		<itemizedlist>
+			<listitem><para>boolean -- logikai</para></listitem>
+			<listitem><para>char -- 16 bites Unicode karakter</para></listitem>
+			<listitem><para>byte -- 8 bites előjeles egész</para></listitem>
+			<listitem><para>short -- 16 bites előjeles egész</para></listitem>
+			<listitem><para>int -- 32 bites előjeles egész</para></listitem>
+			<listitem><para>long -- 64 bites előjeles egész</para></listitem>
+			<listitem><para>float -- 32 bites lebegőpontos</para></listitem>
+			<listitem><para>double -- 64 bites lebegőpontos</para></listitem>
+		</itemizedlist>
+		<para>
+			Konstansokat a Java nyelvben a final minősítővel adhatunk meg.
+		</para>
+		<para>
+			Ahogy a példaprogramban is látszik, a Java nyelvben a
+			<filename>class</filename> kulcsszóval hozhatunk létre
+			osztályt, az osztályokat pedig a <filename>new</filename>
+			operátorral példányosítjuk. Láthatóságtól függően az osztályban
+			található mezőket <filename>osztalyneve.mezoneve</filename> módon
+			érhetjük el és módosíthatjuk.
+		</para>
+		<para>
+			A Java nyelv kivételkezelése hasonló a C++-éhoz, itt is try-catch
+			blokkokat kell használnunk.
+		</para>
+		<para>
+			A könyv a grafikai programozás példájára az AWT könyvtárat hozza,
+			viszont ez manapság már deprecated. Véleményem szerint a legjobb,
+			ha az AWT helyett inkább a JavaFX könyvtárral ismerkedünk meg,
+			melyről már írtam az előző felvonásban, ugyanitt példaprogram is
+			megtalálható.
+		</para>
+		<para>
+			<emphasis role="strong">2. fejezet -- Az alapok</emphasis>
+		</para>
+		<para>
+			Hatalmas előnye a Java nyelvnek, hogy az
+			<filename>Unicode</filename> karakterkódolást részesíti előnyben az
+			<filename>ASCII</filename> helyett, ezáltal sokkal több karaktert
+			használhatunk a programkódban. Ez azt jelenti, hogy bármiféle
+			félelem nélkül használhatunk osztályok, változók, metódusok nevében
+			ékezetes karaktereket.
+		</para>
+		<para>
+			A Java nyelvben minden típus egy osztály is egyben. A legalapvetőbb
+			osztály az <filename>Object</filename> osztály, mindenki ebből
+			örököl.
+		</para>
+		<para>
+			A 2. fejezet további sorai ismertetik a primitív változótípusokat
+			(amelyeket már én is ismertettem), a változódeklarációkat,
+			tömbdeklarációkat. Itt azonban véleményem szerint annyira kevés
+			különbség van a C++-hoz képest, hogy felesleges tovább ragoznom.
+			Úgy is csak ugyanazt tudnám leírni, ami a könyvben is szerepel.
+		</para>
+		<para>
+			<emphasis role="strong">3. fejezet -- Vezérlés</emphasis>
+		</para>
+		<para>
+			A Java-ban két alapvető utasításfajta van, ezek a
+			kifejezés-utasítás, valamint a deklaráció-utasítás. Amennyiben
+			ezeket az utasításokat <filename><![CDATA[{}]]></filename> jelek
+			közé írjuk, úgy egy blokk jön létre.
+		</para>
+		<para>
+			A Java nyelvben vannak egyszerű és összetett elágazások. Egyszerű
+			utasítás az <filename>if</filename>-es szerkezetek, összetett
+			elágazás pedig a <filename>switch</filename>. Míg az előbbiben két
+			esetet különböztetünk meg (igaz/hamis), az utóbbiban akárhány
+			esetre felkészülhetünk.
+		</para>
+		<para>
+			Java-ban a ciklusok nagyon hasonlóak a C++-éhoz, itt is a
+			<filename>while, do-while, for</filename> ciklusokat használhatjuk.
+		</para>
+		<para>
+			<emphasis role="strong">4. fejezet -- Osztályok</emphasis>
+		</para>
+	</section>
+	<section>
+		<title>Python</title>
+		<para>
+		</para>
+	</section>
 </chapter>
