@@ -5,23 +5,74 @@
     <section>
         <title>OO szemlélet</title>
         <para>
-            A módosított polártranszformációs normális generátor beprogramozása Java nyelven. Mutassunk rá, hogy a mi természetes saját megoldásunk (az algoritmus egyszerre két normálist állít elő, kell egy példánytag, amely a nem visszaadottat tárolja és egy logikai tag, hogy van-e tárolt vagy futtatni kell az algot.) és az OpenJDK, Oracle JDK-ban a Sun által adott OO szervezés ua.!
+			A módosított polártranszformációs normális generátor beprogramozása
+			Java nyelven. Mutassunk rá, hogy a mi természetes saját megoldásunk
+			(az algoritmus egyszerre két normálist állít elő, kell egy
+			példánytag, amely a nem visszaadottat tárolja és egy logikai tag,
+			hogy van-e tárolt vagy futtatni kell az algot.) és az OpenJDK,
+			Oracle JDK-ban a Sun által adott OO szervezés ua.!
         </para>
         <para>
             https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
         </para>
         <para>
-            Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó: source/labor/polargen)
+			Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó:
+			source/labor/polargen)
         </para>
     </section>
     <section>
-        <title>Homokozó</title>
+		<title>Homokozó</title>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban tutorál Tóth Attila.
+            </para>
+        </caution>
         <para>
-            Írjuk át az első védési programot (LZW binfa) C++ nyelvről Java nyelvre, ugyanúgy működjön! Mutassunk rá, hogy gyakorlatilag a pointereket és referenciákat kell kiirtani és minden máris működik (erre utal a feladat neve, hogy Java-ban minden referencia, nincs választás, hogy mondjuk egy attribútum pointer, referencia vagy tagként tartalmazott legyen).
+			Írjuk át az első védési programot (LZW binfa) C++ nyelvről Java
+			nyelvre, ugyanúgy működjön! Mutassunk rá, hogy gyakorlatilag a
+			pointereket és referenciákat kell kiirtani és minden máris működik
+			(erre utal a feladat neve, hogy Java-ban minden referencia, nincs
+			választás, hogy mondjuk egy attribútum pointer, referencia vagy
+			tagként tartalmazott legyen).
         </para>
         <para>
-            Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a böngészőből GET-es kéréssel (például a böngésző címsorából) kapja meg azt a mintát, amelynek kiszámolja az LZW binfáját!
-        </para>
+			Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a
+			böngészőből GET-es kéréssel (például a böngésző címsorából) kapja
+			meg azt a mintát, amelynek kiszámolja az LZW binfáját!
+		</para>
+		<para>
+			Megoldása forrása: <link
+				xlink:href="https://github.com/krook1024/LZWBinFa-Servlet">https://github.com/krook1024/LZWBinFa-Servlet</link>
+		</para>
+		<para>
+			Általában nem vagyok híve a fejlesztői környezeteknek, amit lehet,
+			és egyszerűbb projekt, igyekszem puszta Vim-ben írni. Ennek
+			ellenére a megoldást az IntelliJ IDEA fejlesztői környezetben
+			készítettem el, hiszen ennek a környezetnek számos kényelmi
+			funkciója van.
+		</para>
+		<para>
+			A forrásokat a repón belül a
+			<filename>src/com/krook/binfa</filename> mappában találhatjuk meg.
+			Itt van a program lelke, az <filename>LZWBinFa</filename> osztály,
+			valamint a <filename>BinFaServlet</filename> osztály.
+		</para>
+		<para>
+			A <filename>BinFaServlet</filename> osztály végzi a kommunikációt a
+			klienssel, a <filename>javax.servlet</filename> könyvtárait
+			felhasználva. Az általunk írt osztály kiterjeszti a
+			<filename>HttpServlet</filename> osztályt, valamint felülírja a
+			<filename>doPost</filename> és <filename>doGet</filename>
+			metódusokat. Utóbbiban történik a lényeges számítás. Lényegében egy
+			az egyben ki lehet másolni az előző felvonásban taglalt C++
+			programból a megfelelő I/O részeket és ide elhelyezni.
+		</para>
+		<para>
+			A <filename>LZWBinFa</filename> osztály pedig magát a bináris fát építi
+			fel a megszokott módon. A forráskód egy az egyben az előző felvonásban
+			tárgyalt C++ verzió átirata, a pointerek nélkül, melyek Javában nem léteznek.
+		</para>
     </section>
     <section>
         <title>"Gagyi"</title>
