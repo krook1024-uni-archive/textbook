@@ -118,7 +118,10 @@
 		<para>
 			A Java nyelvben minden típus egy osztály is egyben. A legalapvetőbb
 			osztály az <filename>Object</filename> osztály, mindenki ebből
-			örököl.
+			örököl. Mivel a Java egy erősen típusos nyelv, a típuskonverziók
+			mindenhol jelen vannak. A nyelv minden összehasonlításnál megnézi,
+			hogy az összehasonlított elemek egy típushoz tartoznak-e, vagy
+			automatikus típuskonverzióval egy típusra konvertálhatók-e.
 		</para>
 		<para>
 			A 2. fejezet további sorai ismertetik a primitív változótípusokat
@@ -149,6 +152,58 @@
 		</para>
 		<para>
 			<emphasis role="strong">4. fejezet -- Osztályok</emphasis>
+		</para>
+		<para>
+			Az osztályok a legkisebb önálló egységek a Java nyelvben, valamint
+			a könyv legközpontibb alkotóeleme. A könyv szerzői nagyon nagy
+			hangsúlyt fektettek erre a fejezetre.
+		</para>
+		<para>
+			Ahogy az a fenti példaprogramban látszik, az osztályokat a
+			következőképpen hozhatjuk létre.
+		</para>
+		<programlisting>
+			<![CDATA[public class Hallgato {
+				String nev;
+				String neptun_kod;
+				float tanulmanyi_atlag;
+				int osztondij;
+				void osztondijEmel(int novekmeny) {
+					osztondij += novekmeny;
+				}
+			}
+			]]>
+		</programlisting>
+		<para>
+			A fenti példában kiválóan látszik, hogy miképp néz ki egy egyszerű
+			osztály, az itt megjelenő változókat <emphasis
+				role="strong">mező</emphasis>knek, a függvényeket, eljárásokat
+			pedig metódusnak nevezzük összefoglaló néven.
+		</para>
+		<para>
+			A könyv ír a metódusnevek túlterheléséről, ez a funkció elérhető
+			C++-ban. A jelentése, hogy több metódust elnevezhetünk ugyanúgy,
+			amennyiben a szignatúrájuk különbözik. Egy metódus szignatúráját a
+			paraméterek száma és típusa adja meg. A szignatúra a metódust
+			azonosítja.
+		</para>
+		<para>
+			Egy osztályt lehet példányosítani az alábbi módon;
+		</para>
+		<programlisting>
+			<![CDATA[hallgato = new Hallgato();]]>
+		</programlisting>
+		<para>
+			A könyv ír a láthatóságokról is. A Java nyelv láthatóságai a
+			következők lehetnek; <filename>public, private,
+				protected</filename>.  A public láthatóságú változókat el lehet
+			érni és módosítani bárhonnan, míg a private láthatóságú változók
+			nem érhetők el kívülről.  A protected változókat az öröklött
+			osztályok érhetik el és módosíthatják.
+		</para>
+		<para>
+			A következő fontos dolog amiről beszélnünk kell, az a konstruktorok
+			és a destruktorok.
 		</para>
 	</section>
 	<section>
