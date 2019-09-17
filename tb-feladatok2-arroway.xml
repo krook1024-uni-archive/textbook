@@ -12,13 +12,21 @@
 			hogy van-e tárolt vagy futtatni kell az algot.) és az OpenJDK,
 			Oracle JDK-ban a Sun által adott OO szervezés ua.!
         </para>
-        <para>
+		<para>
             https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
         </para>
         <para>
 			Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó:
 			source/labor/polargen)
         </para>
+        <para>
+            A megoldás forrása:
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/arroway/PolarGen.java" />
+            </textobject>
+        </programlisting>
     </section>
     <section>
 		<title>Homokozó</title>
@@ -110,6 +118,23 @@
 			ha nem követjük a Yoda conditions-t!
 			https://en.wikipedia.org/wiki/Yoda_conditions
         </para>
+        <para>
+            Gyakran előforduló hiba, hogy értékadó utasítást írunk le az if
+            szerkezet fejében összehasonlítás helyett. A Yoda conditions
+            használata erre kínál megoldás, miszerint fordított sorrendben
+            kell megszoknunk a programozást, így ha véletlen egy = jellel
+            kevesebbet írnánk, az kiderül fordítási időben, és nem kell
+            futásidőig várni, hogy a hiba felüsse a fejét.
+        </para>
+        <para>
+            Ha az alábbi programot próbáljuk fordítani, meg is kapjuk a
+            hibánkat, ismét, fordítási időben.
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/arroway/Yoda.java" />
+            </textobject>
+        </programlisting>
     </section>
     <section>
         <title>Kódolás from scratch </title>
