@@ -1,7 +1,7 @@
 /*
  * Java program a pí hexadecimális alakjának kiszámításására a BBP
  * algoritmussal.
- * Készült a következő cikk alapján:
+ * Készült a következo cikk alapján:
  *	 	https://www.davidhbailey.com//dhbpapers/bbp-alg.pdf
  *
  * Forrás:
