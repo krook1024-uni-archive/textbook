@@ -196,7 +196,7 @@
         </para>
         <programlisting language="java">
             <textobject>
-                <textdata fileref="./files/arroway/yoda.java" />
+                <textdata fileref="./files/arroway/Yoda.java" />
             </textobject>
         </programlisting>
     </section>
