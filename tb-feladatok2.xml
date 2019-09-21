@@ -14,4 +14,11 @@
             </para>
         </xi:fallback>
     </xi:include>
+    <xi:include href="tb-feladatok2-liskov.xml">
+        <xi:fallback>
+            <para>
+                <emphasis>XInclude: tb-feladatok2-liskov.xml file not found</emphasis>
+            </para>
+        </xi:fallback>
+    </xi:include>
 </part>

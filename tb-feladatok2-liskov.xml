@@ -7,5 +7,81 @@
     </info>
     <section>
         <title>Liskov helyettesítés sértése</title>
+        <para>
+            A Liskov helyettesítési elv megköveteli, hogy minden osztály legyen
+            helyettesíthető egy gyermek osztályával anélkül, hogy a program
+            helyes működése megváltozna.
+        </para>
+        <para>
+            Ez az elv egyébként része a <emphasis role="strong">S.O.L.I.D</emphasis>
+            alapelveknek, melyet Robert C. Martin, a clean code mozgalom atyja
+            alkotott meg. Ezek az alapelvek a kód minőségét hivatottak
+            javítani. Hogyha szeretnél erről részletesen olvasni, olvasd
+            el ezt a posztot:
+            <link xlink:href="https://www.refaktor.hu/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/">
+            ttps://www.refaktor.hu/tiszta-kod-5-resz-a-s-o-l-i-d-alapelvek/
+            </link>.
+        </para>
+        <caution>
+            <title>Módosított kódcsipet</title>
+            <para>
+                Az alábbi kódcsipetet a fenti blogposztból vettem át.
+            </para>
+        </caution>
+        <para>
+            Tekintsük ezt a példát, ahol egy blogmotorral dolgozunk és
+            a <classname>BlogPost</classname> osztályt kiegészítjük a
+            <classname>VideoBlogPost</classname> osztállyal, amely videók
+            megjelenítésére hivatott.
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/liskov/BlogPost.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            Amint látszik, a <classname>VideoBlogPost</classname> osztály
+            <function>getContent()</function> metódusa felülírja a szülőét,
+            méghozzá olyan módon, hogy ha a főprogramban az összes
+            <classname>BlogPost</classname> példányt kicserélnék
+            <classname>VideoBlogPost</classname> példányra, akkor bizony
+            problémába ütköznénk.
+        </para>
+        <para>
+            Bár viszonylag kevés blogmotor íródik C++-ban, lássuk
+            ebben a nyelvben is ugyanezt a példát.
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/liskov/LSP.cc" />
+            </textobject>
+        </programlisting>
+    </section>
+    <section>
+        <title>Szülő-gyerek</title>
+        <para>
+            Demonstráljuk c++ és java osztálydefiníción keresztül, hogy az
+            ősön keresztül csak az ős üzenetei küldhetők!
+        </para>
+    </section>
+    <section>
+        <title>Anti OO</title>
+        <para>
+            A BBP algoritmussal a Pi hexadecimális kifejtésének a 0.
+            pozíciótól számított 10^6, 10^7, 10^8 darab jegyét határozzuk meg
+            C, C++, Java és C# nyelveken és vessük össze a futási időket!
+        </para>
+    </section>
+    <section>
+        <title>Hello, Android!</title>
+        <para>
+            Élesszük fel az SMNIST for Humans projektet!
+        </para>
+    </section>
+    <section>
+        <title>Ciklomatikus komplexitás</title>
+        <para>
+            Számoltassuk ki valamelyik programunk ciklomatikus komplexitását!
+        </para>
     </section>
 </chapter>

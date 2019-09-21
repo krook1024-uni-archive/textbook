@@ -20,13 +20,26 @@
 			source/labor/polargen)
         </para>
         <para>
-            A megoldás forrása:
+            A feladat feladata az, hogy rámutasson az objektum orientált
+            programozás előnyeire, amire eddig konkrétan nem tértünk ki a
+            könyvben. A program megvalósítása után azt kell látnunk, hogy
+            nekünk, programozóknak a matematikai háttérrel alig kell
+            foglalkoznunk, és mégis viszonylag komplex problémák megoldására
+            vagyunk képesek programok segítségével. A kód alább látható.
         </para>
         <programlisting language="java">
             <textobject>
                 <textdata fileref="./files/arroway/PolarGen.java" />
             </textobject>
         </programlisting>
+        <para>
+            A polártranszformációs normális generátor egy pszeudórandomszámok
+            generálására kitalált aloritmus, amelynek magas effektivitást
+            tulajdonítanak a matematikusok, hiszen nem egy, hanem kettő
+            pszeudórandom szám jön létre egy lefutás során, hanem kettő, így
+            minden páros lefutásnál elegendő az előzőleg generált számokból a
+            másodikat visszaadni.
+        </para>
     </section>
     <section>
 		<title>Homokozó</title>
@@ -107,21 +120,72 @@
 			esetben az objektum által hordozott érték, a másikban meg az
 			objektum referenciája) "mélyebb" választ, írj Java példaprogramot
 			mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát
-			építsd a JDK Integer.java forrására3, hogy a 128-nál inkluzív
-			objektum
+			építsd a JDK Integer.java forrására, hogy a 128-nál inkluzív
+			objektum példányokat poolozza!
         </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/arroway/Gagyi.java" />
+            </textobject>
+        </programlisting>
+            <para>
+                A kifejezést olvasva a következőt láthatjuk:
+            </para>
+            <itemizedlist>
+                <listitem><para>
+                Ha <varname>a</varname> nagyobb és egyenlő mint <varname>b</varname>
+                </para></listitem>
+                <listitem>
+                <para>
+                és <varname>a</varname> kisebb egyenlő mint <varname>b</varname>
+                </para>
+                </listitem>
+                <listitem>
+                <para>
+                és <varname>a</varname> mégsem egyenlő <varname>b</varname>
+                </para>
+                </listitem>
+            </itemizedlist>
+            <para>
+                Ha belegondolunk, hogy tudnánk-e találni két olyan számot,
+                amelyre ezek a feltételek teljesülnek, hamar azt gondolhatjuk,
+                hogy ilyen számpár nem létezik és végtelen ciklust kapunk. A
+                tapasztalat azonban ettől különböző, a fenti kóddal nem kapunk
+                végtelen ciklust.
+            </para>
+            <para>
+                A magyarázat a jelenségre, hogy a Java nyelvben az
+                <classname>Integer</classname> osztály
+                <function>equals</function> függvénye nem egyformán dolgozik a
+                <function>==</function> operátorral. Míg az operátor azt nézi,
+                hogy a jobb és bal oldalak referenciája egyenlő e, az
+                <function>equals</function> függvény az értékeket hasonlítja
+                össze, az osztály <function>valueOf</function> függvényének
+                segítségével.
+            </para>
+            <para>
+                A tapasztalat az, hogy bármilyen 128-nál kisebb értékre a program
+                megáll, bármilyen 127-nél nagyobb étrékre pedig végtelen
+                ciklusba kerül.
+            </para>
+            <para>
+                Forrás:
+                <link xlink:href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html">https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html</link>
+                (tekerjünk a <function>valueOf</function>, valamint
+                <function>equals</function> részekhez).
+            </para>
     </section>
     <section>
         <title>Yoda</title>
         <para>
-			Írjunk olyan Java programot, ami java.lang.NullPointerEx-el leáll,
-			ha nem követjük a Yoda conditions-t!
-			https://en.wikipedia.org/wiki/Yoda_conditions
+			Írjunk olyan Java programot, ami java.lang.nullpointerex-el leáll,
+			ha nem követjük a yoda conditions-t!
+			https://en.wikipedia.org/wiki/yoda_conditions
         </para>
         <para>
             Gyakran előforduló hiba, hogy értékadó utasítást írunk le az if
             szerkezet fejében összehasonlítás helyett. A Yoda conditions
-            használata erre kínál megoldás, miszerint fordított sorrendben
+            használata erre kínál megoldást, miszerint fordított sorrendben
             kell megszoknunk a programozást, így ha véletlen egy = jellel
             kevesebbet írnánk, az kiderül fordítási időben, és nem kell
             futásidőig várni, hogy a hiba felüsse a fejét.
@@ -132,7 +196,7 @@
         </para>
         <programlisting language="java">
             <textobject>
-                <textdata fileref="./files/arroway/Yoda.java" />
+                <textdata fileref="./files/arroway/yoda.java" />
             </textobject>
         </programlisting>
     </section>
@@ -140,17 +204,42 @@
         <title>Kódolás from scratch </title>
 		<para>
 			Induljunk ki ebből a tudományos közleményből:
-			http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf és csak
-			ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus
-			megvalósítását!
+            <link xlink:href="http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf">
+			http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf
+            </link>
+            és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus
+            megvalósítását!
         </para>
         <para>
-			Megoldás forrása: <link
-				xlink:href="https://github.com/krook1024/BBP">https://github.com/krook1024/BBP</link>
+            A BBP algoritmus a pí értékének, valamint <filename>n.</filename>
+            jegyeinek gyors kiszámítására született algoritmus. Az első program
+            magát a Pí szám értékét fogja kiszámítani, míg a második képes lesz
+            az n. helyiértéken álló szám hexadecimális értékének megmondására.
         </para>
-        <para>
-			A BBP algoritmus a pí jegyeinek gyors kiszámítására született
-			algoritmus.
-        </para>
+        <caution>
+            <title>Saját kódcsipet</title>
+            <para>
+                Az alábbi kódcsipetet magam készítettem.
+            </para>
+        </caution>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/arroway/BBP.java" />
+            </textobject>
+        </programlisting>
+        <caution>
+            <title>Átvett kódcsipet</title>
+            <para>
+                Az alábbi kódcsipetet a következő forrásból vettem át:
+                <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei">
+                https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei
+                </link>
+            </para>
+        </caution>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/arroway/BBPHexa.java" />
+            </textobject>
+        </programlisting>
     </section>
 </chapter>
