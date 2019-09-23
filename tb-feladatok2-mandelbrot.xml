@@ -1,0 +1,97 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Mandelbrot!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Reverse engineering UML osztálydiagram</title>
+        <para>
+            Az UML osztálydiagrammok kezdetben tervezésre voltak szánva,
+            viszont sok programozó workflow-ja ennek éppen a fordítottja,
+            vagyis először programoznak, aztán dokumentálnak. Ennek
+            következtében kialakult a szokás, hogy reverse engineering
+            jelleggel készítünk UML osztálydiagrammokat, vagyis akkor, mikor
+            már a forráskód készen van.
+        </para>
+        <para>
+            Számos olyan eszköz van, amely képes forráskódból
+            osztálydiagrammokat generálni, az előző felvonásban például az
+            Umbrello nevű programot használtuk, azonban most valami mást fogunk
+            kipróbálni, névszerint a <link
+            xlink:href="http://perso.ensta-paristech.fr/~kielbasi/tikzuml/index.php?lang=en">
+            TikZ-UML</link> csomagot a <link
+            xlink:href="https://www.latex-project.org/"> LaTeX</link>
+            leírónyelvben belül. Ez mind szabad szoftver.
+        </para>
+        <para>
+            Az első védési programhoz, az <filename>LZWBinFá</filename>hoz
+            tartozó osztálydigram itt látható.
+        </para>
+        <figure>
+            <title>LZWBinFa UML osztálydiagramm TeX-ben</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/uml.png" width="100%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+        <para>
+            Véleményem szerint TeX-ben sokkal szebb diagrammok készíthetők,
+            mint a generáló programokkal, ami nem véletlen, hiszen a TeX
+            egy igen népszerű typesetting nyelv, ami jelen van a nyomdákban,
+            de legfőbb tudományos publikációk során használatos.
+        </para>
+        <para>
+            Az ábra forráskódja a következőképp nézz ki.
+        </para>
+        <programlisting language="tex">
+            <textobject>
+                <textdata fileref="./files/mandelb2/uml.tex" />
+            </textobject>
+        </programlisting>
+        <para>
+            Amint látjuk, a <filename>LaTeX</filename> szintaxisa egyáltalán
+            nem nehéz, könnyen emészthető és könnyen írható, arról nem
+            beszélve, hogy gyönyörű dokumentumokat kapunk, melynek minőségét
+            semmilyen WYSIWYG szerkesztővel nem lehet megközelíteni.
+        </para>
+    </section>
+    <section>
+        <title>Forward engineering UML osztálydiagram</title>
+        <para>
+            Ebben a fejezetben megnézzük az UML eredeti rendeltetését,
+            miszerint előre megtervezzük az osztályainkat és ebből
+            generálunk forráskódot.
+        </para>
+        <para>
+            Az ötlet a koncepció mögött az, hogy a programozó miután
+            megtervezte az osztályokat, már csak a lényges részeket kell, hogy
+            kitöltse, és nem kell időt vesztegetni az osztályok, változók,
+            metódusok definíciójával.
+        </para>
+    </section>
+    <section>
+        <title>Egy esettan</title>
+        <para>
+            BME C++ könyv 14. fejezetét (427-444 elmélet; 445-469 esettan)
+            dolgozzuk fel!
+        </para>
+    </section>
+    <section>
+        <title>BPMN</title>
+        <para>
+            Rajzoljunk le egy tevékenységet BPMN-ben!
+        </para>
+    </section>
+    <section>
+        <title>TeX UML</title>
+        <para>
+            LaTeX-ben például a <filename>tikz-uml</filename> csomaggal
+            készíthetünk UML diagrammokat, erről rögtön a csokor első
+            feladatában látható is egy példa.
+        </para>
+    </section>
+</chapter>
+

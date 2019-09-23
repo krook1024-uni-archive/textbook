@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[magyar]{babel}
+\usepackage{tikz-uml}
+
+\pdfsuppresswarningpagegroup=1
+\setlength{\parindent}{0em} % A bekezedések elott nem hagy ures helyet
+\pagenumbering{gobble} % Kikapcsolja az oldalszámokat
+
+\begin{document}
+
+\begin{figure}[htpb]
+\begin{center}
+\begin{tikzpicture}[scale=1, transform shape]
+    \begin{umlpackage}[x=0, y=0]{LZWBinFa}
+        \umlclass{LZWBinFa}
+        {
+            - fa : Csomopont* \\
+            - melyseg : int \\
+            - atlagosszeg : int \\
+            - szorasosszeg : double \\
+            \# gyoker : Csomopont \\
+            \# maxMelyseg : int \\
+            \# atlag : double \\
+            \# szoras : double
+        }
+        {
+            + LZWBinFa() <<contructor>> \\
+            + $\sim$ LZWBinFa() <<destructor>> \\
+            + operator<< (b : char) \\
+            + operator<< (os : std::ostream\&, bf : LZWBinFa\&) : std::ostream\& <<friend>> \\
+            + kiir() \\
+            + kiir(os : std::ostream\&) \\
+            + getMelyseg() : int \\
+            + getAtlag() : double \\
+            + getSzoras() : double \\
+            -- LZWBinFa( : const LZWBinFa\&) <<constructor>> \\
+            -- operator= (: const LZWBinFa\& ) : LZWBinFa\& \\
+            -- kiir(elem : Csomopont*, os : std::ostream\&) \\
+            -- szabadit(elem : Csomopont*) \\
+            \# rmelyseg(elem : Csomopont*) \\
+            \# ratlag(elem : Csomopont*) \\
+            \# rszoras(elem : Csomopont*)
+        }
+
+        \umlclass[x=4, y=-7]{LZWBinFa::Csomopont}
+        {
+            -- betu : char \\
+            -- balNulla : Csomopont* \\
+            -- jobbEgy : Csomopont* \\
+        }
+        {
+            + Csomopont(b : char) <<contructor>> \\
+            + $\sim$ Csomopont() <<destructor>> \\
+            + const nullasGyermek() : Csomopont* \\
+            + const egyesGyermek() : Csomopont* \\
+            + ujNullasGyermek(gy : Csomopont*) : Csomopont* \\
+            + ujEgyesGyermek(gy : Csomopont*) : Csomopont* \\
+            + getBetu() : char \\
+            -- Csomopont(const Csomopont\&) <<contructor>>
+        }
+    \end{umlpackage}
+\end{tikzpicture}
+\end{center}
+\caption{UML osztálydiagramm TeX-ben}%
+\label{fig:uml}
+\end{figure}
+
+\end{document}
