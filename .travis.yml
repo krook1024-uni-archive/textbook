@@ -27,7 +27,9 @@ language: docbook
 install:
 - curl -L https://git.io/fhj4c | sudo bash
 
-script: make travis
+script:
+- ./tools/replace_accents.sh
+- make travis
 
 before_deploy:
 - git config --local user.name "krook1024"
