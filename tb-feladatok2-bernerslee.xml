@@ -284,6 +284,81 @@ public class Alumni extends Hallgato {
 	<section>
 		<title>Python</title>
 		<para>
+            A Pythont 1990-ben alkotta meg Guido von Rossum. A könyv írásának
+            idejében még csak prototipizálásra használták, viszont manapság
+            már sokkal szélesebb körökben elterjedt a nyelv, nem is csoda,
+            hiszen nagyon könnyen elsajátítható nyelvről van szó.
 		</para>
+        <para>
+            Specifikációkat nézve interpreteres szkriptnyelvről beszélhetünk.
+            A program futtatása során nincs szükség se fordításra, se
+            linkelésre, mely egy korszerű számítógépen meggyorsítja a
+            fejlesztés folyamatát. A nyelv magas szintű adattípusokat használ,
+            emiatt a benne írt kódok sokkal rövidebbek, mint a velük ekvivalens
+            C++ vagy Java programok.
+        </para>
+        <para>
+            Fontos különbség még a C++-hoz és Javához képest, hogy a Pythonban
+            a kódcsoportosítás alapját az indentation adja, tehát nagyon fontos,
+            hogy a tabulátorokat hogyan helyezzük el. Cserébe viszont nincsen
+            szükség <![CDATA[{}]]> jelek használatára.
+        </para>
+        <para>
+            Ennyi bevezető után lássunk egy egyszerű Python3 programot.
+        </para>
+        <programlisting language="python">
+            <textobject>
+                <textdata fileref="./files/bernerslee/elso.py" />
+            </textobject>
+        </programlisting>
+        <para>
+            Figyeljük meg a legelső sorban szereplő úgynevezett <emphasis
+            role="bold">shebang</emphasis> sztringet. Beszéltünk róla, hogy
+            a Python interpreteres nyelv, ez a sor a rendszert tájékoztatja,
+            hogy a környezetnek megfelelően a python3 interpretert használja.
+        </para>
+        <para>
+            Ettől eltekintve a kód nem szorul magyarázásra, egyszerűen
+            írható és olvasható. Nem muszáj követnünk az OOP paradigmát,
+            csak azért ilyen a példaprogram, hogy lássunk ilyet is.
+        </para>
+        <para>
+            A nyelv leggyakoribb adattípusai a következők:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    számok: egész, lebegőpontos, komplex
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    sztringek: megadhatók aposztrófok között
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                   ennesek (tuples): gyűjtemények
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    lista: különböző típusú elemek rendezett listája
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    szótár (dict): kulcs-érték párok
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            A nyelv számos funkciója példákon keresztül:
+        </para>
+        <programlisting language="python">
+            <textobject>
+                <textdata fileref="./files/bernerslee/peldak.py" />
+            </textobject>
+        </programlisting>
 	</section>
 </chapter>
