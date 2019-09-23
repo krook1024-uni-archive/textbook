@@ -16,6 +16,16 @@
             már a forráskód készen van.
         </para>
         <para>
+            Az UML specifikációja viszonylag nagy terjedelmű, viszont ezt nem
+            is szükséges ismernünk. Az osztálydiagrammok jelölése a következő
+            rendszere a következőképp néz ki: van egy három részre bontott
+            téglalapunk, a legfelső részben az osztály neve van.  A következő
+            részben a mezők, majd alattuk a metódusok találhatók. A publikus
+            adattagok jelölője a <filename>+</filename>, a priváté a
+            <filename>-</filename>, a protected láthatóságú adattagokat pedig a
+            <filename>#</filename> azonosítja.
+        </para>
+        <para>
             Számos olyan eszköz van, amely képes forráskódból
             osztálydiagrammokat generálni, az előző felvonásban például az
             Umbrello nevű programot használtuk, azonban most valami mást fogunk
@@ -70,6 +80,26 @@
             megtervezte az osztályokat, már csak a lényges részeket kell, hogy
             kitöltse, és nem kell időt vesztegetni az osztályok, változók,
             metódusok definíciójával.
+        </para>
+        <para>
+            Ebben a példában az Eclipsere épülő Papyrus programot fogjuk
+            használni az UML tervezéshez és kódgeneráláshoz. Az Eclipset
+            telepíthetük Arch Linuxon például a
+        </para>
+        <screen>
+            <![CDATA[$ pacman -S eclipse-common eclipse-cpp eclipse-java]]>
+        </screen>
+        <para>
+            parancs kiadásával. Ezután telepítsük a Papyrust is az Eclipse
+            IDE-n belül az utasítások alapján: <link
+            xlink:href="https://www.eclipse.org/papyrus/">
+            https://www.eclipse.org/papyrus/</link>.
+        </para>
+        <para>
+            A tervezés elkezdéséhez kiváló walk-through leírás található a
+            dokumentációban. Ez a következő linken érhető el: <link
+            xlink:href="https://wiki.eclipse.org/Papyrus/Codegen/CppHelloWorld">
+            https://wiki.eclipse.org/Papyrus/Codegen/CppHelloWorld</link>.
         </para>
     </section>
     <section>
