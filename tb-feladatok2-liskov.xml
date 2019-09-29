@@ -126,7 +126,7 @@ error: compilation failed]]>
             A teszt eredményei a következőképp alakultak;
         </para>
         <figure>
-            <title>PiBBP Benchmark</title>
+            <title>PiBBP Benchmark (a kevesebb jobb)</title>
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="./pictures/bbpbench.png" width="100%" />
@@ -145,7 +145,11 @@ error: compilation failed]]>
                 </imageobject>
             </mediaobject>
         </figure>
-
+        <para>
+            A számok azt mutatják, hogy a C, ami nem objektum orientált
+            nyelv, jobban teljesített, mint az objektum orientált nyelvek
+            többsége.
+        </para>
     </section>
     <section>
         <title>Hello, Android!</title>
@@ -200,7 +204,7 @@ error: compilation failed]]>
             <title>SMNISTforHumans</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="./pictures/fh1.png" width="100%" />
+                    <imagedata fileref="./pictures/fh1.png" width="70%" />
                 </imageobject>
             </mediaobject>
         </figure>
@@ -208,7 +212,7 @@ error: compilation failed]]>
             <title>SMNISTforHumans váltakozó háttérszín</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="./pictures/fh2.png" width="100%" />
+                    <imagedata fileref="./pictures/fh2.png" width="70%" />
                 </imageobject>
             </mediaobject>
         </figure>
