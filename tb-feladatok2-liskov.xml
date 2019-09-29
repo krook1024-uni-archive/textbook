@@ -103,16 +103,115 @@ error: compilation failed]]>
     <section>
         <title>Anti OO</title>
         <para>
-            A BBP algoritmussal a Pi hexadecimális kifejtésének a 0.
+            A <link
+            xlink:href="https://www.davidhbailey.com/dhbpapers/bbp-alg.pdf">BBP
+            algoritmussal</link> a Pi hexadecimális kifejtésének a 0.
             pozíciótól számított 10^6, 10^7, 10^8 darab jegyét határozzuk meg
             C, C++, Java és C# nyelveken és vessük össze a futási időket!
         </para>
+        <para>
+            A korábban tárgyalt BBP algoritmusok lefuttatásával fogjuk
+            benchmarkolni a C, C++, Java és C# nyelveket. Az implementációk
+            forrásai a következő linkről származnak:
+            <link
+            xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apas03.html?fbclid=IwAR3u80hqfGIVqCAKbpV-3PqH6P4cnfat7uYvNwa7JxWR44UnelERpb6RLfs#sebesseg">https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apas03.html?fbclid=IwAR3u80hqfGIVqCAKbpV-3PqH6P4cnfat7uYvNwa7JxWR44UnelERpb6RLfs#sebesseg</link>.
+        </para>
+        <para>
+            A forrásokat egy picit átalakítottam, hogy automatizálhatóak
+            legyenek a tesztek, azaz hogy ne a forrásokban kelljen a
+            <filename>d</filename> változót állítani, hanem parancssori
+            argumentumként kapják meg.
+        </para>
+        <para>
+            A teszt eredményei a következőképp alakultak;
+        </para>
+        <figure>
+            <title>PiBBP Benchmark</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/bbpbench.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Akit pedig a számok érdekelnek, a következő táblázatot
+            tanulmányozza;
+        </para>
+        <figure>
+            <title>PiBBP Benchmark</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/bbptable.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+
     </section>
     <section>
         <title>Hello, Android!</title>
         <para>
-            Élesszük fel az SMNIST for Humans projektet!
+            Élesszük fel az <link
+            xlink:href="https://gitlab.com/nbatfai/smnist/tree/master/forHumans/SMNISTforHumansExp3/app/src/main">SMNIST
+            for Humans</link> projektet!
         </para>
+        <caution>
+            <title>Tutorált</title>
+            <para>
+                Ebben a feladatban Racs Tamás tutorált!
+            </para>
+        </caution>
+        <para>
+            Megoldás forrása:
+            <link xlink:href="https://github.com/krook1024/SMNISTforHumans">
+            https://github.com/krook1024/SMNISTforHumans</link>
+        </para>
+        <para>
+            Ehhez a feladathoz szükségünk lesz az Android Studióra, ami
+            az IntellIJ platformra épülő Android fejlesztői környezet.
+            Fontos, hogy amennyiben nem áll rendelkezésünkre Androidos telefon,
+            avagy kényelmesebbnek találjuk, ha a programot a számítógépen
+            tesztelhetjük, telepítésnél válasszuk ki az emulátor opciót is!
+            Ez a varázsló az első indításnál megjelenik.
+        </para>
+        <figure>
+            <title>Android Studio telepítés</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/sdkinst.png" width="100%" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+        <para>
+            A forráskódban hamar megtalálhatjuk a csipeteket, amik
+            az alkalmazás színeiért felelnek. Egyrészt a
+            <filename>colors.xml</filename> fájlt kell megtalálnunk, ebben
+            szerkeszthetjük például a felső sáv színet, majd a
+            <filename>SurfaceView.java</filename> fájlban a váltakozó
+            háttér színeit állíthatjuk be, ezen túl még például az apróságokat
+            is, mint a szegélyek és egyebek.
+        </para>
+        <para>
+            Az én szememnek a <link
+            xlink:href="https://www.nordtheme.com/docs/colors-and-palettes">Nord
+            színséma</link> nagyon kedvező, ezért én erre a színsémára
+            állítottam be az alkalmazást is. Képernyőképek következnek.
+        </para>
+        <figure>
+            <title>SMNISTforHumans</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/fh1.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>SMNISTforHumans váltakozó háttérszín</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/fh2.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>Ciklomatikus komplexitás</title>
