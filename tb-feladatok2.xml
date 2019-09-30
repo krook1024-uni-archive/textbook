@@ -28,5 +28,11 @@
             </para>
         </xi:fallback>
     </xi:include>
-
+    <xi:include href="tb-feladatok2-chomsky.xml">
+        <xi:fallback>
+            <para>
+                <emphasis>XInclude: tb-feladatok2-mandelbrot.xml file not found</emphasis>
+            </para>
+        </xi:fallback>
+    </xi:include>
 </part>
