@@ -8,8 +8,9 @@
     <section>
         <title>Encoding</title>
         <para>
-            Fordítsuk le és futtassuk a Javat tanítok könyv MandelbrotHalmazNagyító.java forrását úgy, hogy a
-            fájl nevekben és a forrásokban is meghagyjuk az ékezetes betűket!
+            Fordítsuk le és futtassuk a Javat tanítok könyv
+            MandelbrotHalmazNagyító.java forrását úgy, hogy a fájl nevekben és
+            a forrásokban is meghagyjuk az ékezetes betűket!
         </para>
         <para>
             <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/adatok.html">
@@ -27,22 +28,16 @@
             kódolással vannak kódolva, ezt a következő parancs kiadásával
             hozhatjuk helyre, feltéve, hogy a megfelelő könyvtárban vagyunk.
         </para>
-        <screen><![CDATA[
-
-$ mkdir utf
-$ find . -type f -exec iconv -f latin1 -t utf-8 "{}" -o utf/"{}" \;
-]]>
+        <screen><![CDATA[$ mkdir utf
+$ find . -type f -exec iconv -f latin1 -t utf-8 "{}" -o utf/"{}" \;]]>
         </screen>
         <para>
             Ezután az utf mappában a fájlneveket kézzel kell helyrehoznunk:
             <filename>MandelbrotHalmazNagy?t?.java</filename> ->
             <filename>MandelbrotHalmazNagyító.java</filename>.
         </para>
-        <screen><![CDATA[
-
-$ javac MandelbrotHalmazNagyító.java
-$ java MandelbrotHalmazNagyító
-]]>
+        <screen><![CDATA[$ javac MandelbrotHalmazNagyító.java
+$ java MandelbrotHalmazNagyító]]>
         </screen>
         <para>
             És ezzel kész is vagyunk. A következő látvány tárul elénk:
@@ -71,8 +66,10 @@ $ java MandelbrotHalmazNagyító
     <section>
         <title>Paszigráfia Rapszódia LuaLaTeX vizualizáció</title>
         <para>
-            Lásd vis_prel_para.pdf! Apró módosításokat eszközölj benne, pl.
-            színvilág, még erősebb 3D-s hatás!
+            Lásd <link
+            xlink:href="https://gitlab.com/nbatfai/pasigraphy-rhapsody/blob/master/para/docs/vis_prel_para.pdf?fbclid=IwAR2eTHDU5iTrIk6QWcywLiEb3tun0cJEq3XzImOyZMQEgurTQU4fRBiI35I">vis_prel_para.pdf</link>!
+            Apró módosításokat eszközölj benne, pl.  színvilág, még erősebb
+            3D-s hatás!
         </para>
     </section>
     <section>
@@ -81,4 +78,4 @@ $ java MandelbrotHalmazNagyító
 
         </para>
     </section>
-k</chapter>
+</chapter>
