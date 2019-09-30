@@ -72,6 +72,12 @@ $ java MandelbrotHalmazNagyító]]>
             3D-s hatás!
         </para>
         <para>
+            Megoldás forrása:
+            <link
+            xlink:href="https://github.com/krook1024/pasigraphy-rhapsody">
+            https://github.com/krook1024/pasigraphy-rhapsody</link>
+        </para>
+        <para>
             A LaTeX-es dokumentumok fordításához érdemes telepítenünk a
             <filename>latexmk</filename> csomagot. A frissebb verziók már
             támogatjuk a <filename>-lualatex</filename> kapcsolót is, ami most
@@ -152,8 +158,6 @@ $ java MandelbrotHalmazNagyító]]>
             Ezeket a színeket fogjuk kicserélni, a pár feladattal előtti Nord
             színséma színeire. Ehhez viszont új színeket kell definiálnunk a
             <filename>tex</filename> fájlban.
-        </para>
-        <para>
             Ezen kívül a jobb 3D hatás érdekében némi árnyékokat is bevetünk,
             ez megnöveli a fordításra szánt időt, viszont véleményem szerint
             sokkal jobban néznek ki így az ábrák.
