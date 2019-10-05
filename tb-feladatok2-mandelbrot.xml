@@ -101,6 +101,45 @@
             xlink:href="https://wiki.eclipse.org/Papyrus/Codegen/CppHelloWorld">
             https://wiki.eclipse.org/Papyrus/Codegen/CppHelloWorld</link>.
         </para>
+        <para>
+            Hogyha kattingatásssal létrehoztuk az osztálydiagrammokat,
+            valami ilyesmit kellene, hogy kapjunk:
+        </para>
+        <figure>
+            <title>FW engineering UML osztálydiagramm</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/uml1.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ezután próbáljuk meg kibogáraszni a Eclipse eszköztárából
+            a <emphasis role="strong">Generate code</emphasis> opciót,
+            és indítsuk el. Ez létre fog hozni nekünk egy új C++
+            projektet, ami megfelel annak, amit lerajzolgattunk.
+        </para>
+        <figure>
+            <title>FW engineering C++ kód generálás</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/uml2.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>FW engineering C++ kód generálás</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/uml3.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A generált kódot már futtathatjuk is, vagy fejleszthetjük
+            akár tovább. Véleményem szerint az ilyen kattingatással csak
+            drága időt veszünk el önmagunktól...
+        </para>
     </section>
     <section>
         <title>Egy esettan</title>
@@ -108,15 +147,105 @@
             BME C++ könyv 14. fejezetét (427-444 elmélet; 445-469 esettan)
             dolgozzuk fel!
         </para>
+        <para>
+            Az esettanulmány az UML tervezés előnyeit próbálja megmutatni.  A
+            történet, hogy van egy cég, aki számítógépeket és alkatrészeket
+            árul, és az ő számukra kell egy alkalmazást készíteni, ami
+            nyilvántartja az alkatrészeket és a konfigurációkat.  Továbbá cél
+            az is, hogy a jövőben minél egyszerűbben kiegészíthető koncepciót
+            alkossunk.
+        </para>
+        <para>
+            A megoldást esetünkben egy C++ könyvtár (library) segítségével
+            oldották meg, hiszen így felhasználható anélkül is, hogy kiadnák a
+            forráskódját.
+        </para>
+        <para>
+            Ez a létrehozott keretrendszer képes kezelni elemi, vagy összetett
+            termékeket, egyszerűen úgy, hogy a terméket reprezentáló osztályban
+            van egy termékeket tároló vektor, ami tartalmazza az ő
+            alkatrészeit, amik szintén a termék osztály példányai.
+        </para>
+        <para>
+            Az osztályok UML osztálydiagrammjai szerint a következőképpen
+            néz ki:
+        </para>
+        <figure>
+            <title>C++ könyv esettan</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/bmecpp.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            A program egyszerű felépítésű szövegfájlokból képes beolvasni
+            adatokat, és ezeket reprezentálja ebben a bizonyos
+            adatszerkezetben, amiről beszéltünk.
+        </para>
     </section>
     <section>
         <title>BPMN</title>
         <para>
             Rajzoljunk le egy tevékenységet BPMN-ben!
         </para>
+        <para>
+            Ehhez a feladathoz kiváló segítséget nyújtott nekem a <link
+            xlink:href="https://demo.bpmn.io/new">bpmn.io</link> webapplkáció.
+        </para>
+        <para>
+            Az alábbi BPMN példa azt mutatja be, hogy mi történhet,
+            amennyiben <emphasis>éhes vagyok</emphasis>.
+        </para>
+        <figure>
+            <title>BPMN tevékenység</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/bpmn.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Az ábrát egyszerűen tudjuk értelmezni, de ehhez nyújtok némi
+            segítséget;
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    A vékony körvonalú kör a <emphasis
+                    role="strong">tevékenység kezdetét</emphasis> jelöli.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A téglalapra hasonlító síkidomok a <emphasis
+                    role="strong">feladatok</emphasis>at jelölik.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A rombuszba zárt kör egy úgynevezett <emphasis
+                    role="strong">kapu</emphasis>. Ez a változat megfelel a
+                    <emphasis role="strong">megengedő vagy</emphasis>nak, míg a
+                    rombuszba zárt X a kizáró vagy megfelelője.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                   A vastag körvönalú kör a <emphasis
+                   role="strong">tevékenység</emphasis> vége.
+                </para>
+            </listitem>
+        </itemizedlist>
     </section>
     <section>
         <title>TeX UML</title>
+        <note>
+            <title>Összevont feladat</title>
+            <para>
+                Ezt a feladatot összevontam a csokor első feladatával.
+            </para>
+        </note>
         <para>
             LaTeX-ben például a <filename>tikz-uml</filename> csomaggal
             készíthetünk UML diagrammokat, erről rögtön a csokor első
