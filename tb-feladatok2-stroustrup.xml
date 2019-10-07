@@ -1,0 +1,91 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Stroustrup!</title>
+    </info>
+    <section>
+        <title>JDK osztályok</title>
+        <para>
+            Írjunk olyan Boost C++ programot (indulj ki például a fénykardból)
+            amely kilistázza a JDK összes osztályát (miután kicsomagoltuk az
+            src.zip állományt, arra ráengedve)!
+        </para>
+        <para>
+            A JDK forráskódját megszerezhetjük például az alábbi parancsok
+            kiadásával (Linux alatt):
+        </para>
+        <screen>
+<![CDATA[$ wget https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz
+$ tar -zxvf openjdk-13_linux_x64_bin.tar.gz
+$ mv jdk-13/lib/src.zip .
+$ unzip src.zip]]>
+        </screen>
+        <para>
+            Ha minden rendben van, akkor most van egy <filename>src</filename>
+            mappánk, ami tartalmazza a JDK forrásait. A következő dolog,
+            amire szükségünk lesz, az a Boost C++ könyvtárak, amit telepíthetünk
+            (Arch Linux alatt) például a következő parancs kiadásával:
+        </para>
+        <screen>
+<![CDATA[$ pacman -S boost boost-libs]]>
+        </screen>
+        <para>
+            Ezután már a könyv repójának a
+            <filename>files/stroustrup/JDK_Classes</filename> mappájában
+            található <filename>Makefile</filename> segítségével egyszerűen
+            fordítható a programunk.
+        </para>
+        <para>
+            A forráskód működése egyszerű: egy vektorba beolvassuk az
+            összes fájlt, ami a bizonyos <filename>src</filename> mappában van,
+            majd belenézünk az összesbe, és keressünk a
+            <filename>class</filename> kulcssszót. Amennyiben találunk ilyet,
+            akkor azt tároljuk és legvégül kiíratjuk.
+        </para>
+        <programlisting language="C++">
+            <textobject>
+                <textdata
+                fileref="./files/stroustrup/JDK_Classes/jdk_classes.cc"/>
+            </textobject>
+        </programlisting>
+    </section>
+    <section>
+        <title>Másolo-mozgató szemantika</title>
+        <para>
+            Kódcsipeteken (copy és move ctor és assign) keresztül vesd össze a
+            C++11 másoló és a mozgató szemantikáját, a mozgató konstruktort
+            alapozd a mozgató értékadásra!
+        </para>
+    </section>
+    <section>
+        <title>Hibásan implementált RSA törése</title>
+        <para>
+            Készítsünk betű gyakoriság alapú törést egy hibásan implementált
+            RSA kódoló:
+        </para>
+        <para>
+            <link xlink:href="
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf">
+            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf
+            </link>
+            (71-73 fólia)
+        </para>
+        <para>
+             által készített titkos szövegen.
+        </para>
+    </section>
+    <section>
+       <title>Változó argumentumszámú ctor</title>
+       <para>
+           Készítsünk olyan példát, amely egy képet tesz az alábbi projekt
+           Perceptron osztályának bemenetére és a Perceptron ne egy értéket,
+           hanem egy ugyanakkora méretű „képet” adjon vissza.  (Lásd még a 4
+           hét/Perceptron osztály feladatot is.)
+       </para>
+    </section>
+    <section>
+        <title>Összefoglaló</title>
+        <para>
+            Az előző 4 feladatból írj egy 1 oldalas bemutató "esszé szöveget"!
+        </para>
+    </section>
+</chapter>
