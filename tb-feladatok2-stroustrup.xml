@@ -38,8 +38,12 @@ $ unzip src.zip]]>
             A forráskód működése egyszerű: egy vektorba beolvassuk az
             összes fájlt, ami a bizonyos <filename>src</filename> mappában van,
             majd belenézünk az összesbe, és keressünk a
-            <filename>class</filename> kulcssszót. Amennyiben találunk ilyet,
-            akkor azt tároljuk és legvégül kiíratjuk.
+            <filename>class</filename> kulcssszót kiegészítve a fájl nevével.
+            Amennyiben találunk ilyet, akkor azt tároljuk és legvégül
+            kiíratjuk. A trükk, hogy mivel a Java konvenció azt mondja,
+            hogy az osztály nevének egyeznie kell a fájl nevével, csak az olyan
+            fájlokat számoljuk, amik azt az osztályt tartalmazzák, amiknek
+            mondják magukat.
         </para>
         <programlisting language="C++">
             <textobject>
@@ -47,6 +51,22 @@ $ unzip src.zip]]>
                 fileref="./files/stroustrup/JDK_Classes/jdk_classes.cc"/>
             </textobject>
         </programlisting>
+        <para>
+            Egy példa kimenet itt látható:
+        </para>
+        <screen>
+<![CDATA[$ ./jdk_classes
+...
+AgentLoadException (file: "/home/b1/src/jdk.attach/com/sun/tools/attach/AgentLoadException.java")
+AttachPermission (file: "/home/b1/src/jdk.attach/com/sun/tools/attach/AttachPermission.java")
+AttachOperationFailedException (file: "/home/b1/src/jdk.attach/com/sun/tools/attach/AttachOperationFailedException.java")
+AttachProvider (file: "/home/b1/src/jdk.attach/com/sun/tools/attach/spi/AttachProvider.java")
+HotSpotAttachProvider (file: "/home/b1/src/jdk.attach/sun/tools/attach/HotSpotAttachProvider.java")
+HotSpotVirtualMachine (file: "/home/b1/src/jdk.attach/sun/tools/attach/HotSpotVirtualMachine.java")
+AttachProviderImpl (file: "/home/b1/src/jdk.attach/sun/tools/attach/AttachProviderImpl.java")
+VirtualMachineImpl (file: "/home/b1/src/jdk.attach/sun/tools/attach/VirtualMachineImpl.java")
+There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
+        </screen>
     </section>
     <section>
         <title>Másolo-mozgató szemantika</title>
@@ -63,8 +83,8 @@ $ unzip src.zip]]>
             RSA kódoló:
         </para>
         <para>
-            <link xlink:href="
-            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf">
+            <link
+            xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf">
             https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf
             </link>
             (71-73 fólia)
