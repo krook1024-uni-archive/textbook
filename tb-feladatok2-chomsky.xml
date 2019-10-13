@@ -54,13 +54,237 @@ $ java MandelbrotHalmazNagyító]]>
     <section>
         <title>OOCWC lexer</title>
         <para>
-
+            Izzítsuk be az OOCWC-t és vázoljuk a <link
+            xlink:href="https://github.com/nbatfai/robocar-emulator/blob/master/justine/rcemu/src/carlexer.ll">
+            https://github.com/nbatfai/robocar-emulator/blob/master/justine/rcemu/src/carlexer.ll</link>
+            lexert és kapcsolását a programunk OO struktúrájába!
+        </para>
+        <para>
+            Az OOCWC-t beizzítani nem nehéz, viszont időigényes, és mi pedig
+            lusták vagyunk. Éppen ezért elkészítettem egy Docker konténert
+            neki, aminek segítségével bármikor futtatni tudunk egy Ubuntu
+            környezetet, ami tartalmazza ezt a projektet.
+        </para>
+        <para>
+            A környezet úgy lett beállítva, hogy VNC szervert futtat, ezáltal
+            elérhető a böngésző címsorából, tehát nem igényel extra
+            szoftvert a telepítése.
+        </para>
+        <para>
+            A Docker képfájl (image) futtatásához szükségünk lesz magára
+            a Dockerre, és a boot2docker programra (de csak ha nem GNU/Linuxot
+            futtatunk), de ezen kívül semmi másra. Most nem kell
+            vesződnünk a millió függőség, a Boost, stb. telepítésével.
+            Az imaget egyszerűen futtassuk a következő parancs kiadásával:
+        </para>
+        <screen>
+<![CDATA[$ sudo docker run -p 6080:80 -v /dev/shm:/dev/shm krook1024/oocwc-on-ubuntu
+]]>
+        </screen>
+        <para>
+            Ez a parancs kéri a Dockert, hogy nyissa 6080-as portot
+            közvetítse a virtuális gép 80-as portjára és csatolja a
+            <filename>/dev/shm</filename> eszközt a virtuális eszközhöz
+            ugyanerre az útvonalra, majd klónozza és futtassa a
+            <filename>krook1024/oocwc-on-ubuntu</filename> repót.
+        </para>
+        <para>
+            A letöltendő anyag méret ~800MB, viszont ezzel még mindig jobban
+            járunk, mintha magunk fordítanánk le a Boost könyvtárakat és
+            telepítenénk a többi függőséget, időben legalábbis biztosan.
         </para>
     </section>
     <section>
         <title>Paszigráfia Rapszódia OpenGL full screen vizualizáció</title>
         <para>
+            <emphasis role="strong">Megoldás forrása: </emphasis> <link
+            xlink:href="https://github.com/krook1024/pasigraphy-rhapsody">
+            https://github.com/krook1024/pasigraphy-rhapsody</link>
+        </para>
+        <para>
+            A Paszigráfia Rapszódia OpenGL program a PaRa nyelvet vizualizálja
+            térben, OpenGL segítségével. A programot futtathatjuk az általam
+            mellékelt Makefile segítségével, ha leklónoztuk a repót és
+            beléptünk a <filename>para/docs/OpenGL</filename> mappába.
+        </para>
+        <para>
+            Az általam elvégzett módosítások a következőek:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    Nord színséma implementációja az eredeti helyett
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    VIM-billentyűk (hjkl) támogatása a WASD mellett
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            A színek módósításához keressük meg az összes
+            <function>glColor3f</function> hívást a programban. Ezt megtehetjük
+            mondjuk a <filename>grep</filename> nevű programmal.
+        </para>
+        <screen><![CDATA[$ cat para12.cpp | grep glColor3f | tr -d ' '
+$ grep glColor3f para12.cpp | tr -d ' '
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(0.818f,.900f,0.824f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(.82f,.15f,.15f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(0.15f,.29f,.82f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(.309f,.820f,.150f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(.804f,.820f,.150f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(.614f,0.150f,0.820f);
+glColor3f(.188f,0.209f,0.190f);
+glColor3f(.114f,.108f,.156f);
+glColor3f(.9,.9,.4);
+glColor3f(.7,.8,.3);
+glColor3f(.7,.5,.3);
+glColor3f(.3,.3,.2+f*.1);
+        ]]>
+        </screen>
+        <para>
+            Itt láthatjuk, hogy milyen színeket használ a program. Én először
+            összegyűjtöttem az egyforma színeket, majd
+            <emphasis role="strong">nevesített konstans</emphasis>okká változtattam őket:
+        </para>
+        <programlisting language="c++">
+<![CDATA[
+#define COLOR_LINE      0.188f, 0.209f, 0.190f
+#define COLOR_BLACK     0.114f, 0.108f, 0.156f
+#define COLOR_BLUE      0.15f,  0.29f,  0.82f
+#define COLOR_BLUE_L    0.818f, 0.900f, 0.824f
+#define COLOR_YELLOW    0.70f,  0.80f,  0.30f
+#define COLOR_YELLOW_D  0.70f,  0.50f,  0.30f
+#define COLOR_RED       0.82f,  0.15f,  0.15f
+#define COLOR_GREEN     0.309f, 0.820f, 0.150f
+#define COLOR_BROWN     0.804f, 0.820f, 0.150f
+#define COLOR_BROWN_L   0.90f,  0.90f,  0.40f
+#define COLOR_PURPLE    0.61f,  0.15f,  0.82f
+]]>
+        </programlisting>
+        <para>
+            Ezek a színek RGB% formátumban vannak tárolva, azaz az első
+            komponensük a vörös (0.0-1.0), majd a zöld és végül a kék aránya.
+        </para>
+        <para>
+            Ezután fogtam a Nord színséma színeit, kicseréltem a definícióban
+            lévő színeket, majd futtattam a programot. A végeredmény
+            a következő volt:
+        </para>
+        <figure>
+            <title>Paszigráfia Rapszódia OpenGL</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/pasigl.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
 
+        <para>
+            Az irányítás módósításához pedig tanulmányozzuk a <function>void
+            keyboard()</function> eljárást.
+        </para>
+        <programlisting language="C++">
+<![CDATA[
+void keyboard ( unsigned char key, int keyx, int keyy )
+{
+        if ( key == '0' ) {
+                selectedCube=0;
+        } else if ( key == '1' ) {
+                selectedCube=1;
+        } else if ( key == '2' ) {
+                selectedCube=2;
+        } else if ( key == '3' ) {
+                selectedCube=3;
+        } else if ( key == '4' ) {
+                selectedCube=4;
+        } else if ( key == '5' ) {
+                selectedCube=5;
+        } else if ( key == '6' ) {
+                selectedCube=6;
+        } else if ( key == 't' ) {
+                transp = !transp;
+        } else if ( key == 'p' ) {
+                pic = !pic;
+        } else if ( key == 'm' ) {
+                mousec = !mousec;
+        } else if ( key == 'o' ) {
+                mousefc = !mousefc;
+        } else if ( key == 'f' ) {
+                fullscr = !fullscr;
+                if ( fullscr )
+                        glutFullScreen();
+                else {
+                        glutReshapeWindow ( width, height );
+                        glutPositionWindow ( 0,0 );
+                }
+        } else if ( key == 'w' || key == 'k' ) {
+                w();
+        } else if ( key == 's' || key == 'j' ) {
+                s();
+        } else if ( key == 'a' || key == 'h' ) {
+                a+=2.0f;
+        } else if ( key == 'd' || key == 'l' ) {
+                a-=2.0f;
+        } else if ( key == 'q' || key == 'J' ) {
+                yy-=1.0f;
+                y-=1.0f;
+        } else if ( key == 'e' || key == 'K' ) {
+                yy+=1.0f;
+                y+=1.0f;
+        } else if ( key == 'r' ) {
+
+                start();
+
+                glMatrixMode ( GL_PROJECTION );
+                glLoadIdentity();
+                gluPerspective ( fovy, ( float ) width / ( float ) height, .1f, 1000.0f );
+                glMatrixMode ( GL_MODELVIEW );
+
+        } else if ( key == '-' ) {
+                ++fovy;
+
+                glMatrixMode ( GL_PROJECTION );
+                glLoadIdentity();
+                gluPerspective ( fovy, ( float ) width / ( float ) height, .1f, 1000.0f );
+                glMatrixMode ( GL_MODELVIEW );
+
+        } else if ( key == '+' ) {
+                --fovy;
+
+                glMatrixMode ( GL_PROJECTION );
+                glLoadIdentity();
+                gluPerspective ( fovy, ( float ) width / ( float ) height, .1f, 1000.0f );
+                glMatrixMode ( GL_MODELVIEW );
+
+        } else if ( key == 27 ) {
+
+                glutDestroyWindow ( wid );
+
+        }
+
+        if ( glutGetWindow() )
+                glutPostRedisplay();
+
+}
+]]>
+        </programlisting>
+        <para>
+            Láthatjuk, hogy az irányítás módosítása is egyszerű feladat;
+            egy-egy if ág tartozik a billentyűkhöz. Ahhoz, hogy a VIM
+            billentyűit (hjkl) engedélyezzük, csak annyit kellett tegyünk,
+            hogy hozzápárosítottuk őket a WASD gombok megfelelőjéhez.
         </para>
     </section>
     <section>
@@ -183,9 +407,67 @@ $ java MandelbrotHalmazNagyító]]>
         </figure>
     </section>
     <section>
-        <title>Perceptron osztály</title>
+        <title>l337.d1c7</title>
         <para>
-
+            Ebben a fejezetben egy OO Java programot készítünk el, amely
+            megvalósítja a <link
+            xlink:href="https://simple.wikipedia.org/wiki/Leet">
+            Leet-kódolást</link>.
         </para>
+        <para>
+            <emphasis role="strong">A program forrása:</emphasis>
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/chomsky2/L337d1c7/Dict.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            A program fordítható a <filename>make</filename> parancs
+            kiadásával és futtatható a <filename>java Dict</filename>
+            parancs kiadásával.
+        </para>
+        <screen><![CDATA[
+$ make clean && make && java Dict
+Hello, world!
+|-|3|_|_0, \/\/012|_|>!
+
+Hello, world!
+|-|3|_|_0, \/\/012|_|]!
+
+Hello, world!
+|-|3|_|_0, Ш012|_|]!
+]]>
+        </screen>
+        <para>
+            Ahogyan látszik, a program igyekszik különböző kimenetet
+            adni különböző futásokkal, ennek az az oka, hogy
+            a karaktercserénél random választja ki, hogy mire cserélje
+            le az adott karaktert.
+        </para>
+        <para>
+            A fordításra használt karaktereket egy <filename>HashMap</filename>
+            adatszerkezetben (szótárban) tároljuk. Ennek a méretének a
+            meghatározására sajnos nincsen primitív módszer, annyi azonban
+            biztos hogy bejegyzésenként 8 bájt biztosan elmegy. Ehhez még hozzá
+            kell vegyük a kulcs-érték párok sztringjeinek a hosszát, amely
+            hossznak a kiszámítására
+            a következő képletet találtam:
+        </para>
+        <screen>
+<![CDATA[(bytes) = 8 * (int) ((((no chars) * 2) + 45) / 8)]]>
+        </screen>
+        <para>
+            Forrás: <link
+            xlink:href="https://stackoverflow.com/questions/31206851/how-much-memory-does-a-string-use-in-java-8">
+            stackoverflow</link>.
+        </para>
+        <para>
+            Ezeket együtt véve (a fenti számoló függvény segítségével) én a
+            következő értéket kaptam:
+        </para>
+        <screen>
+<![CDATA[Size of the HashMap: 3288 bytes]]>
+        </screen>
     </section>
 </chapter>
