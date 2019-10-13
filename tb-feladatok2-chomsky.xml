@@ -108,7 +108,7 @@ $ java MandelbrotHalmazNagyító]]>
             </mediaobject>
         </figure>
         <para>
-            A fordítás <![CDATA[&]]> futtatás jelenleg még nincs automatizálva,
+            A fordítás és futtatás jelenleg még nincs automatizálva,
             viszont nagyon egyszerű és kényelmes, egyszerűen ennyi;
         </para>
         <screen>
