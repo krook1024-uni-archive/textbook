@@ -19,10 +19,10 @@ public:
 protected:
     bool ***racsok;
     int szelesseg, magassag;
-    // Megmutatja melyik rács az aktuális: [rácsIndex][][]
+    // Megmutatja melyik rÃ¡cs az aktuÃ¡lis: [rÃ¡csIndex][][]
     int racsIndex;
-    // A sejttér két egymást követõ t_n és t_n+1 diszkrét idõpillanata
-    // közötti valós idõ.
+    // A sejttÃ©r kÃ©t egymÃ¡st kÃ¶vetÃµ t_n Ã©s t_n+1 diszkrÃ©t idÃµpillanata
+    // kÃ¶zÃ¶tti valÃ³s idÃµ.
     int varakozas;
     void idoFejlodes();
     int szomszedokSzama(bool **racs,
