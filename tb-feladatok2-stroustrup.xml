@@ -69,7 +69,7 @@ There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
         </screen>
     </section>
     <section>
-        <title>Másolo-mozgató szemantika</title>
+        <title>Másoló-mozgató szemantika</title>
         <para>
             Kódcsipeteken (copy és move ctor és assign) keresztül vesd össze a
             C++11 másoló és a mozgató szemantikáját, a mozgató konstruktort
@@ -87,10 +87,7 @@ There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
             xlink:href="https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf">
             https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog2_3.pdf
             </link>
-            (71-73 fólia)
-        </para>
-        <para>
-             által készített titkos szövegen.
+            (71-73 fólia) által készített titkos szövegen.
         </para>
     </section>
     <section>
@@ -103,9 +100,51 @@ There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
        </para>
     </section>
     <section>
+        <title>
+            Egyszerű <filename>String</filename> osztály elkészítése
+        </title>
+        <para>
+            Ebben a feladatban egy egyszerű String osztályt fogunk
+            elkészíteni C++-ban.
+        </para>
+        <para>
+            <emphasis role="strong">A megoldás forrása:</emphasis>
+        </para>
+        <para>
+            String.cpp:
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/stroustrup/String/src/String.cpp"/>
+            </textobject>
+        </programlisting>
+        <para>
+            Main.cpp:
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/stroustrup/String/src/Main.cpp" />
+            </textobject>
+        </programlisting>
+        <para>
+            Mit gondolunk, a felső definíciók alapján mi a lesz a
+            <filename>Main</filename> program kimenete?
+        </para>
+        <para>
+            Ha azt gondoltuk, hogy
+        </para>
+        <screen>
+<![CDATA[Hello, world!
+Hello, world.]]>
+        </screen>
+        <para>
+            akkor helyesen válaszoltunk.
+        </para>
+    </section>
+    <section>
         <title>Összefoglaló</title>
         <para>
-            Az előző 4 feladatból írj egy 1 oldalas bemutató "esszé szöveget"!
+            Az előző 5 feladatból írj egy 1 oldalas bemutató "esszé szöveget"!
         </para>
     </section>
 </chapter>
