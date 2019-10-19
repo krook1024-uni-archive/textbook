@@ -75,6 +75,23 @@ There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
             C++11 másoló és a mozgató szemantikáját, a mozgató konstruktort
             alapozd a mozgató értékadásra!
         </para>
+        <para>
+            Ebben a feladatban a C++ másoló és mozgató szemantikáját hasonlítjuk
+            össze, úgy, hogy előbb megírjuk a másoló konstruktort, majd erre
+            alapozzuk mozgató konstruktort is.
+        </para>
+        <para>
+            Ehhez létrehozunk egy <filename>Data</filename> osztályt, ami
+            mindössze egy <function>n</function> számot fog tartalmazni.
+        </para>
+        <para>
+            <emphasis role="strong">Megoldás forrása:</emphasis>
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/stroustrup/Copy_Assign/src/ctor.cpp" />
+            </textobject>
+        </programlisting>
     </section>
     <section>
         <title>Hibásan implementált RSA törése</title>

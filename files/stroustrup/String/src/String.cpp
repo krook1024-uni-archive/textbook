@@ -14,13 +14,13 @@ String::String (const char* str) {
         exit (1);
 }
 
-String& String::operator= (const String& otherString) {
-    if (this != &otherString) {
+String& String::operator= (const String& rhs) {
+    if (this != &rhs) {
         delete[] buf;
-        length = otherString.length;
+        length = rhs.length;
         buf = new char [length+1];
         if ( nullptr != buf )
-            std::copy (otherString.buf, otherString.buf + length, buf);
+            std::copy (rhs.buf, rhs.buf + length, buf);
         else
             exit (2);
 
