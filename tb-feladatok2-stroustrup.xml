@@ -106,6 +106,121 @@ There are 15314 classes in JDK (sources dir: "/home/b1/src").]]>
             </link>
             (71-73 fólia) által készített titkos szövegen.
         </para>
+        <para>
+            Az RSA egy nyíltkulcsú titkosító algoritmus, ami azt jelenti, hogy
+            a használója rendelkezik egy nyilvános és egy privát kulcssal,
+            melyek között ugyan van matematikai összefüggés, viszont szinte
+            teljeséggel kizárt, hogy egy nyilvános kulcs ismeretében
+            meghatározzuk a privát kulcsot.
+        </para>
+        <para>
+            A lényeg egyszerűen, hogy az üzeneteinket a publikus kulccsal
+            enkódoljuk, dekódolni pedig a privát kulccsal lehet.
+        </para>
+        <para>
+            Az RSA titkosítás működési elvéről olvashatunk pl. a <link
+                xlink:href="https://hu.wikipedia.org/wiki/RSA-elj%C3%A1r%C3%A1s">
+                megfelelő Wikipédia oldalon </link>, viszont ezen feladat célja
+            nem az, hogy pontosan megismerjük és tanulmányozzuk az RSA kódolást,
+            hanem hogy törjünk fel egy hibásan kódolt RSA sztringet, és vonjuk
+            le a következtetést, miszerint felesleges saját titkosítási
+            módszereken gondolkoznunk, valószínűleg úgy sem tudnánk olyat
+            kitalálni, ami a gyakorlatban jól felhasználható lenne. Ez a
+            matematikusok dolga, hagyjuk meg nekik.
+        </para>
+        <para>
+            Nézzük röviden az algoritmus működését:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    Választunk két nagy prímszámot, <code>p</code>-t és
+                    <code>q</code>-t.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kiszámítjuk ezek szorzatát, <code>N</code>-t.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kiszámítjuk az Euler-féle fí-fgv. értékét <code>N</code>-ben.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Választunk egy olyan e számot, amely egytől nagyobb és
+                    relatív prím <code>fí(N)</code> értékéhez.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A d számot kiszámoljuk úgy, hogy a <code>d*e === 1 modulo
+                    fí(N)</code> kongruenciaegyenlet teljesüljön.
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            A fenti lépések után megkapjuk a privát és publikus kulcsainkat.
+        </para>
+        <para>
+            Javában nagy számokkal egyszerűen dolgozhatunk a BigInteger könyvtár
+            behúzása után.
+        </para>
+        <para>
+            A fólián a következő kód szerepelt:
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/stroustrup/RSA/RSA.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            Ha ezt lefuttatjuk, akkor meg is kapjuk a hibás algoritmussal
+            létrehozott (de működő) kulcsokat:
+        </para>
+        <screen>
+        <![CDATA[$ java RSA
+Méret bitekben:
+2019
+p_i
+33063079619837438[...]
+p_i hexa
+464e522ab5bea5d12[...]
+q_i
+34967883984989515[...]
+m_i
+11561459323329467[...]
+z_i
+11561459323329467[...]
+d_i
+73577701873973646[...]
+e_i
+90052108496451452[...]]]>
+        </screen>
+        <para>
+            A következő lépésben futtassuk az RSA2 programot:
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/stroustrup/RSA/RSA2.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            Itt végül visszakapjuk a <code>tisztaSzoveg</code> sztringben tárolt
+            tiszta szöveg (hibásan) RSA-titkosított, majd visszafejtett
+            alakját.
+        </para>
+        <figure>
+            <title>Hibásan implementált RSA törése</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/pasta.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+
     </section>
     <section>
        <title>Változó argumentumszámú ctor</title>
