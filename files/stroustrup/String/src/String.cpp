@@ -4,12 +4,11 @@
 #include    <iostream>
 #include    <cstring>
 
-String::String (const char* str) {
-    this -> length = std::strlen(str);
-    this -> buf = new char[length + 1];
-
+String::String (const char* str)
+    : length(std::strlen(str)), buf(new char [length+1])
+{
     if ( nullptr != buf )
-        std::copy (str, str + this->length, this->buf);
+        std::copy (str, str + length, buf);
     else
         exit (1);
 }

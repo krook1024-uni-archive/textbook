@@ -312,5 +312,146 @@ Hello, world.]]>
         <para>
             Az előző 5 feladatból írj egy 1 oldalas bemutató "esszé szöveget"!
         </para>
+        <para>
+            Az előző öt feladatból személy szerint három fő tanulságot sikerült
+            levonnom.
+        </para>
+        <orderedlist>
+            <listitem>
+                <para>
+                    <emphasis role="strong">Rule of zero / Rule of three / rule of five</emphasis>
+                </para>
+                <para>
+                    Nullás szabályról akkor beszélünk, amennyiben egy osztálynak
+                    nincs semmije a heapen, nem tartalmaz konstruktort, sem
+                    destruktort. A trükk ilyenkor, hogy olyan adattagokat
+                    használunk, amik már maguk is támogatják a
+                    másolást/mozgatást, így nem nekünk kell megírni a
+                    másoló/mozgató konstruktorokat, és a másoló/mozgató
+                    szemantikát, hanem hagyatkozunk a már készen levőkre.
+                    Példán keresztül a legegyszerűbb megmutatni, lássuk is:
+                </para>
+                <programlisting language="c++">
+<![CDATA[
+class Data {
+private:
+    int number;
+    char character;
+    long bigNumber;
+public:
+    Data(int n, char c, long b)
+        : number(n), character(c), bigNumber(b)
+    {}
+};
+]]>
+                </programlisting>
+                <para>
+                    Ehhez az osztályhoz nem kell írnunk mozgató/másoló
+                    szemantikát, mert eleve támogatja azt.
+                </para>
+                <para>
+                    A hármas szabály (nagy hármas, stb., ki hogy hívja) a C++11
+                    szabvány megjelenése előtt volt meghatározó szerepű, röviden
+                    azt mondja ki, hogy ha a következő három dolog közül egyet
+                    is definiál, valószínűleg érdemes definiálnia a másik kettőt
+                    is.
+                </para>
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            másolókonstruktor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            másoló értékadás operátor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            destruktor
+                        </para>
+                    </listitem>
+                </itemizedlist>
+                <para>
+                    A C++11 szabvánnyal viszont megjelent a mozgató szemantika
+                    is, tehát itt már ötös szabályról kell beszélünk. Az ötlet
+                    hasonló, mint a hármas szabálynál, annyi különbséggel, hogy
+                    itt már öt elem van, amit ha definiálunk egy osztályban,
+                    akkor érdemes a másik négyet is definiálni. Lássuk ezeket:
+                </para>
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            másolókonstruktor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            másoló értékadás operátor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            mozgató konstruktor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            mozgató értékadás operátor
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            destruktor
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para>
+                    <emphasis role="strong">A Java homokozó, de sárkányok itt is
+                    vannak</emphasis>
+                </para>
+                <figure>
+                    <title>Here be dragons (Hic Sunt Dracones)</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="./pictures/here_be_dragons.png" width="70%" />
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>
+                    A Javás példában láttuk, hogy nem vészesen bonyolult például
+                    egy RSA-kódolót implementálni, viszont felmerül a kérdés,
+                    valóban van szükségünk arra, hogy saját RSA-kódolót
+                    implementáljunk? A Java nyelv nagyon jó kriptográfiai
+                    képességekkel bír, ha felhasználjuk például a JCA-t (Java
+                    Cryptography Architecture), vagy a JCE-t (Java Cryptography
+                    Extension). <emphasis role="strong">Amennyiben tehetjük,
+                        hagyatkozzunk inkább ezekre saját megoldások helyett.
+                </emphasis>
+            </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <emphasis role="strong">A C++ erőteljes nyelv, cserébe
+                        viszont gondolkodnunk kell</emphasis>
+                </para>
+                <para>
+                    Ebben a gondolatban valami olyasmit szeretnék megfogalmazni,
+                    hogy ami a Perceptronos példára világít rá. Volt egy
+                    programunk, ami egy valós számot adott vissza egy kép
+                    bemenetre, a Perceptron osztály segítségével. Mit kellett
+                    tegyünk, hogy ne egy számot, hanem egy képet adjon vissza?
+                    Összesen 4 sornyi módosítás volt szükséges ehhez. Szerintem
+                    ez egészen jó bizonyíték a C++ erőteljességére, viszont
+                    emellett azt is számításba kell venni, hogy itt teljes
+                    egészében mi gondoskodunk a programunk által felhasznált
+                    memóriáról, és a memóriafolyások elkerülése szintén nem
+                    egyszerű feladat.
+                </para>
+            </listitem>
+        </orderedlist>
     </section>
 </chapter>
