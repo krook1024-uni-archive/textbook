@@ -277,6 +277,14 @@ e_i
             <emphasis role="strong">A megoldás forrása:</emphasis>
         </para>
         <para>
+            String.h:
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/stroustrup/String/inc/String.h"/>
+            </textobject>
+        </programlisting>
+        <para>
             String.cpp:
         </para>
         <programlisting language="c++">
