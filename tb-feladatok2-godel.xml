@@ -60,10 +60,14 @@
             <function>
                 <![CDATA[ abi::__cxa_demangle(typeid(T).name(), 0, 0, &s); ]]>
             </function>
-            kifejezés. Számunkra most nem lényeges, hogy a függvény mire képes,
-            mi csak kihasználjuk őt, és arra használjuk, hogy <emphasis
-                role="strong">elegánsan</emphasis> szerezzük vissza a foglalt
-            típus nevét, hiszen ezt másképp nehéz lenne átadni.
+            kifejezés.
+        </para>
+        <para>
+            Ez a demangle függvény azt tudja, hogy egy megcsonkított azonosítót
+            megpróbál kibogozni és megmondani az eredeti formáját. Fontos, hogy
+            mivel ez a függvény egy char pointert ad vissza, a neki foglalt
+            memóriát kézileg kell felszabadítani a <code
+                language="c++">free()</code> használatával.
         </para>
         <para>
             Ezen kívül fontosnak tartom a
@@ -199,15 +203,65 @@ Map after sorting:
         <para>
             Mutassuk be a https://progpater.blog.hu/2011/03/11/alternativ_tabella
             programban a <code language="java">
-                <![CDATA[ java.lang Interface Comparable<T> ]]>
+                <![CDATA[ java.lang.Interface Comparable<T> ]]>
             </code> szerepét.
+        </para>
+        <para>
+            A lényeges kódcsipet a következő:
+        </para>
+        <programlisting language="java">
+<![CDATA[class Csapat implements Comparable<Csapat> {
+
+  protected String nev;
+  protected double ertek;
+
+  public Csapat(String nev, double ertek) {
+    this.nev = nev;
+    this.ertek = ertek;
+  }
+
+  public int compareTo(Csapat csapat) {
+    if (this.ertek < csapat.ertek) {
+      return -1;
+    } else if (this.ertek > csapat.ertek) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}]]>
+        </programlisting>
+        <para>
+            Azt látjuk, hogy a <classname>Csapat</classname> osztály egy
+            példánya összehasonlítható egy másik <classname>Csapat</classname>
+            példánnyal, és az összehasonlítás alapját a <varname>ertek</varname>
+            mező adja.
+        </para>
+        <para>
+            A <function>compareTo</function> függvényben megjelenő mágikus
+            konstansokat megpróbálhatjuk kibogozni olyan módon, hogy megnézzük a
+            <function>compareTo</function> dokumentációját a Java doksik között.
+        </para>
+        <para>
+            <link xlink:href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">
+                https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
+            </link>
+        </para>
+        <para>
+            A dokumentáció azt mondja, hogy a <function>compareTo</function>
+            függvény visszatérési értéke legyen rendre egy negatív szám, nulla,
+            vagy egy pozitív szám, amennyiben a jelenlegi objektum kisebbnek,
+            egyenlőnek, vagy nagyobbnak minősül ahhoz képest, amihez
+            hozzáhasonlítjuk, tehát így értelmet nyer a fenti kód is.
         </para>
     </section>
     <section>
         <title>Prolog családfa</title>
         <para>
             Ágyazd be a Prolog családfa programot C++ vagy Java programba!
-            Lásd paraprog_guide.pdf!
+        </para>
+        <para>
+            Lásd para_prog_guide.pdf!
         </para>
     </section>
     <section>
