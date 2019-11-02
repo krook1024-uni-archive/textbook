@@ -12,21 +12,7 @@ venv
 
 # Build files
 build
-*/build/*
-*/*/build/*
-*/*/*/*/build/*
-*/*/*/*/*/build/*
-*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/*/*/*/*/build/*
-*/*/*/*/*/*/*/*/*/*/*/*/build/*
-build
-
-# Created by https://www.gitignore.io/api/c,c++,java,python,commonlisp
-# Edit at https://www.gitignore.io/?templates=c,c++,java,python,commonlisp
+build/
 
 ### C ###
 # Prerequisites
