@@ -7,6 +7,126 @@
         <para>
             Gengszterek rendezése lambdával a Robotautó Világbajnokságban
         </para>
+        <para>
+            A robocar-emulator projekt leírásából idézve:
+        </para>
+        <para>
+            <quote>
+                Robocar World Championship (OOCWC) is intended to offer a common
+                research platform for developing urban traffic control
+                algorithms and for investigating the relationship between smart
+                cities and robot cars with particular attention to spread of
+                robot cars of the near future.
+            </quote>
+        </para>
+        <para>
+            Tehát a Robotautó Világbajnokság projekt a városi forgalomirányító
+            algoritmusok tesztelésére, illetve az okos városok és a robotautók
+            között fennálló kapcsolat vizsgálatára jött létre.
+        </para>
+        <para>
+            A mi feladatunk azonban ettől kicsit egyszerűbb, a lambda
+            kifejezéseket kellene megértenünk ebben a feladatban, mely
+            hasznunkra fog válni az elkövetkezendő feladatok során is.
+        </para>
+        <para>
+            A lambda kifejezések lehetőséget nyújtanak számunkra, hogy
+            létrehozzunk egy "névtelen függvényt", vagyis egy olyan
+            konstrukciót, amely úgy viselkedik, mint egy függvény, de megkímél
+            minket attól, hogy egy függvényt valójában definiáljunk.
+        </para>
+        <para>
+            Ha általánosan kellene megfogalmazzam, azt mondanám, hogy bárhol,
+            ahol függvénymutatót használunk, használhatunk lambda kifejezéseket.
+            Tehát akkor használunk lambda kifejezéseket, ahol másképpen
+            függvénymutatókat használnánk.
+        </para>
+        <para>
+            Például az <function>std::sort</function> STL függvény deklarációja
+            a következőképpen néz ki:
+        </para>
+        <programlisting language="c++">
+<![CDATA[void sort()
+template <class RandomAccessIterator>
+    void sort (RandomAccessIterator first, RandomAccessIterator last);
+
+template <class RandomAccessIterator, class Compare>
+    void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);]]>
+        </programlisting>
+        <para>
+            Ebből látjuk, hogy a függvényt kétféleképpen hívhatjuk: megadunk
+            neki két iterátort, vagy megadunk két iterátort és egy függvényt,
+            ami megfelel a <function>Compare</function> követelményeknek
+            (röviden annyi, hogy bool típusú, két paramétere van, melyeket nem
+            módosít).
+        </para>
+        <para>
+            A C++11 szabvány óta fennálló lambda kifejezések C++-ban a következő
+            alakokkal bírnak:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <programlisting language="c++">
+<![CDATA[\[ captures \] ( params ) -> ret { body }]]>
+                </programlisting>
+            </listitem>
+            <listitem>
+                <programlisting language="c++">
+<![CDATA[\[ captures \] ( params ) { body }]]>
+                </programlisting>
+            </listitem>
+            <listitem>
+                <programlisting language="c++">
+<![CDATA[\[ captures \] { body }]]>
+                </programlisting>
+            </listitem>
+        </itemizedlist>
+        <para>
+            Láthatjuk, hogy a ret (visszatérési típus) elhagyható, ilyenkor
+            automatikusan adódik a kód alapján, vagy nincs, amennyiben nem adunk
+            vissza semmit. Hasonlóan elhagyható a params rész is, ez a
+            paramétereket tartalmazza, akkor hagyjuk el, ha nem akarunk megadni
+            paramétert. A captures részbe írhatunk konkrét változókat, = vagy
+            <![CDATA[&]]> jelet, attól függően, hogy érték szerint vagy
+            referencia szerint szeretnénk beadni azokat a változókat, amelyek
+            nincsenek benne a lambda kifejezésben.
+        </para>
+        <para>
+            Lássuk mindezt egy példán keresztül, majd térjünk rá az éles
+            feladatra:
+        </para>
+        <programlisting language="c++">
+            <textobject>
+                <textdata fileref="./files/godel/Lambda/pelda.cc" />
+            </textobject>
+        </programlisting>
+        <para>
+            A példa programban látszik, hogy hogyan tudunk lambda kifejezést
+            használni, ami egyébként nem egy bonyolult konstrukció. A program
+            elsőként visszaadja 4 négyzetét (16), majd a 3, 4, 5 számok
+            négyzeteit (9, 16, 25).
+        </para>
+        <para>
+            Ezután lássuk az éles példát: a következő kódcsipet a Robotautó
+            Világbajnokság projektből származik:
+        </para>
+        <programlisting language="c++">
+<![CDATA[std::vector<Gangster> gangsters;
+[...]
+std::sort ( gangsters.begin(), gangsters.end(), [this, cop] ( Gangster x, Gangster y )
+{
+    return dst ( cop, x.to ) < dst ( cop, y.to );
+} );]]>
+        </programlisting>
+        <para>
+            Azt látjuk, hogy egy Gangster objektumokból álló vektort rendezünk.
+            Ekkor megtehetnénk azt, hogy az osztályban felüldefináljuk az <code
+                language="c++"><![CDATA[operator<]]></code> operátort, vagy
+            csinálhatjuk így is, lambda kifejezéssel. Itt a rendezés alapját a
+            <varname>cop</varname>-tól, azaz a rendőrtől mért távolság adja,
+            azaz azok az elemek kerülnek a vektor elejére, amelyek a rendőrhöz a
+            legközelebb vannak.
+        </para>
     </section>
     <section>
         <title>C++11 Custom Allocator</title>
@@ -81,7 +201,7 @@
             így is. Jelen esetünkben a template használata nélkül a
             következőképpen kellene, hogy kinézzünk a kódunk (csak részletekben)
         </para>
-        <programlisting language="c++">
+        <programlisting language="c++">https://www.facebook.com/groups/udprog/permalink/1231713563683197/
 <![CDATA[struct CustomAllocInt {
 using size_type = size_t;
 using value_type = int;
@@ -104,7 +224,7 @@ using reference = char&;...]]>
         <para>
             A program kimenete a következőképp néz ki:
         </para>
-        <screen><![CDATA[g++ --std=c++17 CustomAlloc.cc && ./a.out
+        <screen><![CDATA[$ g++ --std=c++17 CustomAlloc.cc && ./a.out
 Allocating 1 object(s) of 4 bytes. i=int
 Allocating 1 object(s) of 8 bytes. l=long
 Allocating 1 object(s) of 32 bytes. NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE=std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >
@@ -207,6 +327,30 @@ Map after sorting:
             </code> szerepét.
         </para>
         <para>
+            Az alternatív tabella rendezés a labdarúgó bajnokságokon résztvevő
+            csapatok rangsorolására létrejött algoritmus. Előnye, hogy orvosolja
+            azt a problémát, ami a korábbi rangsorolás mellett fennállt,
+            miszerint a kiosztott pontok nem arányosan kerültek kiosztásra.
+            Például egyformán 9 pontot jelentett a leggyengébb három csapat
+            legyőzése, valamint a legerősebb három csapat legyőzése is.
+        </para>
+        <para>
+            Alapelve Larry Page PageRank algoritmusán alapszik, amelyet már az
+            előző fejezet során elkészítettünk C-ben. Annyi a különbség, hogy
+            itt nem oldalak, hanem csapatok versenyeznek, és az a csapat ér el
+            jobb helyezést, aki jó helyezésen álló csapatokat győz le. A konkrét
+            algoritmusról bővebben olvashatsz az <link
+                xlink:href="https://hu.wikipedia.org/wiki/Alternat%C3%ADv_tabella">
+                Alternatív tabella Wikipédia oldalon </link>.
+        </para>
+        <para>
+            Ami számunkra programozás szempontból kicsit érdekesebb, az az <link
+                xlink:href="
+                https://progpater.blog.hu/2011/03/11/alternativ_tabella">
+                alternativ_tabella</link> Java programban a csapatok
+            összehasonlítására használt mechanizmus.
+        </para>
+        <para>
             A lényeges kódcsipet a következő:
         </para>
         <programlisting language="java">
@@ -214,7 +358,7 @@ Map after sorting:
 
   protected String nev;
   protected double ertek;
-
+https://www.facebook.com/groups/udprog/permalink/1231713563683197/
   public Csapat(String nev, double ertek) {
     this.nev = nev;
     this.ertek = ertek;
@@ -263,6 +407,16 @@ Map after sorting:
         <para>
             Lásd para_prog_guide.pdf!
         </para>
+        <warning>
+            <title>Passzolt feladat</title>
+            <para>
+                Ezt a feladatot a következő felajanlására hivatkozva passzoltam:
+                <link
+                    xlink:href="https://www.facebook.com/groups/udprog/permalink/1231713563683197/">
+                    https://www.facebook.com/groups/udprog/permalink/1231713563683197/
+                </link>
+            </para>
+        </warning>
     </section>
     <section>
         <title>GIMP Scheme hack</title>
@@ -270,5 +424,107 @@ Map after sorting:
             Ha az előző félévben nem dolgoztad fel a témát (például a mandalás
             vagy a króm szöveges dobozosat) akkor itt az alkalom!
         </para>
+        <warning>
+            <title>Passzolt feladat</title>
+            <para>
+                Ezt a feladatot a következő felajanlására hivatkozva passzoltam:
+                <link
+                    xlink:href="https://www.facebook.com/groups/udprog/permalink/1231713563683197/">
+                    https://www.facebook.com/groups/udprog/permalink/1231713563683197/
+                </link>
+            </para>
+        </warning>
+    </section>
+    <section>
+        <title>Streamelő Hackerek</title>
+        <para>
+            Ebben a feladatban egy kicsit a PHP-vel és a JavaScripttel fogunk
+            megismerkedni.
+        </para>
+        <para>1337
+            A feladat mindössze annyi, hogy a weboldalon, ahol a DEAC-Hackerek
+            számontarthatják, hogy a kitűzött 100 órányi streamelésből mennyi
+            van hátra, rendezzük sorba a Hackereket streamelt idő alapján.
+        </para>
+        <para>
+            Ehhez némi JS módosítás elég lett volna, azonban én egy kicsit
+            tovább vittem a dolgot és bepakoltam a Hackereket egy PHP osztályba,
+            hogy ezt is meg tudjam mutatni itt a könyvben.
+        </para>
+        <para>
+            Elsőnek lássuk ezt az osztályt:
+        </para>
+        <programlisting language="PHP">
+            <textobject>
+                <textdata fileref="./files/godel/PHP/Hacker.php" />
+            </textobject>
+        </programlisting>
+        <para>
+            Később ezt az osztályt arra használtam fel, hogy a Hackereket
+            kezelni tudjam elegánsan, a másik PHP fájlban, ami magát az
+            időjegyzést végzi. Lássuk ezt a fájlt is:
+        </para>
+        <programlisting language="PHP">
+            <textobject>
+                <textdata fileref="./files/godel/PHP/100.php" />
+            </textobject>
+        </programlisting>
+        <para>
+            És ezzel el is érkeztünk magához a feladathoz, ami az volt, hogy a
+            Hackereket rendezve jelenítsük meg. Jelen esetben ezt a rendezést
+            kliens oldalon végezzük el, a <function>sortThings()</function>
+            metódus meghívásával.
+        </para>
+        <para>
+            A <function>sortThings()</function> itt is hasonló módon működik,
+            mint ahogy már a C++-os példákban is néztük: egy lambda függvény
+            vagy névtelen függvény használatával.
+        </para>
+        <para>
+            Működési elve a következő:
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    Megkeresi a dokumentumban az összes <code
+                        language="html">span</code> elemet, amelynek létezik
+                    data-time attribútuma.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Meghívja a <function>Array.sort()</function> függvényt
+                    ezekre az elemekre, a rendezés alapját a data-time
+                    attribútum értéke adja, mégpedig úgy, hogy természetes
+                    számma parse-olja őket, és a nagyobbik győz.
+                </para>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="./pictures/sorted.png" width="100%" />
+                    </imageobject>
+                </mediaobject>
+            </listitem>
+            <listitem>
+                <para>
+                    Majd erre (a már sorbarendezett) tömb elemeinek megkeressük
+                    a szülő elemét, és hozzáadjuk ahhoz gyermekként
+                    (gyakorlatilag kicseréljük) az elemeit.
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            Mivel képek nélkül semmi sem az igazi, következzen egy pár az én
+            megoldásomról.
+        </para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/php-login.png" />
+            </imageobject>
+        </mediaobject>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="./pictures/php-sorted.png" width="100%" />
+            </imageobject>
+        </mediaobject>
     </section>
 </chapter>
