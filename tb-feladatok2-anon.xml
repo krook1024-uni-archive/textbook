@@ -1,0 +1,66 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Anon!</title>
+    </info>
+    <section>
+        <title>FUTURE tevékenység editor</title>
+        <para>
+            Javítsunk valamit a ActivityEditor.java JavaFX programon!
+        </para>
+        <para>
+            <link
+                xlink:href="https://github.com/nbatfai/future/tree/master/cs/F6">
+                https://github.com/nbatfai/future/tree/master/cs/F6
+            </link>
+        </para>
+        <para>
+            Itt láthatjuk működésben az alapot:
+            <link
+                xlink:href="https://www.twitch.tv/videos/222879467">
+                https://www.twitch.tv/videos/222879467
+            </link>
+        </para>
+    </section>
+    <section>
+        <title>OOCWC Boost ASIO hálózatkezelése</title>
+        <para>
+            Mutassunk rá a scanf szerepére és használatára!
+        </para>
+        <para>
+            <link
+                xlink:href="https://github.com/nbatfai/robocar-emulator/blob/master/justine/rcemu/src/carlexer.ll">
+                https://github.com/nbatfai/robocar-emulator/blob/master/justine/rcemu/src/carlexer.ll
+            </link>
+        </para>
+    </section>
+    <section>
+        <title>SamuCam</title>
+        <para>
+            Mutassunk rá a webcam (pl. Androidos mobilod) kezelésére ebben a
+            projektben:
+            <link xlink:href="https://github.com/nbatfai/SamuCam">
+                https://github.com/nbatfai/SamuCam
+            </link>
+        </para>
+    </section>
+    <section>
+        <title>BrainB</title>
+        <para>
+            Mutassuk be a Qt slot-signal mechanizmust ebben a projektben:
+            <link xlink:href="https://github.com/nbatfai/esport-talent-search">
+                https://github.com/nbatfai/esport-talent-search
+            </link>
+        </para>
+    </section>
+    <section>
+        <title>OSM térképre rajzolás</title>
+        <para>
+            Debrecen térképre dobjunk rá cuccokat, ennek mintájára, ahol én az
+            országba helyezetem el a DEAC hekkereket:
+            <link xlink:href="https://www.twitch.tv/videos/182262537">
+                https://www.twitch.tv/videos/182262537
+            </link> (de az OOCWC Java Swinges megjelentőjéből is kiindulhatsz,
+            mondjuk az komplexebb, mert ott időfejlődés is van...)
+        </para>
+    </section>
+</chapter>
