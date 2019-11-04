@@ -1,0 +1,50 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Lauda!</title>
+    </info>
+    <section>
+        <title>Port scan</title>
+        <para>
+            Mutassunk rá ebben a port szkennelő forrásban a kivételkezelés
+            szerepére!
+        </para>
+        <para>
+            <link
+                xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id527287">
+                https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id527287
+            </link>
+        </para>
+    </section>
+    <section>
+        <title>AOP</title>
+        <para>
+            Szőj bele egy átszövő vonatkozást az első védési programod Java
+            átiratába!
+        </para>
+    </section>
+    <section>
+        <title>Android Játék</title>
+        <para>
+            Írjunk egy egyszerű Androidos "játékot"! Építkezzünk például a 2.
+            hét "Helló, Android!" feladatára!
+        </para>
+    </section>
+    <section>
+        <title>Junit teszt</title>
+        <para>
+            A
+            <link xlink:href="https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat">
+                https://progpater.blog.hu/2011/03/05/labormeres_otthon_avagy_hogyan_dolgozok_fel_egy_pedat
+            </link>
+            poszt kézzel számított mélységét és szórását dolgozd be egy Junit
+            tesztbe.
+        </para>
+    </section>
+    <section>
+        <title>OSCI</title>
+        <para>
+            Készíts egyszerű C++/OpenGL-es megjelenítőt, amiben egy kocsit
+            irányítasz az úton.
+        </para>
+    </section>
+</chapter>
