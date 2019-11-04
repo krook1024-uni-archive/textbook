@@ -42,6 +42,115 @@
                 https://github.com/nbatfai/SamuCam
             </link>
         </para>
+        <para>
+            A SamuCam egy Qt projekt, ami azt jelenti, hogy szükségünk lesz a
+            QtCreator termékcsaládra a feladat során. Ennek a telepítése
+            egyszerű, a legtöbb GNU/Linux disztribúció csomagkezelője tartalmaz
+            megfelelő csomagokat a telepítéshez. Ha ez megvan, akkor egyszerűen
+            a <code language="bash"><![CDATA[qmake . && make]]></code>
+            paranccsal fordítható.
+        </para>
+        <para>
+            Ami minket a projekt kapcsán érdekel, az a webkamera kezelése. Ennek
+            a lelke a <filename>SamuCam.cpp</filename> fájlban nyugszik.
+        </para>
+        <para>
+            Amennyiben a header fájlt megnézzük, láthatjuk, hogy a kamera
+            kezelésére az opencv2 könyvtárat használjuk:
+        </para>
+        <programlisting language="c++">
+<![CDATA[#include "opencv2/objdetect.hpp"
+#include "opencv2/videoio.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"]]>
+        </programlisting>
+        <para>
+            Fontos megjegyezni, hogy az OpenCV nem csak arra alkalmas, hogy a
+            kamerát kezelje, hanem sokszínű kínálattal rendelkezik gépi tanulás
+            terén is.
+        </para>
+        <para>
+            A <classname>SamuCam</classname> osztály konstruktorában rögtön el
+            is készítünk egy úgynevezett VideoStream-et, ami hasonló mint egy
+            alap C++-os adatfolyam, csak itt videótartalom folyik. A folyamot az
+            osztály <methodname>openVideoStream()</methodname> metódusával
+            nyitjuk meg.
+        </para>
+        <programlisting language="c++">
+<![CDATA[void SamuCam::openVideoStream()
+{
+  videoCapture.open ( videoStream );
+
+  videoCapture.set ( CV_CAP_PROP_FRAME_WIDTH, width );
+  videoCapture.set ( CV_CAP_PROP_FRAME_HEIGHT, height );
+  videoCapture.set ( CV_CAP_PROP_FPS, 10 );
+}]]>
+        </programlisting>
+        <para>
+            Itt az is látszik, hogy beállítjuk az alapvető dolgokat a
+            videófolyamhoz. A <varname>width</varname> és
+            <varname>height</varname> a SamuCam osztály mezői.
+        </para>
+        <para>
+            A fő logika a követező ciklusban található, itt dolgozzuk fel a
+            "látott" adatokat az OpenCV segítségével.
+        </para>
+        <programlisting language="c++">
+<![CDATA[while ( videoCapture.isOpened() ) {
+
+      QThread::msleep ( 50 );
+      while ( videoCapture.read ( frame ) ) {
+
+          if ( !frame.empty() ) {
+
+              cv::resize ( frame, frame, cv::Size ( 176, 144 ), 0, 0, cv::INTER_CUBIC );
+
+              std::vector<cv::Rect> faces;
+              cv::Mat grayFrame;
+
+              cv::cvtColor ( frame, grayFrame, cv::COLOR_BGR2GRAY );
+              cv::equalizeHist ( grayFrame, grayFrame );
+
+              faceClassifier.detectMultiScale ( grayFrame, faces, 1.1, 4, 0, cv::Size ( 60, 60 ) );
+
+              if ( faces.size() > 0 ) {
+
+                  cv::Mat onlyFace = frame ( faces[0] ).clone();
+
+                  QImage* face = new QImage ( onlyFace.data,
+                                              onlyFace.cols,
+                                              onlyFace.rows,
+                                              onlyFace.step,
+                                              QImage::Format_RGB888 );
+
+                  cv::Point x ( faces[0].x-1, faces[0].y-1 );
+                  cv::Point y ( faces[0].x + faces[0].width+2, faces[0].y + faces[0].height+2 );
+                  cv::rectangle ( frame, x, y, cv::Scalar ( 240, 230, 200 ) );
+
+
+                  emit  faceChanged ( face );
+                }
+
+              QImage*  webcam = new QImage ( frame.data,
+                                             frame.cols,
+                                             frame.rows,
+                                             frame.step,
+                                             QImage::Format_RGB888 );
+
+              emit  webcamChanged ( webcam );
+
+            }
+
+          QThread::msleep ( 80 );
+
+        }
+
+      if ( ! videoCapture.isOpened() ) {
+          openVideoStream();
+        }
+
+    }]]>
+        </programlisting>
     </section>
     <section>
         <title>BrainB</title>
@@ -51,6 +160,92 @@
                 https://github.com/nbatfai/esport-talent-search
             </link>
         </para>
+        <para>
+            A slot-signal mechanizmusok lehetőséget ad arra, hogy objektumok
+            kommunikáljanak egymással. Ez a funckió a Qt szerves részét képezi.
+        </para>
+        <para>
+            A fő ötlet az, hogy amikor módosítunk egy Widgetet, akkor
+            feltehetőleg a többit is megfelelően módosítani akarjuk. Kiváló
+            példa erre például egy gomb kezelése, amikor a gombot a felhasználó
+            megnyomja, akkor meg akarjuk hívni a függvényt, ami a gomb
+            lenyomását kezeli.
+        </para>
+        <para>
+            A legtöbb eszköz az ilyeneket úgynevezett callback függvények
+            segítségével oldja meg, például a gomb megnyomásakor a meghívja az
+            <function>onButtonPressed()</function> függvényt.
+        </para>
+        <para>
+            A slot-signal rendszer erre kínál egy alternatívát: egy úgynevezett
+            signal jön létre, mikor egy bizonyos esemény megtörténik. A slotok
+            pedig függvények, amelyek lefutnak egy bizonyos signal hatására.
+            Ezeket a kötésviszonyokat a <function>connect()</function> kell
+            megadnunk.
+        </para>
+        <para>
+            Fontos, hogy a slot-signal párok szignatúrái megegyezzenek.
+        </para>
+        <para>
+            Élő példa következik az esport-talent-search projekt soraiból, ez a
+            BrainBThread.h fejlécfájl egy része:
+        </para>
+        <programlisting language="c++">
+<![CDATA[ signals:
+
+    void heroesChanged ( const QImage &image, const int &x, const int &y );
+    void endAndStats ( const int &t );]]>
+        </programlisting>
+        <para>
+            A következő sorok pedig a BrainBWin.h fejlécfájlból származnak:
+        </para>
+        <programlisting language="c++">
+<![CDATA[ public slots :
+
+    void updateHeroes ( const QImage &image, const int &x, const int &y );
+    //void stats ( const int &t );
+    void endAndStats ( const int &t ); ]]>
+        </programlisting>
+        <para>
+            Miután a slotokat és a signalokat megadtuk, még össze is kell őket
+            kötnünk, ez a BrainBWin osztály konstruktorában történik meg:
+        </para>
+        <programlisting language="c++">
+<![CDATA[brainBThread = new BrainBThread ( w, h - yshift );
+brainBThread->start();
+
+connect ( brainBThread, SIGNAL ( heroesChanged ( QImage, int, int ) ),
+this, SLOT ( updateHeroes ( QImage, int, int ) ) );
+
+connect ( brainBThread, SIGNAL ( endAndStats ( int ) ),
+this, SLOT ( endAndStats ( int ) ) );]]>
+        </programlisting>
+        <para>
+            Egy bizonyos signalt kibocsájtani az emit utasítással lehet, ezt
+            teszi a <methodname>BrainBThread::run()</methodname> metódusa is:
+        </para>
+        <programlisting language="c++">
+<![CDATA[ void BrainBThread::run()
+{
+    while ( time < endTime ) {
+
+            QThread::msleep ( delay );
+
+            if ( !paused ) {
+
+                    ++time;
+
+                    devel();
+
+            }
+
+            draw();
+
+    }
+
+    emit endAndStats ( endTime );
+} ]]>
+        </programlisting>
     </section>
     <section>
         <title>OSM térképre rajzolás</title>
