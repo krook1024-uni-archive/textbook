@@ -1,6 +1,6 @@
 /*
  * CustomAlloc class.
- * @author Norbert Bátfai
+ * @author Norbert Batfai
  */
 
 #include <iostream>

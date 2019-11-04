@@ -80,7 +80,7 @@ class LZWBinFa {
 				char betu;
 				Csomopont *balNulla;
 				Csomopont *jobbEgy;
-				Csomopont(const Csomopont &);	//másoló konstruktor
+				Csomopont(const Csomopont &);	//masolo konstruktor
 				Csomopont & operator=(const Csomopont &);
 		};
 
@@ -275,7 +275,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 
-		if (b == 0x0a) {	// újsor
+		if (b == 0x0a) {	// ujsor
 			kommentben = false;
 			continue;
 		}
@@ -283,7 +283,7 @@ int main(int argc, char *argv[])
 		if (kommentben)
 			continue;
 
-		if (b == 0x4e)	// N betű
+		if (b == 0x4e)	// N betu
 			continue;
 
 		for (int i = 0; i < 8; ++i) {

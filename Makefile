@@ -1,4 +1,4 @@
-all:	clean fdl
+all:	clean travis
 
 fdl:	clean validate_tb_fdl_hu tb_fdl.pdf
 

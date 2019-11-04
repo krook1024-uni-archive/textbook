@@ -1,9 +1,9 @@
 // sejtszal.cpp
 //
-// Életjáték rajzoló
-// Programozó Páternoszter
+// Eletjatek rajzolo
+// Programozo Paternoszter
 //
-// Copyright (C) 2011, Bátfai Norbert, nbatfai@inf.unideb.hu, nbatfai@gmail.com
+// Copyright (C) 2011, Batfai Norbert, nbatfai@inf.unideb.hu, nbatfai@gmail.com
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -18,30 +18,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
-// Ez a program szabad szoftver; terjeszthetõ illetve módosítható a
-// Free Software Foundation által kiadott GNU General Public License
-// dokumentumában leírtak; akár a licenc 3-as, akár (tetszõleges) késõbbi
-// változata szerint.
+// Ez a program szabad szoftver; terjesztheto illetve modosithato a
+// Free Software Foundation altal kiadott GNU General Public License
+// dokumentumaban leirtak; akar a licenc 3-as, akar (tetszoleges) kesobbi
+// valtozata szerint.
 //
-// Ez a program abban a reményben kerül közreadásra, hogy hasznos lesz,
-// de minden egyéb GARANCIA NÉLKÜL, az ELADHATÓSÁGRA vagy VALAMELY CÉLRA
-// VALÓ ALKALMAZHATÓSÁGRA való származtatott garanciát is beleértve.
-// További részleteket a GNU General Public License tartalmaz.
+// Ez a program abban a remenyben kerul kozreadasra, hogy hasznos lesz,
+// de minden egyeb GARANCIA NELKUL, az ELADHATOSAGRA vagy VALAMELY CELRA
+// VALO ALKALMAZHATOSAGRA valo szarmaztatott garanciat is beleertve.
+// Tovabbi reszleteket a GNU General Public License tartalmaz.
 //
-// A felhasználónak a programmal együtt meg kell kapnia a GNU General
-// Public License egy példányát; ha mégsem kapta meg, akkor
+// A felhasznalonak a programmal egyutt meg kell kapnia a GNU General
+// Public License egy peldanyat; ha megsem kapta meg, akkor
 // tekintse meg a <http://www.gnu.org/licenses/> oldalon.
 //
 //
 // Version history:
 //
-// 0.0.1    A két osztály tervezésének fõ szempontja az volt, hogy
-// ne vagy alig különbözzön az elsõ C++-os példától, a Mandelostól:
+// 0.0.1    A ket osztaly tervezesenek fo szempontja az volt, hogy
+// ne vagy alig kulonbozzon az elso C++-os peldatol, a Mandelostol:
 // http://progpater.blog.hu/2011/02/26/tan_csodallak_amde_nem_ertelek_de_kepzetem_hegyvolgyedet_bejarja
-// ezért az olyan kényesebb dolgokkal, hogy kezeljük a racsIndex-et a
-// két osztályra bontott C++ megoldásban, amikor írjuk át a Javásból, nem foglalkoztunk
-// a kiinduló Javás: http://www.tankonyvtar.hu/informatika/javat-tanitok-1-2-080904-1
-// (a bazár eszme: Release Early, Release Often" írjuk ki a posztra)
+// ezert az olyan kenyesebb dolgokkal, hogy kezeljuk a racsIndex-et a
+// ket osztalyra bontott C++ megoldasban, amikor irjuk at a Javasbol, nem foglalkoztunk
+// a kiindulo Javas: http://www.tankonyvtar.hu/informatika/javat-tanitok-1-2-080904-1
+// (a bazar eszme: ?Release Early, Release Often" irjuk ki a posztra)
 //
 
 #include "sejtszal.h"
@@ -58,24 +58,24 @@ SejtSzal::SejtSzal(bool ***racsok, int szelesseg, int magassag, int varakozas, S
 }
 
 /**
-   * Az kérdezett állapotban lévõ nyolcszomszédok száma.
+   * Az kerdezett allapotban levo nyolcszomszedok szama.
    *
-   * @param   rács    a sejttér rács
-   * @param   sor     a rács vizsgált sora
-   * @param   oszlop  a rács vizsgált oszlopa
-   * @param   állapor a nyolcszomszédok vizsgált állapota
-   * @return int a kérdezett állapotbeli nyolcszomszédok száma.
+   * @param   racs    a sejtter racs
+   * @param   sor     a racs vizsgalt sora
+   * @param   oszlop  a racs vizsgalt oszlopa
+   * @param   allapor a nyolcszomszedok vizsgalt allapota
+   * @return int a kerdezett allapotbeli nyolcszomszedok szama.
    */
 int SejtSzal::szomszedokSzama(bool **racs,
                               int sor, int oszlop, bool allapot) {
     int allapotuSzomszed = 0;
-    // A nyolcszomszédok végigzongorázása:
+    // A nyolcszomszedok vegigzongorazasa:
     for(int i=-1; i<2; ++i)
         for(int j=-1; j<2; ++j)
-            // A vizsgált sejtet magát kihagyva:
+            // A vizsgalt sejtet magat kihagyva:
             if(!((i==0) && (j==0))) {
-        // A sejttérbõl szélének szomszédai
-        // a szembe oldalakon ("periódikus határfeltétel")
+        // A sejtterbol szelenek szomszedai
+        // a szembe oldalakon ("periodikus hatarfeltetel")
         int o = oszlop + j;
         if(o < 0)
             o = szelesseg-1;
@@ -96,11 +96,11 @@ int SejtSzal::szomszedokSzama(bool **racs,
 }
 
 /**
- * A sejttér idõbeli fejlõdése a John H. Conway féle
- * életjáték sejtautomata szabályai alapján történik.
- * A szabályok részletes ismertetését lásd például a
- * [MATEK JÁTÉK] hivatkozásban (Csákány Béla: Diszkrét
- * matematikai játékok. Polygon, Szeged 1998. 171. oldal.)
+ * A sejtter idobeli fejlodese a John H. Conway fele
+ * eletjatek sejtautomata szabalyai alapjan tortenik.
+ * A szabalyok reszletes ismerteteset lasd peldaul a
+ * [MATEK JATEK] hivatkozasban (Csakany Bela: Diszkret
+ * matematikai jatekok. Polygon, Szeged 1998. 171. oldal.)
  */
 void SejtSzal::idoFejlodes() {
 
@@ -113,15 +113,15 @@ void SejtSzal::idoFejlodes() {
             int elok = szomszedokSzama(racsElotte, i, j, SejtAblak::ELO);
 
             if(racsElotte[i][j] == SejtAblak::ELO) {
-                /* Élõ élõ marad, ha kettõ vagy három élõ
-             szomszedja van, különben halott lesz. */
+                /* Elo elo marad, ha ketto vagy harom elo
+             szomszedja van, kulonben halott lesz. */
                 if(elok==2 || elok==3)
                     racsUtana[i][j] = SejtAblak::ELO;
                 else
                     racsUtana[i][j] = SejtAblak::HALOTT;
             }  else {
-                /* Halott halott marad, ha három élõ
-             szomszedja van, különben élõ lesz. */
+                /* Halott halott marad, ha harom elo
+             szomszedja van, kulonben elo lesz. */
                 if(elok==3)
                     racsUtana[i][j] = SejtAblak::ELO;
                 else
@@ -133,7 +133,7 @@ void SejtSzal::idoFejlodes() {
 }
 
 
-/** A sejttér idõbeli fejlõdése. */
+/** A sejtter idobeli fejlodese. */
 void SejtSzal::run()
 {
     while(true) {

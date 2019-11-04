@@ -2,7 +2,7 @@
  *   jdk_classes.cc
  * List classes in JDK.
  *
- * @author Molnár Antal Albert
+ * @author Molnar Antal Albert
  * @date 2019. 10. 07
  */
 

@@ -45,7 +45,7 @@ class Dict {
     public static void main(String[] args) {
         // Fill the dictionary -- feel free to add more
         dictionary.put("A", new String[] {"4", "/-\\"});
-        dictionary.put("B", new String[] {"8", "|3", "ß"});
+        dictionary.put("B", new String[] {"8", "|3", "ss"});
         dictionary.put("C", new String[] {"<", "("});
         dictionary.put("D", new String[] {"|)", "|]", "|>"});
         dictionary.put("E", new String[] {"3"});
@@ -66,9 +66,9 @@ class Dict {
         dictionary.put("T", new String[] {"7", "+"});
         dictionary.put("U", new String[] {"|_|"});
         dictionary.put("V", new String[] {"\\/"});
-        dictionary.put("W", new String[] {"\\/\\/", "Ш"});
-        dictionary.put("X", new String[] {"Ж", ")(", "}{"});
-        dictionary.put("Y", new String[] {"Ч", "¥"});
+        dictionary.put("W", new String[] {"\\/\\/", "?"});
+        dictionary.put("X", new String[] {"?", ")(", "}{"});
+        dictionary.put("Y", new String[] {"?", "JPY"});
         dictionary.put("Z", new String[] {"2", "5", "7_"});
 
         Dict d = new Dict();

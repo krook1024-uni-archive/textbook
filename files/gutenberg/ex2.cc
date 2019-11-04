@@ -3,7 +3,7 @@
 class tesztOsztaly {
 public:
 	~tesztOsztaly() {
-		std::cout << "lefutó kód vagyok" << std::endl;
+		std::cout << "lefuto kod vagyok" << std::endl;
 	}
 };
 
@@ -17,10 +17,10 @@ main(void) {
 	}
 
 	catch (const char* exception) {
-		std::cout << "Hiba lépett fel! Üzenet: " << exception << std::endl;
+		std::cout << "Hiba lepett fel! Uzenet: " << exception << std::endl;
 	}
 
-	std::cout << "Program vége." << std::endl;
+	std::cout << "Program vege." << std::endl;
 
 	return 0;
 }
@@ -33,7 +33,7 @@ f(void) {
 
 void
 g(void) {
-	throw "hoppá";
+	throw "hoppa";
 }
 
 

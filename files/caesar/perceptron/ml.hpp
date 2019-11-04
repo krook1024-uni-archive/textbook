@@ -3,12 +3,12 @@
  * @brief JUDAH - Jacob is equipped with a text-based user interface
  *
  * @file ql.hpp
- * @author  Norbert Bátfai <nbatfai@gmail.com>
+ * @author  Norbert Batfai <nbatfai@gmail.com>
  * @version 0.0.1
  *
  * @section LICENSE
  *
- * Copyright (C) 2015 Norbert Bátfai, batfai.norbert@inf.unideb.hu
+ * Copyright (C) 2015 Norbert Batfai, batfai.norbert@inf.unideb.hu
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@
  *
  * The main purpose of this project is to allow the evaluation and
  * verification of the results of the paper entitled "A disembodied
- * developmental robotic agent called Samu Bátfai". It is our hope
+ * developmental robotic agent called Samu Batfai". It is our hope
  * that Samu will be the ancestor of developmental robotics chatter
  * bots that will be able to chat in natural language like humans do.
  *

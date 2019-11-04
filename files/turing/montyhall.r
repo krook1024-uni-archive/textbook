@@ -1,5 +1,5 @@
 #   An illustration written in R for the Monty Hall Problem
-#   Copyright (C) 2019  Dr. Norbert Bátfai, nbatfai@gmail.com
+#   Copyright (C) 2019  Dr. Norbert Batfai, nbatfai@gmail.com
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by

@@ -21,10 +21,10 @@ public:
 
     void operator<< (char b)
     {
-        // Mit kell betenni éppen, '0'-t?
+        // Mit kell betenni eppen, '0'-t?
         if (b == '0')
         {
-            if (!fa->nullasGyermek ())	// ha nincs, hát akkor csinálunk
+            if (!fa->nullasGyermek ())	// ha nincs, hat akkor csinalunk
             {
                 Csomopont *uj = new Csomopont ('0');
                 fa->ujNullasGyermek (uj);
@@ -195,8 +195,8 @@ LZWBinFa::rmelyseg (Csomopont * elem)
         if (melyseg > maxMelyseg)
             maxMelyseg = melyseg;
         rmelyseg (elem->egyesGyermek ());
-        // ez a postorder bejáráshoz képest
-        // 1-el nagyobb mélység, ezért -1
+        // ez a postorder bejarashoz kepest
+        // 1-el nagyobb melyseg, ezert -1
         rmelyseg (elem->nullasGyermek ());
         --melyseg;
     }
@@ -271,7 +271,7 @@ main (int argc, char *argv[])
 
     std::fstream kiFile (*++argv, std::ios_base::out);
 
-    unsigned char b;		// ide olvassik majd a bejövő fájl bájtjait
+    unsigned char b;		// ide olvassik majd a bejovo fajl bajtjait
     LZWBinFa binFa;		// s nyomjuk majd be az LZW fa objektumunkba
 
     while (beFile.read ((char *) &b, sizeof (unsigned char)))
@@ -290,7 +290,7 @@ main (int argc, char *argv[])
         }
 
         if (b == 0x0a)
-        {			// újsor
+        {			// ujsor
             kommentben = false;
             continue;
         }
@@ -298,7 +298,7 @@ main (int argc, char *argv[])
         if (kommentben)
             continue;
 
-        if (b == 0x4e)		// N betű
+        if (b == 0x4e)		// N betu
             continue;
 
         for (int i = 0; i < 8; ++i)
@@ -312,7 +312,7 @@ main (int argc, char *argv[])
 
     }
 
-    kiFile << binFa;		// ehhez kell a globális operator<< túlterhelése, lásd fentebb
+    kiFile << binFa;		// ehhez kell a globalis operator<< tulterhelese, lasd fentebb
 
     kiFile << "depth = " << binFa.getMelyseg () << std::endl;
     kiFile << "mean = " << binFa.getAtlag () << std::endl;

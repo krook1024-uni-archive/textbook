@@ -5,7 +5,7 @@ public class RSA {
             (700 * (int) (java.lang.Math.log( (double) 10)) /
                 java.lang.Math.log((double) 2));
 
-        System.out.println("Méret bitekben: ");
+        System.out.println("Meret bitekben: ");
         System.out.println(meretBitekben);
 
         java.math.BigInteger p_i =

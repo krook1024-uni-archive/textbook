@@ -1,71 +1,71 @@
 /*
  * GaltonDeszka.java
  *
- * DIGIT 2005, Javat tanítok
- * Bátfai Norbert, nbatfai@inf.unideb.hu
+ * DIGIT 2005, Javat tanitok
+ * Batfai Norbert, nbatfai@inf.unideb.hu
  *
  */
 /**
- * A Galton deszka kísérletet szimuláló osztály.
- * A kísérlet leírását lásd a [RÉNYI VALSÉG KÖNYV] (Rényi
- * Alfréd: Valószínûségszámítás, Tankönyvkiadó, 1973, 144 o.) 
- * könyvben.
+ * A Galton deszka kiserletet szimulalo osztaly.
+ * A kiserlet leirasat lasd a [RENYI VALSEG KONYV] (Renyi
+ * Alfred: Valoszinusegszamitas, Tankonyvkiado, 1973, 144 o.) 
+ * konyvben.
  *
- * @author Bátfai Norbert, nbatfai@inf.unideb.hu
+ * @author Batfai Norbert, nbatfai@inf.unideb.hu
  * @version 0.0.1
  */
 public class GaltonDeszka extends java.awt.Frame implements Runnable {
-    /** Melyik oszlopban van éppen az esõ golyó? */
+    /** Melyik oszlopban van eppen az eso golyo? */
     private int oszlop = 0;
-    /** Melyik sorban van éppen az esõ golyó? */
+    /** Melyik sorban van eppen az eso golyo? */
     private int sor = 0;
-    /** Hová hány golyó esett, az i. helyre hisztogram[i] */
+    /** Hova hany golyo esett, az i. helyre hisztogram[i] */
     private int [] hisztogram;
-    /** Hány pixel magas legyen egy deszkasor. */
-    private int sorMagasság;
-    /** Hány pixel széles legyen a kísérleti elrendezés ablaka? */
-    private int ablakSzélesség;
-    /** Hány pixel magas legyen a kísérleti elrendezés ablaka? */
-    private int ablakMagasság;
-    // Véletlenszám generátor
+    /** Hany pixel magas legyen egy deszkasor. */
+    private int sorMagassag;
+    /** Hany pixel szeles legyen a kiserleti elrendezes ablaka? */
+    private int ablakSzelesseg;
+    /** Hany pixel magas legyen a kiserleti elrendezes ablaka? */
+    private int ablakMagassag;
+    // Veletlenszam generator
     private java.util.Random random = new java.util.Random();
-    // Pillanatfelvétel készítéséhez
+    // Pillanatfelvetel keszitesehez
     private java.awt.Robot robot;
-    /** Készítsünk pillanatfelvételt? */
-    private boolean pillanatfelvétel = false;
-    /** A pillanatfelvételek számozásához. */
-    private static int pillanatfelvételSzámláló = 0;
+    /** Keszitsunk pillanatfelvetelt? */
+    private boolean pillanatfelvetel = false;
+    /** A pillanatfelvetelek szamozasahoz. */
+    private static int pillanatfelvetelSzamlalo = 0;
     /**
-     * Létrehoz egy Galton deszka kísérleti elrendezést
-     * absztraháló <code>GaltonDeszka</code> objektumot.
+     * Letrehoz egy Galton deszka kiserleti elrendezest
+     * absztrahalo <code>GaltonDeszka</code> objektumot.
      *
-     * @param      magasság       a deszkasorok száma.
-     * @param      sorMagasság    a deszkasorok magassága pixelben.
+     * @param      magassag       a deszkasorok szama.
+     * @param      sorMagassag    a deszkasorok magassaga pixelben.
      */
-    public GaltonDeszka(int magasság, int sorMagasság) {
-        // Hová hány golyó esett, az i. helyre hisztogram[i]
-        hisztogram = new int [magasság];
-        // Nullázzuk a hisztogram elemeit (nem lenne szükséges, de ez a
-        // biztonságos taktika)
+    public GaltonDeszka(int magassag, int sorMagassag) {
+        // Hova hany golyo esett, az i. helyre hisztogram[i]
+        hisztogram = new int [magassag];
+        // Nullazzuk a hisztogram elemeit (nem lenne szukseges, de ez a
+        // biztonsagos taktika)
         for(int i=0; i<hisztogram.length; ++i)
             hisztogram[i] = 0;
-        this.sorMagasság = sorMagasság;
-        // Az ablak bezárásakor kilépünk a programból.
+        this.sorMagassag = sorMagassag;
+        // Az ablak bezarasakor kilepunk a programbol.
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent e) {
                 setVisible(false);
                 System.exit(0);
             }
         });
-        // Az s gomb benyomásával ki/bekapcsoljuk a 
-        // pillanatfelvétel készítést a kísérletrõl:
+        // Az s gomb benyomasaval ki/bekapcsoljuk a 
+        // pillanatfelvetel keszitest a kiserletrol:
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent e) {
                 if(e.getKeyCode() == java.awt.event.KeyEvent.VK_S)
-                    pillanatfelvétel = !pillanatfelvétel;
+                    pillanatfelvetel = !pillanatfelvetel;
             }
         });
-        // Pillanatfelvétel készítéséhez:
+        // Pillanatfelvetel keszitesehez:
         try {
             robot = new java.awt.Robot(
                     java.awt.GraphicsEnvironment.
@@ -74,84 +74,84 @@ public class GaltonDeszka extends java.awt.Frame implements Runnable {
         } catch(java.awt.AWTException e) {
             e.printStackTrace();
         }
-        // Ablak tulajdonságai
-        setTitle("Galton deszka kísérlet");
+        // Ablak tulajdonsagai
+        setTitle("Galton deszka kiserlet");
         setResizable(false);
-        ablakSzélesség = magasság*sorMagasság*2;
-        ablakMagasság = magasság*sorMagasság+400;                
-        setSize(ablakSzélesség, ablakMagasság);
+        ablakSzelesseg = magassag*sorMagassag*2;
+        ablakMagassag = magassag*sorMagassag+400;                
+        setSize(ablakSzelesseg, ablakMagassag);
         setVisible(true);
-        // A kísérlet indul:
+        // A kiserlet indul:
         new Thread(this).start();
     }
     /**
-     * A kísérlet aktuális állapotának kirajzolása.
+     * A kiserlet aktualis allapotanak kirajzolasa.
      */
     public void paint(java.awt.Graphics g) {
-        // A deszkasorok és a golyó kirajzolása
+        // A deszkasorok es a golyo kirajzolasa
         for(int i=0; i<hisztogram.length; ++i) {
-            // Deszkák kirajzolása
+            // Deszkak kirajzolasa
             g.setColor(java.awt.Color.BLACK);
             for(int j=0; j<i; ++j)
                 g.fillRect(getWidth()/2
-                        -((i-1)*sorMagasság+sorMagasság/2)
-                        +j*2*sorMagasság+sorMagasság/3,
-                        50+i*sorMagasság, sorMagasság/3, sorMagasság);
-            // Minden lehetséges pozícióra egy fehér
-            // golyó kirajzolása (törli a korábbi piros golyókat)
+                        -((i-1)*sorMagassag+sorMagassag/2)
+                        +j*2*sorMagassag+sorMagassag/3,
+                        50+i*sorMagassag, sorMagassag/3, sorMagassag);
+            // Minden lehetseges poziciora egy feher
+            // golyo kirajzolasa (torli a korabbi piros golyokat)
             g.setColor(java.awt.Color.WHITE);
             for(int j=0; j<=i; ++j)
                 g.fillArc(getWidth()/2
-                        -(i*sorMagasság+sorMagasság/2)+j*2*sorMagasság,
-                        50+i*sorMagasság,
-                        sorMagasság,
-                        sorMagasság, 0, 360);
-            // A most éppen aláhulló golyó kirajzolása
+                        -(i*sorMagassag+sorMagassag/2)+j*2*sorMagassag,
+                        50+i*sorMagassag,
+                        sorMagassag,
+                        sorMagassag, 0, 360);
+            // A most eppen alahullo golyo kirajzolasa
             if(i == sor) {
                 g.setColor(java.awt.Color.RED);
                 g.fillArc(getWidth()/2
-                        -(i*sorMagasság+sorMagasság/2)+oszlop*2*sorMagasság,
-                        50+i*sorMagasság, sorMagasság, sorMagasság, 0, 360);
+                        -(i*sorMagassag+sorMagassag/2)+oszlop*2*sorMagassag,
+                        50+i*sorMagassag, sorMagassag, sorMagassag, 0, 360);
             }
         }
-        // A hisztogram kirajzolása
+        // A hisztogram kirajzolasa
         g.setColor(java.awt.Color.GREEN);
         for(int j=0; j<hisztogram.length; ++j)
             g.fillRect(getWidth()/2
-                    -((hisztogram.length-1)*sorMagasság
-                    +sorMagasság/2)+j*2*sorMagasság,
-                    50+hisztogram.length*sorMagasság,
-                    sorMagasság, sorMagasság*hisztogram[j]/10);
-        // Készítünk pillanatfelvételt?
-        if(pillanatfelvétel) {            
-            // a biztonság kedvéért egy kép készítése után
-            // kikapcsoljuk a pillanatfelvételt, hogy a 
-            // programmal ismerkedõ Olvasó ne írja tele a 
-            // fájlrendszerét a pillanatfelvételekkel        
-            pillanatfelvétel = false;
-            pillanatfelvétel(robot.createScreenCapture
+                    -((hisztogram.length-1)*sorMagassag
+                    +sorMagassag/2)+j*2*sorMagassag,
+                    50+hisztogram.length*sorMagassag,
+                    sorMagassag, sorMagassag*hisztogram[j]/10);
+        // Keszitunk pillanatfelvetelt?
+        if(pillanatfelvetel) {            
+            // a biztonsag kedveert egy kep keszitese utan
+            // kikapcsoljuk a pillanatfelvetelt, hogy a 
+            // programmal ismerkedo Olvaso ne irja tele a 
+            // fajlrendszeret a pillanatfelvetelekkel        
+            pillanatfelvetel = false;
+            pillanatfelvetel(robot.createScreenCapture
                     (new java.awt.Rectangle
                     (getLocation().x, getLocation().y, 
-                    ablakSzélesség, ablakMagasság)));                
+                    ablakSzelesseg, ablakMagassag)));                
         }
     }
-    // Ne villogjon a felület (mert a "gyári" update()
-    // lemeszelné a vászon felületét).
+    // Ne villogjon a felulet (mert a "gyari" update()
+    // lemeszelne a vaszon feluletet).
     public void update(java.awt.Graphics g) {
         paint(g);
     }
     /**
-     * Pillanatfelvételek készítése.
+     * Pillanatfelvetelek keszitese.
      */
-    public void pillanatfelvétel(java.awt.image.BufferedImage felvetel) {
+    public void pillanatfelvetel(java.awt.image.BufferedImage felvetel) {
         
-        // A pillanatfelvétel kép fájlneve
+        // A pillanatfelvetel kep fajlneve
         StringBuffer sb = new StringBuffer();
         sb = sb.delete(0, sb.length());
         sb.append("GaltonDeszkaKiserlet");
-        sb.append(++pillanatfelvételSzámláló);
+        sb.append(++pillanatfelvetelSzamlalo);
         sb.append(".png");
-        // png formátumú képet mentünk
+        // png formatumu kepet mentunk
         try {
             javax.imageio.ImageIO.write(felvetel, "png",
                     new java.io.File(sb.toString()));
@@ -160,50 +160,50 @@ public class GaltonDeszka extends java.awt.Frame implements Runnable {
         }
     }
     /**
-     * A kísérlet idõbeli fejlõdésének vezérlése.
+     * A kiserlet idobeli fejlodesenek vezerlese.
      */
     public void run() {
-        // Végtelen ciklus, azaz végtelen sok golyót
-        // dobunk le a deszkák között.
+        // Vegtelen ciklus, azaz vegtelen sok golyot
+        // dobunk le a deszkak kozott.
         while(true) {
-            // Kezdetben a golyó a legfelsõ deszka felett.
+            // Kezdetben a golyo a legfelso deszka felett.
             oszlop = 0;
-            // A ciklus minden iterációja egy deszkasornyi
-            // esést jelent a golyó életében
+            // A ciklus minden iteracioja egy deszkasornyi
+            // esest jelent a golyo eleteben
             for(int i=0; i<hisztogram.length; ++i) {
-                // Melyik sorban van éppen az esõ golyó?
+                // Melyik sorban van eppen az eso golyo?
                 sor = i;
-                // Ha növelni akarjuk a sebességet (a
-                // látvány rovására) akkor kommentezzük be
-                // ezt a várakozó try blokkot (de ekkor
-                // ne felejtsük el a hisztogram oszlopainak
-                // magasságát sorMagasság*hisztogram[j]/10-rõl
-                // például sorMagasság*hisztogram[j]/10000-re állítani).
+                // Ha novelni akarjuk a sebesseget (a
+                // latvany rovasara) akkor kommentezzuk be
+                // ezt a varakozo try blokkot (de ekkor
+                // ne felejtsuk el a hisztogram oszlopainak
+                // magassagat sorMagassag*hisztogram[j]/10-rol
+                // peldaul sorMagassag*hisztogram[j]/10000-re allitani).
                 try {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {}
                 
-                // Az tetején a golyó az elsõ deszka felett
+                // Az tetejen a golyo az elso deszka felett
                 if(i>0)
-                    // ha nem a tetején, akkor 50%-50%, hogy
-                    // jobbra vagy balra esik tovább.
-                    // Melyik oszlopban van éppen az esõ golyó?
+                    // ha nem a tetejen, akkor 50%-50%, hogy
+                    // jobbra vagy balra esik tovabb.
+                    // Melyik oszlopban van eppen az eso golyo?
                     oszlop = oszlop + random.nextInt(2);
-                // Rajzoljuk ki a kísérlet aktuális állapotát!
+                // Rajzoljuk ki a kiserlet aktualis allapotat!
                 repaint();
             }
-            // Ha kilép a golyó a ciklusból, akkor
-            // végig esett a deszkasorokon és valamelyik
-            // tárolóba esett
+            // Ha kilep a golyo a ciklusbol, akkor
+            // vegig esett a deszkasorokon es valamelyik
+            // taroloba esett
             ++hisztogram[oszlop];
         }
     }
     /**
-     * Példányosít egy Galton deszkás kísérleti
-     * elrendezés obektumot.
+     * Peldanyosit egy Galton deszkas kiserleti
+     * elrendezes obektumot.
      */
     public static void main(String[] args) {
-        // Legyen 30 sor, soronként 10 pixellel
+        // Legyen 30 sor, soronkent 10 pixellel
         new GaltonDeszka(30, 10);
     }
 }                

@@ -1,7 +1,7 @@
 /*
-	Mandelb osztály. A Mandelbrot halmaz számítására
-	valamint ábrázolására.
-	Készíto: Molnár Antal Albert.
+	Mandelb osztaly. A Mandelbrot halmaz szamitasara
+	valamint abrazolasara.
+	Keszito: Molnar Antal Albert.
 */
 
 import javafx.scene.*;

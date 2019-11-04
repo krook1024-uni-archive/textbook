@@ -1,87 +1,87 @@
 /*
- * MandelbrotIterációk.java
+ * MandelbrotIteraciok.java
  *
- * DIGIT 2005, Javat tanítok
- * Bátfai Norbert, nbatfai@inf.unideb.hu
+ * DIGIT 2005, Javat tanitok
+ * Batfai Norbert, nbatfai@inf.unideb.hu
  *
  */
 /**
- * A nagyított Mandelbrot halmazok adott pontjában képes
- * nyomonkövetni az z_{n+1} = z_n * z_n + c iterációt.
+ * A nagyitott Mandelbrot halmazok adott pontjaban kepes
+ * nyomonkovetni az z_{n+1} = z_n * z_n + c iteraciot.
  *
- * @author Bátfai Norbert, nbatfai@inf.unideb.hu
+ * @author Batfai Norbert, nbatfai@inf.unideb.hu
  * @version 0.0.1
  */
-public class MandelbrotIterációk implements Runnable{
-    /** Mennyi idõt várakozzunk két iteráció bemutatása között? */
-    private int várakozás;
-    // Kissé igaz redundánsan, s nem szépen, de kényelmesen:
-    private MandelbrotHalmazNagyító nagyító;
+public class MandelbrotIteraciok implements Runnable{
+    /** Mennyi idot varakozzunk ket iteracio bemutatasa kozott? */
+    private int varakozas;
+    // Kisse igaz redundansan, s nem szepen, de kenyelmesen:
+    private MandelbrotHalmazNagyito nagyito;
     private int j, k;
     private double a, b, c, d;
-    private  int szélesség, magasság;
-    private java.awt.image.BufferedImage kép;
+    private  int szelesseg, magassag;
+    private java.awt.image.BufferedImage kep;
     /**
-     * Létrehoz egy iterációkat vizsgáló <code>MandelbrotIterációk</code>
-     * szál objektumot egy adott <code>MandelbrotHalmaznagyító</code>
+     * Letrehoz egy iteraciokat vizsgalo <code>MandelbrotIteraciok</code>
+     * szal objektumot egy adott <code>MandelbrotHalmaznagyito</code>
      * objektumhoz.
      *
-     * @param      nagyító      egy <code>MandelbrotHalmazNagyító</code> objektum
-     * @param      várakozás    várakozási idõ
+     * @param      nagyito      egy <code>MandelbrotHalmazNagyito</code> objektum
+     * @param      varakozas    varakozasi ido
      */
-    public MandelbrotIterációk(MandelbrotHalmazNagyító nagyító, int várakozás) {        
-        this.nagyító = nagyító;
-        this.várakozás = várakozás;
-        j = nagyító.getY();
-        k = nagyító.getX();
-        a = nagyító.getA();
-        b = nagyító.getB();
-        c = nagyító.getC();
-        d = nagyító.getD();
-        kép = nagyító.kép();
-        szélesség  = nagyító.getSz();
-        magasság = nagyító.getM();
+    public MandelbrotIteraciok(MandelbrotHalmazNagyito nagyito, int varakozas) {        
+        this.nagyito = nagyito;
+        this.varakozas = varakozas;
+        j = nagyito.getY();
+        k = nagyito.getX();
+        a = nagyito.getA();
+        b = nagyito.getB();
+        c = nagyito.getC();
+        d = nagyito.getD();
+        kep = nagyito.kep();
+        szelesseg  = nagyito.getSz();
+        magassag = nagyito.getM();
     }
-    /** Az vizsgált pontból induló iterációk bemutatása. */
+    /** Az vizsgalt pontbol indulo iteraciok bemutatasa. */
     public void run() {
-        /* Az alábbi kód javarészt a MandelbrotHalmaz.java számolást 
-         végzõ run() módszerébõl származik, hiszen ugyanazt csináljuk,
-         csak most nem a hálón megyünk végig, hanem a háló adott a
-         példányosításunkkor az egérmutató mutatta csomópontjában (ennek
-         felel meg a c kompelx szám) számolunk, tehát a két külsõ for 
+        /* Az alabbi kod javareszt a MandelbrotHalmaz.java szamolast 
+         vegzo run() modszerebol szarmazik, hiszen ugyanazt csinaljuk,
+         csak most nem a halon megyunk vegig, hanem a halo adott a
+         peldanyositasunkkor az egermutato mutatta csomopontjaban (ennek
+         felel meg a c kompelx szam) szamolunk, tehat a ket kulso for 
          ciklus nem kell. */
-        // A [a,b]x[c,d] tartományon milyen sûrû a
-        // megadott szélesség, magasság háló:
-        double dx = (b-a)/szélesség;
-        double dy = (d-c)/magasság;
+        // A [a,b]x[c,d] tartomanyon milyen suru a
+        // megadott szelesseg, magassag halo:
+        double dx = (b-a)/szelesseg;
+        double dy = (d-c)/magassag;
         double reC, imC, reZ, imZ, ujreZ, ujimZ;
-        // Hány iterációt csináltunk?
-        int iteráció = 0;
-        // c = (reC, imC) a háló rácspontjainak
-        // megfelelõ komplex szám
+        // Hany iteraciot csinaltunk?
+        int iteracio = 0;
+        // c = (reC, imC) a halo racspontjainak
+        // megfelelo komplex szam
         reC = a+k*dx;
         imC = d-j*dy;
         // z_0 = 0 = (reZ, imZ)
         reZ = 0;
         imZ = 0;
-        iteráció = 0;
-        // z_{n+1} = z_n * z_n + c iterációk
-        // számítása, amíg |z_n| < 2 vagy még
-        // nem értük el a 255 iterációt, ha
-        // viszont elértük, akkor úgy vesszük,
-        // hogy a kiinduláci c komplex számra
-        // az iteráció konvergens, azaz a c a
+        iteracio = 0;
+        // z_{n+1} = z_n * z_n + c iteraciok
+        // szamitasa, amig |z_n| < 2 vagy meg
+        // nem ertuk el a 255 iteraciot, ha
+        // viszont elertuk, akkor ugy vesszuk,
+        // hogy a kiindulaci c komplex szamra
+        // az iteracio konvergens, azaz a c a
         // Mandelbrot halmaz eleme
-        while(reZ*reZ + imZ*imZ < 4 && iteráció < 255) {
+        while(reZ*reZ + imZ*imZ < 4 && iteracio < 255) {
             // z_{n+1} = z_n * z_n + c
             ujreZ = reZ*reZ - imZ*imZ + reC;
             ujimZ = 2*reZ*imZ + imC;
          
-            // az iteráció (reZ, imZ) -> (ujreZ, ujimZ)
+            // az iteracio (reZ, imZ) -> (ujreZ, ujimZ)
             // ezt az egyenest kell kirajzolnunk, de most
-            // a komplex számokat vissza kell transzformálnunk
-            // a rács oszlop, sor koordinátájává:
-            java.awt.Graphics g = kép.getGraphics();
+            // a komplex szamokat vissza kell transzformalnunk
+            // a racs oszlop, sor koordinatajava:
+            java.awt.Graphics g = kep.getGraphics();
             g.setColor(java.awt.Color.WHITE);
             g.drawLine(
                     (int)((reZ - a)/dx),
@@ -90,16 +90,16 @@ public class MandelbrotIterációk implements Runnable{
                     (int)((d - ujimZ)/dy)
                     );
             g.dispose();
-            nagyító.repaint();
+            nagyito.repaint();
             
             reZ = ujreZ;
             imZ = ujimZ;
             
-            ++iteráció;
-            // Várakozunk, hogy közben csodálhassuk az iteráció
-            // látványát:
+            ++iteracio;
+            // Varakozunk, hogy kozben csodalhassuk az iteracio
+            // latvanyat:
             try {
-                Thread.sleep(várakozás);
+                Thread.sleep(varakozas);
             } catch (InterruptedException e) {}
         }
     }    

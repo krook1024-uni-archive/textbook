@@ -1,4 +1,4 @@
-#   Copyright (C) 2019  Dr. Norbert Bátfai, nbatfai@gmail.com
+#   Copyright (C) 2019  Dr. Norbert Batfai, nbatfai@gmail.com
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -9,7 +9,7 @@
 
 library(neuralnet)
 
-# A kimeneti számok maradjanak valósak
+# A kimeneti szamok maradjanak valosak
 options(scipen = 999)
 
 a1    <- c(0,1,0,1)

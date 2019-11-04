@@ -1,10 +1,10 @@
 /*
- * Java program a pí hexadecimális alakjának kiszámításására a BBP
+ * Java program a pi hexadecimalis alakjanak kiszamitasasara a BBP
  * algoritmussal.
- * Készült a következo cikk alapján:
+ * Keszult a kovetkezo cikk alapjan:
  *	 	https://www.davidhbailey.com//dhbpapers/bbp-alg.pdf
  *
- * Forrás:
+ * Forras:
  *		https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei
  */
 

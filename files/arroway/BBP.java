@@ -1,10 +1,10 @@
 /*
- * Java program a pí decimális alakjának kiszámítására a BBP algoritmussal.
+ * Java program a pi decimalis alakjanak kiszamitasara a BBP algoritmussal.
  *
- * Készült a következo cikk alapján;
+ * Keszult a kovetkezo cikk alapjan;
  *	 		https://www.davidhbailey.com//dhbpapers/bbp-alg.pdf
  *
- * @author Molnár Antal
+ * @author Molnar Antal
  */
 
 import java.lang.Math;		// pow()

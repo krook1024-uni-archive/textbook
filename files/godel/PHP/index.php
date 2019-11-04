@@ -1,4 +1,4 @@
 <?php
 ?>
 
-<a href="login.php">Bejelentkezés</a>
+<a href="login.php">Bejelentkezes</a>

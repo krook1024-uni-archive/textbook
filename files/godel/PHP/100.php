@@ -41,18 +41,18 @@ if ( ! empty($_GET['time'])) {
 </head>
 <body>
 
-<p id="ido">Streameljünk 100 óra DEAC játékot!</p>
+<p id="ido">Streameljunk 100 ora DEAC jatekot!</p>
 <img src="http://deac.hu/upload/5b376e152b0b5.png" width="300">
-<p id="hanyan" class="smallcap">Hány DEAC-Hackers streamel?</p>
+<p id="hanyan" class="smallcap">Hany DEAC-Hackers streamel?</p>
 
 <div align="center">
-    Hajrá,
+    Hajra,
     <?= $hacker->getName(); ?>!
 </div>
 
 <div align="center">
-    <button onclick="refresh100()">FRISSÍT</button>
-    <button onclick="stop100()">LEÁLLÍT</button>
+    <button onclick="refresh100()">FRISSIT</button>
+    <button onclick="stop100()">LEALLIT</button>
 </div>
 
 <div align="center">
@@ -67,7 +67,7 @@ if ( ! empty($_GET['time'])) {
         $seconds = $tmp->getSeconds();
 
         echo "<span class='hacker' data-time='" . $tmp->getTime() . "'>";
-        echo "Hacker: " . $h . ", idő: " . $hours . " óra " . $minutes . " perc " . $seconds . " mp";
+        echo "Hacker: " . $h . ", ido: " . $hours . " ora " . $minutes . " perc " . $seconds . " mp";
         echo "</span>";
     }
     ?>
@@ -96,15 +96,15 @@ if ( ! empty($_GET['time'])) {
         var minutes = Math.floor((time - hours * 1000 * 60 * 60) / (1000 * 60));
         var seconds = Math.floor((time - hours * 1000 * 60 * 60 - minutes * 1000 * 60) / 1000);
 
-        document.getElementById("ido").innerHTML = hours + " óra "
+        document.getElementById("ido").innerHTML = hours + " ora "
             + minutes + " perc " + seconds + " mp ";
         if (nofhackers === 1)
             document.getElementById("hanyan").innerHTML = nofhackers + " hacker streamel";
         else
-            document.getElementById("hanyan").innerHTML = nofhackers + " hacker streamel párhuzamosan";
+            document.getElementById("hanyan").innerHTML = nofhackers + " hacker streamel parhuzamosan";
 
         if (time >= limit) {
-            document.getElementById("ido").innerHTML = "A 100 óra stream teljesítve!";
+            document.getElementById("ido").innerHTML = "A 100 ora stream teljesitve!";
         }
 
         if (localtime >= refreshlimit) {

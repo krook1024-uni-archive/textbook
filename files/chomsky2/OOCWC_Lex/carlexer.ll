@@ -2,12 +2,12 @@
 * @brief Justine - this is a rapid prototype for development of Robocar City Emulator
 *
 * @file carlexer.ll
-* @author  Norbert Bátfai <nbatfai@gmail.com>
+* @author  Norbert Batfai <nbatfai@gmail.com>
 * @version 0.0.10
 *
 * @section LICENSE
 *
-* Copyright (C) 2014 Norbert Bátfai, batfai.norbert@inf.unideb.hu
+* Copyright (C) 2014 Norbert Batfai, batfai.norbert@inf.unideb.hu
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by

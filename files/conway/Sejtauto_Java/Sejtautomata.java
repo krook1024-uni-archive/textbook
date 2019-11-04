@@ -19,7 +19,7 @@ public class Sejtautomata extends java.awt.Frame implements Runnable {
     /* Ket racsot hasznalunk majd, az egyik a sejtter allapotat
      * a t_n, a masik a t_n+1 idopillanatban jellemzi. */
     protected boolean [][][] racsok = new boolean [2][][];
-    /* Valamelyik racsra mutat, technikai jellegű, hogy ne kelljen a
+    /* Valamelyik racsra mutat, technikai jellegu, hogy ne kelljen a
      * [2][][]-bol az elso dimenziot hasznalni, mert vagy az egyikre
      * allitjuk, vagy a masikra. */
     protected boolean [][] racs;
@@ -68,7 +68,7 @@ public class Sejtautomata extends java.awt.Frame implements Runnable {
                 System.exit(0);
             }
         });
-        // A billentyűzetrol erkezo esemenyek feldolgozasa
+        // A billentyuzetrol erkezo esemenyek feldolgozasa
         addKeyListener(new java.awt.event.KeyAdapter() {
             // Az 'k', 'n', 'l', 'g' es 's' gombok lenyomasat figyeljuk
             public void keyPressed(java.awt.event.KeyEvent e) {

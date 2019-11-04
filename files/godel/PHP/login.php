@@ -41,7 +41,7 @@
 </style>
 
 <form method="POST">
-    <label for="name">Név</label>
-    <input type="text" name="name" id="name" placeholder="Név" />
-    <input type="submit" value="Bejelentkezés" />
+    <label for="name">Nev</label>
+    <input type="text" name="name" id="name" placeholder="Nev" />
+    <input type="submit" value="Bejelentkezes" />
 </form>

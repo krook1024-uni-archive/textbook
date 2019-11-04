@@ -18,17 +18,17 @@ public:
     void run();
 
 protected:
-    // A komplex sík vizsgált tartománya [a,b]x[c,d].
+    // A komplex sik vizsgalt tartomanya [a,b]x[c,d].
     double a, b, c, d;
-    // A komplex sík vizsgált tartományára feszített
-    // háló szélessége és magassága.
+    // A komplex sik vizsgalt tartomanyara feszitett
+    // halo szelessege es magassaga.
     int szelesseg, magassag;
-    // Max. hány lépésig vizsgáljuk a z_{n+1} = z_n * z_n + c iterációt?
-    // (tk. most a nagyítási pontosság)
+    // Max. hany lepesig vizsgaljuk a z_{n+1} = z_n * z_n + c iteraciot?
+    // (tk. most a nagyitasi pontossag)
     int iteraciosHatar;
-    // Kinek számolok?
+    // Kinek szamolok?
     FrakAblak* frakAblak;
-    // Soronként küldöm is neki vissza a kiszámoltakat.
+    // Soronkent kuldom is neki vissza a kiszamoltakat.
     int* egySor;
 
 };

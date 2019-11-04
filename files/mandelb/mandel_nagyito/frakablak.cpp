@@ -1,6 +1,6 @@
 // frakablak.cpp
 //
-// Mandelbrot halmaz nagyító
+// Mandelbrot halmaz nagyito
 
 #include "frakablak.h"
 
@@ -46,7 +46,7 @@ void FrakAblak::paintEvent(QPaintEvent*) {
 
 void FrakAblak::mousePressEvent(QMouseEvent* event) {
 
-    // A nagyítandó kijelölt területet bal felsõ sarka:
+    // A nagyitando kijelolt teruletet bal felso sarka:
     x = event->x();
     y = event->y();
     mx = 0;
@@ -57,9 +57,9 @@ void FrakAblak::mousePressEvent(QMouseEvent* event) {
 
 void FrakAblak::mouseMoveEvent(QMouseEvent* event) {
 
-    // A nagyítandó kijelölt terület szélessége és magassága:
+    // A nagyitando kijelolt terulet szelessege es magassaga:
     mx = event->x() - x;
-    my = mx; // négyzet alakú
+    my = mx; // negyzet alaku
 
     update();
 }

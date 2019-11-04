@@ -4,20 +4,20 @@ int
 main(void) {
 	try {
 		double n;
-		std::cout << "Adj meg egy nemnulla számot: ";
+		std::cout << "Adj meg egy nemnulla szamot: ";
 		std::cin >> n;
 
 		if(n == 0)
-			throw "Nullának nem létezik a reciproka!";
+			throw "Nullanak nem letezik a reciproka!";
 
 		std::cout << n << " reciproka: " << 1/n << std::endl;
 	}
 
 	catch (const char* exception) {
-		std::cout << "Hiba lépett fel! Üzenet: " << exception << std::endl;
+		std::cout << "Hiba lepett fel! Uzenet: " << exception << std::endl;
 	}
 
-	std::cout << "Program vége." << std::endl;
+	std::cout << "Program vege." << std::endl;
 
 	return 0;
 }

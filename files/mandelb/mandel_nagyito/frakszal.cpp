@@ -1,6 +1,6 @@
 // frakszal.cpp
 //
-// Mandelbrot halmaz rajzoló
+// Mandelbrot halmaz rajzolo
 
 
 #include "frakszal.h"
@@ -27,31 +27,31 @@ FrakSzal::~FrakSzal()
 
 void FrakSzal::run()
 {
-    // A [a,b]x[c,d] tartományon milyen sûrû a
-    // megadott szélesség, magasság háló:
+    // A [a,b]x[c,d] tartomanyon milyen suru a
+    // megadott szelesseg, magassag halo:
     double dx = (b-a)/szelesseg;
     double dy = (d-c)/magassag;
     double reC, imC, reZ, imZ, ujreZ, ujimZ;
-    // Hány iterációt csináltunk?
+    // Hany iteraciot csinaltunk?
     int iteracio = 0;
-    // Végigzongorázzuk a szélesség x magasság hálót:
+    // Vegigzongorazzuk a szelesseg x magassag halot:
     for(int j=0; j<magassag; ++j) {
         //sor = j;
         for(int k=0; k<szelesseg; ++k) {
-            // c = (reC, imC) a háló rácspontjainak
-            // megfelelõ komplex szám
+            // c = (reC, imC) a halo racspontjainak
+            // megfelelo komplex szam
             reC = a+k*dx;
             imC = d-j*dy;
             // z_0 = 0 = (reZ, imZ)
             reZ = 0;
             imZ = 0;
             iteracio = 0;
-            // z_{n+1} = z_n * z_n + c iterációk
-            // számítása, amíg |z_n| < 2 vagy még
-            // nem értük el a 255 iterációt, ha
-            // viszont elértük, akkor úgy vesszük,
-            // hogy a kiinduláci c komplex számra
-            // az iteráció konvergens, azaz a c a
+            // z_{n+1} = z_n * z_n + c iteraciok
+            // szamitasa, amig |z_n| < 2 vagy meg
+            // nem ertuk el a 255 iteraciot, ha
+            // viszont elertuk, akkor ugy vesszuk,
+            // hogy a kiindulaci c komplex szamra
+            // az iteracio konvergens, azaz a c a
             // Mandelbrot halmaz eleme
             while(reZ*reZ + imZ*imZ < 4 && iteracio < iteraciosHatar) {
                 // z_{n+1} = z_n * z_n + c
@@ -65,19 +65,19 @@ void FrakSzal::run()
                 ++iteracio;
 
             }
-            // ha a < 4 feltétel nem teljesült és a
-            // iteráció < iterációsHatár sérülésével lépett ki, azaz
-            // feltesszük a c-rõl, hogy itt a z_{n+1} = z_n * z_n + c
-            // sorozat konvergens, azaz iteráció = iterációsHatár
-            // ekkor az iteráció %= 256 egyenlõ 255, mert az esetleges
-            // nagyítasok során az iteráció = valahány * 256 + 255
+            // ha a < 4 feltetel nem teljesult es a
+            // iteracio < iteraciosHatar serulesevel lepett ki, azaz
+            // feltesszuk a c-rol, hogy itt a z_{n+1} = z_n * z_n + c
+            // sorozat konvergens, azaz iteracio = iteraciosHatar
+            // ekkor az iteracio %= 256 egyenlo 255, mert az esetleges
+            // nagyitasok soran az iteracio = valahany * 256 + 255
 
             iteracio %= 256;
 
-            //a színezést viszont már majd a FrakAblak osztályban lesz
+            //a szinezest viszont mar majd a FrakAblak osztalyban lesz
             egySor[k] = iteracio;
         }
-        // Ábrázolásra átadjuk a kiszámolt sort a FrakAblak-nak.
+        // Abrazolasra atadjuk a kiszamolt sort a FrakAblak-nak.
         frakAblak->vissza(j, egySor, szelesseg);
     }
     frakAblak->vissza();

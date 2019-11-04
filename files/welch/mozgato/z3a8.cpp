@@ -28,11 +28,11 @@ class LZWBinFa {
 
 		LZWBinFa & operator<<(char b) {
 			if (b == '0') {
-				if (!fa->nullasGyermek()) {	// ha nincs, hát akkor csinálunk
+				if (!fa->nullasGyermek()) {	// ha nincs, hat akkor csinalunk
 					Csomopont *uj = new Csomopont('0');
 					fa->ujNullasGyermek(uj);
 					fa = gyoker;
-				} else {	// ha van, arra rálépünk
+				} else {	// ha van, arra ralepunk
 					fa = fa->nullasGyermek();
 				}
 			}
@@ -282,7 +282,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 
-		if (b == 0x0a) {	// újsor
+		if (b == 0x0a) {	// ujsor
 			kommentben = false;
 			continue;
 		}
@@ -290,7 +290,7 @@ int main(int argc, char *argv[])
 		if (kommentben)
 			continue;
 
-		if (b == 0x4e)	// N betű
+		if (b == 0x4e)	// N betu
 			continue;
 
 		for (int i = 0; i < 8; ++i) {
@@ -302,19 +302,19 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	// Kipróbáljuk a másoló ctort
+	// Kiprobaljuk a masolo ctort
 	fgv(binFa);
 
-	// Kiírjuk az eredeti fát, mint eddig.
+	// Kiirjuk az eredeti fat, mint eddig.
 	kiFile << binFa;
 	kiFile << "depth = " << binFa.getMelyseg() << std::endl;
 	kiFile << "mean = " << binFa.getAtlag() << std::endl;
 	kiFile << "var = " << binFa.getSzoras() << std::endl;
 
-	// Átmozgatjuk a fát binFa2-be.
+	// Atmozgatjuk a fat binFa2-be.
 	binFa2 = binFa;
 
-	// Majd kiírjuk ezt
+	// Majd kiirjuk ezt
 	kiFile << binFa2;
 	kiFile << "depth = " << binFa2.getMelyseg() << std::endl;
 	kiFile << "mean = " << binFa2.getAtlag() << std::endl;

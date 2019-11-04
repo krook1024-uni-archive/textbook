@@ -1,36 +1,36 @@
 #!/usr/bin/env ptyhon3
 
-# Listák
+# Listak
 lista = ['boci', 3, 'kecske', 3.1415]
 szamok = [1, 2, 3, 4, 5]
 allatok = ['kutya', 'macska']
 
-## Kiíratás
+## Kiiratas
 print(lista)
 print(szamok)
 print(allatok)
 
-## Listához fűzés
-allatok.append('egér')
+## Listahoz fuzes
+allatok.append('eger')
 szamok.append(6)
 
-## Elem törlése
+## Elem torlese
 szamok.remove(2)
 
-## Lista létrehozása listából
+## Lista letrehozasa listabol
 
-## Függvény
-def vowel(ch): # Magánhangzó-é
+## Fuggveny
+def vowel(ch): # Maganhangzo-e
     return ch.lower() in ['a', 'e', 'i', 'o', 'u']
 
-## Végiglépkedés a lista elemein
+## Vegiglepkedes a lista elemein
 for allat in allatok:
     z = 'z' if vowel(allat[0]) else '' ## Ternary operator
-    print('Az én kedvenc állatom a' + z, allat)
+    print('Az en kedvenc allatom a' + z, allat)
 
 ## Inline for ciklus
 szamok_duplaja = [2 * szam for szam in szamok]
-print('A számok duplája', szamok_duplaja)
+print('A szamok duplaja', szamok_duplaja)
 
 ## Lista, sztring, stb hossza
-print('Tárolt állatok száma:', len(allatok))
+print('Tarolt allatok szama:', len(allatok))

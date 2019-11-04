@@ -1,8 +1,8 @@
 // z3a7.cpp
 
-#include <iostream>		// mert olvassuk a std::cin, írjuk a std::cout csatornákat
-#include <cmath>		// mert vonunk gyököt a szóráshoz: std::sqrt
-#include <fstream>		// fájlból olvasunk, írunk majd
+#include <iostream>		// mert olvassuk a std::cin, irjuk a std::cout csatornakat
+#include <cmath>		// mert vonunk gyokot a szorashoz: std::sqrt
+#include <fstream>		// fajlbol olvasunk, irunk majd
 
 class LZWBinFa
 {
@@ -31,7 +31,7 @@ public:
                 fa = fa->nullasGyermek ();
             }
         }
-        // Mit kell betenni éppen, vagy '1'-et?
+        // Mit kell betenni eppen, vagy '1'-et?
         else
         {
             if (!fa->egyesGyermek ())
@@ -103,7 +103,7 @@ private:
         char betu;
         Csomopont *balNulla;
         Csomopont *jobbEgy;
-        Csomopont (const Csomopont &); //másoló konstruktor
+        Csomopont (const Csomopont &); //masolo konstruktor
         Csomopont & operator= (const Csomopont &);
     };
 
@@ -284,7 +284,7 @@ main (int argc, char *argv[])
         }
 
         if (b == 0x0a)
-        {			// újsor
+        {			// ujsor
             kommentben = false;
             continue;
         }
@@ -292,7 +292,7 @@ main (int argc, char *argv[])
         if (kommentben)
             continue;
 
-        if (b == 0x4e)		// N betű
+        if (b == 0x4e)		// N betu
             continue;
 
         for (int i = 0; i < 8; ++i)
