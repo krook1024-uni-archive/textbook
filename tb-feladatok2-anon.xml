@@ -252,6 +252,21 @@ int yyFlexLexer::yylex(){return -1;}]]>
 
     }]]>
         </programlisting>
+        <para>
+            A kódból azt látjuk, hogy a program képkockánként (frame-enként)
+            dolgozzuk fel. Lényegében a kapott képeket először átméretezzük,
+            majd fekete-fehérré konvertáljuk őket. Az így kapott képen arcokat
+            keresünk, és amennyiben ezekkel kapcsolatos változást érzékelünk,
+            kibocsájtjuk a <function>faceChanged()</function> szignált, amiről
+            a következő feladat kapcsán tárgyalunk.
+        </para>
+        <note>
+            <title>Megjegyzés</title>
+            <para>
+                A slot-signal mechanizmus osztályok kommnunikációjára
+                felhasznált mechanizmus. Bővebben a következő feladatok során.
+            </para>
+        </note>
     </section>
     <section>
         <title>BrainB</title>
