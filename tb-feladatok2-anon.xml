@@ -20,6 +20,103 @@
                 https://www.twitch.tv/videos/222879467
             </link>
         </para>
+        <para>
+            Ezt a programot feléleszteni (legalábbis Ubuntu 19.04 alatt) nem
+            túl nehéz, még az előző félév során készített
+            <filename>run</filename> szkriptem tökéletesen működik. Ennek a
+            forrássa alább látható:
+        </para>
+        <programlisting language="bash">
+<![CDATA[#!/usr/bin/env bash
+
+export PATH_TO_FX="/usr/share/openjfx/lib"
+
+java_modules="javafx.controls,javafx.graphics,javafx.media,javafx.swing,javafx.web"
+
+rm -f *.class
+
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javac\
+    --module-path $PATH_TO_FX\
+    --add-modules=$java_modules ActivityEditor.java
+
+
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java\
+    --module-path $PATH_TO_FX\
+    --add-modules=$java_modules ActivityEditor
+
+rm -f *.class ]]>
+        </programlisting>
+        <para>
+            A szkript használatát az teszi indokolttá, hogy a JavaFX
+            használatához minden alkalommal hozzá kell adni futásidejű
+            könyvtárakat is, és lusták vagyunk ahhoz, hogy ezt megjegyezzük, és
+            minden futtatáskor begépeljük.
+        </para>
+        <para>
+            A programot elindítva (egyszerűen <code language="bash">./run</code>
+            használatával) a következőt láthatjuk:
+        </para>
+        <figure>
+            <title>ActivityEditor</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/activityed.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Mivel konkrét ötletem nem volt arra, hogy mit lehetne ezen hackelni,
+            egyszerűen egy új színsémát fogok bevezetni, ami nem más mint a jól
+            megszokott <link xlink:href="https://www.nordtheme.com/">Nord</link>
+            színszéma.
+        </para>
+        <para>
+            Mindezt egy egyszerű CSS fájl létrehozásával, valamint egy extra sor
+            beszúrásával elő lehet idézni. A dokumentáció <link
+                xlink:href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html">itt
+                érhető el</link>, viszont az elolvasástól óva intenék minden
+            programozót, időpazarlás lenne. A CSS-t amúgy is mindenki ismeri.
+        </para>
+        <para>
+            Az én CSS változatom itt látható:
+        </para>
+        <programlisting>
+<![CDATA[ .root {
+    -fx-accent: #a3be8c;
+    -fx-focus-color: -fx-accent;
+    -fx-base: #2e3440;
+    -fx-control-inner-background: -fx-base;
+    -fx-control-inner-background-alt: -fx-base;
+}
+.label{ -fx-text-fill: #eceff4; }
+.separator *.line { -fx-background-color: #4c566a;
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+}
+.scroll-bar{ -fx-background-color: -fx-accent; }
+.button:default { -fx-base: -fx-accent; }
+.table-view {
+    -fx-background-color: derive(-fx-base, 10%);
+    -fx-selection-bar-non-focused: derive(-fx-base, 85%);
+}
+.table-view .column-header .label{ -fx-font-weight: none; } ]]>
+        </programlisting>
+        <para>
+            Ezzel a stíluslappal a program a következőképp mutat:
+        </para>
+        <figure>
+            <title>ActivityEditor Nord</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/activityed-nord.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/anon/F6/ActivityEditor.java" />
+            </textobject>
+        </programlisting>
     </section>
     <section>
         <title>OOCWC Boost ASIO hálózatkezelése</title>
@@ -131,7 +228,31 @@ DISP	"<disp>"
 int yyFlexLexer::yylex(){return -1;}]]>
         </programlisting>
         <para>
-            Az sscanf hívások...
+            Az sscanf függvényt a bemenet feldolgozására használjuk. A yytext
+            <type>char*</type> tartalmazza az éppen feldolgozásra váró
+            sztringet.
+        </para>
+        <para>
+            Az sscanf használata egyszerű: meg kell adnunk neki a vizsgálandó
+            szöveget, majd egy sztringet, amiben különleges jelentéssel bíró
+            karaktereket helyezhetünk el, ezekről tájékozódhatunk a <code
+                language="bash">man scanf</code> parancs kiadásával.
+            Ezek a különleges jelentéssel bíró karakterek fogják megadni, hogy
+            pontosan milyen jellegű bemenetet is várunk. Ezután meg kell adni
+            annyi darab referenciát, ahány ilyen különleges jelentéssel bíró
+            karaktert használtunk a szabályok leírása során. A különleges
+            jelentéssel bíró karaktereket <![CDATA[%]]> jel után kell megadnunk.
+        </para>
+        <para>
+            Például a következő sor:
+        </para>
+        <programlisting language="c++">
+            <![CDATA[std::sscanf(yytext, "betu: %c, szam: %d", &c, &i);]]>
+        </programlisting>
+        <para>
+            jelentése, hogy vizsgáljuk meg a yytext sztringet, és amennyiben
+            betu: BETŰ, szam: SZÁM alakú, a BETŰ-t tegyük be a c változóban, a
+            SZÁM-ot pedig az i változóba.
         </para>
     </section>
     <section>

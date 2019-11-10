@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+export PATH_TO_FX="/usr/share/openjfx/lib"
+
+java_modules="javafx.controls,javafx.graphics,javafx.media,javafx.swing,javafx.web"
+
+rm -f *.class
+
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javac\
+    --module-path $PATH_TO_FX\
+    --add-modules=$java_modules ActivityEditor.java
+
+
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java\
+    --module-path $PATH_TO_FX\
+    --add-modules=$java_modules ActivityEditor
+
+rm -f *.class
