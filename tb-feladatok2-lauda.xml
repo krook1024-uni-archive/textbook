@@ -14,6 +14,69 @@
                 https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/ch01.html#id527287
             </link>
         </para>
+        <para>
+            A program forrása elég rövid, ezért be is húzom ide, hogy jobban
+            lássuk, amiről beszélgetünk.
+        </para>
+        <programlisting language="java">
+<![CDATA[ public class PortScan {
+
+    public static void main(String[] args) {
+
+        for(int i=0; i<1024; ++i)
+
+            try {
+
+                java.net.Socket socket = new java.net.Socket(args[0], i);
+
+                System.out.println(i + " figyeli");
+
+                socket.close();
+
+            } catch (Exception e) {
+
+                System.out.println(i + " nem figyeli");
+
+            }
+    }
+
+}]]>
+        </programlisting>
+        <para>
+            Portszkennelést páldul akkor használunk, mikor szeretnénk
+            meggyőződni arról, hogy egy általunk üzemeltetett szerver nem fed
+            fel túl sokat (tehát nem rendelkezik feleslegesen nyitva levő
+            portokkal).
+        </para>
+        <para>
+            Ezen program működési elve, hogy 0-tól 1024-ig végigmegy az összes
+            porton, és megpróbál egy socketet nyitni a <code
+                language="java">java.net.Socket</code> osztály segítségével.
+            Amennyiben elolvassuk az ehhez az osztályhoz tartozó
+            <link xlink:href="https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html">dokumentációt,</link>
+            azt láthatjuk, hogy amennyiben nem tudunk csatlakozni, úgy <code
+            language="java">SecurityException</code> hibát fog dobni a meghívás.
+        </para>
+        <para>
+            Ennek köszönhetően egyszerűen, amennyiben nem tudunk socketet nyitni
+            az adott porton, tudjuk, hogy nem elérhető.
+        </para>
+        <para>
+            Példa kimenet alább látható (0-65535):
+        </para>
+        <screen>
+<![CDATA[
+$ java PortScan unideb.hu | grep -v nem
+22 figyeli
+25 figyeli
+80 figyeli
+111 figyeli
+113 figyeli
+443 figyeli
+2017 figyeli
+5666 figyeli
+]]>
+        </screen>
     </section>
     <section>
         <title>AOP</title>
