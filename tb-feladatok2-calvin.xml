@@ -1,0 +1,40 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Calvin!</title>
+    </info>
+    <section>
+        <title>MNIST</title>
+        <para>
+            Az alap feladat megoldása, + saját kézzel rajzolt képet is ismerjen
+            fel.
+        </para>
+    </section>
+    <section>
+        <title>Deep MNIST</title>
+        <para>
+            Mint az előző, de a mél yváltozattal. Segítő ábra, vesd össze a
+            forráskoddal a
+            <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf">https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf</link>
+            8. fóliáját.
+        </para>
+    </section>
+    <section>
+        <title>Android telefonra a TF objektum detektációja</title>
+        <para>Telepítsük fel, próbáljuk ki!</para>
+    </section>
+    <section>
+        <title>SMNIST for Machines</title>
+        <para>Készíts saját modellt, vagy használj meglévőt, lásd:</para>
+        <para>
+            <link xlink:href="https://arxiv.org/abs/1906.12213">https://arxiv.org/abs/1906.12213</link>.
+        </para>
+    </section>
+    <section>
+        <title>Minecraft MALMO-s példa</title>
+        <para>
+            A <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>
+            felhasználásával egy ágens példa, lásd pl.
+            <link xlink:href="https://www.youtube.com/watch?v=bAPSu3Rndi8">https://www.youtube.com/watch?v=bAPSu3Rndi8</link>
+        </para>
+    </section>
+</chapter>

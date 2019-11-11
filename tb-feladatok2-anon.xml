@@ -462,7 +462,7 @@ this, SLOT ( endAndStats ( int ) ) );]]>
             teszi a <methodname>BrainBThread::run()</methodname> metódusa is:
         </para>
         <programlisting language="c++">
-<![CDATA[ void BrainBThread::run()
+<![CDATA[void BrainBThread::run()
 {
     while ( time < endTime ) {
 
@@ -481,7 +481,7 @@ this, SLOT ( endAndStats ( int ) ) );]]>
     }
 
     emit endAndStats ( endTime );
-} ]]>
+}]]>
         </programlisting>
     </section>
     <section>
