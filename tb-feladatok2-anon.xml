@@ -495,4 +495,179 @@ this, SLOT ( endAndStats ( int ) ) );]]>
             mondjuk az komplexebb, mert ott időfejlődés is van...)
         </para>
     </section>
+    <section>
+        <title>Android Tracker alkalmazás</title>
+        <note>
+            <title>Tutorálás</title>
+            <para>
+                Ebben a feladatban Tóth Attila tutoriált.
+            </para>
+        </note>
+        <para>
+            Ebben a feladattal Android alkalmazásfejlesztéssel fogunk
+            foglalkozni. Megismerjük az Android permission rendszerét, valamint
+            a GPS API használatát.
+        </para>
+        <para>
+            Az Android Studio legfrissebb verziójának letöltése után hozzunk
+            létre egy alkalmazást, ezen belül válasszuk a Phone and Tablet
+            opciót és egy üres applikációt készítsünk. Ezután a következő
+            látvány fogad minket:
+        </para>
+        <figure>
+            <title>Tracker alkalmazás</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/tracker_empty.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ezután a kódhoz adjunk hozzá egy üres Activity-t.
+        </para>
+        <figure>
+            <title>Android Studio üres Activity</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/tracker_empty_activity.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ez a lépés már létrehozott nekünk egy Java osztályt, amit fejlesztve
+            fejleszthetjük az alkalmazásunkat.
+        </para>
+        <para>
+            Az eszköz helyzetéhez való hozzáférést az osztály
+            <function>onCreate()</function> metódusában tesszük meg.
+        </para>
+        <para>
+            Az Android Studio meglehetősen intuitív, királyi utat biztosít az
+            elrendezések szerkesztéséhez. Grafikus szerkesztőt kapunk ehhez,
+            amely egy XML fájlba dolgozik.
+        </para>
+        <para>
+            A megoldás forrása:
+        </para>
+        <programlisting language="java">
+<![CDATA[package com.krook1024.tracker;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    LocationManager locationManager;
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
+    Marker marker;
+    LocationListener locationListener;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.layout);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
+        assert mapFragment != null;
+        mapFragment.getMapAsync(this);
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        /*if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        REQUEST_LOCATION_PERMISSION);
+            } else {
+                // No explanation needed; request the permission
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        REQUEST_LOCATION_PERMISSION);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } /*else {
+            // Permission has already been granted
+        }*/
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                if (marker != null) {
+                    mMap.addPolyline(new PolylineOptions()
+                            .add(marker.getPosition(), latLng)
+                            .width(10)
+                            .color(Color.BLUE));
+
+                    marker.remove();
+
+                    marker = mMap.addMarker(new MarkerOptions().position(latLng).title("MyPosition:" + location.getLatitude() + ":" + location.getLongitude()));
+                    mMap.setMaxZoomPreference(30);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, mMap.getCameraPosition().zoom));
+                } else {
+                    marker = mMap.addMarker(new MarkerOptions().position(latLng).title("MyPosition:" + location.getLatitude() + ":" + location.getLongitude()));
+                    mMap.setMaxZoomPreference(30);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18.0f));
+                }
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        };
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30, 1, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30, 1, locationListener);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        locationManager.removeUpdates(locationListener);
+    }
+}]]>
+        </programlisting>
+    </section>
 </chapter>
