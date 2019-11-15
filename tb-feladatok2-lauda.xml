@@ -91,6 +91,18 @@ $ java PortScan unideb.hu | grep -v nem
             Írjunk egy egyszerű Androidos "játékot"! Építkezzünk például a 2.
             hét "Helló, Android!" feladatára!
         </para>
+        <para>
+            Ebben a feladatban egy egyszerű Snake játékot fogunk elkészíteni. A
+            Snake játék lényege, hogy egy kígyót irányítunk, a képernyőn pedig
+            véletlenszerűen jelenik meg egy alma, amit ha a kígyó megesz, akkor
+            eggyel nő a hossza. A cél tehát, hogy minél hosszabb legyen a
+            kígyónk. A kígyó meghal, ha saját magába ütközik (megenné magát),
+            vagy ha a falba ütközik.
+        </para>
+        <para>
+            Az írányítást úgy gondoltam, hogy a képernyő megfelelő széleire
+            kattintva lehet a kígyó irányát megváltoztatni.
+        </para>
     </section>
     <section>
         <title>Junit teszt</title>
@@ -102,6 +114,135 @@ $ java PortScan unideb.hu | grep -v nem
             poszt kézzel számított mélységét és szórását dolgozd be egy Junit
             tesztbe.
         </para>
+        <para>
+            Az úgynevezett unit tesztek lényege, hogy a kódok automatikusan
+            tesztelhetőek legyenek. Ahelyett, hogy rengeteg időt töltenénk
+            minden egyes verzió kézi tesztelésével, úgynevezett unit teszteket
+            hozunk létre, amik például minden egyes commit után (ha használunk
+            verziókövetőt, ami még az unit teszteknél is fontosabb) letesztelik
+            az aktuális kódot előre megadott módon.
+        </para>
+        <para>
+            Élő példát ilyen tesztekre találhatunk a vadonban, például ha
+            megnézzük a Firefox Treeherder oldalát:
+			<link xlink:href="https://treeherder.mozilla.org/#/jobs?repo=autoland">
+				https://treeherder.mozilla.org/#/jobs?repo=autoland
+			</link>.
+        </para>
+        <para>
+            Természetesen ezek a tesztek nem helyettesítik teljesen a szoftver
+            kézi tesztelését, csupán lerövidítik, kiegészítik azt. Megnézhetjük
+            például a Firefox stratégiáját a következő oldalon:
+            <link xlink:href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Automated_testing">
+                https://developer.mozilla.org/en-US/docs/Mozilla/QA/Automated_testing
+            </link>
+        </para>
+        <figure>
+            <title>Firefox automatizált tesztelés</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/firefoxtest.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Láthatjuk, hogy a célja ezeknek a teszteknek a <emphasis
+                role="strong">gyakori hibák</emphasis> kiszűrése.
+        </para>
+        <para>
+            A JUnit a Java programnyelvhez létrehozott unit tesztelési megoldás.
+            A használata egyszerű: létrehozunk egy új osztályt, ahol
+            beimportáljuk a tesztelni kívánt kód osztályait, majd egy előre
+            meghatározott szintaxissal megadjuk, hogy tesztelésnél milyen
+            eredményeket várunk. Tekintsük a következő példát a JUnit
+            leírásából:
+            <link xlink:href="https://junit.org/junit5/docs/current/user-guide/#writing-tests">
+                https://junit.org/junit5/docs/current/user-guide/#writing-tests
+            </link>.
+        </para>
+        <programlisting language="java">
+<![CDATA[import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import example.util.Calculator;
+
+import org.junit.jupiter.api.Test;
+
+class MyFirstJUnitJupiterTests {
+
+    private final Calculator calculator = new Calculator();
+
+    @Test
+    void addition() {
+        assertEquals(2, calculator.add(1, 1));
+    } ]]>
+        </programlisting>
+        <para>
+            Látjuk, hogy importálásra kerül a
+            <classname>Calculator</classname>osztály, és az
+            <function>addition()</function> metódusban történik maga az
+            összeshasonlítás, hogy vajon ha a <varname>calculator</varname>
+            objektum (ami a Calculator osztály egy példánya)
+            <methodname>add()</methodname> metódusát hívjuk 1-re és 1-re,
+            akkor valóban kettőt kapunk-e.
+        </para>
+        <para>
+            A hosszas bevező után térjünk az igazi feladatra: készítsünk saját
+            JUnit tesztet. Ehhez az első lépés, hogy a blogposztban szereplő
+            kódot átírjuk C-ről Java-ra, viszont ezt már megtettük a 12.2-es
+            fejezetben, az a változat már képes volt mélységet és szórást
+            számolni. Ennek a lebutított változatát fogjuk használni a feladat
+            során, hiszen ez bőven elég arra a célra, amire használni fogjuk.
+            Lássuk is ezt a verziót:
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/lauda/junit/LZWBinFa.java" />
+            </textobject>
+        </programlisting>
+        <para>
+            Erre a kimenet a következő:
+        </para>
+        <screen>
+<![CDATA[in = 01111001001001000111
+melyseg = 4
+atlag = 2.75
+szoras = 0.9574271077563381]]>
+        </screen>
+        <para>
+            Ez megfelel a kézzel számoltaknak, viszont ez az unalmas, kézi
+            tesztelés. Ahhoz, hogy ezt soha ne kelljen többet manuálisan, kézzel
+            megnézni, készítsük el a JUnit tesztünket, amihez az IntelliJ IDEA
+            nagyon jó segítséget nyújt. Szimplán navigáljunk az osztály
+            definíciójához, majd nyomjuk meg az Alt+Enter billentyűkombinációt.
+            Ezután válasszuk a "Create tests" menüpontot, és bejön egy felület,
+            ami le is generálja nekünk a szükséges teszt osztályt.
+        </para>
+        <figure>
+            <title>JUNit teszt generálás (IntelliJ IDEA)</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/testgen.png" width="40%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ezt az osztályt minimálisan kellett kiegészítenem ahhoz, hogy működő
+            tesztet kapjak. Az eredmény mind a három tesztre pozitív, tehát a
+            programunk jól működött, íme:
+        </para>
+        <programlisting language="java">
+            <textobject>
+                <textdata fileref="./files/lauda/junit/LZWBinFaTest.java" />
+            </textobject>
+        </programlisting>
+        <figure>
+            <title>JUnit teszt lefut</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/testOK.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>OSCI</title>
