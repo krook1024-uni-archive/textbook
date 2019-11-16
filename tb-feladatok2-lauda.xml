@@ -84,6 +84,101 @@ $ java PortScan unideb.hu | grep -v nem
             Szőj bele egy átszövő vonatkozást az első védési programod Java
             átiratába!
         </para>
+        <para>
+            Az aspektus orientált programozást (AOP) egy olyan szemlélet, amely
+            lehetőséget ad számunkra egy bizonyos kód módosítására, anélkül,
+            hogy a kódot módosítanánk. Lehetőségünk van például megadni
+            kódcsipeteket egy külön fájlban, amiknek megmondhatjuk, hogy
+            fussanak le az után, vagy előtt, amikor a programban például lefut
+            egy metódus.
+        </para>
+        <para>
+            Számomra az egész élmény kicsit szürreális volt, olyan, mintha ezzel
+            az ötlettel nem programozók, hanem filozófusok hozakodtak volna elő.
+            Minél többet használjuk, annál inkább nemdeterminisztikusabbá
+            tesszük a programunkat, az undefined behaviour pedig sosem olyan
+            dolog, amit szeretnénk...
+        </para>
+        <para>
+            Az AOP felhasználását illetően azt találtam, hogy akkor
+            használhatjuk az ilyesfajta programozást, amikor régi kódhoz
+            kényszerülünk nyúlni, de "bántani" mégsem szeretnénk azt, hiszen ki
+            tudja mi történhet.
+        </para>
+        <para>
+            Az AspectJ az AOP szemlélet Java-s kivetülése. Ezt a legtöbb
+            GNU/Linux disztribúción telepíthetjük a favorizált
+            csomagkezelőnkkel. Ubuntu alatt:
+        </para>
+        <screen>
+            <![CDATA[$ apt install aspectj]]>
+        </screen>
+        <para>
+            Ezután a fordítás meglehetősen hasonló rendes Java kód fordításához,
+            annyi különbséggel, hogy a java fordító helyett az ajc fordítót
+            használjuk.
+        </para>
+        <para>
+            Hogy az egyszerűséget megőrizzük, az első védési program lebutított
+            verzióját fogjuk felhasználni állatorvosi lóként.
+        </para>
+        <para>
+            Tegyük fel, hogy szeretnénk megszámlálni az egyesek és nullások
+            számát a fában, viszont nem vagyunk elég képzettek ahhoz, hogy magát
+            az <classname>LZWBinFa</classname> osztályt módosítsuk. Segítsünkre
+            siet az AspectJ, ahol úgynevezett pointcut-ok segítségével
+            megmondhatjuk, hogy mi történjen egy bizonyos metódus lefutása
+            előtt/után.
+        </para>
+        <para>
+            Tekintsük a következő Aspect-et:
+        </para>
+        <programlisting language="java">
+<![CDATA[package com.krook1024;
+
+public aspect Aspect {
+    private int ones = 0, zeros = 0;
+
+    // Az addbit() pointcut -- hogy tudjuk számolni a bemenő adatokat
+    pointcut addbit(): execution(public void addBit(char));
+
+    before(char b): addbit() && args(b) {
+        if ('1' == b)
+            ++ones;
+        else if ('0' == b)
+            ++zeros;
+    }
+
+
+    // A main() függvény pointcut -- hogy ki tudjuk írni a lefutás után az eredményt
+    pointcut main(): execution(public static void main(String[]));
+
+    after(): main() {
+        System.out.println("ones = " + ones);
+        System.out.println("zeros = " + zeros);
+    }
+}]]>
+        </programlisting>
+        <para>
+            Ezzel a két pointcuttal már el is értük, amit annyira szerettünk
+            volna: a megszámoltuk a fába bepakolt egyeseket és nullásokat.
+        </para>
+        <figure>
+            <title>AspectJ működés közben</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/aspectj.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <screen>
+<![CDATA[in = 01111001001001000111
+melyseg = 4
+atlag = 2.75
+szoras = 0.9574271077563381
+ones = 10
+zeros = 10]]>
+        </screen>
     </section>
     <section>
         <title>Android Játék</title>
