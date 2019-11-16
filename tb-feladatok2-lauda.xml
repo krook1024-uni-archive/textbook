@@ -103,6 +103,243 @@ $ java PortScan unideb.hu | grep -v nem
             Az írányítást úgy gondoltam, hogy a képernyő megfelelő széleire
             kattintva lehet a kígyó irányát megváltoztatni.
         </para>
+        <note>
+            <title>Felhasznált tartalom</title>
+            <para>
+                A feladat elvégzése során segítségemre volt a következő
+                blogcikk:
+                <link
+                    xlink:href="http://gamecodeschool.com/android/coding-a-snake-game-for-android/#">
+                    http://gamecodeschool.com/android/coding-a-snake-game-for-android
+                </link>.
+            </para>
+        </note>
+        <para>
+            Az első lépés természetesen, hogy létrehozunk egy Android Studio
+            projektet, kézileg menedzselni a fordítórendszert és társait
+            borzasztóan időigényes lenne, arról nem is beszélve, hogy az Android
+            Studio nagyon sok kényelmi funkciót szolgáltat. Kiváló választást
+            végeztek a Google-nél, mikor úgy döntöttek, hogy az Android Studio-t
+            az IntellIJ IDEA alapjaira építik.
+        </para>
+        <para>
+            Az IntelliJ IDEA Ultimade edition változatával (diákoknak az egész
+            termékcsalád ingyenes) lehetőségem volt egy UML osztálydiagrammot
+            legenerálni, ez talán segíti a magyarázást:
+        </para>
+        <figure>
+            <title>Snake UML diagram</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/snake.png" width="40%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ha létrehoztuk az osztályt, létre kell hozni egy úgynevezett
+            Activity-t, amit a telefonunk futtatni képes. Egy-egy ilyen Activity
+            egy-egy képernyőnek felel meg. Gondoljunk például az androidus
+            telefonunk beállítások menüjére, ami maga egy Activity, és az összes
+            megnyitható opció saját Activity-t jelent.
+        </para>
+        <para>
+            Nekünk egyetlen darab Activity létrehozására lesz szükségünk, ez
+            fogja működtetni a programot. Az Activity a következőképp néz ki:
+        </para>
+        <programlisting language="java">
+<![CDATA[public class MainActivity {
+    SnakeEngine snakeEngine;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Felbontás
+        Display display = getWindowManager().getDefaultDisplay();
+
+        Point size = new Point();
+        display.getSize(size);
+
+        snakeEngine = new SnakeEngine(this, size);
+
+        setContentView(snakeEngine);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        snakeEngine.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        snakeEngine.pause();
+    }
+}]]>
+        </programlisting>
+        <para>
+            Amint látható, mindössze annyi történik, hogy megadjuk hogy alapvető
+            események hatására mi történjen. Az
+            <methodname>onCreate()</methodname> akkor fut le, amikor a
+            felhasználó elindítja az alkalmazást. Nem is véletlen, hogy ekkor
+            inicializáljuk a <varname>snakeEngine</varname> objektumot a
+            megfelelő paraméterekkel (a "kontextus", valamint a méret). Ezen
+            kívül az <methodname>onResume(), onPause()</methodname> metódusok
+            akkor futnak le, amikor a felhasználó szünetelteti az alkalmazást
+            (pl. ha kilép a telefon főképernyőjére).
+        </para>
+        <para>
+            A kód érdekes része maga a <varname>SnakeEngine</varname> osztály.
+            Ez jóval hosszabb, szóval csak a lényeges részeket fogom beágyazni.
+        </para>
+        <para>
+            A <varname>SnakeEngine</varname> osztályt a
+            <varname>SurfaceView</varname> osztályból származtatjuk, ami úgymond
+            a nyelv része, ezt az Android operációs rendszer szolgáltatja. A
+            dokumentáció ehhez itt található meg:
+            <link xlink:href="https://developer.android.com/reference/android/view/SurfaceView">
+                https://developer.android.com/reference/android/view/SurfaceView
+            </link>.
+        </para>
+        <para>
+            Minden játék tartalmaz egy fő loopot, nincs ez másképp a mi
+            esetünkben sem. A fő szálat a mi esetünkben a következő kód alkotja:
+        </para>
+        <programlisting language="java">
+<![CDATA[@Override
+    public void run() {
+        while (isPlaying) {
+            if (updateRequired()) {
+                update();
+                draw();
+            }
+        }
+    }]]>
+        </programlisting>
+        <para>
+            Ez a rész biztosítja, hogy amíg a felhasználó az alkalmazásban van,
+            folymatosan kapja a frissítéseket, ha pedig nincs, akkor ne
+            használjunk feleslegesen erőforrásokat. Az
+            <varname>isPlaying</varname> bool változó mondja meg, hogy éppen
+            játszik-e a felhasználó. Emlékszünk a
+            <methodname>onResume(), onPause()</methodname> metódusokra? Pontosan
+            ezek állítják be az isPlaying változó értékét.
+        </para>
+        <para>
+            Az <methodname>update()</methodname> metódusban a következő
+            történik: megnézzük, hogy éppen találtunk-e egy almát, ha igen,
+            akkor megesszük, vagy ha esetleg meghalna a kígyónk (falnak
+            ütközött, vagy megette magát), akkor újraindítjuk a játékot.
+        </para>
+        <programlisting language="java">
+<![CDATA[public void update() {
+        // Found apple?
+        if (snakeXs[0] == appleX && snakeYs[0] == appleY) {
+            eatApple();
+        }
+
+        moveSnake();
+
+        if (detectDeath())
+            newGame();
+    }]]>
+        </programlisting>
+        <para>
+            Egy másik kulcsfontosságú metódus a <methodname>draw()</methodname>
+            metódus.
+        </para>
+        <programlisting language="java">
+<![CDATA[ public void draw() {
+        if (surfaceHolder.getSurface().isValid()) {
+            canvas = surfaceHolder.lockCanvas();
+
+            // Background: Nord
+            canvas.drawColor(Color.argb(255, 56, 66, 82));
+
+            // Snake's color: Nord #A3BE8C
+            paint.setColor(Color.argb(255, 163, 190, 140));
+
+            // Font size
+            paint.setTextSize(90);
+            canvas.drawText("Score: " + score, 10, 70, paint);
+
+            // Draw the snake block-by-block
+            for (int i = 0; i < snakeLength; ++i) {
+                canvas.drawRect(snakeXs[i] * blockSize,
+                        (snakeYs[i] * blockSize),
+                        (snakeXs[i] * blockSize) + blockSize,
+                        (snakeYs[i] * blockSize) + blockSize,
+                        paint);
+            }
+
+            // Apple color: Nord red
+            paint.setColor(Color.argb(255, 191, 97, 106));
+
+            // Draw apple
+            canvas.drawRect(appleX * blockSize,
+                    (appleY * blockSize),
+                    (appleX * blockSize) + blockSize,
+                    (appleY * blockSize) + blockSize,
+                    paint);
+
+            // Unlock canvas
+            surfaceHolder.unlockCanvasAndPost(canvas);
+
+        }
+    } ]]>
+        </programlisting>
+        <para>
+            Ami itt történik, az maga a képernyőre rajzolás. Ehhez úgynevezett
+            festéket és vásznat használunk (paint és canvas). A
+            <classname>Canvas</classname> osztály
+            <methodname>drawText()</methodname> metódusával tudunk egyszerűen
+            szöveget írni a képernyőre, a <methodname>drawRect()</methodname>
+            metódus pedig, ahogyan a neve is takarja, négyszögeket képes
+            rajzolni.
+        </para>
+        <para>
+            A felhasználói bemenet feldolgozását az
+            <methodname>onTouchEvent()</methodname> metódusban végezzük el.
+            Ahogyan a feladat elején is tárgyaltuk, az irányítás egyszerű: a
+            képernyő megfelelő szegmensében kell tapicskolnunk ahhoz, hogy az
+            irányt megváltoztassuk.
+        </para>
+        <programlisting language="java">
+<![CDATA[@Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if ((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
+            double x = motionEvent.getX();
+            double y = motionEvent.getY();
+
+            if (heading == Heading.UP || heading == Heading.DOWN) {
+                if (x >= screenX / 2)
+                    heading = Heading.RIGHT;
+                else
+                    heading = Heading.LEFT;
+            } else {
+                if (y <= screenY / 2)
+                    heading = Heading.UP;
+                else
+                    heading = Heading.DOWN;
+            }
+
+        }
+
+        return true;
+    } ]]>
+        </programlisting>
+        <para>
+            A végeredmény a következőképp néz ki:
+        </para>
+        <figure>
+            <title>Snake</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/snakegame.png" width="80%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
     </section>
     <section>
         <title>Junit teszt</title>
