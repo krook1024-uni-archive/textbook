@@ -8,19 +8,479 @@
             Az alap feladat megoldása, + saját kézzel rajzolt képet is ismerjen
             fel.
         </para>
+        <para>
+            A megoldás forrása:
+            <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">
+                https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol
+            </link>
+        </para>
+        <para>
+            Az MNIST nem más, mint kézzel írott számok adatbázisa, amit azzal a
+            célra tartanak fennt, hogy mély tanulásos neurális hálózatokat
+            tanítsanak, és teszteljenek vele. Az MNIST dataset
+            <link xlink:href="http://yann.lecun.com/exdb/mnist/">
+                Yann LeCunn oldalán
+            </link>
+            érhető el. Ez az adatkészlet hatvanezer tanítópéldát és tízezer
+            tesztelő példát tartalmaz.
+        </para>
+        <para>
+            A mély tanulást arra értjük, hogy a neurális hálózatunknak
+            <emphasis role="strong">számos rejtett rétege</emphasis> (hidden
+            layer)-e van, hiszen ezek nagyban megnövelik a pontosságát.
+        </para>
+        <para>
+            A mi feladatunk, hogy kipróbáljuk, milyen is dolgozni ezzel az
+            adatkészlettel egy Python programon és a Tensorlfow könyvtáron
+            keresztül.
+        </para>
+        <para>
+            Mivel ez a kód jópár éve íródott, és azóta sok dolgot
+            megváltoztattak a Tensorflow könyvtárban, az első dolgunk kiiktatni
+            a felesleges hibaüzeneteket, hogy azok ne zavarjanak minket. Ehhez
+            a következő sort szúrjuk be oda, ahol a tensorflow könyvtárat
+            importáljuk.
+        </para>
+        <programlisting language="python">
+<![CDATA[import tensorflow as tf
+tf.logging.set_verbosity(tf.logging.ERROR) # Shut TF up]]>
+        </programlisting>
+        <para>
+            Még ez sem old meg mindent, szóval a programot kénytelenek leszünk
+            úgy futtatni, hogy a stderr folyamot a /dev/null-ba irányítjuk,
+            tehát:
+        </para>
+        <screen>
+            <![CDATA[python softmax.py 2>/dev/null]]>
+        </screen>
+        <para>
+            Ez mind mit sem ér, ha nem az 1.14.0-s verzióját használjuk a
+            tensorflownak, szóval győződjünk meg róla, hogy ezt a verziót
+            töltöttük le!
+        </para>
+        <para>
+            Lássuk tehát a forrást lépésről lépésre. Elsőként beimportáljuk
+            a szükséges adatokat és könyvtárakat:
+        </para>
+        <programlisting language="python">
+<![CDATA[from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+# Import data
+from tensorflow.examples.tutorials.mnist import input_data
+
+import tensorflow as tf
+tf.logging.set_verbosity(tf.logging.ERROR) # Shut TF up
+
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('TkAgg') # sudo apt install python3-tk ]]>
+        </programlisting>
+        <para>
+            A <methodname>readimg()</methodname> függvény fogja a saját kézzel
+            rajzolt kép beolvasását végezni.
+        </para>
+        <programlisting language="python">
+<![CDATA[def readimg():
+    file = tf.read_file("sajat8a.png")
+    img = tf.image.decode_png(file,channels=1)
+    return img]]>
+        </programlisting>
+        <para>
+            A main eljárásban elsőként létrehozzuk a modellünket és a
+            súlyfüggvényt, esetünkben y-t.
+        </para>
+        <programlisting language="python">
+<![CDATA[def main(_):
+    data_dir = '/tmp/tensorflow/mnist/input_data'
+    mnist = input_data.read_data_sets(data_dir, one_hot=True)
+
+    # Create the model
+    x = tf.placeholder(tf.float32, [None, 784])
+    W = tf.Variable(tf.zeros([784, 10]))
+    b = tf.Variable(tf.zeros([10]))
+    y = tf.matmul(x, W) + b
+
+    # Define loss and optimizer
+    y_ = tf.placeholder(tf.float32, [None, 10])
+
+    # The raw formulation of cross-entropy,
+    #
+    #   tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(tf.nn.softmax(y)),
+    #                                 reduction_indices=[1]))
+    #
+    # can be numerically unstable.
+    #
+    # So here we use tf.nn.softmax_cross_entropy_with_logits on the raw
+    # outputs of 'y', and then average across the batch.
+    cross_entropy = tf.reduce_mean(
+        tf.nn.softmax_cross_entropy_with_logits(labels = y_, logits = y)
+    )
+
+    train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)]]>
+        </programlisting>
+        <para>
+            A tanítás és tesztelés a következő fázisban történik. A tanítás
+            során 100-as csomagokban dolgozzuk fel a bemenő adatokat, ebben a
+            fázisban számoljuk a súlyokat. A tesztelés során az MNIST teszt
+            adatkészletét felhasználva döntjük el, hogy mennyire pontos a
+            feltanított háló, azaz hogy százalékos formában mennyit talált el a
+            tesztképek közül.
+        </para>
+        <programlisting language="python">
+<![CDATA[sess = tf.InteractiveSession()
+    # Train
+    tf.initialize_all_variables().run(session=sess)
+    print()
+    print("> A halozat tanitasa")
+    for i in range(1000):
+        batch_xs, batch_ys = mnist.train.next_batch(100)
+        sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+        if i % 100 == 0:
+            print("->", i/10, "%")
+    print()
+
+    # Test trained model
+    print("> A halozat tesztelese")
+    correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+    print("-> Pontossag: ", sess.run(accuracy, feed_dict={x: mnist.test.images,
+      y_: mnist.test.labels}))
+    print() ]]>
+        </programlisting>
+        <para>
+            Az ezt következő fázisban megnézzük, hogy a 42. tesztképet, valamint
+            azt, hogy a program ezt minek ismeri fel. Hogy miért éppen a
+            42.-et?
+            <link xlink:href="https://simple.wikipedia.org/wiki/42_(answer)">
+                Azért, mert 42 a válasz a végső kérdésre: az élet, a
+                világmindenség, és minden más.
+            </link>
+        </para>
+        <figure>
+            <title>A 42. tesztkép</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/42.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Amint látjuk a 42. tesztkép éppen egy négyes, amit a programunk is
+            négyesnek ismert fel.
+        </para>
+        <programlisting language="python">
+<![CDATA[print("> A MNIST 42. tesztkepenek felismerese, mutatom a szamot, a"
+          " tovabblepeshez csukd be az ablakot")
+
+    img = mnist.test.images[42]
+    image = img
+
+    plt.imshow(image.reshape(28, 28), cmap=plt.cm.binary)
+    plt.savefig("4.png")
+    plt.show() ]]>
+        </programlisting>
+        <para>
+            Ezután már csak egy lépés maradt hátra: a saját kézzel rajzolt
+            számot felismerni. Én egy 8-ast rajzoltam GIMP-ben, de rajzolhattam
+            volna ezt papíron is, viszont így könnyebb volt olyan formátumra
+            hozni, amit a program megért.
+        </para>
+        <programlisting language="python">
+<![CDATA[print("> A sajat kezi 8-asom felismerese, mutatom a szamot, a"
+          " tovabblepeshez csukd be az ablakot")
+    img = readimg()
+    image = img.eval()
+    image = image.reshape(28*28)
+    plt.imshow(image.reshape(28,28), cmap=plt.cm.binary)
+    plt.savefig("saj8.png")
+    plt.show()
+
+    classification = sess.run(tf.argmax(y, 1), feed_dict={x: [image]})
+
+    print("-> Ezt a halozat ennek ismeri fel: ", classification[0])
+    print()]]>
+        </programlisting>
+        <figure>
+            <title>Saját 8-as</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/saj8.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ezt a nyolcast azonban a program hármasnak ismerte fel.
+        </para>
+        <screen>
+<![CDATA[ $ python softmay.py 2>/dev/null
+Extracting /tmp/tensorflow/mnist/input_data/train-images-idx3-ubyte.gz
+Extracting /tmp/tensorflow/mnist/input_data/train-labels-idx1-ubyte.gz
+Extracting /tmp/tensorflow/mnist/input_data/t10k-images-idx3-ubyte.gz
+Extracting /tmp/tensorflow/mnist/input_data/t10k-labels-idx1-ubyte.gz
+
+> A halozat tanitasa
+-> 0.0 %
+-> 10.0 %
+-> 20.0 %
+-> 30.0 %
+-> 40.0 %
+-> 50.0 %
+-> 60.0 %
+-> 70.0 %
+-> 80.0 %
+-> 90.0 %
+
+> A halozat tesztelese
+-> Pontossag:  0.9168
+
+> A MNIST 42. tesztkepenek felismerese, mutatom a szamot, a tovabblepeshez csukd be az ablakot
+-> Ezt a halozat ennek ismeri fel:  4
+
+> A sajat kezi 8-asom felismerese, mutatom a szamot, a tovabblepeshez csukd be az ablakot
+-> Ezt a halozat ennek ismeri fel:  3]]>
+        </screen>
     </section>
     <section>
         <title>Deep MNIST</title>
         <para>
-            Mint az előző, de a mél yváltozattal. Segítő ábra, vesd össze a
+            Mint az előző, de a mély változattal. Segítő ábra, vesd össze a
             forráskoddal a
             <link xlink:href="https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf">https://arato.inf.unideb.hu/batfai.norbert/NEMESPOR/DE/denbatfai2.pdf</link>
             8. fóliáját.
         </para>
+        <para>
+            Az előző feladatban láttott ~91 százalékos pontosság (valamint a
+            tény, hogy a kézzel rajzolt 8-ast hibásan ismertük fel)
+            szégyenbeejtően gyatra, éppen ez teszi indokolttá, hogy a korábban
+            említett mély tanulásos változatot is elkészítsük.
+        </para>
+        <para>
+            A módosítások elvégzéséhez a következő cikket olvastam el, vettem
+            igénybe:
+            <link
+                xlink:href="https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/r0.10/tensorflow/g3doc/tutorials/mnist/pros/index.md">
+                 https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/r0.10/tensorflow/g3doc/tutorials/mnist/pros/index.md
+            </link>.
+        </para>
+        <para>
+            Az előző fejezetben <emphasis role="strong">egy lineáris
+                réteg</emphasis>et hoztunk létre, azonban a mély tanulásos
+            módszer lényege, hogy többrétegű konvolúciós neurális hálózatot
+            hozzunk létre.
+        </para>
+        <para>
+            A kód átlátásához a következő magyarázó ábrát húznám be, amit Dr.
+            Bátfai Norbert készített.
+        </para>
+        <figure>
+            <title>Deep MNIST magyarázó</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/deepmnistmagy.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Az ábráról azt olvashatjuk le, hogy a bemeneti réteg, ami ugye
+            28x28x1 dimenziókkal bír (ugyanis ekkora egy-egy kép mérete) az első
+            konvolúciós rétegben ReLU neuronok segítségével átalakításra
+            kerülnek 28x28x32 mélyre. Ezt az első összevonó réteg leredukálja
+            fele szélességre és magasságra, viszont a mélység marad. Ezután a
+            második konvolúciós rétegbe kerül át, ahol ismét ugyanez megy végre,
+            és a második összevonó réteg után 7x7x64 dimenziókkal fog bírni.
+            Az FC rétegekben "kilapítjuk" az adatot, hogy egy 3136x1 "csíkot"
+            kapjunk. Ebből aztán a dropout réteg készít 1024x3136 dimenziójú
+            adatot, amit majd besorolunk 0-9 közé, majd a y_conv kimeneti réteg
+            már az azonosított számot fogja tartalmazni.
+        </para>
+        <para>
+            Sokat próbálkoztam, hogy manuálisan, csakis Tensorflow használatával
+            működésre bírjam ezt a változatot, melynek a forráskódja
+            megtekinthető ITT, azonban amikor a klasszifikációra került a sor,
+            valamiért mindig elszállt a program, talán a fizikai memória híján.
+        </para>
+        <para>
+            Ekkor rátaláltam a következő cikkre:
+            <link
+                xlink:href="https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d">
+                https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
+            </link>.
+            A cikk írója Keras-t használ, ami egy neurális hálózatokhoz készült
+            könyvtár, aminek célja, hogy minél felhasználóbarátabb legyen, ezzel
+            lehetővé téve a gyors kísérletezést neurális hálózatokkal.
+        </para>
+        <para>
+            Ezen felbuzdulva úgy döntöttem, hogy én is megpróbálom a Keras-os
+            verziót működésre bírni, hogy saját képet is felismerjen. A
+            megoldásom alább látható:
+        </para>
+        <programlisting language="python">
+<![CDATA[import tensorflow as tf
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('TkAgg')
+
+def read_img():
+    import numpy as np
+    img = load_img("sajat8a.png", target_size=(28, 28), color_mode="grayscale")
+    x = img_to_array(img)
+    return x
+
+print()
+print('Tanitas folyamatban...')
+
+# Reshaping the array to 4-dims so that it can work with the Keras API
+x_train = x_train.reshape(x_train.shape[0], 28, 28, 1)
+x_test = x_test.reshape(x_test.shape[0], 28, 28, 1)
+input_shape = (28, 28, 1)
+
+# Making sure that the values are float so that we can get decimal points after division
+x_train = x_train.astype('float32')
+x_test = x_test.astype('float32')
+
+# Normalizing the RGB codes by dividing it to the max RGB value.
+x_train /= 255
+x_test /= 255
+
+# Importing the required Keras modules containing model and layers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
+from keras.preprocessing.image import load_img, img_to_array
+from keras.applications.resnet50 import preprocess_input
+from PIL import Image
+
+# Creating a Sequential Model and adding the layers
+model = Sequential()
+model.add(Conv2D(28, kernel_size=(3,3), input_shape=input_shape))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten()) # Flattening the 2D arrays for fully connected layers
+model.add(Dense(128, activation=tf.nn.relu))
+model.add(Dropout(0.2))
+model.add(Dense(10,activation=tf.nn.softmax))
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.fit(x=x_train,y=y_train, epochs=10)
+
+model.evaluate(x_test, y_test)
+
+# 42
+print()
+print("mutatom a 42. elemet, folytatáshoz zárd be az ablakot")
+
+plt.imshow(x_test[42].reshape(28, 28),cmap='Greys')
+plt.savefig("42.png")
+plt.show()
+
+pred = model.predict(x_test[42].reshape(1, 28, 28, 1))
+print("ennek ismerte fel:", pred.argmax())
+
+# saját kép
+print()
+print("mutatom a saját kézi rajzot, folytatáshoz zárd be az ablakot")
+
+image = read_img()
+plt.imshow(image.reshape(28, 28), cmap='Greys')
+plt.savefig("saj8.png")
+plt.show()
+
+pred = model.predict(image.reshape(1, 28, 28, 1))
+print("ennek ismerte fel:", pred.argmax())]]>
+        </programlisting>
+        <para>
+            A futásidő eltart egy darabig, viszont még mindig barátibb, mint
+            mikor saját magam próbáltam leírni a moddelt Keras nélkül. Ez
+            viszont betudható az én hibámnak.
+        </para>
+        <para>
+            Látható, hogy a pontosság jóval fentebb kúszott, valamint, hogy
+            immár a kézzel rajzolt nyolcasomat is felismerte a hálózat.
+        </para>
+        <para>
+            A kimenet alább látható:
+        </para>
+        <screen>
+<![CDATA[ $ python deep_mnist.py 2>/dev/null
+
+Tanitas folyamatban...
+Epoch 1/10
+60000/60000 [==============================] - 33s 556us/step
+Epoch 2/10
+60000/60000 [==============================] - 33s 556us/step
+Epoch 3/10
+60000/60000 [==============================] - 35s 580us/step
+Epoch 4/10
+60000/60000 [==============================] - 30s 506us/step
+Epoch 5/10
+60000/60000 [==============================] - 30s 497us/step
+Epoch 6/10
+60000/60000 [==============================] - 33s 554us/step
+Epoch 7/10
+60000/60000 [==============================] - 30s 497us/step
+Epoch 8/10
+60000/60000 [==============================] - 30s 497us/step
+Epoch 9/10
+60000/60000 [==============================] - 30s 501us/step
+Epoch 10/10
+60000/60000 [==============================] - 30s 500us/step
+
+10000/10000 [==============================] - 2s 153us/step
+
+mutatom a 42. elemet, folytatáshoz zárd be az ablakot
+ennek ismerte fel: 4
+
+mutatom a saját kézi rajzot, folytatáshoz zárd be az ablakot
+ennek ismerte fel: 8]]>
+        </screen>
     </section>
     <section>
         <title>Android telefonra a TF objektum detektációja</title>
         <para>Telepítsük fel, próbáljuk ki!</para>
+        <para>
+            A feladatunk, hogy kipróbáljuk a TF objektum detektálóját Androidos
+            készüléken. Ehhez szükségünk lesz az Android Studióra, valamint egy
+            olyan Androidot futtató eszközre, amelyen engedélyeztük a fejlesztői
+            opciókat.
+        </para>
+        <para>
+            Amennyiben ezek rendelkezésünkre állnak, kezdjünk is neki, klónozzuk
+            a tensorflow/examples repót a GitHub-ról. Ha ezt megtettük, nincs
+            más dolgunk, mint megnyitni a repón belüli
+            <filename>lite/examples/object_detection/android</filename> mappát,
+            mint projekt, az Android Studio-ban, megvárni, még a Gradle sync
+            befejeződik, majd futtatni a készülékünkön.
+        </para>
+        <figure>
+            <title>TF Lite object detection</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/tflite_as.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Ezután már ki is próbálhatjuk az alkalmazást, amint a megjelölt
+            "Compile <![CDATA[&]]> Run" gombra kattintva az elinduló művelet
+            lefutott. Az én eredményeim alább láthatóak.
+        </para>
+        <figure>
+            <title>TF Lite object detection tapasztalatok</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="./pictures/tf_trial.png" width="100%" />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            Általában a szoftver helyesen ismerte fel a neki megmutatott
+            tárgyakat, persze némi ingadozás érzékelhető volt a tesztelés során.
+        </para>
     </section>
     <section>
         <title>SMNIST for Machines</title>
@@ -35,6 +495,25 @@
             A <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>
             felhasználásával egy ágens példa, lásd pl.
             <link xlink:href="https://www.youtube.com/watch?v=bAPSu3Rndi8">https://www.youtube.com/watch?v=bAPSu3Rndi8</link>
+        </para>
+        <para>
+            A MALMÖ-ről már írtam az előző félév során is, az akkor leírtak még
+            most is állnak. A MALMÖ egy Minecraft ágensek programozására
+            alkalmas keretrendszer, melynek előnye, hogy a játékot nem kell
+            megvásárolnunk, mert egy futtatható Minecraft binárissal érkezik.
+        </para>
+        <para>
+            A MALMÖ több nyelvhez szolgáltat interfészt a Minecraft ágensek
+            programozására. Python-ban, C++-ban, Javában, valamint C#-ban is
+            programozhatunk ilyen ágenst.
+        </para>
+        <para>
+            Kezdésnek töltsük le a legfrisebb release-t az alábbi repóból:
+            <link xlink:href="https://github.com/Microsoft/malmo">
+                https://github.com/Microsoft/malmo
+            </link>.
+            Fontos, hogy ne klónozzuk, mert a klónozással nem jön le minden
+            szükséges kelléke a Malmönek.
         </para>
     </section>
 </chapter>

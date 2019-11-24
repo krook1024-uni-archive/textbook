@@ -32,6 +32,41 @@
                 </author>
             </authorgroup>
         </biblioentry>
+        <biblioentry>
+            <abbrev>MALMO</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <firstname>M.</firstname>
+                        <surname>Johnson</surname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <firstname>K.</firstname>
+                        <surname>Hoffmann</surname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <firstname>D.</firstname>
+                        <surname>Bignell</surname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <title>
+                The Malmo Platform for Artificial Intelligence Experimentation.
+                Proc. 25th International Joint Conference on Artificial
+                Intelligence
+            </title>
+            <publisher>
+                <publishername>
+                    Ed. Kambhampati S., p. 4246. AAAI Press, Palo Alto, California USA.
+                    <link xlink:href="https://github.com/Microsoft/malmo">https://github.com/Microsoft/malmo</link>
+                </publishername>
+            </publisher>
+            <pubdate>2016</pubdate>
+        </biblioentry>
     </bibliodiv>
     <bibliodiv>
         <title>C</title>
