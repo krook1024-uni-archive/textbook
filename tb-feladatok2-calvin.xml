@@ -515,5 +515,78 @@ ennek ismerte fel: 8]]>
             Fontos, hogy ne klónozzuk, mert a klónozással nem jön le minden
             szükséges kelléke a Malmönek.
         </para>
+        <para>
+            Én a Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6
+            verziót töltöttem le, hiszen így nem kell külön bajlódnom a Boost
+            telepítéssel, megspórolva ezzel jónéhány órát.
+        </para>
+        <para>
+            A csomagolt Minecraftot a következő parancsok kiadásával indíthatjuk
+            el.
+        </para>
+        <screen>
+<![CDATA[$ cd Minecraft
+$ ./launchClient.sh]]>
+        </screen>
+        <para>
+            Ha már a Minecraft fut, lépjünk be a PythonExamples mappába, ahol
+            kipróbálhatunk számos példa ágenst. A legegyszerűbb példát a
+            <filename>tutorial_1.py</filename> mission, ami semmi mást nem
+            csinál, csak egy üres téren áll.
+        </para>
+        <para>
+            Egy-egy mission közben irányító parancsokat küldhetünk az ágensnek,
+            ilyen lehet például az hogy ugorjon, forduljon valamelyik irányba,
+            sétáljon, vagy fusson. Ezeknek a szintaxisa a következőképpen
+            alakul (a mellékelt Tutorial.pdf-ből idézve):
+        </para>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    move[-1,1] -- mozgás előre, hátra
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    strafe[-1,1] -- mozgás oldalirányba
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    pitch[-1,1] -- kamera mozgatása fel-le
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    turn[-1,1] -- fordulás balra-jobbra
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    jump 1/0 -- ugrálás be/ki
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    crouch 1/0 -- guggolás be/ki
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    attach 1/0
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    use 1/0
+                </para>
+            </listitem>
+        </itemizedlist>
+        <para>
+            Ezeket a parancsokat pythonban a következőképpen adhatjuk ki:
+        </para>
+        <programlisting language="python">
+<![CDATA[agent_host.sendCommand("PARANCS")]]>
+        </programlisting>
     </section>
 </chapter>
