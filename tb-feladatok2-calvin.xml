@@ -588,5 +588,171 @@ $ ./launchClient.sh]]>
         <programlisting language="python">
 <![CDATA[agent_host.sendCommand("PARANCS")]]>
         </programlisting>
+        <para>
+            A Pythonos interfészen keresztül úgynevezett küldetéseket hozhatunk
+            létre, melyek a következőképp néznek ki:
+        </para>
+        <programlisting language="python">
+<![CDATA[from __future__ import print_function
+
+# Tutorial sample #1: Run simple mission
+
+from builtins import range
+import MalmoPython
+import os
+import sys
+import time
+
+if sys.version_info[0] == 2:
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
+else:
+    import functools
+    print = functools.partial(print, flush=True)
+
+# Create default Malmo objects:
+
+agent_host = MalmoPython.AgentHost()
+try:
+    agent_host.parse( sys.argv )
+except RuntimeError as e:
+    print('ERROR:',e)
+    print(agent_host.getUsage())
+    exit(1)
+if agent_host.receivedArgument("help"):
+    print(agent_host.getUsage())
+    exit(0)
+
+my_mission = MalmoPython.MissionSpec()
+my_mission_record = MalmoPython.MissionRecordSpec()
+
+# Attempt to start a mission:
+max_retries = 3
+for retry in range(max_retries):
+    try:
+        agent_host.startMission( my_mission, my_mission_record )
+        break
+    except RuntimeError as e:
+        if retry == max_retries - 1:
+            print("Error starting mission:",e)
+            exit(1)
+        else:
+            time.sleep(2)
+
+# Loop until mission starts:
+print("Waiting for the mission to start ", end=' ')
+world_state = agent_host.getWorldState()
+while not world_state.has_mission_begun:
+    print(".", end="")
+    time.sleep(0.1)
+    world_state = agent_host.getWorldState()
+    for error in world_state.errors:
+        print("Error:",error.text)
+
+print()
+print("Mission running ", end=' ')
+
+# Loop until mission ends:
+while world_state.is_mission_running:
+    print(".", end="")
+    time.sleep(0.1)
+    world_state = agent_host.getWorldState()
+    for error in world_state.errors:
+        print("Error:",error.text)
+
+print()
+print("Mission ended")
+# Mission has ended.]]>
+        </programlisting>
+        <para>
+            Ezen egyszerű példa során az ágens nem csinál semmit, viszont jól
+            kivehető részekre bontható a programunk. Elsőként a kódcsipet, ami
+            létrehozza magát az ágenst, valamint a küldetést.
+        </para>
+        <programlisting language="python">
+<![CDATA[# Create default Malmo objects:
+
+agent_host = MalmoPython.AgentHost()
+try:
+    agent_host.parse( sys.argv )
+except RuntimeError as e:
+    print('ERROR:',e)
+    print(agent_host.getUsage())
+    exit(1)
+if agent_host.receivedArgument("help"):
+    print(agent_host.getUsage())
+    exit(0)
+
+my_mission = MalmoPython.MissionSpec()
+my_mission_record = MalmoPython.MissionRecordSpec()]]>
+        </programlisting>
+        <para>
+            Ezután várunk, amíg a küldetés inicializálódik. Ez annak
+            feleltethető meg, amíg a Minecraft legenerálja a pályát, valamint
+            betölti magát a lokális szervert.
+        </para>
+
+
+        <programlisting language="python">
+<![CDATA[max_retries = 3
+for retry in range(max_retries):
+    try:
+        agent_host.startMission( my_mission, my_mission_record )
+        break
+    except RuntimeError as e:
+        if retry == max_retries - 1:
+            print("Error starting mission:",e)
+            exit(1)
+        else:
+            time.sleep(2)]]>
+        </programlisting>
+        <para>
+            A következő részt amolyan főciklusnak nevezheténk, hiszen ez a
+            ciklus újra és újra lefut, amíg a küldetésünk fut.
+        </para>
+        <programlisting language="python">
+<![CDATA[print()
+print("Mission running ", end=' ')
+
+# Loop until mission ends:
+while world_state.is_mission_running:
+    print(".", end="")
+    time.sleep(0.1)
+    world_state = agent_host.getWorldState()
+    for error in world_state.errors:
+        print("Error:",error.text)
+
+print()
+print("Mission ended")]]>
+        </programlisting>
+        <para>
+            Tehát egy ilyen küldetés felépítése a következő:
+        </para>
+        <orderedlist>
+            <listitem>
+                <para>
+                    Az ágens inicializálása.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Csatlakozás a Minecraft klienshez, várakozás a küldetés
+                    elindulására.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kódrész, ami lefut a küldetés előtt.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kódrész, ami a küldetés során folyamatosan fut.
+                </para>
+            </listitem>
+        </orderedlist>
+        <para>
+            Amint látszik, az ágens érdembeli logikáját a 4. számmal jelölt
+            részben érdemes implementálni.
+        </para>
     </section>
 </chapter>
