@@ -664,8 +664,9 @@ print("Mission ended")
 # Mission has ended.]]>
         </programlisting>
         <para>
-            Ezen egyszerű példa során az ágens nem csinál semmit, viszont jól
-            kivehető részekre bontható a programunk. Elsőként a kódcsipet, ami
+            Ezen egyszerű példa során az ágens nem csinál semmit, viszont a
+            példa éppen elég a felépítés bemutatására, hiszen jól elkülöníthető
+            részekre bontható a forráskód. Elsőként szerepel a kódcsipet, ami
             létrehozza magát az ágenst, valamint a küldetést.
         </para>
         <programlisting language="python">
@@ -690,8 +691,6 @@ my_mission_record = MalmoPython.MissionRecordSpec()]]>
             feleltethető meg, amíg a Minecraft legenerálja a pályát, valamint
             betölti magát a lokális szervert.
         </para>
-
-
         <programlisting language="python">
 <![CDATA[max_retries = 3
 for retry in range(max_retries):
@@ -707,7 +706,9 @@ for retry in range(max_retries):
         </programlisting>
         <para>
             A következő részt amolyan főciklusnak nevezheténk, hiszen ez a
-            ciklus újra és újra lefut, amíg a küldetésünk fut.
+            ciklus újra és újra lefut, amíg a küldetésünk fut. Ezelőtt a
+            rész előtt érdemes elhelyezni olyan utasításokat, amiket a küldetés
+            előtt, viszont csak egyszer szeretnénk futtatni.
         </para>
         <programlisting language="python">
 <![CDATA[print()
