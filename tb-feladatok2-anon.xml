@@ -509,6 +509,10 @@ this, SLOT ( endAndStats ( int ) ) );]]>
             a GPS API használatát.
         </para>
         <para>
+            A Tracker alkalmazás lényege, hogy élőben mutatja a térképen a
+            helyzetünket, a GPS adatokat felhasználva.
+        </para>
+        <para>
             Az Android Studio legfrissebb verziójának letöltése után hozzunk
             létre egy alkalmazást, ezen belül válasszuk a Phone and Tablet
             opciót és egy üres applikációt készítsünk. Ezután a következő
@@ -534,128 +538,120 @@ this, SLOT ( endAndStats ( int ) ) );]]>
             </mediaobject>
         </figure>
         <para>
-            Ez a lépés már létrehozott nekünk egy Java osztályt, amit fejlesztve
-            fejleszthetjük az alkalmazásunkat.
+            Az üres Activity-t azonban már nekünk kell feltöltenünk. Egy
+            Activity általában egy képernyőnek felel meg.  Az Android Studio
+            meglehetősen intuitív, királyi utat biztosít az elrendezések
+            szerkesztéséhez. Grafikus szerkesztőt kapunk ehhez, amely egy XML
+            fájlba dolgozik.
         </para>
         <para>
-            Az eszköz helyzetéhez való hozzáférést az osztály
-            <function>onCreate()</function> metódusában tesszük meg.
+            <emphasis role="strong">A megoldás forrása:</emphasis>
         </para>
         <para>
-            Az Android Studio meglehetősen intuitív, királyi utat biztosít az
-            elrendezések szerkesztéséhez. Grafikus szerkesztőt kapunk ehhez,
-            amely egy XML fájlba dolgozik.
-        </para>
-        <para>
-            A megoldás forrása:
+            Elsőként létrehozzuk az osztályunk mezőit, amire szükségünk lesz a
+            későbbiekben. Szerencsére a nevük meglehetősen beszédes, ezért nem
+            magyaráznám, hogy mi miért fog majd felelni.
         </para>
         <programlisting language="java">
 <![CDATA[package com.krook1024.tracker;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
-
 public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    LocationManager locationManager;
-    private static final int REQUEST_LOCATION_PERMISSION = 1;
-    Marker marker;
-    LocationListener locationListener;
+private GoogleMap mMap;
+LocationManager locationManager;
+private static final int REQUEST_LOCATION_PERMISSION = 1;
+Marker marker;
+LocationListener locationListener;]]>
+        </programlisting>
+        <para>
+            Ezután felülírjuk a FragmentActivity osztály beépített onCreate
+            metódusát. Itt olyan kódot van lehetőségünk leírni, amely rögtön az
+            alkalmazás elindulása után fut le, és fut mindaddig, amíg le nem
+            áll, néhány kivétellel.
+        </para>
+        <para>
+            A helyzet frissítésére egy úgynevezett locationListenert használunk,
+            amelynek meg tudjuk mondani, hogy mi történjen, amikor az eszköz
+            fizikai helyzete megváltozuk. Esetünkben mindössze annyi, hogy
+            amennyiben már hoztunk létre jelölőt, úgy azt helyezzük át,
+            amennyiben pedig még nem, hozzunk létre egyet a megfelelő helyen.
+            Ezen kívül a térképnek is a megfelelő részére "scrollozunk".
+        </para>
+        <programlisting language="java">
+<![CDATA[@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    setContentView(R.layout.layout);
+    SupportMapFragment mapFragment =
+        (SupportMapFragment)
+        getSupportFragmentManager().findFragmentById(R.id.mapView);
 
-        setContentView(R.layout.layout);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
-        assert mapFragment != null;
-        mapFragment.getMapAsync(this);
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+    assert mapFragment != null;
 
-        /*if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        REQUEST_LOCATION_PERMISSION);
-            } else {
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        REQUEST_LOCATION_PERMISSION);
+    mapFragment.getMapAsync(this);
+    locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+    locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            LatLng latLng = new LatLng(
+                    location.getLatitude(), location.getLongitude());
 
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
+            if (marker != null) {
+                mMap.addPolyline(new PolylineOptions()
+                        .add(marker.getPosition(), latLng)
+                        .width(10)
+                        .color(Color.BLUE));
+
+                marker.remove();
+
+                marker = mMap.addMarker(
+                        new MarkerOptions()
+                        .position(latLng)
+                        .title("MyPosition:" + location.getLatitude()
+                            + ":" + location.getLongitude()));
+
+                mMap.setMaxZoomPreference(30);
+                mMap.moveCamera(
+                        CameraUpdateFactory
+                        .newLatLngZoom(latLng, mMap.getCameraPosition().zoom));
             }
-        } /*else {
-            // Permission has already been granted
-        }*/
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                if (marker != null) {
-                    mMap.addPolyline(new PolylineOptions()
-                            .add(marker.getPosition(), latLng)
-                            .width(10)
-                            .color(Color.BLUE));
-
-                    marker.remove();
-
-                    marker = mMap.addMarker(new MarkerOptions().position(latLng).title("MyPosition:" + location.getLatitude() + ":" + location.getLongitude()));
-                    mMap.setMaxZoomPreference(30);
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, mMap.getCameraPosition().zoom));
-                } else {
-                    marker = mMap.addMarker(new MarkerOptions().position(latLng).title("MyPosition:" + location.getLatitude() + ":" + location.getLongitude()));
-                    mMap.setMaxZoomPreference(30);
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18.0f));
-                }
+            else {
+                marker = mMap.addMarker(
+                        new MarkerOptions()
+                        .position(latLng)
+                        .title("MyPosition:" + location.getLatitude()
+                            + ":" + location.getLongitude()));
+                mMap.setMaxZoomPreference(30);
+                mMap.moveCamera(
+                        CameraUpdateFactory.newLatLngZoom(latLng, 18.0f));
             }
+        }]]>
+        </programlisting>
+        <para>
+            A kód végső fragmense csak amolyan technikai dolgok. Itt adjuk meg,
+            hogy mi történjen úgynevezett speciális esetekben, például amikor a
+            felhasználó szünetelteti a programot.
+        </para>
+        <programlisting language="java">
+<![CDATA[@Override
+public void onStatusChanged(String provider, int status, Bundle extras) {
 
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
+}
 
-            }
+@Override
+public void onProviderEnabled(String provider) {
 
-            @Override
-            public void onProviderEnabled(String provider) {
+}
 
-            }
+@Override
+public void onProviderDisabled(String provider) {
 
-            @Override
-            public void onProviderDisabled(String provider) {
+}};
 
-            }
-        };
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30, 1, locationListener);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30, 1, locationListener);
-    }
+    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30, 1, locationListener);
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30, 1, locationListener);
+}
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -666,8 +662,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onStop() {
         super.onStop();
         locationManager.removeUpdates(locationListener);
-    }
-}]]>
+    }}]]>
         </programlisting>
     </section>
 </chapter>

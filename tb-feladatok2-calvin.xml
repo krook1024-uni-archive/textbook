@@ -755,5 +755,10 @@ print("Mission ended")]]>
             Amint látszik, az ágens érdembeli logikáját a 4. számmal jelölt
             részben érdemes implementálni.
         </para>
+        <para>
+            A malmö GitHub repó tartalmaz ettől összetettebb ágensekre is
+            példákat, például a MazeRunner.py nevű küldetést. Ebben a
+            küldetésben az ágens egy labirintusból próbál kijutni.
+        </para>
     </section>
 </chapter>
