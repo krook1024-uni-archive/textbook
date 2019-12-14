@@ -1,245 +1,290 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
-    <info>
-        <title>Helló, Arroway!</title>
-    </info>
-    <section>
-        <title>OO szemlélet</title>
-        <para>
+	<info>
+		<title>Helló, Arroway!</title>
+	</info>
+	<section>
+		<title>OO szemlélet</title>
+		<para>
 			A módosított polártranszformációs normális generátor beprogramozása
 			Java nyelven. Mutassunk rá, hogy a mi természetes saját megoldásunk
 			(az algoritmus egyszerre két normálist állít elő, kell egy
 			példánytag, amely a nem visszaadottat tárolja és egy logikai tag,
 			hogy van-e tárolt vagy futtatni kell az algot.) és az OpenJDK,
 			Oracle JDK-ban a Sun által adott OO szervezés ua.!
-        </para>
+		</para>
 		<para>
-            https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
-        </para>
-        <para>
+			https://arato.inf.unideb.hu/batfai.norbert/UDPROG/deprecated/Prog1_5.pdf (16-22 fólia)
+		</para>
+		<para>
 			Ugyanezt írjuk meg C++ nyelven is! (lásd még UDPROG repó:
 			source/labor/polargen)
-        </para>
-        <para>
-            A feladat feladata az, hogy rámutasson az objektum orientált
-            programozás előnyeire, amire eddig konkrétan nem tértünk ki a
-            könyvben. A program megvalósítása után azt kell látnunk, hogy
-            nekünk, programozóknak a matematikai háttérrel alig kell
-            foglalkoznunk, és mégis viszonylag komplex problémák megoldására
-            vagyunk képesek programok segítségével. A kód alább látható.
-        </para>
-        <programlisting language="java">
-            <textobject>
-                <textdata fileref="./files/arroway/PolarGen.java" />
-            </textobject>
-        </programlisting>
-        <para>
-            A polártranszformációs normális generátor egy pszeudórandomszámok
-            generálására kitalált aloritmus, amelynek magas effektivitást
-            tulajdonítanak a matematikusok, hiszen nem egy, hanem kettő
-            pszeudórandom szám jön létre egy lefutás során, hanem kettő, így
-            minden páros lefutásnál elegendő az előzőleg generált számokból a
-            másodikat visszaadni.
-        </para>
-    </section>
-    <section>
+		</para>
+		<para>
+			A feladat feladata az, hogy rámutasson az objektum orientált
+			programozás előnyeire, amire eddig konkrétan nem tértünk ki a
+			könyvben. A program megvalósítása után azt kell látnunk, hogy
+			nekünk, programozóknak a matematikai háttérrel alig kell
+			foglalkoznunk, és mégis viszonylag komplex problémák megoldására
+			vagyunk képesek programok segítségével. A kód alább látható.
+		</para>
+		<programlisting language="java">
+			<textobject>
+				<textdata fileref="./files/arroway/PolarGen.java" />
+			</textobject>
+		</programlisting>
+		<para>
+			A polártranszformációs normális generátor egy pszeudórandomszámok
+			generálására kitalált aloritmus, amelynek magas effektivitást
+			tulajdonítanak a matematikusok, hiszen nem egy, hanem kettő
+			pszeudórandom szám jön létre egy lefutás során, hanem kettő, így
+			minden páros lefutásnál elegendő az előzőleg generált számokból a
+			másodikat visszaadni.
+		</para>
+	</section>
+	<section>
 		<title>Homokozó</title>
-        <caution>
-            <title>Tutorált</title>
-            <para>
-                Ebben a feladatban tutorált Tóth Attila.
-            </para>
-        </caution>
-        <para>
+		<caution>
+			<title>Tutorált</title>
+			<para>
+				Ebben a feladatban tutorált Tóth Attila.
+			</para>
+		</caution>
+		<para>
 			Írjuk át az első védési programot (LZW binfa) C++ nyelvről Java
 			nyelvre, ugyanúgy működjön! Mutassunk rá, hogy gyakorlatilag a
 			pointereket és referenciákat kell kiirtani és minden máris működik
 			(erre utal a feladat neve, hogy Java-ban minden referencia, nincs
 			választás, hogy mondjuk egy attribútum pointer, referencia vagy
 			tagként tartalmazott legyen).
-        </para>
-        <para>
+		</para>
+		<para>
 			Miután már áttettük Java nyelvre, tegyük be egy Java Servletbe és a
 			böngészőből GET-es kéréssel (például a böngésző címsorából) kapja
 			meg azt a mintát, amelynek kiszámolja az LZW binfáját!
 		</para>
 		<para>
-			Megoldása forrása: <link
-				xlink:href="https://github.com/krook1024/LZWBinFa-Servlet">https://github.com/krook1024/LZWBinFa-Servlet</link>
-		</para>
-		<para>
-			Általában nem vagyok híve a fejlesztői környezeteknek, amit lehet,
-			és egyszerűbb projekt, igyekszem puszta Vim-ben írni. Ennek
-			ellenére a megoldást az IntelliJ IDEA fejlesztői környezetben
-			készítettem el, hiszen ennek a környezetnek számos kényelmi
-			funkciója van.
-		</para>
-		<para>
-			A forrásokat a repón belül a
-			<filename>src/com/krook/binfa</filename> mappában találhatjuk meg.
-			Itt van a program lelke, az <filename>LZWBinFa</filename> osztály,
-			valamint a <filename>BinFaServlet</filename> osztály.
-		</para>
-		<para>
-			A <filename>BinFaServlet</filename> osztály végzi a kommunikációt a
-			klienssel, a <filename>javax.servlet</filename> könyvtárait
-			felhasználva. Az általunk írt osztály kiterjeszti a
-			<filename>HttpServlet</filename> osztályt, valamint felülírja a
-			<filename>doPost</filename> és <filename>doGet</filename>
-			metódusokat. Utóbbiban történik a lényeges számítás. Lényegében egy
-			az egyben ki lehet másolni az előző felvonásban taglalt C++
-			programból a megfelelő I/O részeket és ide elhelyezni.
-		</para>
-		<para>
-			A <filename>LZWBinFa</filename> osztály pedig magát a bináris fát építi
-			fel a megszokott módon. A forráskód egy az egyben az előző felvonásban
-			tárgyalt C++ verzió átirata, a pointerek nélkül, melyek Javában nem léteznek.
-		</para>
-        <figure>
-            <title>LZWBinFa generátor böngészős változata</title>
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="./pictures/binfa_1.png" width="100%" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-		<figure>
-			<title>LZWBinFa generátor böngészős változatának kimenete</title>
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="./pictures/binfa_2.png" width="100%" />
-                </imageobject>
-			</mediaobject>
-		</figure>
-    </section>
-    <section>
-        <title>"Gagyi"</title>
-        <para>
-            Az ismert formális
-            <code language="C"><![CDATA[while (x <= t && x >= t && t != x);]]></code>
-			tesztkérdéstípusra adj a szokásosnál (miszerint x, t az egyik
-			esetben az objektum által hordozott érték, a másikban meg az
-			objektum referenciája) "mélyebb" választ, írj Java példaprogramot
-			mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát
-			építsd a JDK Integer.java forrására, hogy a 128-nál inkluzív
-			objektum példányokat poolozza!
-        </para>
-        <programlisting language="java">
-            <textobject>
-                <textdata fileref="./files/arroway/Gagyi.java" />
-            </textobject>
-        </programlisting>
-            <para>
-                A kifejezést olvasva a következőt láthatjuk:
-            </para>
-            <itemizedlist>
-                <listitem><para>
-                Ha <varname>a</varname> nagyobb és egyenlő mint <varname>b</varname>
-                </para></listitem>
-                <listitem>
-                <para>
-                és <varname>a</varname> kisebb egyenlő mint <varname>b</varname>
-                </para>
-                </listitem>
-                <listitem>
-                <para>
-                és <varname>a</varname> mégsem egyenlő <varname>b</varname>
-                </para>
-                </listitem>
-            </itemizedlist>
-            <para>
-                Ha belegondolunk, hogy tudnánk-e találni két olyan számot,
-                amelyre ezek a feltételek teljesülnek, hamar azt gondolhatjuk,
-                hogy ilyen számpár nem létezik és végtelen ciklust kapunk. A
-                tapasztalat azonban ettől különböző, a fenti kóddal nem kapunk
-                végtelen ciklust.
-            </para>
-            <para>
-                A magyarázat a jelenségre, hogy a Java nyelvben az
-                <classname>Integer</classname> osztály
-                <function>equals</function> függvénye nem egyformán dolgozik a
-                <function>==</function> operátorral. Míg az operátor azt nézi,
-                hogy a jobb és bal oldalak referenciája egyenlő e, az
-                <function>equals</function> függvény az értékeket hasonlítja
-                össze, az osztály <function>valueOf</function> függvényének
-                segítségével.
-            </para>
-            <para>
-                A tapasztalat az, hogy bármilyen 128-nál kisebb értékre a program
-                megáll, bármilyen 127-nél nagyobb étrékre pedig végtelen
-                ciklusba kerül.
-            </para>
-            <para>
-                Forrás:
-                <link xlink:href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html">https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html</link>
-                (tekerjünk a <function>valueOf</function>, valamint
-                <function>equals</function> részekhez).
-            </para>
-    </section>
-    <section>
-        <title>Yoda</title>
-        <para>
-			Írjunk olyan Java programot, ami java.lang.nullpointerex-el leáll,
-			ha nem követjük a yoda conditions-t!
-			https://en.wikipedia.org/wiki/yoda_conditions
-        </para>
-        <para>
-            Gyakran előforduló hiba, hogy értékadó utasítást írunk le az if
-            szerkezet fejében összehasonlítás helyett. A Yoda conditions
-            használata erre kínál megoldást, miszerint fordított sorrendben
-            kell megszoknunk a programozást, így ha véletlen egy = jellel
-            kevesebbet írnánk, az kiderül fordítási időben, és nem kell
-            futásidőig várni, hogy a hiba felüsse a fejét.
-        </para>
-        <para>
-            Ha az alábbi programot próbáljuk fordítani, meg is kapjuk a
-            hibánkat, ismét, fordítási időben.
-        </para>
-        <programlisting language="java">
-            <textobject>
-                <textdata fileref="./files/arroway/Yoda.java" />
-            </textobject>
-        </programlisting>
-    </section>
-    <section>
-        <title>Kódolás from scratch </title>
-		<para>
-			Induljunk ki ebből a tudományos közleményből:
-            <link xlink:href="http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf">
-			http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf
-            </link>
-            és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus
-            megvalósítását!
-        </para>
-        <para>
-            A BBP algoritmus a pí értékének, valamint <filename>n.</filename>
-            jegyeinek gyors kiszámítására született algoritmus. Az első program
-            magát a Pí szám értékét fogja kiszámítani, míg a második képes lesz
-            az n. helyiértéken álló szám hexadecimális értékének megmondására.
-        </para>
-        <caution>
-            <title>Saját kódcsipet</title>
-            <para>
-                Az alábbi kódcsipetet magam készítettem.
-            </para>
-        </caution>
-        <programlisting language="java">
-            <textobject>
-                <textdata fileref="./files/arroway/BBP.java" />
-            </textobject>
-        </programlisting>
-        <caution>
-            <title>Átvett kódcsipet</title>
-            <para>
-                Az alábbi kódcsipetet a következő forrásból vettem át:
-                <link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei">
-                https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei
-                </link>
-            </para>
-        </caution>
-        <programlisting language="java">
-            <textobject>
-                <textdata fileref="./files/arroway/BBPHexa.java" />
-            </textobject>
-        </programlisting>
-    </section>
-</chapter>
+				Megoldása forrása: <link
+					xlink:href="https://github.com/krook1024/LZWBinFa-Servlet">https://github.com/krook1024/LZWBinFa-Servlet</link>
+			</para>
+			<para>
+				Általában nem vagyok híve a fejlesztői környezeteknek, amit lehet,
+				és egyszerűbb projekt, igyekszem puszta Vim-ben írni. Ennek
+				ellenére a megoldást az IntelliJ IDEA fejlesztői környezetben
+				készítettem el, hiszen ennek a környezetnek számos kényelmi
+				funkciója van.
+			</para>
+			<para>
+				A forrásokat a repón belül a
+				<filename>src/com/krook/binfa</filename> mappában találhatjuk meg.
+					Itt van a program lelke, az <filename>LZWBinFa</filename> osztály,
+						valamint a <filename>BinFaServlet</filename> osztály.
+					</para>
+					<para>
+						A <filename>BinFaServlet</filename> osztály végzi a kommunikációt a
+							klienssel, a <filename>javax.servlet</filename> könyvtárait
+								felhasználva. Az általunk írt osztály kiterjeszti a
+							<filename>HttpServlet</filename> osztályt, valamint felülírja a
+							<filename>doPost</filename> és <filename>doGet</filename>
+								metódusokat. Utóbbiban történik a lényeges számítás. Lényegében egy
+								az egyben ki lehet másolni az előző felvonásban taglalt C++
+								programból a megfelelő I/O részeket és ide elhelyezni.
+						</para>
+						<para>
+							A <filename>LZWBinFa</filename> osztály pedig magát a bináris fát építi
+								fel a megszokott módon. A forráskód egy az egyben az előző felvonásban
+								tárgyalt C++ verzió átirata, a pointerek nélkül, melyek Javában nem léteznek.
+						</para>
+						<figure>
+							<title>LZWBinFa generátor böngészős változata</title>
+							<mediaobject>
+								<imageobject>
+									<imagedata fileref="./pictures/binfa_1.png" width="100%" />
+								</imageobject>
+							</mediaobject>
+						</figure>
+						<figure>
+							<title>LZWBinFa generátor böngészős változatának kimenete</title>
+							<mediaobject>
+								<imageobject>
+									<imagedata fileref="./pictures/binfa_2.png" width="100%" />
+								</imageobject>
+							</mediaobject>
+						</figure>
+					</section>
+					<section>
+						<title>"Gagyi"</title>
+						<para>
+							Az ismert formális
+							<code language="C"><![CDATA[while (x <= t && x >= t && t != x);]]></code>
+								tesztkérdéstípusra adj a szokásosnál (miszerint x, t az egyik
+								esetben az objektum által hordozott érték, a másikban meg az
+								objektum referenciája) "mélyebb" választ, írj Java példaprogramot
+								mely egyszer végtelen ciklus, más x, t értékekkel meg nem! A példát
+								építsd a JDK Integer.java forrására, hogy a 128-nál inkluzív
+								objektum példányokat poolozza!
+						</para>
+						<programlisting language="java">
+							<textobject>
+								<textdata fileref="./files/arroway/Gagyi.java" />
+							</textobject>
+						</programlisting>
+						<para>
+							A kifejezést olvasva a következőt láthatjuk:
+						</para>
+						<itemizedlist>
+							<listitem><para>
+										Ha <varname>a</varname> nagyobb és egyenlő mint <varname>b</varname>
+								</para></listitem>
+								<listitem>
+									<para>
+											és <varname>a</varname> kisebb egyenlő mint <varname>b</varname>
+										</para>
+									</listitem>
+									<listitem>
+										<para>
+												és <varname>a</varname> mégsem egyenlő <varname>b</varname>
+											</para>
+										</listitem>
+									</itemizedlist>
+									<para>
+										Ha belegondolunk, hogy tudnánk-e találni két olyan számot,
+										amelyre ezek a feltételek teljesülnek, hamar azt gondolhatjuk,
+										hogy ilyen számpár nem létezik és végtelen ciklust kapunk. A
+										tapasztalat azonban ettől különböző, a fenti kóddal nem kapunk
+										végtelen ciklust.
+									</para>
+									<para>
+										A magyarázat a jelenségre, hogy a Java nyelvben az
+										<classname>Integer</classname> osztály
+										<function>equals</function> függvénye nem egyformán dolgozik a
+										<function>==</function> operátorral. Míg az operátor azt nézi,
+											hogy a jobb és bal oldalak referenciája egyenlő e, az
+										<function>equals</function> függvény az értékeket hasonlítja
+											össze, az osztály <function>valueOf</function> függvényének
+												segítségével.
+										</para>
+										<para>
+											A tapasztalat az, hogy bármilyen 128-nál kisebb értékre a program
+											megáll, bármilyen 127-nél nagyobb étrékre pedig végtelen
+											ciklusba kerül.
+										</para>
+										<para>
+											Ennek az oka pedig az, hogy a Java ezeket a nullához relatíve
+											közel lévő számokat egy afféle gyorsítótárban tárolja, poolozza.
+											
+										</para>
+										<para>
+											A következő kódcsipet a JDK7 forrásából származik, a
+											<filename>
+												java/lang/Integer.java
+											</filename>
+											fájlból, a 637. sortól megkezdve.
+										</para>
+										<programlisting language="java">
+<![CDATA[ /**
+
+ * Returns an {@code Integer} instance representing the specified
+ * {@code int} value.  If a new {@code Integer} instance is not
+ * required, this method should generally be used in preference to
+ * the constructor {@link #Integer(int)}, as this method is likely
+ * to yield significantly better space and time performance by
+ * caching frequently requested values.
+ *
+ * @param  i an {@code int} value.
+ * @return an {@code Integer} instance representing {@code i}.
+ * @since  1.5
+ */
+
+public static Integer valueOf(int i) {
+
+    assert IntegerCache.high >= 127;
+
+    if (i >= IntegerCache.low && i <= IntegerCache.high)
+
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+
+    return new Integer(i);
+
+}]]>
+										</programlisting>
+										<para>
+											A feladat megfejtése elolvasható a fenti pár soros kommentben.
+											A lényeg, hogy a jobb teljesítmény és alacsonyabb futásidő érdekében
+											ezekhez a kicsi számokhoz nem új objektumokat hoz létre a Java,
+											hanem az IntegerCache-ből mazsolázgat ki egy megfelelő számot.
+										</para>
+										<para>
+											Forrás:
+											<link xlink:href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html">https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html</link>
+												(tekerjünk a <function>valueOf</function>, valamint
+												<function>equals</function> részekhez).
+											</para>
+										</section>
+										<section>
+											<title>Yoda</title>
+											<para>
+												Írjunk olyan Java programot, ami java.lang.nullpointerex-el leáll,
+												ha nem követjük a yoda conditions-t!
+												https://en.wikipedia.org/wiki/yoda_conditions
+											</para>
+											<para>
+												Gyakran előforduló hiba, hogy értékadó utasítást írunk le az if
+												szerkezet fejében összehasonlítás helyett. A Yoda conditions
+												használata erre kínál megoldást, miszerint fordított sorrendben
+												kell megszoknunk a programozást, így ha véletlen egy = jellel
+												kevesebbet írnánk, az kiderül fordítási időben, és nem kell
+												futásidőig várni, hogy a hiba felüsse a fejét.
+											</para>
+											<para>
+												Ha az alábbi programot próbáljuk fordítani, meg is kapjuk a
+												hibánkat, ismét, fordítási időben.
+											</para>
+											<programlisting language="java">
+												<textobject>
+													<textdata fileref="./files/arroway/Yoda.java" />
+												</textobject>
+											</programlisting>
+										</section>
+										<section>
+											<title>Kódolás from scratch </title>
+											<para>
+												Induljunk ki ebből a tudományos közleményből:
+												<link xlink:href="http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf">
+													http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/bbp-alg.pdf
+												</link>
+													és csak ezt tanulmányozva írjuk meg Java nyelven a BBP algoritmus
+													megvalósítását!
+											</para>
+											<para>
+													A BBP algoritmus a pí értékének, valamint <filename>n.</filename>
+														jegyeinek gyors kiszámítására született algoritmus. Az első program
+														magát a Pí szám értékét fogja kiszámítani, míg a második képes lesz
+														az n. helyiértéken álló szám hexadecimális értékének megmondására.
+												</para>
+												<caution>
+													<title>Saját kódcsipet</title>
+													<para>
+														Az alábbi kódcsipetet magam készítettem.
+													</para>
+												</caution>
+												<programlisting language="java">
+													<textobject>
+														<textdata fileref="./files/arroway/BBP.java" />
+													</textobject>
+												</programlisting>
+												<caution>
+													<title>Átvett kódcsipet</title>
+													<para>
+														Az alábbi kódcsipetet a következő forrásból vettem át:
+														<link xlink:href="https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei">
+															https://www.tankonyvtar.hu/hu/tartalom/tkt/javat-tanitok-javat/apbs02.html#pi_jegyei
+														</link>
+													</para>
+												</caution>
+												<programlisting language="java">
+													<textobject>
+														<textdata fileref="./files/arroway/BBPHexa.java" />
+													</textobject>
+												</programlisting>
+											</section>
+										</chapter>
